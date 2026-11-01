@@ -1,0 +1,34 @@
+{
+  "name": "reels",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Faceless Indonesian reels generator — Remotion + Piper (TTS) + whisper.cpp (captions), fully local & open-source",
+  "type": "module",
+  "scripts": {
+    "tts": "node scripts/tts.mjs",
+    "tts:eleven": "node scripts/tts-eleven.mjs",
+    "captions": "node scripts/captions.mjs",
+    "build:audio": "npm run tts && npm run captions",
+    "build:audio:eleven": "npm run tts:eleven && npm run captions",
+    "studio": "remotion studio",
+    "render": "remotion render Reel out/reel.mp4 --browser-executable=\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\"",
+    "all": "npm run build:audio && npm run render"
+  },
+  "dependencies": {
+    "@react-three/fiber": "^9.8.2",
+    "@remotion/captions": "latest",
+    "@remotion/cli": "latest",
+    "@remotion/install-whisper-cpp": "latest",
+    "@remotion/media-utils": "latest",
+    "@remotion/three": "^4.0.539",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "remotion": "latest",
+    "three": "^0.187.0"
+  },
+  "devDependencies": {
+    "@types/react": "19.0.0",
+    "@types/three": "^0.187.0",
+    "typescript": "^5.6.0"
+  }
+}

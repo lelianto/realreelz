@@ -1,0 +1,33 @@
+{
+  "template": "stickman",
+  "name": "NIKOLA TESLA",
+  "title": "Nikola Tesla",
+  "script": "Pria ini menerangi dunia, tapi meninggal sendirian di kamar hotel, nyaris tanpa uang. Namanya Nikola Tesla. Tahun seribu delapan ratus delapan puluh empat, ia tiba di Amerika dan bekerja untuk Thomas Edison. Tak lama, mereka berselisih, dan Tesla pergi. Ia lalu mengembangkan listrik arus bolak-balik, sistem yang bisa mengirim daya sangat jauh. Perusahaan Westinghouse membeli patennya, dan di pameran dunia Chicago, ribuan lampu menyala berkat sistem itu. Konon, Tesla bahkan merelakan royaltinya demi menyelamatkan Westinghouse. Lalu ia bermimpi lebih besar: menara raksasa yang mengirim energi tanpa kabel. Tapi pendananya mundur, dan menara itu akhirnya dirobohkan. Hari ini, kota di seluruh dunia bersinar dengan gagasannya. Ia tidak gagal. Mungkin dunia saja yang belum siap.",
+  "elevenVoiceId": "nPczCjzI2devNBz1zQrb",
+  "elevenStability": 0.45,
+  "elevenStyle": 0.2,
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#ffd23f",
+  "captionFixes": {
+    "Priya": "Pria",
+    "berselisi": "berselisih",
+    "bola": "bolak-balik",
+    "balik": "",
+    "patenya": "patennya",
+    "Conan": "Konon",
+    "Ya": "Ia"
+  },
+  "keywords": ["dunia", "uang", "Tesla", "Edison", "listrik", "jauh", "lampu", "royaltinya", "menara", "energi", "dirobohkan", "bersinar", "gagal", "siap"],
+  "storyScenes": [
+    {"kind": "room", "cue": null},
+    {"kind": "lab", "cue": "Namanya"},
+    {"kind": "rival", "cue": "Edison"},
+    {"kind": "wave", "cue": "arus"},
+    {"kind": "fair", "cue": "pameran"},
+    {"kind": "contract", "cue": "Konon"},
+    {"kind": "tower", "cue": "bermimpi"},
+    {"kind": "fall", "cue": "pendananya"},
+    {"kind": "city", "cue": "Hari"}
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "title": "3 Kebiasaan Pagi",
+  "script": "Mau harimu lebih produktif? Coba tiga kebiasaan pagi ini. Pertama, jauhkan ponsel selama tiga puluh menit setelah bangun. Kedua, minum segelas air putih sebelum kopi. Ketiga, tulis satu hal paling penting yang ingin kamu selesaikan hari ini. Lakukan konsisten selama seminggu, dan rasakan bedanya.",
+  "voicePitch": 0,
+  "elevenVoiceId": "TX3LPaxmHKxFdv7VOQHJ",
+  "music": "music.mp3",
+  "musicVolume": 0.14,
+  "accent": "#8f7bff",
+  "scenes": [
+    {
+      "type": "intro",
+      "fromSec": 0,
+      "kicker": "PRODUKTIVITAS",
+      "heading": "3 Kebiasaan Pagi",
+      "sub": "biar harimu lebih produktif"
+    },
+    {
+      "type": "tip",
+      "fromSec": 4.0,
+      "n": 1,
+      "icon": "📵",
+      "title": "Jauhkan ponsel",
+      "stat": 30,
+      "statUnit": "menit",
+      "note": "setelah bangun",
+      "color": "#ff7a7a"
+    },
+    {
+      "type": "tip",
+      "fromSec": 9.0,
+      "n": 2,
+      "icon": "💧",
+      "title": "Minum air putih",
+      "stat": 1,
+      "statUnit": "gelas",
+      "note": "sebelum kopi",
+      "color": "#6ec8ff"
+    },
+    {
+      "type": "tip",
+      "fromSec": 13.0,
+      "n": 3,
+      "icon": "✍️",
+      "title": "Tulis 1 prioritas",
+      "stat": 1,
+      "statUnit": "hal penting",
+      "note": "untuk hari ini",
+      "color": "#ffd166"
+    },
+    {
+      "type": "outro",
+      "fromSec": 18.0,
+      "stat": 7,
+      "statUnit": "hari",
+      "heading": "Konsisten seminggu",
+      "sub": "rasakan bedanya ✨"
+    }
+  ]
+}

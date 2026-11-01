@@ -1,0 +1,80 @@
+{
+  "template": "stickman",
+  "name": "ALEXANDER FLEMING",
+  "title": "Alexander Fleming",
+  "script": "Penemuan yang menyelamatkan jutaan nyawa ini berawal dari laboratorium yang berantakan. Tahun seribu sembilan ratus dua puluh delapan, ilmuwan Skotlandia Alexander Fleming pergi berlibur, dan meninggalkan cawan berisi bakteri di meja kerjanya. Saat kembali, ia melihat jamur tumbuh di salah satu cawan. Anehnya, bakteri di sekitar jamur itu lenyap. Zat dari jamur itu ia namakan penisilin. Tapi selama bertahun-tahun, penisilin sulit dibuat dalam jumlah besar. Lalu Howard Florey dan Ernst Chain berhasil memurnikannya. Saat Perang Dunia Kedua, penisilin diproduksi massal dan menyelamatkan banyak tentara dari infeksi. Tahun seribu sembilan ratus empat puluh lima, ketiganya menerima Hadiah Nobel. Semua itu berawal dari satu cawan yang terlupakan. Kadang, perubahan besar datang dari hal kecil yang hampir kita buang.",
+  "elevenVoiceId": "nPczCjzI2devNBz1zQrb",
+  "elevenStability": 0.45,
+  "elevenStyle": 0.2,
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#ffd23f",
+  "captionFixes": {
+    "Scott": "Skotlandia",
+    "Landia": "",
+    "Zad": "Zat",
+    "Floraid": "Florey",
+    "masal": "massal",
+    "perang": "Perang",
+    "dunia": "Dunia",
+    "kedua": "Kedua",
+    "hadiah": "Hadiah"
+  },
+  "keywords": [
+    "nyawa",
+    "berantakan",
+    "Fleming",
+    "bakteri",
+    "jamur",
+    "lenyap",
+    "penisilin",
+    "sulit",
+    "memurnikannya",
+    "tentara",
+    "Nobel",
+    "terlupakan",
+    "kecil"
+  ],
+  "storyScenes": [
+    {
+      "kind": "messyLab",
+      "cue": null
+    },
+    {
+      "kind": "holiday",
+      "cue": "berlibur"
+    },
+    {
+      "kind": "discover",
+      "cue": "kembali"
+    },
+    {
+      "kind": "petri",
+      "cue": "Anehnya"
+    },
+    {
+      "kind": "bottle",
+      "cue": "namakan"
+    },
+    {
+      "kind": "struggle",
+      "cue": "sulit"
+    },
+    {
+      "kind": "team",
+      "cue": "Florey"
+    },
+    {
+      "kind": "factory",
+      "cue": "Perang"
+    },
+    {
+      "kind": "nobel",
+      "cue": "1945"
+    },
+    {
+      "kind": "lastDish",
+      "cue": "Semua"
+    }
+  ]
+}

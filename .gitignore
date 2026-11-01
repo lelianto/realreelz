@@ -1,0 +1,35 @@
+# dependencies
+node_modules/
+
+# python venv & downloaded binaries (piper, whisper.cpp, models)
+.venv/
+.bin/
+
+# secrets — NEVER commit a real key. Keep only the example template.
+.env
+.env.*
+!.env.example
+
+# rendered output
+out/
+
+# generated media & assets in public/ (all recreated by the pipeline:
+# voiceover.wav, voiceover.src.mp3, music.mp3, captions.json, …)
+public/*
+!public/.gitkeep
+
+# rendered / source media anywhere in the repo (defense in depth)
+*.mp4
+*.mov
+*.webm
+*.wav
+*.mp3
+
+# logs & OS cruft
+*.log
+npm-debug.log*
+.DS_Store
+
+# editors
+.vscode/
+.idea/

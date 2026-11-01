@@ -1,0 +1,75 @@
+{
+  "template": "stickman",
+  "name": "WRIGHT BERSAUDARA",
+  "title": "Wright Bersaudara",
+  "script": "Dua pemilik toko sepeda ini mendahului para ilmuwan dunia. Mereka adalah Wright bersaudara, Orville dan Wilbur, dari Ohio, Amerika. Tanpa ijazah kuliah, mereka bermimpi membuat manusia terbang. Banyak orang menganggap itu mustahil. Mereka mempelajari burung, menguji sayap dalam terowongan angin buatan sendiri, dan gagal berkali-kali. Lalu, pada tujuh belas Desember seribu sembilan ratus tiga, di Kitty Hawk, Orville naik ke pesawat buatan mereka. Mesin menyala, dan pesawat itu terangkat. Penerbangannya hanya dua belas detik. Tapi dua belas detik itu mengubah dunia. Enam puluh enam tahun kemudian, sepotong kain dari pesawat itu dibawa ke Bulan. Dari toko sepeda, sampai ke Bulan. Jadi, jangan remehkan mimpimu.",
+  "elevenVoiceId": "nPczCjzI2devNBz1zQrb",
+  "elevenStability": 0.45,
+  "elevenStyle": 0.2,
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#ffd23f",
+  "captionFixes": {
+    "tokoh": "toko",
+    "Bersodara": "bersaudara",
+    "terwongan": "terowongan",
+    "bulan": "Bulan"
+  },
+  "keywords": [
+    "sepeda",
+    "Wright",
+    "terbang",
+    "mustahil",
+    "burung",
+    "angin",
+    "gagal",
+    "pesawat",
+    "terangkat",
+    "detik",
+    "dunia",
+    "Bulan",
+    "mimpimu"
+  ],
+  "storyScenes": [
+    {
+      "kind": "bikeShop",
+      "cue": null
+    },
+    {
+      "kind": "dream",
+      "cue": "bermimpi"
+    },
+    {
+      "kind": "doubt",
+      "cue": "mustahil"
+    },
+    {
+      "kind": "tunnel",
+      "cue": "mempelajari"
+    },
+    {
+      "kind": "crash",
+      "cue": "gagal"
+    },
+    {
+      "kind": "beach",
+      "cue": "Desember"
+    },
+    {
+      "kind": "liftoff",
+      "cue": "terangkat"
+    },
+    {
+      "kind": "worldSky",
+      "cue": "Tapi"
+    },
+    {
+      "kind": "moon",
+      "cue": "66"
+    },
+    {
+      "kind": "dreamEnd",
+      "cue": "jangan"
+    }
+  ]
+}

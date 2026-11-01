@@ -1,0 +1,16 @@
+{
+  "template": "reflective",
+  "kicker": "RENUNGAN",
+  "title": "Tuhan Tetap Baik",
+  "script": "Ketika kita memiliki pekerjaan, kita sering lupa berterima kasih kepada Tuhan. Kita mengeluh karena harus bangun pagi, mengeluh karena pekerjaan menumpuk, mengeluh karena gaji terasa kurang, bahkan terkadang merasa semua yang kita miliki adalah hasil kerja keras kita sendiri. Tetapi ketika pekerjaan itu hilang, kita mulai bertanya kepada Tuhan. Tuhan, kenapa mencari pekerjaan begitu sulit? Tuhan, kenapa Engkau tidak membuka jalan? Tuhan, kenapa doaku belum dijawab? Pernahkah kita berpikir... Ketika Tuhan memberikan pekerjaan, kita lupa bersyukur. Tetapi ketika pekerjaan itu tidak ada, kita mempertanyakan kebaikan-Nya. Mungkin selama ini bukan Tuhan yang kurang baik kepada kita. Mungkin kitalah yang terlalu sibuk melihat apa yang belum kita miliki, sampai lupa mensyukuri apa yang pernah Tuhan berikan. Bukan berarti kita tidak boleh menangis, mengeluh, atau meminta pertolongan Tuhan. Tetapi jangan sampai kita hanya mengingat Tuhan ketika membutuhkan sesuatu. Sebab Tuhan tetap baik, baik ketika kita memiliki pekerjaan, maupun ketika kita sedang berjuang mendapatkannya kembali.",
+  "elevenVoiceId": "nPczCjzI2devNBz1zQrb",
+  "elevenStability": 0.6,
+  "elevenStyle": 0.1,
+  "music": "music.mp3",
+  "musicVolume": 0.18,
+  "accent": "#e8c58f",
+  "highlights": [
+    "Ketika Tuhan memberikan pekerjaan, kita lupa bersyukur. Tetapi ketika pekerjaan itu tidak ada, kita mempertanyakan kebaikan-Nya.",
+    "Sebab Tuhan tetap baik, baik ketika kita memiliki pekerjaan, maupun ketika kita sedang berjuang mendapatkannya kembali."
+  ]
+}

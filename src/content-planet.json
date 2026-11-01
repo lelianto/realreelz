@@ -1,0 +1,51 @@
+{
+  "template": "planet",
+  "kicker": "TATA SURYA",
+  "title": "Bumi",
+  "subtitle": "Rumah kita di antara bintang",
+  "script": "Inilah Bumi, satu-satunya planet yang kita tahu dipenuhi kehidupan. Ia diselimuti atmosfer, lapisan gas yang melindungi kita dari radiasi matahari dan menjaga suhu tetap hangat. Permukaannya sebagian besar adalah lautan, menutupi tujuh puluh satu persen wajah planet ini. Bumi tidak sendirian; ia ditemani sebuah bulan setia yang mengelilinginya setiap dua puluh tujuh hari. Dan dalam tiga ratus enam puluh lima hari, Bumi menyelesaikan satu perjalanan penuh mengelilingi matahari. Sebuah rumah kecil berwarna biru, melayang di tengah luasnya alam semesta.",
+  "elevenVoiceId": "nPczCjzI2devNBz1zQrb",
+  "elevenStability": 0.5,
+  "elevenStyle": 0.15,
+  "accent": "#6ec8ff",
+  "planetColor": "#1f5fa0",
+  "landColor": "#3d8f5a",
+  "atmosphere": "#7cc6ff",
+  "music": "music.mp3",
+  "musicVolume": 0.1,
+  "statsCue": "menyelesaikan",
+  "labels": [
+    {
+      "text": "Atmosfer",
+      "detail": "lapisan pelindung",
+      "cue": "atmosfer",
+      "x": 840,
+      "y": 760,
+      "tx": 650,
+      "ty": 840
+    },
+    {
+      "text": "Permukaan",
+      "detail": "71% lautan",
+      "cue": "lautan",
+      "x": 210,
+      "y": 1080,
+      "tx": 470,
+      "ty": 1020
+    },
+    {
+      "text": "Orbit Bulan",
+      "detail": "±27 hari",
+      "cue": "bulan",
+      "x": 820,
+      "y": 1280,
+      "tx": 650,
+      "ty": 1230
+    }
+  ],
+  "stats": [
+    {"value": "12.742", "unit": "km diameter"},
+    {"value": "1", "unit": "satelit alami"},
+    {"value": "365", "unit": "hari / orbit"}
+  ]
+}
