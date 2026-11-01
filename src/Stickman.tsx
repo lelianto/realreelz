@@ -753,18 +753,27 @@ const Note: React.FC<{points?: string[]; label?: string}> = ({points, label}) =>
   );
 };
 
-const SceneArt: React.FC<{scene: StoryScene; f: number; len: number; accent: string}> = ({scene, f, len, accent}) => {
+const SceneArt: React.FC<{scene: StoryScene; f: number; len: number; accent: string; hue?: number; baseHair?: string; baseMoustache?: boolean}> = ({scene, f, len, accent, hue = 0, baseHair, baseMoustache}) => {
   const kind = scene.kind;
-  const hero = {hair: scene.hair, coat: scene.coat, moustache: scene.moustache, old: scene.old};
+  const hero = {
+    hair: scene.hair ?? baseHair,
+    coat: scene.coat,
+    moustache: scene.moustache ?? baseMoustache,
+    old: scene.old,
+  };
   const {fps} = useVideoConfig();
   const seed = Math.floor(f / 3);
   const pop = spring({frame: f, fps, config: {damping: 12}, durationInFrames: 16});
+  // Per-video background tint: the big scene backdrops are expressed as HSL and
+  // rotated by `hue` so each video reads as a distinct colour family, while the
+  // characters/props keep their natural colours.
+  const bgc = (h: number, s: number, l: number) => `hsl(${((h + hue) % 360 + 360) % 360} ${s}% ${l}%)`;
 
   // ====== GENERIC reusable scenes — parameterized, work for any inventor ======
   if (kind === 'gintro') {
     return (
       <g>
-        <rect width={W} height={H} fill="#20242e" />
+        <rect width={W} height={H} fill={bgc(225, 20, 15)} />
         <path d="M360 0 L720 0 L905 1500 H175 Z" fill="#2c3340" opacity={0.55} />
         <rect y={1500} width={W} height={420} fill="#14161d" />
         <Stick x={540} y={1560} {...hero} look={scene.mood ?? 'sad'} scale={1.15} talking armL={10} armR={10} />
@@ -774,7 +783,7 @@ const SceneArt: React.FC<{scene: StoryScene; f: number; len: number; accent: str
   if (kind === 'gportrait') {
     return (
       <g>
-        <rect width={W} height={H} fill="#2b3a52" />
+        <rect width={W} height={H} fill={bgc(218, 31, 25)} />
         <rect y={1500} width={W} height={420} fill="#1b2435" />
         {scene.label ? <Card y={320} text={scene.label} /> : null}
         <Stick x={540} y={1560} {...hero} look="neutral" scale={1.2} />
@@ -785,7 +794,7 @@ const SceneArt: React.FC<{scene: StoryScene; f: number; len: number; accent: str
     const lit = interpolate(f, [6, 36], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
     return (
       <g>
-        <rect width={W} height={H} fill={`hsl(220 28% ${12 + lit * 12}%)`} />
+        <rect width={W} height={H} fill={`hsl(${(((220 + hue) % 360) + 360) % 360} 28% ${12 + lit * 12}%)`} />
         <rect y={1500} width={W} height={420} fill="#14161d" />
         <circle cx={540} cy={790} r={200 * lit} fill="#ffe07a" opacity={0.26 * lit} />
         <Bulb x={540} y={840} on={lit > 0.4} size={1.7} />
@@ -796,7 +805,7 @@ const SceneArt: React.FC<{scene: StoryScene; f: number; len: number; accent: str
   if (kind === 'gwork') {
     return (
       <g>
-        <rect width={W} height={H} fill="#5a6b58" />
+        <rect width={W} height={H} fill={bgc(113, 10, 38)} />
         <rect y={1500} width={W} height={420} fill="#3a4538" />
         <rect x={470} y={1140} width={560} height={40} fill="#8a6a45" stroke={INK} strokeWidth={8} />
         <rect x={522} y={1180} width={28} height={320} fill="#6c5236" stroke={INK} strokeWidth={7} />
@@ -809,7 +818,7 @@ const SceneArt: React.FC<{scene: StoryScene; f: number; len: number; accent: str
   if (kind === 'gstruggle') {
     return (
       <g>
-        <rect width={W} height={H} fill="#6b5050" />
+        <rect width={W} height={H} fill={bgc(0, 15, 37)} />
         <rect y={1500} width={W} height={420} fill="#3a2a2a" />
         <text x={760} y={780} textAnchor="middle" fontSize={230} fontWeight={900} fill="#c9412f" stroke={INK} strokeWidth={9} paintOrder="stroke" fontFamily="Arial Black, Arial">?</text>
         <Stick x={300} y={1540} {...hero} look="sad" scale={1.1} />
@@ -819,7 +828,7 @@ const SceneArt: React.FC<{scene: StoryScene; f: number; len: number; accent: str
   if (kind === 'grival') {
     return (
       <g>
-        <rect width={W} height={H} fill="#c98a3f" />
+        <rect width={W} height={H} fill={bgc(35, 56, 52)} />
         <rect y={1500} width={W} height={420} fill="#5e3f24" />
         {scene.bubbleL ? <Bubble x={300} y={600} side="l" text={scene.bubbleL} /> : null}
         {scene.bubbleR ? <Bubble x={790} y={600} side="r" text={scene.bubbleR} /> : null}
@@ -831,7 +840,7 @@ const SceneArt: React.FC<{scene: StoryScene; f: number; len: number; accent: str
   if (kind === 'gbreakthrough') {
     return (
       <g>
-        <rect width={W} height={H} fill="#153a6b" />
+        <rect width={W} height={H} fill={bgc(212, 67, 25)} />
         {Array.from({length: 14}, (_, i) => {
           const a = (i / 14) * Math.PI * 2 + f / 55;
           return <line key={i} x1={540 + Math.cos(a) * 300} y1={740 + Math.sin(a) * 300} x2={540 + Math.cos(a) * 640} y2={740 + Math.sin(a) * 640} stroke={accent} strokeWidth={14} strokeLinecap="round" opacity={0.7} />;
@@ -850,7 +859,7 @@ const SceneArt: React.FC<{scene: StoryScene; f: number; len: number; accent: str
     const lit = interpolate(f, [0, 70], [0.15, 0.85], {extrapolateRight: 'clamp'});
     return (
       <g>
-        <rect width={W} height={H} fill="#0d1534" />
+        <rect width={W} height={H} fill={bgc(228, 60, 13)} />
         <Skyline lit={lit} />
         {f > 20 ? (
           <>
@@ -866,7 +875,7 @@ const SceneArt: React.FC<{scene: StoryScene; f: number; len: number; accent: str
   if (kind === 'gaward') {
     return (
       <g>
-        <rect width={W} height={H} fill="#5b1420" />
+        <rect width={W} height={H} fill={bgc(350, 63, 22)} />
         {[0, 1, 2, 3, 4, 5, 6].map((i) => (
           <rect key={i} x={i * 160 - 20} width={80} height={1500} fill="#74202b" />
         ))}
@@ -886,7 +895,7 @@ const SceneArt: React.FC<{scene: StoryScene; f: number; len: number; accent: str
   if (kind === 'gclose') {
     return (
       <g>
-        <rect width={W} height={H} fill="#141c44" />
+        <rect width={W} height={H} fill={bgc(230, 55, 17)} />
         {Array.from({length: 30}, (_, i) => (
           <circle key={i} cx={rand(i + 8) * W} cy={rand(i + 60) * 950} r={4} fill="#fff" />
         ))}
@@ -2660,7 +2669,10 @@ export const StickmanStory: React.FC<{
   name: string;
   keywords: string[];
   accent: string;
-}> = ({words, scenes, name, keywords, accent}) => {
+  hue?: number; // per-video background hue offset (deg); 0 = original palette
+  baseHair?: string; // per-video default hair colour (scene.hair overrides)
+  baseMoustache?: boolean; // per-video default moustache (scene.moustache overrides)
+}> = ({words, scenes, name, keywords, accent, hue = 0, baseHair, baseMoustache}) => {
   const frame = useCurrentFrame();
   const {fps, durationInFrames} = useVideoConfig();
 
@@ -2687,7 +2699,7 @@ export const StickmanStory: React.FC<{
     <AbsoluteFill style={{background: '#000', overflow: 'hidden'}}>
       <AbsoluteFill style={{transform: `scale(${zoom})`, transformOrigin: '50% 58%'}}>
         <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`}>
-          <SceneArt key={scene.kind + idx} scene={scene} f={f} len={len} accent={accent} />
+          <SceneArt key={scene.kind + idx} scene={scene} f={f} len={len} accent={accent} hue={hue} baseHair={baseHair} baseMoustache={baseMoustache} />
         </svg>
       </AbsoluteFill>
       <div

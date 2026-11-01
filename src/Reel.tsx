@@ -181,6 +181,9 @@ const StickmanReel: React.FC = () => {
           name={content.name ?? ''}
           keywords={content.keywords ?? []}
           accent={content.accent ?? '#ffd23f'}
+          hue={(content as {hue?: number}).hue ?? 0}
+          baseHair={(content as {hair?: string}).hair}
+          baseMoustache={(content as {moustache?: boolean}).moustache}
         />
       ) : null}
     </AbsoluteFill>

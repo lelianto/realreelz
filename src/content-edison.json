@@ -1,0 +1,26 @@
+{
+  "template": "stickman",
+  "name": "THOMAS EDISON",
+  "title": "Thomas Alva Edison",
+  "script": "Pada tahun 1879, dunia masih gelap gulita setiap malam. Seorang pria dari Amerika bertekad mengubah itu. Namanya Thomas Alva Edison. Sejak kecil dia dianggap bodoh oleh gurunya dan dikeluarkan dari sekolah. Tapi ibunya tetap percaya dan mengajarinya sendiri di rumah. Untuk menciptakan bola lampu, Edison harus bereksperimen ribuan kali mencari bahan filamen yang tepat. Ribuan kali gagal, tapi dia bilang dia hanya menemukan ribuan cara yang tidak berhasil. Akhirnya, sebuah filamen karbon menyala terang selama berjam-jam. Lampu pijar pun lahir. Penemuannya membuat kota di seluruh dunia terang benderang di malam hari, mengubah cara manusia bekerja dan hidup. Edison memegang lebih dari seribu hak paten sepanjang hidupnya. Pesannya sederhana, jenius itu satu persen inspirasi dan sembilan puluh sembilan persen kerja keras.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "elevenVoiceId": "nPczCjzI2devNBz1zQrb",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#ffd23f",
+  "hue": 0,
+  "hair": "#2a2320",
+  "moustache": true,
+  "captionFixes": {"bodo": "bodoh", "benerang": "benderang", "Alpha": "Alva", "Alfa": "Alva"},
+  "keywords": ["Edison", "bodoh", "filamen", "lampu", "benderang", "paten", "jenius"],
+  "storyScenes": [
+    {"kind": "gintro", "cue": null, "mood": "sad"},
+    {"kind": "gportrait", "cue": "Namanya", "label": "Thomas Edison"},
+    {"kind": "gstruggle", "cue": "bodoh"},
+    {"kind": "gwork", "cue": "bereksperimen", "prop": "bulb"},
+    {"kind": "gbreakthrough", "cue": "menyala", "label": "BOLA LAMPU"},
+    {"kind": "gimpact", "cue": "benderang"},
+    {"kind": "gaward", "cue": "paten", "label": "1000+ PATEN"},
+    {"kind": "gclose", "cue": "Pesannya"}
+  ]
+}
