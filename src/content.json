@@ -1,53 +1,49 @@
 {
   "template": "stickman",
-  "name": "DUNNING-KRUGER",
-  "title": "Dunning-Kruger Effect",
-  "script": "Kamu baru menonton dua video tentang suatu topik, lalu tiba-tiba merasa sudah menjadi ahli. Kamu mulai percaya diri, merasa paham segalanya, bahkan berani mendebat siapa pun. Tapi begitu masuk lebih dalam, kamu sadar ternyata masalahnya jauh lebih rumit dari yang kamu bayangkan. Fenomena ini disebut efek Dunning Kruger. Orang yang baru tahu sedikit justru paling percaya diri, sementara para ahli sejati malah sering ragu. Kenapa bisa begitu? Karena untuk benar-benar menyadari betapa sedikitnya yang kita pahami, kita justru butuh lebih banyak ilmu. Semakin dangkal pengetahuan, semakin besar rasa percaya diri yang keliru. Jadi, makin banyak kamu belajar, makin kamu sadar betapa luasnya hal yang belum kamu ketahui. Itu bukan kelemahan, itu tanda kamu makin bijak. Lain kali sebelum merasa paling benar, tanyakan, apakah aku benar-benar paham, atau baru tahu kulitnya saja?",
+  "name": "SURVIVORSHIP",
+  "title": "Survivorship Bias",
+  "script": "Kamu sering melihat miliarder yang dulu berani keluar dari bangku kuliah, lalu menyimpulkan bahwa sekolah itu tidak penting. Kamu pun mulai berpikir untuk ikut berhenti saja, karena toh mereka semua terlihat berhasil. Tapi tunggu dulu, kamu hanya melihat segelintir orang yang berhasil. Bagaimana dengan jutaan orang yang juga keluar, lalu gagal, dan tidak pernah terdengar kabarnya? Fenomena ini disebut survivorship bias, atau bias orang yang selamat. Kita terbiasa belajar hanya dari para pemenang, sementara yang kalah perlahan menghilang dari cerita. Saat Perang Dunia Kedua, militer ingin memperkuat badan pesawat di bagian yang paling banyak terkena peluru. Padahal justru bagian yang jarang terkena itulah yang harus diperkuat, karena pesawat yang tertembak di sana tidak pernah pulang. Jadi sebelum meniru resep sukses siapa pun, tanyakan, siapa yang mencoba hal serupa tapi kabarnya tak pernah sampai ke kita? Kebenaran sering bersembunyi di balik mereka yang diam.",
   "elevenVoiceId": "nPczCjzI2devNBz1zQrb",
-  "elevenStability": 0.45,
-  "elevenStyle": 0.2,
+  "edgeVoiceId": "id-ID-ArdiNeural",
   "music": "music.mp3",
   "musicVolume": 0.08,
   "accent": "#ffd23f",
-  "captionFixes": {
-    "Daning": "Dunning",
-    "effekt": "efek"
-  },
+  "captionFixes": {},
   "keywords": [
-    "ahli",
-    "percaya",
-    "dalam",
-    "rumit",
-    "sedikit",
-    "ragu",
-    "dangkal",
-    "belajar",
-    "bijak",
-    "paham"
+    "sukses",
+    "kuliah",
+    "berhenti",
+    "gagal",
+    "terdengar",
+    "pemenang",
+    "pesawat",
+    "peluru",
+    "meniru",
+    "diam"
   ],
   "storyScenes": [
     {
       "kind": "cstory",
       "cue": null,
-      "label": "Baru belajar",
-      "bubble": "Gampang, aku paham semua!",
+      "label": "Lihat yang sukses",
+      "bubble": "Berarti kuliah nggak penting!",
       "mood": "happy",
       "hair": "#2a2320",
       "moustache": false
     },
     {
       "kind": "cthink",
-      "cue": "percaya",
-      "bubble": "Aku sudah jago banget",
+      "cue": "berhenti",
+      "bubble": "Aku ikut berhenti aja deh",
       "mood": "happy",
       "hair": "#2a2320",
       "moustache": false
     },
     {
       "kind": "cstory",
-      "cue": "dalam",
-      "label": "Kenyataan",
-      "bubble": "Kok ternyata serumit ini?",
+      "cue": "tunggu",
+      "label": "Yang tak terlihat",
+      "bubble": "Lho, yang gagal ke mana?",
       "mood": "shock",
       "hair": "#2a2320",
       "moustache": false
@@ -55,42 +51,42 @@
     {
       "kind": "cterm",
       "cue": "disebut",
-      "term": "DUNNING-KRUGER",
-      "def": "Makin sedikit tahu, makin pede merasa ahli",
+      "term": "SURVIVORSHIP BIAS",
+      "def": "Cuma lihat yang berhasil, yang gagal tak terlihat",
       "hair": "#2a2320",
       "moustache": false
     },
     {
       "kind": "cdilemma",
-      "cue": "justru",
-      "optL": "Pemula: PEDE",
-      "optR": "Ahli: RAGU",
+      "cue": "pemenang",
+      "optL": "Yang terlihat",
+      "optR": "Yang hilang",
       "hair": "#2a2320",
       "moustache": false
     },
     {
       "kind": "cwhy",
-      "cue": "menyadari",
-      "label": "KENAPA BEGITU?",
+      "cue": "militer",
+      "label": "CONTOH KLASIK",
       "points": [
-        "Tahu sedikit, ngerasa tahu semua",
-        "Sadar belum tahu butuh ilmu lebih",
-        "Makin dangkal, makin pede keliru"
+        "PD II: pesawat pulang penuh peluru",
+        "Militer mau perkuat bagian itu",
+        "Harusnya bagian yang tak kena"
       ],
       "hair": "#2a2320",
       "moustache": false
     },
     {
       "kind": "clesson",
-      "cue": "belajar",
-      "label": "Makin tahu, makin rendah hati",
+      "cue": "meniru",
+      "label": "Cari yang tak terdengar",
       "hair": "#2a2320",
       "moustache": false
     },
     {
       "kind": "coutro",
-      "cue": "Lain",
-      "label": "Paham, atau baru kulitnya?",
+      "cue": "bersembunyi",
+      "label": "Siapa yang tak bersuara?",
       "hair": "#2a2320",
       "moustache": false
     }
