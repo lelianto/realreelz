@@ -23,6 +23,9 @@ export type StoryScene = {
   term?: string; // the concept name revealed on cterm
   def?: string; // short definition under the term
   points?: string[]; // up to 3 short bullet lines on cwhy
+  // optional data for ANIMAL characters / analogies
+  char?: string; // 'frog' | 'sheep' | 'ant' | 'wolf' | 'fox' | 'mouse' | 'lion' (default: stickman)
+  heat?: number; // 0..1 water temperature for the cpot (boiling-frog) scene
 };
 
 const INK = '#1b1a22';
@@ -160,6 +163,240 @@ const Stick: React.FC<StickProps> = ({
       )}
     </g>
   );
+};
+
+// ---------------------------------------------------------------------------
+// Animal characters — flat 2D in the same house style, chosen per scene via
+// `char`. Each takes the ground point (x, y) and draws upward, honoring
+// scale / flip / look / talking and an idle bob + blink, exactly like Stick.
+// ---------------------------------------------------------------------------
+type AnimalProps = StickProps; // animals ignore hair/coat/arm* but share the shape
+
+const Eyes: React.FC<{cs: number[]; cy: number; r?: number; pr?: number; look?: string; blink: boolean}> = ({
+  cs,
+  cy,
+  r = 26,
+  pr = 11,
+  look = 'neutral',
+  blink,
+}) => (
+  <>
+    {cs.map((cx) =>
+      blink ? (
+        <line key={cx} x1={cx - r * 0.6} y1={cy} x2={cx + r * 0.6} y2={cy} stroke={INK} strokeWidth={6} strokeLinecap="round" />
+      ) : (
+        <g key={cx}>
+          <circle cx={cx} cy={cy} r={r} fill="#fff" stroke={INK} strokeWidth={5} />
+          <circle cx={cx + (look === 'shock' ? 0 : 2)} cy={look === 'sad' ? cy - 6 : cy} r={look === 'shock' ? pr * 0.7 : pr} fill={INK} />
+        </g>
+      ),
+    )}
+  </>
+);
+
+const Frog: React.FC<AnimalProps> = ({x, y, scale = 1, look = 'neutral', talking = false, flip = false}) => {
+  const frame = useCurrentFrame();
+  const bob = Math.sin(frame / 10) * 3;
+  const breathe = 1 + Math.sin(frame / 14) * 0.02;
+  const blink = frame % 95 < 4;
+  const open = talking && Math.sin(frame / 2.3) > 0;
+  return (
+    <g transform={`translate(${x} ${y + bob}) scale(${(flip ? -1 : 1) * scale} ${scale})`}>
+      <ellipse cx={-122} cy={-10} rx={56} ry={22} fill="#5a9433" stroke={INK} strokeWidth={6} />
+      <ellipse cx={122} cy={-10} rx={56} ry={22} fill="#5a9433" stroke={INK} strokeWidth={6} />
+      <g transform={`translate(0 -150) scale(1 ${breathe})`}>
+        <ellipse cx={0} cy={0} rx={160} ry={130} fill="#6fae3d" stroke={INK} strokeWidth={8} />
+        <ellipse cx={0} cy={44} rx={98} ry={72} fill="#b7dd86" />
+      </g>
+      <ellipse cx={-74} cy={-34} rx={30} ry={15} fill="#5a9433" stroke={INK} strokeWidth={6} />
+      <ellipse cx={74} cy={-34} rx={30} ry={15} fill="#5a9433" stroke={INK} strokeWidth={6} />
+      <circle cx={-72} cy={-292} r={62} fill="#6fae3d" stroke={INK} strokeWidth={8} />
+      <circle cx={72} cy={-292} r={62} fill="#6fae3d" stroke={INK} strokeWidth={8} />
+      <Eyes cs={[-72, 72]} cy={-300} r={35} pr={15} look={look} blink={blink} />
+      {look === 'angry' ? (
+        <>
+          <line x1={-106} y1={-352} x2={-44} y2={-332} stroke={INK} strokeWidth={9} strokeLinecap="round" />
+          <line x1={106} y1={-352} x2={44} y2={-332} stroke={INK} strokeWidth={9} strokeLinecap="round" />
+        </>
+      ) : null}
+      <circle cx={-18} cy={-208} r={5} fill={INK} />
+      <circle cx={18} cy={-208} r={5} fill={INK} />
+      {open || look === 'shock' ? (
+        <ellipse cx={0} cy={-150} rx={60} ry={34} fill="#3f6b23" stroke={INK} strokeWidth={6} />
+      ) : look === 'sad' ? (
+        <path d="M-82 -150 Q0 -192 82 -150" fill="none" stroke={INK} strokeWidth={8} strokeLinecap="round" />
+      ) : (
+        <path d="M-92 -170 Q0 -118 92 -170" fill="none" stroke={INK} strokeWidth={9} strokeLinecap="round" />
+      )}
+    </g>
+  );
+};
+
+const Sheep: React.FC<AnimalProps> = ({x, y, scale = 1, look = 'neutral', talking = false, flip = false}) => {
+  const frame = useCurrentFrame();
+  const bob = Math.sin(frame / 9) * 3;
+  const blink = frame % 90 < 4;
+  const open = talking && Math.sin(frame / 2.2) > 0;
+  return (
+    <g transform={`translate(${x} ${y + bob}) scale(${(flip ? -1 : 1) * scale} ${scale})`}>
+      {[-78, -28, 28, 78].map((lx) => (
+        <rect key={lx} x={lx - 9} y={-74} width={18} height={76} fill="#2a2320" stroke={INK} strokeWidth={4} />
+      ))}
+      {Array.from({length: 13}, (_, i) => {
+        const a = (i / 13) * Math.PI * 2;
+        return <circle key={i} cx={Math.cos(a) * 150} cy={-158 + Math.sin(a) * 112} r={50} fill="#f4f2ec" stroke={INK} strokeWidth={6} />;
+      })}
+      <ellipse cx={0} cy={-158} rx={150} ry={112} fill="#f4f2ec" />
+      <ellipse cx={-118} cy={-300} rx={30} ry={46} fill="#2a2320" stroke={INK} strokeWidth={5} />
+      <ellipse cx={118} cy={-300} rx={30} ry={46} fill="#2a2320" stroke={INK} strokeWidth={5} />
+      <ellipse cx={0} cy={-318} rx={78} ry={86} fill="#efe9df" stroke={INK} strokeWidth={7} />
+      <path d="M-78 -372 Q0 -352 78 -372" fill="#f4f2ec" stroke={INK} strokeWidth={6} />
+      <Eyes cs={[-30, 30]} cy={-326} r={22} pr={10} look={look} blink={blink} />
+      {open ? (
+        <ellipse cx={0} cy={-280} rx={16} ry={12} fill="#59211f" stroke={INK} strokeWidth={4} />
+      ) : look === 'sad' ? (
+        <path d="M-18 -276 Q0 -292 18 -276" fill="none" stroke={INK} strokeWidth={5} strokeLinecap="round" />
+      ) : (
+        <path d="M-18 -286 Q0 -270 18 -286" fill="none" stroke={INK} strokeWidth={5} strokeLinecap="round" />
+      )}
+      <circle cx={0} cy={-298} r={6} fill={INK} />
+    </g>
+  );
+};
+
+const Ant: React.FC<AnimalProps> = ({x, y, scale = 1, look = 'neutral', talking = false, flip = false}) => {
+  const frame = useCurrentFrame();
+  const bob = Math.sin(frame / 8) * 3;
+  const blink = frame % 86 < 4;
+  const open = talking && Math.sin(frame / 2.1) > 0;
+  const B = '#2a2320';
+  return (
+    <g transform={`translate(${x} ${y + bob}) scale(${(flip ? -1 : 1) * scale} ${scale})`}>
+      {/* legs */}
+      {[[-60, 40], [-70, -10], [-60, -60]].map(([lx, dy], i) => (
+        <g key={i}>
+          <line x1={-40} y1={-120 - dy} x2={lx - 70} y2={-120 - dy + 30} stroke={B} strokeWidth={9} strokeLinecap="round" />
+          <line x1={40} y1={-120 - dy} x2={-lx + 70} y2={-120 - dy + 30} stroke={B} strokeWidth={9} strokeLinecap="round" />
+        </g>
+      ))}
+      <ellipse cx={0} cy={-110} rx={82} ry={104} fill={B} stroke={INK} strokeWidth={6} />
+      <circle cx={0} cy={-232} r={54} fill={B} stroke={INK} strokeWidth={6} />
+      <circle cx={0} cy={-328} r={62} fill={B} stroke={INK} strokeWidth={6} />
+      {/* antennae */}
+      <path d="M-26 -382 Q-54 -430 -40 -456" fill="none" stroke={B} strokeWidth={7} strokeLinecap="round" />
+      <path d="M26 -382 Q54 -430 40 -456" fill="none" stroke={B} strokeWidth={7} strokeLinecap="round" />
+      <circle cx={-40} cy={-460} r={9} fill={B} />
+      <circle cx={40} cy={-460} r={9} fill={B} />
+      <Eyes cs={[-26, 26]} cy={-336} r={22} pr={10} look={look} blink={blink} />
+      {open ? (
+        <ellipse cx={0} cy={-298} rx={14} ry={10} fill="#59211f" stroke={INK} strokeWidth={3} />
+      ) : (
+        <path d="M-16 -300 Q0 -286 16 -300" fill="none" stroke="#efe9df" strokeWidth={5} strokeLinecap="round" />
+      )}
+    </g>
+  );
+};
+
+type CritterStyle = {
+  fur: string;
+  belly: string;
+  snout?: string;
+  nose?: string;
+  ear: 'pointed' | 'round' | 'small';
+  mane?: string;
+  tail?: string;
+  headR?: number;
+};
+const Critter: React.FC<AnimalProps & {s: CritterStyle}> = ({x, y, scale = 1, look = 'neutral', talking = false, flip = false, s}) => {
+  const frame = useCurrentFrame();
+  const bob = Math.sin(frame / 9) * 3.5;
+  const blink = frame % 88 < 4;
+  const open = talking && Math.sin(frame / 2.1) > -0.1;
+  const headR = s.headR ?? 100;
+  const hy = -300;
+  return (
+    <g transform={`translate(${x} ${y + bob}) scale(${(flip ? -1 : 1) * scale} ${scale})`}>
+      <ellipse cx={-70} cy={-8} rx={44} ry={18} fill={s.fur} stroke={INK} strokeWidth={6} />
+      <ellipse cx={70} cy={-8} rx={44} ry={18} fill={s.fur} stroke={INK} strokeWidth={6} />
+      {s.tail ? <path d="M112 -120 Q236 -150 206 -8" fill={s.tail} stroke={INK} strokeWidth={8} strokeLinejoin="round" /> : null}
+      <path d="M-120 -20 Q-150 -220 0 -250 Q150 -220 120 -20 Z" fill={s.fur} stroke={INK} strokeWidth={8} />
+      <ellipse cx={0} cy={-84} rx={78} ry={112} fill={s.belly} />
+      {s.mane
+        ? Array.from({length: 16}, (_, i) => {
+            const a = (i / 16) * Math.PI * 2;
+            return <circle key={i} cx={Math.cos(a) * (headR + 26)} cy={hy + Math.sin(a) * (headR + 26)} r={36} fill={s.mane} stroke={INK} strokeWidth={5} />;
+          })
+        : null}
+      {s.ear === 'pointed' ? (
+        <>
+          <path d={`M${-headR + 24} ${hy - headR + 34} L${-headR - 16} ${hy - headR - 62} L${-headR + 74} ${hy - headR + 26} Z`} fill={s.fur} stroke={INK} strokeWidth={7} strokeLinejoin="round" />
+          <path d={`M${headR - 24} ${hy - headR + 34} L${headR + 16} ${hy - headR - 62} L${headR - 74} ${hy - headR + 26} Z`} fill={s.fur} stroke={INK} strokeWidth={7} strokeLinejoin="round" />
+        </>
+      ) : s.ear === 'round' ? (
+        <>
+          <circle cx={-headR + 8} cy={hy - headR + 4} r={50} fill={s.fur} stroke={INK} strokeWidth={7} />
+          <circle cx={headR - 8} cy={hy - headR + 4} r={50} fill={s.fur} stroke={INK} strokeWidth={7} />
+          <circle cx={-headR + 8} cy={hy - headR + 4} r={26} fill={s.belly} />
+          <circle cx={headR - 8} cy={hy - headR + 4} r={26} fill={s.belly} />
+        </>
+      ) : (
+        <>
+          <circle cx={-headR + 34} cy={hy - headR + 24} r={28} fill={s.fur} stroke={INK} strokeWidth={6} />
+          <circle cx={headR - 34} cy={hy - headR + 24} r={28} fill={s.fur} stroke={INK} strokeWidth={6} />
+        </>
+      )}
+      <circle cx={0} cy={hy} r={headR} fill={s.fur} stroke={INK} strokeWidth={8} />
+      <Eyes cs={[-38, 38]} cy={hy - 12} r={26} pr={12} look={look} blink={blink} />
+      {look === 'angry' ? (
+        <>
+          <line x1={-68} y1={hy - 54} x2={-16} y2={hy - 34} stroke={INK} strokeWidth={9} strokeLinecap="round" />
+          <line x1={68} y1={hy - 54} x2={16} y2={hy - 34} stroke={INK} strokeWidth={9} strokeLinecap="round" />
+        </>
+      ) : null}
+      {s.snout ? <ellipse cx={0} cy={hy + 48} rx={54} ry={42} fill={s.snout} /> : null}
+      <path d={`M-16 ${hy + 24} L16 ${hy + 24} L0 ${hy + 44} Z`} fill={s.nose ?? INK} />
+      {open || look === 'shock' ? (
+        <ellipse cx={0} cy={hy + 70} rx={20} ry={look === 'shock' ? 22 : 14} fill="#59211f" stroke={INK} strokeWidth={4} />
+      ) : look === 'sad' ? (
+        <path d={`M-22 ${hy + 76} Q0 ${hy + 58} 22 ${hy + 76}`} fill="none" stroke={INK} strokeWidth={6} strokeLinecap="round" />
+      ) : (
+        <path d={`M-22 ${hy + 64} Q0 ${hy + 84} 22 ${hy + 64}`} fill="none" stroke={INK} strokeWidth={6} strokeLinecap="round" />
+      )}
+      {s.snout ? (
+        <>
+          <line x1={18} y1={hy + 48} x2={114} y2={hy + 34} stroke={INK} strokeWidth={3} />
+          <line x1={18} y1={hy + 56} x2={114} y2={hy + 62} stroke={INK} strokeWidth={3} />
+          <line x1={-18} y1={hy + 48} x2={-114} y2={hy + 34} stroke={INK} strokeWidth={3} />
+          <line x1={-18} y1={hy + 56} x2={-114} y2={hy + 62} stroke={INK} strokeWidth={3} />
+        </>
+      ) : null}
+    </g>
+  );
+};
+const Wolf: React.FC<AnimalProps> = (p) => <Critter {...p} s={{fur: '#8a8f98', belly: '#c7ccd2', snout: '#b9bec5', ear: 'pointed', tail: '#8a8f98'}} />;
+const Fox: React.FC<AnimalProps> = (p) => <Critter {...p} s={{fur: '#e07a32', belly: '#f6ebda', snout: '#f7efe3', ear: 'pointed', tail: '#e07a32'}} />;
+const Mouse: React.FC<AnimalProps> = (p) => <Critter {...p} s={{fur: '#9aa0a8', belly: '#d9dde2', snout: '#d9dde2', ear: 'round', tail: '#c7a9b0', headR: 92}} />;
+const Lion: React.FC<AnimalProps> = (p) => <Critter {...p} s={{fur: '#e3a23c', belly: '#f1d59e', snout: '#f4e6ca', ear: 'small', mane: '#b06a22'}} />;
+
+const Actor: React.FC<StickProps & {char?: string}> = ({char, ...p}) => {
+  switch (char) {
+    case 'frog':
+      return <Frog {...p} />;
+    case 'sheep':
+      return <Sheep {...p} />;
+    case 'ant':
+      return <Ant {...p} />;
+    case 'wolf':
+      return <Wolf {...p} />;
+    case 'fox':
+      return <Fox {...p} />;
+    case 'mouse':
+      return <Mouse {...p} />;
+    case 'lion':
+      return <Lion {...p} />;
+    default:
+      return <Stick {...p} />;
+  }
 };
 
 // ---------------------------------------------------------------------------
@@ -661,6 +898,89 @@ const SceneArt: React.FC<{scene: StoryScene; f: number; len: number; accent: str
   }
 
   // ====== CONCEPT scenes — story-first explainers (mental models etc.) ======
+  if (kind === 'cpot') {
+    // boiling-frog pot: a frog sits in water that heats up with `heat` (0..1)
+    const heat = scene.heat ?? 0;
+    const cx = 540;
+    const potTop = 1150;
+    const potBot = 1495;
+    const htTop = 300; // half-width at pot top
+    const htBot = 235; // half-width at pot bottom
+    const hw = (yy: number) => htTop + (htBot - htTop) * ((yy - potTop) / (potBot - potTop));
+    const waterY = 1248;
+    const wTop = hw(waterY) - 14;
+    const wBot = htBot - 14;
+    const hue = interpolate(heat, [0, 1], [205, 8]);
+    const bg = `hsl(${hue} ${interpolate(heat, [0, 1], [34, 66])}% ${interpolate(heat, [0, 1], [44, 34])}%)`;
+    const waterFill = `hsl(${interpolate(heat, [0, 1], [205, 12])} ${interpolate(heat, [0, 1], [55, 72])}% 52%)`;
+    const flame = 0.3 + heat * 0.7;
+    const bubbleN = Math.round(heat * 9);
+    return (
+      <g>
+        <rect width={W} height={H} fill={bg} />
+        {/* steam wisps rising above the pot */}
+        {Array.from({length: 6}, (_, i) => {
+          const t = ((f / 2 + i * 32) % 170) / 170;
+          const sx = cx - 140 + i * 56;
+          return (
+            <path
+              key={i}
+              d={`M${sx} ${potTop - 30 - t * 540} q 22 -44 0 -88 q -22 -44 0 -88`}
+              fill="none"
+              stroke="#ffffff"
+              strokeWidth={11}
+              strokeLinecap="round"
+              opacity={heat * (1 - t) * 0.6}
+            />
+          );
+        })}
+        {/* thermometer */}
+        <g transform="translate(948 700)">
+          <rect x={-18} y={0} width={36} height={360} rx={18} fill="#fff" stroke={INK} strokeWidth={7} />
+          <circle cx={0} cy={404} r={46} fill="#c9412f" stroke={INK} strokeWidth={7} />
+          <rect x={-10} y={interpolate(heat, [0, 1], [330, 18])} width={20} height={interpolate(heat, [0, 1], [86, 398])} rx={10} fill="#c9412f" />
+        </g>
+        {/* frog sits in the pot (lower half gets covered by water) */}
+        <Frog x={cx} y={1372} scale={0.74} look={heat > 0.72 ? 'shock' : heat > 0.4 ? 'neutral' : 'happy'} talking={heat < 0.4} />
+        {/* water in front of the frog */}
+        <path
+          d={`M${cx - wTop} ${waterY} Q${cx} ${waterY - 20} ${cx + wTop} ${waterY} L${cx + wBot} ${potBot - 6} Q${cx} ${potBot + 8} ${cx - wBot} ${potBot - 6} Z`}
+          fill={waterFill}
+          opacity={0.62}
+          stroke="#ffffffaa"
+          strokeWidth={5}
+        />
+        {Array.from({length: bubbleN}, (_, i) => {
+          const t = ((f / 2 + i * 22) % 90) / 90;
+          return <circle key={i} cx={cx - 150 + rand(i + 3) * 300} cy={potBot - 20 - t * 210} r={6 + rand(i + 9) * 8} fill="#ffffff" opacity={0.5 * (1 - t)} />;
+        })}
+        {/* pot: sides + base drawn in front so the water and frog read as inside it */}
+        <path d={`M${cx - htTop} ${potTop} L${cx - htBot} ${potBot}`} stroke={INK} strokeWidth={10} fill="none" />
+        <path d={`M${cx + htTop} ${potTop} L${cx + htBot} ${potBot}`} stroke={INK} strokeWidth={10} fill="none" />
+        <path d={`M${cx - htBot} ${potBot} Q${cx - htBot} ${potBot + 42} ${cx - htBot + 42} ${potBot + 42} L${cx + htBot - 42} ${potBot + 42} Q${cx + htBot} ${potBot + 42} ${cx + htBot} ${potBot}`} stroke={INK} strokeWidth={10} fill="#474b54" />
+        <ellipse cx={cx - htTop - 12} cy={potTop - 8} rx={30} ry={46} fill="none" stroke={INK} strokeWidth={12} />
+        <ellipse cx={cx + htTop + 12} cy={potTop - 8} rx={30} ry={46} fill="none" stroke={INK} strokeWidth={12} />
+        <rect x={cx - htTop - 26} y={potTop - 30} width={(htTop + 26) * 2} height={34} rx={14} fill="#5b616b" stroke={INK} strokeWidth={9} />
+        {/* stove flames under the pot */}
+        {Array.from({length: 7}, (_, i) => {
+          const fx = cx - 150 + i * 50;
+          const flick = (Math.sin(f / 4 + i) * 0.5 + 0.5) * 20;
+          const h = 60 * flame + flick;
+          return (
+            <path
+              key={i}
+              d={`M${fx} ${potBot + 42} Q${fx - 22} ${potBot + 42 - h * 0.6} ${fx} ${potBot + 42 - h} Q${fx + 22} ${potBot + 42 - h * 0.6} ${fx} ${potBot + 42} Z`}
+              fill={i % 2 ? '#ffb43d' : '#ff7a2f'}
+              stroke={INK}
+              strokeWidth={4}
+            />
+          );
+        })}
+        {scene.bubble ? <ThoughtCloud x={300} y={560} text={scene.bubble} /> : null}
+        {scene.label ? <TopTag text={scene.label} /> : null}
+      </g>
+    );
+  }
   if (kind === 'cstory') {
     return (
       <g>
@@ -669,7 +989,7 @@ const SceneArt: React.FC<{scene: StoryScene; f: number; len: number; accent: str
         <rect x={160} y={1300} width={760} height={56} rx={14} fill="#6b5236" stroke={INK} strokeWidth={8} />
         {scene.prop ? <GProp prop={scene.prop} x={820} y={1300} f={f} /> : null}
         {scene.bubble ? <ThoughtCloud x={700} y={650} text={scene.bubble} /> : null}
-        <Stick x={400} y={1540} {...hero} look={scene.mood ?? 'neutral'} talking scale={1.1} armR={40} />
+        <Actor char={scene.char} x={400} y={1540} {...hero} look={scene.mood ?? 'neutral'} talking scale={1.1} armR={40} />
         {scene.label ? <TopTag text={scene.label} /> : null}
       </g>
     );
@@ -680,7 +1000,7 @@ const SceneArt: React.FC<{scene: StoryScene; f: number; len: number; accent: str
         <rect width={W} height={H} fill="#2a2f3e" />
         <rect y={1500} width={W} height={420} fill="#191d28" />
         {scene.bubble ? <ThoughtCloud x={540} y={620} text={scene.bubble} /> : null}
-        <Stick x={540} y={1600} {...hero} look={scene.mood ?? 'sad'} scale={1.05} />
+        <Actor char={scene.char} x={540} y={1600} {...hero} look={scene.mood ?? 'sad'} scale={1.05} />
       </g>
     );
   }
@@ -708,7 +1028,7 @@ const SceneArt: React.FC<{scene: StoryScene; f: number; len: number; accent: str
             </g>
           ) : null,
         )}
-        <Stick x={540} y={1560} {...hero} look="shock" scale={1.1} armL={60} armR={60} />
+        <Actor char={scene.char} x={540} y={1560} {...hero} look="shock" scale={1.1} armL={60} armR={60} />
       </g>
     );
   }
@@ -718,7 +1038,7 @@ const SceneArt: React.FC<{scene: StoryScene; f: number; len: number; accent: str
         <rect width={W} height={H} fill="#5a4a2e" />
         <rect y={1480} width={W} height={440} fill="#3a2f1d" />
         <Coins f={f} label={scene.label} />
-        <Stick x={885} y={1540} {...hero} look="sad" scale={0.95} />
+        <Actor char={scene.char} x={885} y={1540} {...hero} look="sad" scale={0.95} />
       </g>
     );
   }
@@ -747,7 +1067,7 @@ const SceneArt: React.FC<{scene: StoryScene; f: number; len: number; accent: str
             ))}
           </text>
         ) : null}
-        <Stick x={540} y={1620} {...hero} look="happy" scale={1.0} armL={120} />
+        <Actor char={scene.char} x={540} y={1620} {...hero} look="happy" scale={1.0} armL={120} />
       </g>
     );
   }
@@ -757,7 +1077,7 @@ const SceneArt: React.FC<{scene: StoryScene; f: number; len: number; accent: str
         <rect width={W} height={H} fill="#1f3a34" />
         <rect y={1500} width={W} height={420} fill="#14241f" />
         <Note points={scene.points} label={scene.label} />
-        <Stick x={540} y={1600} {...hero} look="neutral" talking scale={0.98} armR={55} />
+        <Actor char={scene.char} x={540} y={1600} {...hero} look="neutral" talking scale={0.98} armR={55} />
       </g>
     );
   }
@@ -775,7 +1095,7 @@ const SceneArt: React.FC<{scene: StoryScene; f: number; len: number; accent: str
           </g>
         ) : null}
         <rect y={1500} width={W} height={420} fill="#0e1f47" />
-        <Stick x={540} y={1600} {...hero} look="happy" scale={1.1} armL={140} armR={140} />
+        <Actor char={scene.char} x={540} y={1600} {...hero} look="happy" scale={1.1} armL={140} armR={140} />
       </g>
     );
   }
@@ -789,7 +1109,7 @@ const SceneArt: React.FC<{scene: StoryScene; f: number; len: number; accent: str
         <circle cx={760} cy={340} r={140} fill="#f2ecd3" stroke={INK} strokeWidth={9} />
         <path d="M0 1320 Q540 1190 1080 1320 V1920 H0 Z" fill="#223044" stroke={INK} strokeWidth={9} />
         {scene.label ? <TopTag text={scene.label} /> : null}
-        <Stick x={540} y={1540} {...hero} look="happy" scale={1.05} armL={120} />
+        <Actor char={scene.char} x={540} y={1540} {...hero} look="happy" scale={1.05} armL={120} />
       </g>
     );
   }

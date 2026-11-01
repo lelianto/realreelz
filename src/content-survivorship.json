@@ -1,0 +1,94 @@
+{
+  "template": "stickman",
+  "name": "SURVIVORSHIP",
+  "title": "Survivorship Bias",
+  "script": "Kamu sering melihat miliarder yang dulu berani keluar dari bangku kuliah, lalu menyimpulkan bahwa sekolah itu tidak penting. Kamu pun mulai berpikir untuk ikut berhenti saja, karena toh mereka semua terlihat berhasil. Tapi tunggu dulu, kamu hanya melihat segelintir orang yang berhasil. Bagaimana dengan jutaan orang yang juga keluar, lalu gagal, dan tidak pernah terdengar kabarnya? Fenomena ini disebut survivorship bias, atau bias orang yang selamat. Kita terbiasa belajar hanya dari para pemenang, sementara yang kalah perlahan menghilang dari cerita. Saat Perang Dunia Kedua, militer ingin memperkuat badan pesawat di bagian yang paling banyak terkena peluru. Padahal justru bagian yang jarang terkena itulah yang harus diperkuat, karena pesawat yang tertembak di sana tidak pernah pulang. Jadi sebelum meniru resep sukses siapa pun, tanyakan, siapa yang mencoba hal serupa tapi kabarnya tak pernah sampai ke kita? Kebenaran sering bersembunyi di balik mereka yang diam.",
+  "elevenVoiceId": "nPczCjzI2devNBz1zQrb",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#ffd23f",
+  "captionFixes": {},
+  "keywords": [
+    "sukses",
+    "kuliah",
+    "berhenti",
+    "gagal",
+    "terdengar",
+    "pemenang",
+    "pesawat",
+    "peluru",
+    "meniru",
+    "diam"
+  ],
+  "storyScenes": [
+    {
+      "kind": "cstory",
+      "cue": null,
+      "label": "Lihat yang sukses",
+      "bubble": "Berarti kuliah nggak penting!",
+      "mood": "happy",
+      "hair": "#2a2320",
+      "moustache": false
+    },
+    {
+      "kind": "cthink",
+      "cue": "berhenti",
+      "bubble": "Aku ikut berhenti aja deh",
+      "mood": "happy",
+      "hair": "#2a2320",
+      "moustache": false
+    },
+    {
+      "kind": "cstory",
+      "cue": "tunggu",
+      "label": "Yang tak terlihat",
+      "bubble": "Lho, yang gagal ke mana?",
+      "mood": "shock",
+      "hair": "#2a2320",
+      "moustache": false
+    },
+    {
+      "kind": "cterm",
+      "cue": "disebut",
+      "term": "SURVIVORSHIP BIAS",
+      "def": "Cuma lihat yang berhasil, yang gagal tak terlihat",
+      "hair": "#2a2320",
+      "moustache": false
+    },
+    {
+      "kind": "cdilemma",
+      "cue": "pemenang",
+      "optL": "Yang terlihat",
+      "optR": "Yang hilang",
+      "hair": "#2a2320",
+      "moustache": false
+    },
+    {
+      "kind": "cwhy",
+      "cue": "militer",
+      "label": "CONTOH KLASIK",
+      "points": [
+        "PD II: pesawat pulang penuh peluru",
+        "Militer mau perkuat bagian itu",
+        "Harusnya bagian yang tak kena"
+      ],
+      "hair": "#2a2320",
+      "moustache": false
+    },
+    {
+      "kind": "clesson",
+      "cue": "meniru",
+      "label": "Cari yang tak terdengar",
+      "hair": "#2a2320",
+      "moustache": false
+    },
+    {
+      "kind": "coutro",
+      "cue": "bersembunyi",
+      "label": "Siapa yang tak bersuara?",
+      "hair": "#2a2320",
+      "moustache": false
+    }
+  ]
+}

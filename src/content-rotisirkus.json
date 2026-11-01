@@ -1,0 +1,34 @@
+{
+  "template": "stickman",
+  "name": "ROTI & SIRKUS",
+  "title": "Roti dan Sirkus",
+  "script": "Seorang anak terus bertanya kenapa makan malamnya hari ini kosong. Daripada menjawab, orang tuanya langsung memberi permen dan menyalakan kartun kesukaannya. Anak itu pun lupa pada pertanyaannya tadi, dan ikut tertawa riang. Dua ribu tahun lalu, penguasa Romawi melakukan hal yang serupa, membagikan roti gratis dan pertunjukan gladiator supaya rakyat tidak banyak menuntut. Mereka menyebutnya roti dan sirkus. Perut yang kenyang dan tontonan yang ramai membuat orang lupa mengajukan pertanyaan yang penting. Jadi saat sebuah masalah besar tiba-tiba tenggelam oleh gosip, drama, atau sensasi sesaat, berhati-hatilah. Tanyakan pada dirimu, saat semua orang sibuk heboh, isu penting apa yang sebenarnya sedang dialihkan dari perhatian kita.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "elevenVoiceId": "nPczCjzI2devNBz1zQrb",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#ffd23f",
+  "captionFixes": {"permain": "permen", "maka": "makan"},
+  "keywords": [
+    "pertanyaan",
+    "permen",
+    "lupa",
+    "Romawi",
+    "roti",
+    "sirkus",
+    "kenyang",
+    "tenggelam",
+    "heboh",
+    "dialihkan"
+  ],
+  "storyScenes": [
+    {"kind": "cstory", "cue": null, "label": "Pertanyaan sulit", "bubble": "Kok nggak ada makanan?", "mood": "sad", "hair": "#2a2320", "moustache": false},
+    {"kind": "cstory", "cue": "permen", "label": "Dikasih pengalih", "bubble": "Nih, nonton kartun aja", "mood": "happy", "hair": "#2a2320", "moustache": false},
+    {"kind": "cthink", "cue": "lupa", "bubble": "Hehe lucu, lupa deh", "mood": "happy", "hair": "#2a2320", "moustache": false},
+    {"kind": "cstory", "cue": "Romawi", "label": "Roma, 2000 thn lalu", "bubble": "Roti gratis! Gladiator!", "mood": "happy", "hair": "#2a2320", "moustache": false},
+    {"kind": "cterm", "cue": "menyebutnya", "term": "ROTI & SIRKUS", "def": "Alihkan massa pakai hiburan biar lupa masalah", "hair": "#2a2320", "moustache": false},
+    {"kind": "cwhy", "cue": "kenyang", "label": "KENAPA MEMPAN?", "points": ["Perut kenyang bikin tenang", "Tontonan ramai bikin lupa", "Pertanyaan penting hilang"], "hair": "#2a2320", "moustache": false},
+    {"kind": "clesson", "cue": "tenggelam", "label": "Isu hilang? Curiga.", "hair": "#2a2320", "moustache": false},
+    {"kind": "coutro", "cue": "heboh", "label": "Semua heboh. Dialihkan apa?", "hair": "#2a2320", "moustache": false}
+  ]
+}

@@ -16,13 +16,18 @@ const CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 const OUT_DIR = path.join(ROOT, 'out');
 mkdirSync(OUT_DIR, {recursive: true});
 
+// TTS engine: 'edge' (free, no key — default) or 'eleven' (ElevenLabs).
+const ENGINE = (process.env.TTS_ENGINE || 'edge').toLowerCase() === 'eleven' ? 'eleven' : 'edge';
+const TTS_SCRIPT = ENGINE === 'eleven' ? 'scripts/tts-eleven.mjs' : 'scripts/tts-edge.mjs';
+const VOICE_ENV = ENGINE === 'eleven' ? 'ELEVEN_VOICE_ID' : 'EDGE_VOICE';
+
 // ---- single job slot (render is heavy; one at a time) ----
 /** @type {null | {id,prompt,state,step,steps,log,video,error,startedAt}} */
 let current = null;
 
 const STEPS = [
   {key: 'generate', label: 'Menulis naskah & adegan (LLM)'},
-  {key: 'tts', label: 'Membuat suara (ElevenLabs)'},
+  {key: 'tts', label: `Membuat suara (${ENGINE === 'eleven' ? 'ElevenLabs' : 'edge-tts'})`},
   {key: 'captions', label: 'Membuat caption (whisper)'},
   {key: 'render', label: 'Render video'},
 ];
@@ -50,7 +55,7 @@ async function runJob(job) {
     if (!job.skipGenerate) {
       await run('node', ['scripts/generate-content.mjs', job.prompt], job, 'generate');
     }
-    await run('node', ['scripts/tts-eleven.mjs'], job, 'tts');
+    await run('node', [TTS_SCRIPT], job, 'tts');
     await run('node', ['scripts/captions.mjs'], job, 'captions');
     const outRel = path.join('out', `web-${job.id}.mp4`);
     await run(
@@ -111,7 +116,7 @@ const server = createServer(async (req, res) => {
     } catch {}
     const prompt = (body.prompt || '').trim();
     if (!prompt && !body.skipGenerate) return json(res, 400, {error: 'Prompt kosong.'});
-    if (body.voiceId) process.env.ELEVEN_VOICE_ID = String(body.voiceId);
+    if (body.voiceId) process.env[VOICE_ENV] = String(body.voiceId);
     current = {
       id: randomUUID().slice(0, 8),
       prompt,
@@ -177,10 +182,14 @@ const server = createServer(async (req, res) => {
 });
 
 server.listen(PORT, () => {
-  const hasEleven = existsSync(path.join(ROOT, '.env')) &&
-    /ELEVENLABS_API_KEY=\S/.test(readFileSync(path.join(ROOT, '.env'), 'utf8'));
-  console.log(`\n  Reels web  →  http://localhost:${PORT}\n`);
-  if (!hasEleven) console.log('  ⚠  .env belum punya ELEVENLABS_API_KEY — TTS akan gagal.');
+  const env = existsSync(path.join(ROOT, '.env')) ? readFileSync(path.join(ROOT, '.env'), 'utf8') : '';
+  console.log(`\n  Reels web  →  http://localhost:${PORT}   (suara: ${ENGINE})\n`);
+  if (ENGINE === 'eleven' && !/ELEVENLABS_API_KEY=\S/.test(env))
+    console.log('  ⚠  TTS_ENGINE=eleven tapi .env belum punya ELEVENLABS_API_KEY.');
+  if (!existsSync(path.join(ROOT, '.venv', 'bin', 'edge-tts')) && ENGINE === 'edge')
+    console.log('  ⚠  edge-tts belum terpasang:  .venv/bin/pip install edge-tts');
+  if (!/ANTHROPIC_API_KEY=\S/.test(env))
+    console.log('  ⚠  .env belum punya ANTHROPIC_API_KEY — langkah "generate" akan gagal.');
   if (!existsSync(path.join(ROOT, 'public', 'music.mp3')))
     console.log('  ⚠  public/music.mp3 belum ada — musik latar kosong.');
   console.log('');

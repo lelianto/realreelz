@@ -1,0 +1,34 @@
+{
+  "template": "stickman",
+  "name": "KATAK REBUS",
+  "title": "Efek Katak Rebus",
+  "script": "Bayangkan seekor katak dimasukkan ke dalam panci berisi air dingin. Dia merasa sangat nyaman. Lalu air itu dipanaskan sangat perlahan, sedikit demi sedikit. Karena perubahannya terlalu kecil untuk terasa, si katak tidak pernah merasa perlu melompat keluar, sampai akhirnya air mendidih dan semuanya terlambat. Inilah yang disebut efek katak rebus. Hal yang dulu kita tolak mentah-mentah, lama-lama terasa wajar, asalkan dinaikkan pelan-pelan tanpa kita sadari. Pola yang sama sering dipakai oleh mereka yang berkuasa, aturan yang makin mencekik atau kebebasan yang sedikit demi sedikit dikurangi, dinaikkan bertahap supaya tidak ada yang protes. Jadi jangan cuma menilai perubahan hari ini, lihat baik-baik ke arah mana semuanya bergerak. Karena saat air sudah terasa panas, biasanya kita sudah terlanjur berada di dalamnya.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "elevenVoiceId": "nPczCjzI2devNBz1zQrb",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#ffd23f",
+  "captionFixes": {"kata": "katak", "pelan-pelantan": "pelan-pelan tanpa"},
+  "keywords": [
+    "katak",
+    "perlahan",
+    "melompat",
+    "mendidih",
+    "wajar",
+    "berkuasa",
+    "mencekik",
+    "arah",
+    "panas",
+    "protes"
+  ],
+  "storyScenes": [
+    {"kind": "cpot", "cue": null, "heat": 0.05, "label": "Air dingin", "bubble": "Adem, nyaman nih"},
+    {"kind": "cpot", "cue": "perlahan", "heat": 0.35, "label": "Makin hangat", "bubble": "Masih aman kok"},
+    {"kind": "cpot", "cue": "melompat", "heat": 0.6, "label": "Nanti aja?", "bubble": "Nanti aja lompatnya"},
+    {"kind": "cterm", "cue": "disebut", "char": "frog", "term": "KATAK REBUS", "def": "Hal buruk jadi biasa kalau dinaikkan pelan-pelan"},
+    {"kind": "cwhy", "cue": "wajar", "char": "frog", "label": "KENAPA KETERUSAN?", "points": ["Perubahan kecil tak picu alarm", "Yang ditolak jadi terasa wajar", "Sadar saat sudah terlanjur"]},
+    {"kind": "cdilemma", "cue": "berkuasa", "char": "frog", "optL": "Protes sekarang", "optR": "Terbiasa pelan"},
+    {"kind": "clesson", "cue": "arah", "char": "frog", "label": "Lihat arahnya, bukan hari ini"},
+    {"kind": "cpot", "cue": "terlanjur", "heat": 1, "label": "Sudah terlanjur di dalam"}
+  ]
+}

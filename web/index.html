@@ -125,16 +125,15 @@
         <div class="chips" id="chips"></div>
         <div class="row">
           <div>
-            <label for="voice">Suara</label>
+            <label for="voice">Suara (edge-tts, gratis)</label>
             <select id="voice">
-              <option value="nPczCjzI2devNBz1zQrb">Brian (default)</option>
-              <option value="pNInz6obpgDQGcFmaJgB">Adam</option>
-              <option value="EXAVITQu4vr4xnSDxMaL">Sarah</option>
+              <option value="id-ID-ArdiNeural">Ardi (pria)</option>
+              <option value="id-ID-GadisNeural">Gadis (wanita)</option>
             </select>
           </div>
           <button id="go">Buat video</button>
         </div>
-        <p class="note">Perlu <code>ELEVENLABS_API_KEY</code> & <code>ANTHROPIC_API_KEY</code> di <code>.env</code>. Proses ±2–5 menit.</p>
+        <p class="note">Suara pakai <code>edge-tts</code> (gratis, tanpa key). Hanya perlu <code>ANTHROPIC_API_KEY</code> di <code>.env</code> untuk naskah. Proses ±2–5 menit.</p>
       </div>
 
       <div class="card hide" id="progress">

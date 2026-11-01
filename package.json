@@ -7,9 +7,11 @@
   "scripts": {
     "tts": "node scripts/tts.mjs",
     "tts:eleven": "node scripts/tts-eleven.mjs",
+    "tts:edge": "node scripts/tts-edge.mjs",
     "captions": "node scripts/captions.mjs",
     "build:audio": "npm run tts && npm run captions",
     "build:audio:eleven": "npm run tts:eleven && npm run captions",
+    "build:audio:edge": "npm run tts:edge && npm run captions",
     "studio": "remotion studio",
     "render": "remotion render Reel out/reel.mp4 --browser-executable=\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\"",
     "all": "npm run build:audio && npm run render",
