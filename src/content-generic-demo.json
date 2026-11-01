@@ -1,0 +1,81 @@
+{
+  "template": "stickman",
+  "name": "MARIE CURIE",
+  "title": "Marie Curie",
+  "script": "Wanita ini meneliti sesuatu yang bersinar dalam gelap, dan itu perlahan merenggut nyawanya. Namanya Marie Curie, lahir di Polandia tahun seribu delapan ratus enam puluh tujuh. Saat itu, perempuan sulit diterima di dunia sains, dan banyak yang meragukannya. Tapi ia terus bekerja di laboratorium sederhana, meneliti batuan yang memancarkan energi misterius. Energi itu ia namai radioaktivitas. Lalu ia menemukan dua unsur baru, polonium dan radium. Tahun seribu sembilan ratus tiga, ia menjadi perempuan pertama yang meraih Hadiah Nobel, bahkan kemudian meraihnya dua kali. Penemuannya membuka jalan bagi pengobatan kanker dan sinar X di seluruh dunia. Marie Curie membuktikan bahwa rasa penasaran bisa mengubah dunia.",
+  "elevenVoiceId": "nPczCjzI2devNBz1zQrb",
+  "elevenStability": 0.45,
+  "elevenStyle": 0.2,
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#ffd23f",
+  "captionFixes": {},
+  "keywords": [
+    "bersinar",
+    "Curie",
+    "meragukannya",
+    "radioaktivitas",
+    "radium",
+    "Nobel",
+    "kanker",
+    "penasaran",
+    "dunia"
+  ],
+  "storyScenes": [
+    {
+      "kind": "gintro",
+      "cue": null,
+      "mood": "sad",
+      "hair": "#3a2c20",
+      "moustache": false
+    },
+    {
+      "kind": "gportrait",
+      "cue": "Namanya",
+      "label": "1867 · POLANDIA",
+      "hair": "#3a2c20",
+      "moustache": false
+    },
+    {
+      "kind": "grival",
+      "cue": "diterima",
+      "bubbleL": "Mustahil",
+      "bubbleR": "Perempuan?",
+      "hair": "#3a2c20",
+      "moustache": false
+    },
+    {
+      "kind": "gwork",
+      "cue": "laboratorium",
+      "prop": "flask",
+      "hair": "#3a2c20",
+      "moustache": false
+    },
+    {
+      "kind": "gbreakthrough",
+      "cue": "menemukan",
+      "label": "RADIUM",
+      "hair": "#3a2c20",
+      "moustache": false
+    },
+    {
+      "kind": "gaward",
+      "cue": "Nobel",
+      "label": "NOBEL 1903",
+      "hair": "#3a2c20",
+      "moustache": false
+    },
+    {
+      "kind": "gimpact",
+      "cue": "kanker",
+      "hair": "#3a2c20",
+      "moustache": false
+    },
+    {
+      "kind": "gclose",
+      "cue": "membuktikan",
+      "hair": "#3a2c20",
+      "moustache": false
+    }
+  ]
+}

@@ -3,7 +3,20 @@
 import {AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 
 export type StoryWord = {text: string; fromMs: number; toMs: number};
-export type StoryScene = {kind: string; cue: string | null};
+export type StoryScene = {
+  kind: string;
+  cue: string | null;
+  // optional data read by the GENERIC (parameterized) scenes
+  label?: string;
+  bubbleL?: string;
+  bubbleR?: string;
+  mood?: 'neutral' | 'happy' | 'sad' | 'shock' | 'angry';
+  prop?: string;
+  hair?: string;
+  coat?: string;
+  moustache?: boolean;
+  old?: boolean;
+};
 
 const INK = '#1b1a22';
 const SKIN = '#f6dfb8';
@@ -352,10 +365,202 @@ const Flyer: React.FC<{x: number; y: number; s: number; prop?: number}> = ({x, y
 // ---------------------------------------------------------------------------
 // Scenes (`f` = frames since this scene started, `len` = its length)
 // ---------------------------------------------------------------------------
-const SceneArt: React.FC<{kind: string; f: number; len: number}> = ({kind, f, len}) => {
+// Small shared props used by the generic scenes.
+const Card: React.FC<{y: number; text: string}> = ({y, text}) => (
+  <g>
+    <rect x={160} y={y - 82} width={760} height={164} rx={18} fill="#fff" stroke={INK} strokeWidth={10} />
+    <text x={540} y={y + 22} textAnchor="middle" fontSize={62} fontWeight={900} fill="#c9412f" fontFamily="Arial Black, Arial">{text}</text>
+  </g>
+);
+
+const Bubble: React.FC<{x: number; y: number; side: 'l' | 'r'; text: string}> = ({x, y, side, text}) => (
+  <g>
+    <rect x={x - 175} y={y - 95} width={350} height={150} rx={22} fill="#fff" stroke={INK} strokeWidth={8} />
+    <path d={side === 'l' ? `M${x - 50} ${y + 48} L${x - 80} ${y + 120} L${x + 6} ${y + 52} Z` : `M${x + 50} ${y + 48} L${x + 80} ${y + 120} L${x - 6} ${y + 52} Z`} fill="#fff" stroke={INK} strokeWidth={8} />
+    <text x={x} y={y - 2} textAnchor="middle" fontSize={44} fontWeight={900} fill={INK} fontFamily="Arial Black, Arial">{text}</text>
+  </g>
+);
+
+const GProp: React.FC<{prop?: string; x: number; y: number; f: number}> = ({prop, x, y, f}) => {
+  if (prop === 'flask') return <Flask x={x} y={y} fill="#8bd17c" level={0.5} />;
+  if (prop === 'bulb') return <Bulb x={x} y={y - 130} />;
+  if (prop === 'book')
+    return (
+      <g>
+        <rect x={x - 80} y={y - 110} width={160} height={120} fill="#c0894b" stroke={INK} strokeWidth={7} />
+        <rect x={x - 80} y={y - 110} width={160} height={120} fill="none" stroke={INK} strokeWidth={7} />
+        <line x1={x} y1={y - 110} x2={x} y2={y + 10} stroke={INK} strokeWidth={6} />
+      </g>
+    );
+  if (prop === 'gear')
+    return (
+      <g transform={`translate(${x} ${y - 80}) rotate(${f * 3})`}>
+        {Array.from({length: 8}, (_, i) => (
+          <rect key={i} x={-13} y={-72} width={26} height={30} fill="#9aa0ac" stroke={INK} strokeWidth={4} transform={`rotate(${i * 45})`} />
+        ))}
+        <circle r={46} fill="#c4c9d2" stroke={INK} strokeWidth={7} />
+        <circle r={16} fill="#6b7280" />
+      </g>
+    );
+  if (prop === 'scope')
+    return (
+      <g transform={`translate(${x} ${y - 40})`}>
+        <rect x={-18} y={-230} width={120} height={46} rx={10} fill="#3a3f52" stroke={INK} strokeWidth={7} transform="rotate(-32)" />
+        <line x1={0} y1={0} x2={0} y2={-120} stroke={INK} strokeWidth={10} />
+        <path d="M-70 0 H70" stroke={INK} strokeWidth={10} strokeLinecap="round" />
+      </g>
+    );
+  return (
+    <>
+      <Dish x={x - 60} y={y} r={56} />
+      <Dish x={x + 60} y={y - 10} r={56} />
+    </>
+  );
+};
+
+const SceneArt: React.FC<{scene: StoryScene; f: number; len: number; accent: string}> = ({scene, f, len, accent}) => {
+  const kind = scene.kind;
+  const hero = {hair: scene.hair, coat: scene.coat, moustache: scene.moustache, old: scene.old};
   const {fps} = useVideoConfig();
   const seed = Math.floor(f / 3);
   const pop = spring({frame: f, fps, config: {damping: 12}, durationInFrames: 16});
+
+  // ====== GENERIC reusable scenes — parameterized, work for any inventor ======
+  if (kind === 'gintro') {
+    return (
+      <g>
+        <rect width={W} height={H} fill="#20242e" />
+        <path d="M360 0 L720 0 L905 1500 H175 Z" fill="#2c3340" opacity={0.55} />
+        <rect y={1500} width={W} height={420} fill="#14161d" />
+        <Stick x={540} y={1560} {...hero} look={scene.mood ?? 'sad'} scale={1.15} talking armL={10} armR={10} />
+      </g>
+    );
+  }
+  if (kind === 'gportrait') {
+    return (
+      <g>
+        <rect width={W} height={H} fill="#2b3a52" />
+        <rect y={1500} width={W} height={420} fill="#1b2435" />
+        {scene.label ? <Card y={320} text={scene.label} /> : null}
+        <Stick x={540} y={1560} {...hero} look="neutral" scale={1.2} />
+      </g>
+    );
+  }
+  if (kind === 'gidea') {
+    const lit = interpolate(f, [6, 36], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+    return (
+      <g>
+        <rect width={W} height={H} fill={`hsl(220 28% ${12 + lit * 12}%)`} />
+        <rect y={1500} width={W} height={420} fill="#14161d" />
+        <circle cx={540} cy={790} r={200 * lit} fill="#ffe07a" opacity={0.26 * lit} />
+        <Bulb x={540} y={840} on={lit > 0.4} size={1.7} />
+        <Stick x={540} y={1600} {...hero} look="happy" scale={1.1} armL={120} />
+      </g>
+    );
+  }
+  if (kind === 'gwork') {
+    return (
+      <g>
+        <rect width={W} height={H} fill="#5a6b58" />
+        <rect y={1500} width={W} height={420} fill="#3a4538" />
+        <rect x={470} y={1140} width={560} height={40} fill="#8a6a45" stroke={INK} strokeWidth={8} />
+        <rect x={522} y={1180} width={28} height={320} fill="#6c5236" stroke={INK} strokeWidth={7} />
+        <rect x={956} y={1180} width={28} height={320} fill="#6c5236" stroke={INK} strokeWidth={7} />
+        <GProp prop={scene.prop} x={760} y={1140} f={f} />
+        <Stick x={250} y={1540} {...hero} look="neutral" talking scale={1.05} armR={60} />
+      </g>
+    );
+  }
+  if (kind === 'gstruggle') {
+    return (
+      <g>
+        <rect width={W} height={H} fill="#6b5050" />
+        <rect y={1500} width={W} height={420} fill="#3a2a2a" />
+        <text x={760} y={780} textAnchor="middle" fontSize={230} fontWeight={900} fill="#c9412f" stroke={INK} strokeWidth={9} paintOrder="stroke" fontFamily="Arial Black, Arial">?</text>
+        <Stick x={300} y={1540} {...hero} look="sad" scale={1.1} />
+      </g>
+    );
+  }
+  if (kind === 'grival') {
+    return (
+      <g>
+        <rect width={W} height={H} fill="#c98a3f" />
+        <rect y={1500} width={W} height={420} fill="#5e3f24" />
+        {scene.bubbleL ? <Bubble x={300} y={600} side="l" text={scene.bubbleL} /> : null}
+        {scene.bubbleR ? <Bubble x={790} y={600} side="r" text={scene.bubbleR} /> : null}
+        <Stick x={300} y={1540} {...hero} look="angry" talking scale={1.05} armR={55} />
+        <Stick x={790} y={1540} hair="#b7b0a4" coat="#46503a" look="angry" scale={1.05} flip />
+      </g>
+    );
+  }
+  if (kind === 'gbreakthrough') {
+    return (
+      <g>
+        <rect width={W} height={H} fill="#153a6b" />
+        {Array.from({length: 14}, (_, i) => {
+          const a = (i / 14) * Math.PI * 2 + f / 55;
+          return <line key={i} x1={540 + Math.cos(a) * 300} y1={740 + Math.sin(a) * 300} x2={540 + Math.cos(a) * 640} y2={740 + Math.sin(a) * 640} stroke={accent} strokeWidth={14} strokeLinecap="round" opacity={0.7} />;
+        })}
+        {scene.label ? (
+          <g transform={`translate(540 720) scale(${pop})`}>
+            <rect x={-320} y={-95} width={640} height={190} rx={18} fill={accent} stroke={INK} strokeWidth={10} />
+            <text x={0} y={30} textAnchor="middle" fontSize={88} fontWeight={900} fill={INK} fontFamily="Arial Black, Arial">{scene.label}</text>
+          </g>
+        ) : null}
+        <Stick x={540} y={1600} {...hero} look="happy" scale={1.1} armL={140} armR={140} />
+      </g>
+    );
+  }
+  if (kind === 'gimpact') {
+    const lit = interpolate(f, [0, 70], [0.15, 0.85], {extrapolateRight: 'clamp'});
+    return (
+      <g>
+        <rect width={W} height={H} fill="#0d1534" />
+        <Skyline lit={lit} />
+        {f > 20 ? (
+          <>
+            <Bolt from={[0, 800]} to={[540, 930]} seed={seed} width={6} />
+            <Bolt from={[540, 930]} to={[1080, 760]} seed={seed + 9} width={6} />
+          </>
+        ) : null}
+        <rect y={1490} width={W} height={430} fill="#1a1423" />
+        <Stick x={540} y={1640} {...hero} look="happy" scale={1.05} />
+      </g>
+    );
+  }
+  if (kind === 'gaward') {
+    return (
+      <g>
+        <rect width={W} height={H} fill="#5b1420" />
+        {[0, 1, 2, 3, 4, 5, 6].map((i) => (
+          <rect key={i} x={i * 160 - 20} width={80} height={1500} fill="#74202b" />
+        ))}
+        <path d="M250 0 L60 1500 H1020 L830 0 Z" fill="#ffe9a6" opacity={0.18} />
+        {scene.label ? (
+          <g transform={`translate(540 330) scale(${pop})`}>
+            <rect x={-330} y={-95} width={660} height={190} rx={20} fill={accent} stroke={INK} strokeWidth={10} />
+            <text x={0} y={32} textAnchor="middle" fontSize={84} fontWeight={900} fill={INK} fontFamily="Arial Black, Arial">{scene.label}</text>
+          </g>
+        ) : null}
+        <rect y={1500} width={W} height={420} fill="#2d1a1e" />
+        <Stick x={540} y={1560} {...hero} look="happy" scale={1.1} armL={150} />
+        <circle cx={540} cy={1230} r={34} fill={accent} stroke={INK} strokeWidth={7} />
+      </g>
+    );
+  }
+  if (kind === 'gclose') {
+    return (
+      <g>
+        <rect width={W} height={H} fill="#141c44" />
+        {Array.from({length: 30}, (_, i) => (
+          <circle key={i} cx={rand(i + 8) * W} cy={rand(i + 60) * 950} r={4} fill="#fff" />
+        ))}
+        <circle cx={760} cy={360} r={150} fill="#f2ecd3" stroke={INK} strokeWidth={9} />
+        <path d="M0 1320 Q540 1190 1080 1320 V1920 H0 Z" fill="#223044" stroke={INK} strokeWidth={9} />
+        <Stick x={540} y={1540} {...hero} look="happy" scale={1.05} armL={120} />
+      </g>
+    );
+  }
 
   if (kind === 'room') {
     return (
@@ -924,6 +1129,401 @@ const SceneArt: React.FC<{kind: string; f: number; len: number}> = ({kind, f, le
     );
   }
 
+  const galileo = {hair: '#543d2b', moustache: true, coat: '#3a2e2b'};
+  const oldGalileo = {hair: '#cfcbc4', moustache: true, coat: '#2e2624'};
+  const inquisitor = {hair: '#1b1a22', moustache: false, coat: '#801818'};
+  const assistant = {hair: '#2c3540', moustache: false, coat: '#414e63'};
+
+  if (kind === 'galileoCell') {
+    return (
+      <g>
+        <rect width={W} height={H} fill="#14161f" />
+        {[0, 1, 2, 3, 4, 5, 6].map((row) => (
+          <line key={row} x1={0} y1={row * 220 + 60} x2={W} y2={row * 220 + 60} stroke="#212433" strokeWidth={5} />
+        ))}
+        <rect y={1500} width={W} height={420} fill="#0d0e14" />
+        <rect y={1492} width={W} height={12} fill={INK} />
+
+        <path d="M720 180 L1040 180 L1080 1500 L440 1500 Z" fill="#fff5d0" opacity={0.12} />
+        <rect x={720} y={160} width={280} height={340} rx={14} fill="#26344d" stroke={INK} strokeWidth={12} />
+        <line x1={790} y1={160} x2={790} y2={500} stroke={INK} strokeWidth={10} />
+        <line x1={860} y1={160} x2={860} y2={500} stroke={INK} strokeWidth={10} />
+        <line x1={930} y1={160} x2={930} y2={500} stroke={INK} strokeWidth={10} />
+        <line x1={720} y1={330} x2={1000} y2={330} stroke={INK} strokeWidth={10} />
+
+        <path d="M220 300 Q200 480 230 680" fill="none" stroke="#606675" strokeWidth={12} strokeDasharray="18 10" />
+        <circle cx={230} cy={690} r={28} fill="none" stroke="#606675" strokeWidth={12} />
+
+        <g transform={`translate(540 330) scale(${pop}) translate(-540 -330)`}>
+          <rect x={160} y={240} width={760} height={180} rx={20} fill="#7a1f1d" stroke={INK} strokeWidth={10} />
+          <text x={540} y={360} textAnchor="middle" fontSize={80} fontWeight={900} fill="#ffd23f" fontFamily="Arial Black, Arial">
+            DITUDUH SESAT
+          </text>
+        </g>
+
+        <Stick x={460} y={1540} {...oldGalileo} look="sad" scale={1.12} talking armR={28} armL={18} />
+      </g>
+    );
+  }
+
+  if (kind === 'galileoPisa') {
+    const drop = interpolate(f, [14, len - 16], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+    const dropY = drop * drop * 820;
+    const hitGround = drop >= 0.98;
+
+    return (
+      <g>
+        {sky('#7ec8f0', '#4a823b')}
+
+        <ellipse cx={820} cy={220} rx={160} ry={50} fill="#ffffffd0" />
+        <ellipse cx={750} cy={200} rx={100} ry={60} fill="#ffffffd0" />
+
+        <g transform="rotate(5.5 360 1500)">
+          <rect x={180} y={1340} width={340} height={160} rx={8} fill="#f4eedb" stroke={INK} strokeWidth={9} />
+          {[0, 1, 2, 3, 4, 5].map((tier) => {
+            const ty = 1340 - (tier + 1) * 115;
+            return (
+              <g key={tier}>
+                <rect x={195} y={ty} width={310} height={115} fill="#ede3c7" stroke={INK} strokeWidth={8} />
+                {[0, 1, 2, 3, 4, 5].map((c) => (
+                  <line key={c} x1={215 + c * 52} y1={ty} x2={215 + c * 52} y2={ty + 115} stroke="#8c7d67" strokeWidth={8} />
+                ))}
+                <rect x={185} y={ty + 105} width={330} height={14} fill="#d9cdb0" stroke={INK} strokeWidth={6} />
+              </g>
+            );
+          })}
+          <rect x={220} y={570} width={260} height={80} rx={12} fill="#e5d8b8" stroke={INK} strokeWidth={8} />
+          <path d="M220 570 L350 490 L480 570 Z" fill="#b8513b" stroke={INK} strokeWidth={8} />
+          <Stick x={395} y={640} {...galileo} look="happy" scale={0.52} armR={115} />
+        </g>
+
+        <circle cx={430} cy={640 + dropY} r={28} fill="#2a2d34" stroke={INK} strokeWidth={6} />
+        <circle cx={495} cy={640 + dropY} r={14} fill="#5d6370" stroke={INK} strokeWidth={5} />
+
+        {hitGround
+          ? Array.from({length: 8}, (_, i) => (
+              <circle
+                key={i}
+                cx={460 + (rand(i) - 0.5) * 120}
+                cy={1480 - rand(i + 4) * 35}
+                r={16 + rand(i + 2) * 20}
+                fill="#d8c59d"
+                opacity={0.65}
+              />
+            ))
+          : null}
+
+        <Stick x={820} y={1540} {...assistant} look="shock" scale={0.95} armL={85} armR={85} />
+
+        <g transform={`translate(540 250) scale(${pop}) translate(-540 -250)`}>
+          <rect x={180} y={190} width={720} height={120} rx={18} fill="#17151e" stroke="#fff" strokeWidth={7} />
+          <text x={540} y={272} textAnchor="middle" fontSize={58} fontWeight={900} fill="#ffd23f" fontFamily="Arial Black, Arial">
+            KECEPATAN SAMA
+          </text>
+        </g>
+      </g>
+    );
+  }
+
+  if (kind === 'galileoTelescope') {
+    return (
+      <g>
+        {sky('#131a33', '#402a1f')}
+
+        {Array.from({length: 28}, (_, i) => (
+          <circle
+            key={i}
+            cx={rand(i * 13) * W}
+            cy={rand(i * 29 + 1) * 850}
+            r={3 + rand(i) * 4}
+            fill="#fff"
+            opacity={0.4 + Math.sin(f / 4 + i) * 0.35}
+          />
+        ))}
+
+        <circle cx={880} cy={260} r={75} fill="#fcedaa" stroke={INK} strokeWidth={7} />
+        <circle cx={850} cy={240} r={65} fill="#131a33" />
+
+        <path d="M0 1100 Q540 880 1080 1100" fill="none" stroke="#25324d" strokeWidth={24} />
+        <rect x={60} y={1350} width={960} height={150} rx={6} fill="#543c2c" stroke={INK} strokeWidth={9} />
+        {[0, 1, 2, 3, 4, 5, 6].map((i) => (
+          <rect key={i} x={110 + i * 135} y={1200} width={50} height={150} rx={12} fill="#6e503b" stroke={INK} strokeWidth={7} />
+        ))}
+
+        <line x1={600} y1={1080} x2={490} y2={1500} stroke="#3b2518" strokeWidth={14} strokeLinecap="round" />
+        <line x1={600} y1={1080} x2={600} y2={1500} stroke="#4a301f" strokeWidth={14} strokeLinecap="round" />
+        <line x1={600} y1={1080} x2={720} y2={1500} stroke="#3b2518" strokeWidth={14} strokeLinecap="round" />
+        <circle cx={600} cy={1080} r={24} fill="#c8963e" stroke={INK} strokeWidth={7} />
+
+        <g transform="translate(600 1080) rotate(-32) translate(-600 -1080)">
+          <rect x={420} y={1062} width={130} height={36} rx={6} fill="#b08130" stroke={INK} strokeWidth={7} />
+          <rect x={550} y={1050} width={380} height={60} rx={8} fill="#e5b85c" stroke={INK} strokeWidth={8} />
+          <rect x={590} y={1046} width={24} height={68} rx={4} fill="#c8963e" stroke={INK} strokeWidth={6} />
+          <rect x={860} y={1046} width={24} height={68} rx={4} fill="#c8963e" stroke={INK} strokeWidth={6} />
+          <rect x={930} y={1040} width={45} height={80} rx={6} fill="#ffd23f" stroke={INK} strokeWidth={8} />
+          <polygon points="975,1040 1300,850 1300,1270 975,1120" fill="#ffeaa7" opacity={0.16} />
+        </g>
+
+        <Stick x={340} y={1540} {...galileo} look="happy" scale={1.08} armR={118} armL={58} talking />
+      </g>
+    );
+  }
+
+  if (kind === 'galileoMoons') {
+    return (
+      <g>
+        <rect width={W} height={H} fill="#090d1f" />
+
+        <circle cx={540} cy={820} r={460} fill="#0d142d" stroke="#36456b" strokeWidth={12} />
+        <line x1={540} y1={360} x2={540} y2={1280} stroke="#2a3654" strokeWidth={4} strokeDasharray="16 12" />
+        <line x1={80} y1={820} x2={1000} y2={820} stroke="#2a3654" strokeWidth={4} strokeDasharray="16 12" />
+
+        <g transform="translate(320 620)">
+          <circle r={155} fill="#e8e4d3" stroke={INK} strokeWidth={9} />
+          {[
+            [-45, -35, 30],
+            [25, -60, 22],
+            [45, 35, 38],
+            [-35, 55, 26],
+            [10, 0, 18],
+          ].map(([cx, cy, cr], i) => (
+            <g key={i}>
+              <circle cx={cx} cy={cy} r={cr} fill="#bfbba8" stroke={INK} strokeWidth={5} />
+              <circle cx={cx + cr * 0.2} cy={cy + cr * 0.2} r={cr * 0.65} fill="#9c9784" />
+            </g>
+          ))}
+          <rect x={-140} y={180} width={280} height={50} rx={12} fill="#141c30" stroke="#fff" strokeWidth={4} />
+          <text x={0} y={217} textAnchor="middle" fontSize={34} fontWeight={900} fill="#fff" fontFamily="Arial Black, Arial">
+            KAWAH BULAN
+          </text>
+        </g>
+
+        <g transform="translate(730 840)">
+          <circle r={135} fill="#d99962" stroke={INK} strokeWidth={9} />
+          <clipPath id="jup-clip">
+            <circle r={135} />
+          </clipPath>
+          <g clipPath="url(#jup-clip)">
+            <rect x={-150} y={-80} width={300} height={38} fill="#b0693a" />
+            <rect x={-150} y={-20} width={300} height={44} fill="#f0c294" />
+            <rect x={-150} y={40} width={300} height={38} fill="#964b28" />
+            <ellipse cx={50} cy={55} rx={34} ry={22} fill="#bd3e28" stroke={INK} strokeWidth={5} />
+          </g>
+          <circle r={135} fill="none" stroke={INK} strokeWidth={9} />
+          <rect x={-100} y={160} width={200} height={50} rx={12} fill="#141c30" stroke="#fff" strokeWidth={4} />
+          <text x={0} y={197} textAnchor="middle" fontSize={34} fontWeight={900} fill="#fff" fontFamily="Arial Black, Arial">
+            JUPITER
+          </text>
+
+          {[-250, -170, 170, 250].map((baseX, i) => {
+            const orbitX = baseX + Math.sin(f / 8 + i * 1.6) * 36;
+            return (
+              <g key={i}>
+                <circle cx={orbitX} cy={0} r={14} fill="#ffe699" stroke={INK} strokeWidth={4} />
+                <line x1={orbitX - 18} y1={-25} x2={orbitX + 18} y2={-25} stroke="#ffd23f" strokeWidth={3} />
+              </g>
+            );
+          })}
+        </g>
+
+        <g transform={`translate(540 230) scale(${pop}) translate(-540 -230)`}>
+          <rect x={220} y={170} width={640} height={110} rx={18} fill="#17151e" stroke="#fff" strokeWidth={6} />
+          <text x={540} y={246} textAnchor="middle" fontSize={54} fontWeight={900} fill="#ffd23f" fontFamily="Arial Black, Arial">
+            4 BULAN JUPITER
+          </text>
+        </g>
+
+        <rect y={1500} width={W} height={420} fill="#1a1c29" />
+        <rect y={1492} width={W} height={12} fill={INK} />
+        <Stick x={240} y={1540} {...galileo} look="shock" scale={0.95} armL={125} armR={125} />
+      </g>
+    );
+  }
+
+  if (kind === 'galileoOrbit') {
+    const angle = (f / len) * Math.PI * 1.5 + 0.4;
+    const rx = 370;
+    const ry = 190;
+    const earthX = 540 + Math.cos(angle) * rx;
+    const earthY = 800 + Math.sin(angle) * ry;
+
+    return (
+      <g>
+        <rect width={W} height={H} fill="#070a17" />
+
+        {Array.from({length: 40}, (_, i) => (
+          <circle key={i} cx={rand(i * 17) * W} cy={rand(i * 41) * 1400} r={3 + rand(i) * 3} fill="#fff" opacity={0.5} />
+        ))}
+
+        <ellipse cx={540} cy={800} rx={rx} ry={ry} fill="none" stroke="#48608f" strokeWidth={6} strokeDasharray="18 14" />
+
+        <circle cx={540} cy={800} r={180} fill="#ffaa00" opacity={0.2} />
+        <circle cx={540} cy={800} r={130} fill="#ffc83d" stroke={INK} strokeWidth={9} />
+        {Array.from({length: 12}, (_, i) => {
+          const a = (i / 12) * Math.PI * 2 + f / 24;
+          return (
+            <line
+              key={i}
+              x1={540 + Math.cos(a) * 135}
+              y1={800 + Math.sin(a) * 135}
+              x2={540 + Math.cos(a) * 175}
+              y2={800 + Math.sin(a) * 175}
+              stroke="#ff8800"
+              strokeWidth={10}
+              strokeLinecap="round"
+            />
+          );
+        })}
+        <circle cx={540} cy={800} r={105} fill="#ffe676" />
+        <text x={540} y={815} textAnchor="middle" fontSize={46} fontWeight={900} fill={INK} fontFamily="Arial Black, Arial">
+          MATAHARI
+        </text>
+
+        <g transform={`translate(${earthX} ${earthY})`}>
+          <circle r={54} fill="#2979ff" stroke={INK} strokeWidth={7} />
+          <ellipse cx={-12} cy={-10} rx={22} ry={16} fill="#4caf50" />
+          <ellipse cx={16} cy={12} rx={18} ry={14} fill="#4caf50" />
+          <circle cx={Math.cos(f / 4) * 85} cy={Math.sin(f / 4) * 45} r={14} fill="#e0e0e0" stroke={INK} strokeWidth={4} />
+          <rect x={-60} y={-95} width={120} height={42} rx={10} fill="#0d142d" stroke="#fff" strokeWidth={3} />
+          <text x={0} y={-66} textAnchor="middle" fontSize={28} fontWeight={900} fill="#fff" fontFamily="Arial Black, Arial">
+            BUMI
+          </text>
+        </g>
+
+        <g transform={`translate(540 250) scale(${pop}) translate(-540 -250)`}>
+          <rect x={130} y={190} width={820} height={120} rx={18} fill="#ffd23f" stroke={INK} strokeWidth={9} />
+          <text
+            x={540}
+            y={250}
+            textAnchor="middle"
+            dominantBaseline="central"
+            fontSize={44}
+            fontWeight={900}
+            fill={INK}
+            fontFamily="Arial Black, Arial"
+          >
+            BUMI MENGELILINGI MATAHARI
+          </text>
+        </g>
+
+        <rect y={1500} width={W} height={420} fill="#141724" />
+        <rect y={1492} width={W} height={12} fill={INK} />
+        <Stick x={240} y={1540} {...galileo} look="happy" scale={1.05} armR={135} armL={30} talking />
+      </g>
+    );
+  }
+
+  if (kind === 'galileoTrial') {
+    return (
+      <g>
+        <rect width={W} height={H} fill="#421319" />
+        {[0, 1, 2, 3].map((i) => (
+          <rect key={i} x={60 + i * 280} y={0} width={120} height={1500} fill="#2f0d11" stroke={INK} strokeWidth={7} />
+        ))}
+        <path d="M0 450 Q540 600 1080 450 V0 H0 Z" fill="#691d25" stroke={INK} strokeWidth={8} />
+
+        <rect x={140} y={880} width={800} height={200} rx={14} fill="#54382b" stroke={INK} strokeWidth={10} />
+        <rect x={180} y={930} width={720} height={40} fill="#3b261d" stroke={INK} strokeWidth={6} />
+
+        <Stick x={320} y={890} {...inquisitor} look="angry" scale={0.78} armR={40} />
+        <Stick x={540} y={880} coat="#5c1015" hair="#111" look="angry" scale={0.85} armR={125} armL={35} talking />
+        <Stick x={760} y={890} {...inquisitor} look="angry" scale={0.78} armL={40} flip />
+
+        <g transform={`translate(540 220) scale(${pop}) translate(-540 -220)`}>
+          <rect x={340} y={150} width={400} height={140} rx={18} fill="#fff" stroke={INK} strokeWidth={9} />
+          <text x={540} y={252} textAnchor="middle" fontSize={80} fontWeight={900} fill="#c9412f" fontFamily="Arial Black, Arial">
+            1633
+          </text>
+        </g>
+
+        <rect y={1500} width={W} height={420} fill="#2b1a1c" />
+        <rect y={1492} width={W} height={12} fill={INK} />
+
+        <Stick x={540} y={1540} {...oldGalileo} look="sad" scale={1.08} armL={14} armR={14} />
+        <rect x={480} y={1490} width={120} height={45} rx={6} fill="#f5eedc" stroke={INK} strokeWidth={5} />
+      </g>
+    );
+  }
+
+  if (kind === 'galileoHouseArrest') {
+    return (
+      <g>
+        <rect width={W} height={H} fill="#3d2c25" />
+        <rect y={1500} width={W} height={420} fill="#241a15" />
+        <rect y={1492} width={W} height={12} fill={INK} />
+
+        <rect x={660} y={280} width={360} height={520} fill="#0c1326" stroke={INK} strokeWidth={12} />
+        {Array.from({length: 12}, (_, i) => (
+          <circle key={i} cx={680 + rand(i * 11) * 320} cy={300 + rand(i * 23) * 480} r={3 + rand(i) * 3} fill="#fff" />
+        ))}
+        <line x1={780} y1={280} x2={780} y2={800} stroke={INK} strokeWidth={10} />
+        <line x1={900} y1={280} x2={900} y2={800} stroke={INK} strokeWidth={10} />
+        <line x1={660} y1={540} x2={1020} y2={540} stroke={INK} strokeWidth={10} />
+
+        <rect x={360} y={1180} width={380} height={40} fill="#69462f" stroke={INK} strokeWidth={8} />
+        <rect x={400} y={1220} width={35} height={280} fill="#4d3221" stroke={INK} strokeWidth={7} />
+        <rect x={670} y={1220} width={35} height={280} fill="#4d3221" stroke={INK} strokeWidth={7} />
+
+        <rect x={450} y={1110} width={24} height={70} fill="#ede5d1" stroke={INK} strokeWidth={5} />
+        <ellipse cx={462} cy={1095} rx={10} ry={16} fill="#ffaa00" />
+        <circle cx={462} cy={1095} r={36} fill="#ffe680" opacity={0.25} />
+
+        <rect x={510} y={1140} width={160} height={40} rx={4} fill="#eee4cc" stroke={INK} strokeWidth={6} />
+
+        <Stick x={260} y={1540} {...oldGalileo} look="neutral" scale={1.08} talking armR={55} />
+
+        <g transform={`translate(540 460) scale(${pop}) translate(-540 -460)`}>
+          <path d="M220 340 H860 V560 H540 L480 640 L490 560 H220 Z" fill="#ffffff" stroke={INK} strokeWidth={10} />
+          <text x={540} y={435} textAnchor="middle" fontSize={60} fontWeight={900} fill="#c9412f" fontFamily="Arial Black, Arial">
+            "EPPUR SI MUOVE"
+          </text>
+          <text x={540} y={510} textAnchor="middle" fontSize={38} fontWeight={900} fill="#2f3550" fontFamily="Arial Black, Arial">
+            (Namun ia tetap bergerak)
+          </text>
+        </g>
+      </g>
+    );
+  }
+
+  if (kind === 'galileoEnd') {
+    return (
+      <g>
+        <rect width={W} height={H} fill="#060914" />
+
+        {Array.from({length: 48}, (_, i) => (
+          <circle
+            key={i}
+            cx={rand(i * 19) * W}
+            cy={rand(i * 37) * 1200}
+            r={3 + rand(i) * 5}
+            fill="#fff"
+            opacity={0.35 + Math.sin(f / 5 + i) * 0.45}
+          />
+        ))}
+
+        <circle cx={850} cy={340} r={110} fill="#ffecb3" stroke={INK} strokeWidth={8} />
+        <circle cx={850} cy={340} r={145} fill="#ffeaa7" opacity={0.22} />
+
+        <g transform="translate(240 420)">
+          <ellipse rx={70} ry={18} fill="none" stroke="#d4b483" strokeWidth={8} transform="rotate(-18)" />
+          <circle r={36} fill="#e8c792" stroke={INK} strokeWidth={6} />
+          <ellipse rx={70} ry={18} fill="none" stroke="#d4b483" strokeWidth={8} strokeDasharray="50 60" transform="rotate(-18)" />
+        </g>
+
+        <g transform="translate(540 380)">
+          <circle r={58} fill="#3a86ff" stroke={INK} strokeWidth={6} />
+          <ellipse cx={-14} cy={-10} rx={22} ry={15} fill="#52b788" />
+          <ellipse cx={16} cy={12} rx={16} ry={12} fill="#52b788" />
+          <circle r={75} fill="#64b5f6" opacity={0.2} />
+        </g>
+
+        <path d="M0 1340 Q540 1180 1080 1340 V1920 H0 Z" fill="#1b2e22" stroke={INK} strokeWidth={10} />
+
+        <Stick x={540} y={1540} {...oldGalileo} look="happy" scale={1.15} armL={135} armR={135} />
+      </g>
+    );
+  }
+
   // city: closing scene
   const lit = interpolate(f, [0, 70], [0.15, 0.85], {extrapolateRight: 'clamp'});
   return (
@@ -1021,13 +1621,14 @@ export const StickmanStory: React.FC<{
     return w ? Math.round((w.fromMs / 1000) * fps) : null;
   });
   const timeline = scenes
-    .map((s, i) => ({kind: s.kind, from: starts[i]}))
-    .filter((s): s is {kind: string; from: number} => s.from !== null);
+    .map((s, i) => ({scene: s, from: starts[i]}))
+    .filter((s): s is {scene: StoryScene; from: number} => s.from !== null);
   const idx = timeline.reduce((best, s, i) => (frame >= s.from ? i : best), 0);
-  const scene = timeline[idx];
+  const item = timeline[idx];
+  const scene = item.scene;
   const end = timeline[idx + 1]?.from ?? durationInFrames;
-  const f = frame - scene.from;
-  const len = end - scene.from;
+  const f = frame - item.from;
+  const len = end - item.from;
 
   // each cut lands with a small punch-in, then the camera creeps forward
   const punch = spring({frame: f, fps, config: {damping: 14}, durationInFrames: 12});
@@ -1037,7 +1638,7 @@ export const StickmanStory: React.FC<{
     <AbsoluteFill style={{background: '#000', overflow: 'hidden'}}>
       <AbsoluteFill style={{transform: `scale(${zoom})`, transformOrigin: '50% 58%'}}>
         <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`}>
-          <SceneArt key={scene.kind} kind={scene.kind} f={f} len={len} />
+          <SceneArt key={scene.kind + idx} scene={scene} f={f} len={len} accent={accent} />
         </svg>
       </AbsoluteFill>
       <div

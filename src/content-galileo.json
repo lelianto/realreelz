@@ -1,0 +1,77 @@
+{
+  "template": "stickman",
+  "name": "GALILEO GALILEI",
+  "title": "Galileo Galilei",
+  "script": "Pria ini dituduh sesat dan dihukum seumur hidup, tapi penemuannya membuka mata dunia. Dia adalah Galileo Galilei dari Italia. Di Menara Pisa, ia membuktikan semua benda jatuh dengan kecepatan sama, mematahkan teori kuno. Lalu, Galileo membuat teropongnya sendiri dan menatap langit malam. Ia menemukan kawah Bulan serta empat bulan yang mengitari Jupiter. Itu bukti nyata: Bumi bukanlah pusat alam semesta, melainkan mengelilingi Matahari. Penguasa marah. Tahun seribu enam ratus tiga puluh tiga, Galileo diadili di Roma dan dipaksa mencabut ucapannya. Ia dihukum tahanan rumah hingga akhir hayatnya. Namun ia berbisik: ia tetap bergerak. Jangan takut melihat kebenaran, meski dunia menutup mata.",
+  "elevenVoiceId": "nPczCjzI2devNBz1zQrb",
+  "elevenStability": 0.45,
+  "elevenStyle": 0.2,
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#ffd23f",
+  "captionFixes": {
+    "Priya": "Pria",
+    "menara": "Menara",
+    "pisa": "Pisa",
+    "bulan": "Bulan",
+    "melayankan": "melainkan",
+    "matahari": "Matahari"
+  },
+  "keywords": [
+    "sesat",
+    "seumur",
+    "hidup",
+    "Galileo",
+    "Galilei",
+    "Pisa",
+    "jatuh",
+    "kecepatan",
+    "sama",
+    "teropongnya",
+    "kawah",
+    "Bulan",
+    "Jupiter",
+    "Bumi",
+    "Matahari",
+    "marah",
+    "1633",
+    "diadili",
+    "tahanan",
+    "bergerak",
+    "kebenaran"
+  ],
+  "storyScenes": [
+    {
+      "kind": "galileoCell",
+      "cue": null
+    },
+    {
+      "kind": "galileoPisa",
+      "cue": "Menara"
+    },
+    {
+      "kind": "galileoTelescope",
+      "cue": "teropong"
+    },
+    {
+      "kind": "galileoMoons",
+      "cue": "kawah"
+    },
+    {
+      "kind": "galileoOrbit",
+      "cue": "Bumi"
+    },
+    {
+      "kind": "galileoTrial",
+      "cue": "diadili"
+    },
+    {
+      "kind": "galileoHouseArrest",
+      "cue": "tahanan"
+    },
+    {
+      "kind": "galileoEnd",
+      "cue": "Jangan"
+    }
+  ]
+}

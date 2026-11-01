@@ -1,75 +1,81 @@
 {
   "template": "stickman",
-  "name": "WRIGHT BERSAUDARA",
-  "title": "Wright Bersaudara",
-  "script": "Dua pemilik toko sepeda ini mendahului para ilmuwan dunia. Mereka adalah Wright bersaudara, Orville dan Wilbur, dari Ohio, Amerika. Tanpa ijazah kuliah, mereka bermimpi membuat manusia terbang. Banyak orang menganggap itu mustahil. Mereka mempelajari burung, menguji sayap dalam terowongan angin buatan sendiri, dan gagal berkali-kali. Lalu, pada tujuh belas Desember seribu sembilan ratus tiga, di Kitty Hawk, Orville naik ke pesawat buatan mereka. Mesin menyala, dan pesawat itu terangkat. Penerbangannya hanya dua belas detik. Tapi dua belas detik itu mengubah dunia. Enam puluh enam tahun kemudian, sepotong kain dari pesawat itu dibawa ke Bulan. Dari toko sepeda, sampai ke Bulan. Jadi, jangan remehkan mimpimu.",
+  "name": "MARIE CURIE",
+  "title": "Marie Curie",
+  "script": "Wanita ini meneliti sesuatu yang bersinar dalam gelap, dan itu perlahan merenggut nyawanya. Namanya Marie Curie, lahir di Polandia tahun seribu delapan ratus enam puluh tujuh. Saat itu, perempuan sulit diterima di dunia sains, dan banyak yang meragukannya. Tapi ia terus bekerja di laboratorium sederhana, meneliti batuan yang memancarkan energi misterius. Energi itu ia namai radioaktivitas. Lalu ia menemukan dua unsur baru, polonium dan radium. Tahun seribu sembilan ratus tiga, ia menjadi perempuan pertama yang meraih Hadiah Nobel, bahkan kemudian meraihnya dua kali. Penemuannya membuka jalan bagi pengobatan kanker dan sinar X di seluruh dunia. Marie Curie membuktikan bahwa rasa penasaran bisa mengubah dunia.",
   "elevenVoiceId": "nPczCjzI2devNBz1zQrb",
   "elevenStability": 0.45,
   "elevenStyle": 0.2,
   "music": "music.mp3",
   "musicVolume": 0.08,
   "accent": "#ffd23f",
-  "captionFixes": {
-    "tokoh": "toko",
-    "Bersodara": "bersaudara",
-    "terwongan": "terowongan",
-    "bulan": "Bulan"
-  },
+  "captionFixes": {},
   "keywords": [
-    "sepeda",
-    "Wright",
-    "terbang",
-    "mustahil",
-    "burung",
-    "angin",
-    "gagal",
-    "pesawat",
-    "terangkat",
-    "detik",
-    "dunia",
-    "Bulan",
-    "mimpimu"
+    "bersinar",
+    "Curie",
+    "meragukannya",
+    "radioaktivitas",
+    "radium",
+    "Nobel",
+    "kanker",
+    "penasaran",
+    "dunia"
   ],
   "storyScenes": [
     {
-      "kind": "bikeShop",
-      "cue": null
+      "kind": "gintro",
+      "cue": null,
+      "mood": "sad",
+      "hair": "#3a2c20",
+      "moustache": false
     },
     {
-      "kind": "dream",
-      "cue": "bermimpi"
+      "kind": "gportrait",
+      "cue": "Namanya",
+      "label": "1867 · POLANDIA",
+      "hair": "#3a2c20",
+      "moustache": false
     },
     {
-      "kind": "doubt",
-      "cue": "mustahil"
+      "kind": "grival",
+      "cue": "diterima",
+      "bubbleL": "Mustahil",
+      "bubbleR": "Perempuan?",
+      "hair": "#3a2c20",
+      "moustache": false
     },
     {
-      "kind": "tunnel",
-      "cue": "mempelajari"
+      "kind": "gwork",
+      "cue": "laboratorium",
+      "prop": "flask",
+      "hair": "#3a2c20",
+      "moustache": false
     },
     {
-      "kind": "crash",
-      "cue": "gagal"
+      "kind": "gbreakthrough",
+      "cue": "menemukan",
+      "label": "RADIUM",
+      "hair": "#3a2c20",
+      "moustache": false
     },
     {
-      "kind": "beach",
-      "cue": "Desember"
+      "kind": "gaward",
+      "cue": "Nobel",
+      "label": "NOBEL 1903",
+      "hair": "#3a2c20",
+      "moustache": false
     },
     {
-      "kind": "liftoff",
-      "cue": "terangkat"
+      "kind": "gimpact",
+      "cue": "kanker",
+      "hair": "#3a2c20",
+      "moustache": false
     },
     {
-      "kind": "worldSky",
-      "cue": "Tapi"
-    },
-    {
-      "kind": "moon",
-      "cue": "66"
-    },
-    {
-      "kind": "dreamEnd",
-      "cue": "jangan"
+      "kind": "gclose",
+      "cue": "membuktikan",
+      "hair": "#3a2c20",
+      "moustache": false
     }
   ]
 }

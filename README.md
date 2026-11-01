@@ -32,7 +32,38 @@ Dua aset ini **tidak** ikut di repo (sengaja) dan harus kamu sediakan sendiri:
 - `public/music.mp3` — musik latar bebas royalti (mis. dari Pixabay).
 - API key ElevenLabs di `.env` (kalau pakai suara ElevenLabs).
 
-## Alur pakai
+## Cara cepat: web app (prompt → video)
+
+Cukup tulis satu tokoh/topik, biarkan pipeline-nya jalan sampai MP4 jadi. Pakai
+template **stickman generik** (tidak perlu menggambar adegan baru per tokoh).
+
+```bash
+npm run web      # buka http://localhost:4000
+```
+
+Butuh dua key di `.env`:
+
+- `ELEVENLABS_API_KEY` — untuk suara.
+- `ANTHROPIC_API_KEY` — untuk mengubah prompt jadi naskah + daftar adegan
+  (model default `claude-sonnet-5-5`, bisa diganti via `ANTHROPIC_MODEL`).
+
+Alurnya (semua server-side, key tidak pernah ke browser): prompt →
+`scripts/generate-content.mjs` (LLM menulis `src/content.json`) → `tts:eleven`
+→ `captions` → `remotion render` → MP4 bisa diputar & diunduh di halaman.
+Satu render jalan pada satu waktu. Proses ±2–5 menit.
+
+Mau tanpa web? Generate kontennya saja lalu pakai alur manual di bawah:
+
+```bash
+npm run generate "Alan Turing, bapak ilmu komputer"   # -> src/content.json
+```
+
+> Generator hanya memakai adegan generik (`gintro`, `gportrait`, `gwork`,
+> `gstruggle`, `grival`, `gbreakthrough`, `gimpact`, `gaward`, `gclose`), jadi
+> topik baru tidak butuh kode baru. Tokoh perempuan tetap tampil generik —
+> karakter stickman belum punya gaya rambut khusus.
+
+## Alur pakai (manual)
 
 Semua konten diatur lewat `src/content.json`. Untuk ganti video, salin salah satu
 template ke `content.json`, lalu generate suara + caption, lalu render.

@@ -12,7 +12,9 @@
     "build:audio:eleven": "npm run tts:eleven && npm run captions",
     "studio": "remotion studio",
     "render": "remotion render Reel out/reel.mp4 --browser-executable=\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\"",
-    "all": "npm run build:audio && npm run render"
+    "all": "npm run build:audio && npm run render",
+    "generate": "node scripts/generate-content.mjs",
+    "web": "node scripts/server.mjs"
   },
   "dependencies": {
     "@react-three/fiber": "^9.8.2",
