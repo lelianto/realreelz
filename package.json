@@ -2,7 +2,7 @@
   "name": "reels",
   "version": "1.0.0",
   "private": true,
-  "description": "Faceless Indonesian reels generator — Remotion + Piper (TTS) + whisper.cpp (captions), fully local & open-source",
+  "description": "Faceless Indonesian reels generator — Remotion + Piper/ElevenLabs (TTS) + whisper.cpp (captions)",
   "type": "module",
   "scripts": {
     "tts": "node scripts/tts.mjs",
