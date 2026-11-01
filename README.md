@@ -1,8 +1,9 @@
 # Reels Generator
 
 Generator video reels vertikal (1080×1920) berbahasa Indonesia, tanpa wajah.
-Pipeline: naskah → suara (TTS) → caption otomatis → render video, semuanya lokal
-kecuali suara ElevenLabs.
+Pipeline: naskah → suara (TTS) → caption otomatis → render video. Suara default
+pakai **edge-tts** (suara neural Microsoft, gratis & tanpa API key); ElevenLabs
+dan Piper tersedia sebagai alternatif.
 
 > Repo **private**. Lihat [Catatan lisensi](#catatan-lisensi) sebelum dipakai komersial atau dipublikasikan.
 
@@ -16,21 +17,27 @@ kecuali suara ElevenLabs.
   Remotion (yang sering crash di macOS versi baru).
 - Untuk caption: **whisper.cpp** (otomatis di-download & di-build oleh
   `@remotion/install-whisper-cpp` saat pertama kali `npm run captions`).
-- Untuk TTS open-source (Piper): **Python**. Di mesin ini pakai
-  `/usr/bin/python3` (Xcode CLT), karena Homebrew Python di sini rusak.
-  Lihat `scripts/tts.mjs`.
+- Untuk TTS gratis (edge-tts / Piper): **Python** di `.venv`. Di mesin ini venv
+  dibuat dengan `/usr/bin/python3` (Xcode CLT), karena Homebrew Python di sini
+  rusak:
+  ```bash
+  /usr/bin/python3 -m venv .venv
+  .venv/bin/pip install edge-tts piper-tts
+  ```
 
 ## Setup
 
 ```bash
 npm install
-cp .env.example .env     # lalu isi ELEVENLABS_API_KEY=...
+cp .env.example .env     # isi ANTHROPIC_API_KEY (untuk web app)
 ```
 
-Dua aset ini **tidak** ikut di repo (sengaja) dan harus kamu sediakan sendiri:
+Aset/hal ini **tidak** ikut di repo (sengaja) dan harus kamu sediakan sendiri:
 
 - `public/music.mp3` — musik latar bebas royalti (mis. dari Pixabay).
-- API key ElevenLabs di `.env` (kalau pakai suara ElevenLabs).
+- `ANTHROPIC_API_KEY` di `.env` — hanya untuk web app / `npm run generate`.
+- `ELEVENLABS_API_KEY` di `.env` — **opsional**, hanya kalau mau suara ElevenLabs
+  (default sudah pakai edge-tts yang gratis).
 
 ## Cara cepat: web app (prompt → video)
 
@@ -41,16 +48,17 @@ template **stickman generik** (tidak perlu menggambar adegan baru per tokoh).
 npm run web      # buka http://localhost:4000
 ```
 
-Butuh dua key di `.env`:
-
-- `ELEVENLABS_API_KEY` — untuk suara.
-- `ANTHROPIC_API_KEY` — untuk mengubah prompt jadi naskah + daftar adegan
-  (model default `claude-sonnet-5-5`, bisa diganti via `ANTHROPIC_MODEL`).
+Cukup **satu** key di `.env`: `ANTHROPIC_API_KEY` (untuk mengubah prompt jadi
+naskah + daftar adegan; model default `claude-sonnet-5-5`, ganti via
+`ANTHROPIC_MODEL`). Suara pakai edge-tts yang gratis, jadi tidak perlu key lain.
 
 Alurnya (semua server-side, key tidak pernah ke browser): prompt →
-`scripts/generate-content.mjs` (LLM menulis `src/content.json`) → `tts:eleven`
+`scripts/generate-content.mjs` (LLM menulis `src/content.json`) → `tts:edge`
 → `captions` → `remotion render` → MP4 bisa diputar & diunduh di halaman.
 Satu render jalan pada satu waktu. Proses ±2–5 menit.
+
+Mau pakai ElevenLabs di web app? Jalankan dengan `TTS_ENGINE=eleven npm run web`
+(perlu `ELEVENLABS_API_KEY`).
 
 Mau tanpa web? Generate kontennya saja lalu pakai alur manual di bawah:
 
@@ -79,21 +87,27 @@ template ke `content.json`, lalu generate suara + caption, lalu render.
 # 1. pilih template (contoh: stickman)
 cp src/content-stickman.json src/content.json
 
-# 2. buat suara + caption (ElevenLabs)
-npm run tts:eleven      # -> public/voiceover.wav
-npm run captions        # -> public/captions.json
+# 2. buat suara + caption (edge-tts, gratis)
+npm run build:audio:edge    # = tts:edge + captions
 
 # 3. render
-npm run render          # -> out/reel.mp4
+npm run render              # -> out/reel.mp4
 ```
 
+Pilihan TTS (semuanya menulis `public/voiceover.wav`):
+
+| Script | Mesin | Catatan |
+|--------|-------|---------|
+| `npm run tts:edge`   | edge-tts  | **Default.** Gratis, tanpa key, suara neural natural (`id-ID-ArdiNeural`/`GadisNeural`). Pilih suara: `npm run tts:edge list`. |
+| `npm run tts:eleven` | ElevenLabs | Kualitas tinggi, perlu `ELEVENLABS_API_KEY`, kuota terbatas. |
+| `npm run tts`        | Piper      | Open-source, offline, gratis; kualitas di bawah edge-tts. |
+
 - `npm run studio` — buka Remotion Studio untuk preview di browser.
-- `npm run tts` — TTS versi open-source (Piper), alternatif ElevenLabs.
-- `npm run build:audio:eleven` — gabungan `tts:eleven` + `captions`.
+- `npm run build:audio:edge` / `:eleven` — gabungan `tts:*` + `captions`.
 
 > **Penting:** `voiceover.wav` dan `captions.json` hanya menyimpan narasi
-> **terakhir**. Setiap ganti ke template bernarasi, jalankan ulang
-> `tts:eleven` + `captions` (memakai kuota ElevenLabs).
+> **terakhir**. Setiap ganti ke template bernarasi, jalankan ulang `tts:*` +
+> `captions` (edge-tts gratis, jadi aman diulang).
 
 ## Template
 
