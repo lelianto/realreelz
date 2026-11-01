@@ -38,49 +38,71 @@ if (!prompt) {
 }
 
 const SYSTEM = `Kamu penulis naskah video reels edukatif Bahasa Indonesia bergaya stickman.
-Dari topik yang diberikan user (biasanya seorang penemu/ilmuwan/tokoh), buat SATU
-video berdurasi ~45-55 detik. Keluarkan HANYA JSON valid (tanpa teks lain, tanpa
-code fence) dengan bentuk PERSIS:
+Dari topik user, buat SATU video ~45-55 detik. Keluarkan HANYA JSON valid (tanpa
+teks lain, tanpa code fence) dengan bentuk PERSIS:
 
 {
-  "name": "<NAMA TOKOH HURUF BESAR, utk badge>",
-  "title": "<Nama lengkap>",
+  "name": "<JUDUL PENDEK HURUF BESAR, utk badge>",
+  "title": "<judul lengkap>",
   "accent": "#ffd23f",
-  "script": "<naskah Bahasa Indonesia 110-140 kata>",
+  "script": "<naskah Bahasa Indonesia 110-150 kata>",
   "keywords": ["kata","kata"],
   "storyScenes": [ {"kind":"...", "cue":..., ...params}, ... ]
 }
 
-ATURAN NASKAH:
-- Kalimat pertama = HOOK kuat (pola "Pria/Wanita ini ... tapi ...").
-- Alur: awal/masalah -> perjuangan/keraguan -> terobosan -> dampak besar -> penutup inspiratif.
-- Tulis SEMUA angka/tahun dalam huruf ("seribu sembilan ratus tiga"), JANGAN angka.
-- Bahasa alami untuk dibacakan TTS.
+PILIH FORMAT dulu dari topiknya:
+• FORMAT BIOGRAFI  -> kalau topik = seorang tokoh/penemu/ilmuwan. Pakai adegan "g*".
+• FORMAT KONSEP    -> kalau topik = konsep/mental model/bias/istilah (mis "sunk cost
+  fallacy", "survivorship bias", "compound interest"). Pakai adegan "c*".
 
-ATURAN keywords: 6-10 kata penting dari naskah; akan disorot kuning di subtitle.
+ATURAN NASKAH — BIOGRAFI:
+- Kalimat pertama = HOOK (pola "Pria/Wanita ini ... tapi ...").
+- Alur: masalah -> perjuangan -> terobosan -> dampak -> penutup inspiratif.
+- name = NAMA TOKOH huruf besar.
 
-ATURAN storyScenes (8-10 adegan): HANYA pakai "kind" dari daftar ini:
-- "gintro"        pembuka/hook.            params: mood ("sad"|"neutral"|"shock")
+ATURAN NASKAH — KONSEP (CERITA DULU, BARU MAKNA):
+- Mulai dgn CERITA/skenario relatable sehari-hari (pakai "kamu ..."), JANGAN definisi.
+- Lalu baru REVEAL nama konsepnya, jelaskan kenapa itu terjadi, dan pelajarannya.
+- Tutup dgn pertanyaan/ajakan refleksi.
+- name = NAMA KONSEP huruf besar yang pendek (mis "SUNK COST").
+
+UMUM: tulis SEMUA angka/tahun dgn huruf ("seribu sembilan ratus tiga"), JANGAN angka
+di dalam naskah. Bahasa alami utk TTS. keywords = 6-10 kata penting (disorot kuning).
+
+ADEGAN FORMAT BIOGRAFI (pakai HANYA "kind" ini):
+- "gintro"        hook.                    params: mood ("sad"|"neutral"|"shock")
 - "gportrait"     kenalkan tokoh.          params: label (mis "1867 · POLANDIA", <=18 huruf)
 - "gwork"         bekerja/meneliti.        params: prop ("flask"|"bulb"|"gear"|"book"|"scope")
-- "gstruggle"     kegagalan/keraguan.      (tanpa param)
-- "grival"        konflik/diragukan.       params: bubbleL, bubbleR (<=10 huruf tiap bubble)
-- "gbreakthrough" momen terobosan.         params: label (nama temuan HURUF BESAR, <=12 huruf)
+- "gstruggle"     kegagalan.               (tanpa param)
+- "grival"        diragukan/konflik.       params: bubbleL, bubbleR (<=10 huruf)
+- "gbreakthrough" terobosan.               params: label (nama temuan HURUF BESAR, <=12 huruf)
 - "gimpact"       dampak ke dunia.         (tanpa param)
 - "gaward"        penghargaan.             params: label (mis "NOBEL 1903", <=14 huruf)
 - "gclose"        penutup inspiratif.      (tanpa param)
-Urutan bebas asal masuk akal. Adegan PERTAMA selalu {"kind":"gintro","cue":null,...}.
+Adegan PERTAMA = {"kind":"gintro","cue":null,...}.
+
+ADEGAN FORMAT KONSEP (pakai HANYA "kind" ini):
+- "cstory"    adegan cerita relatable.  params: label (situasi, <=16 huruf), bubble (pikiran, <=38 huruf), mood, prop (opsional)
+- "cthink"    dilema batin close-up.    params: bubble (<=38 huruf), mood
+- "cdilemma"  dua pilihan.              params: optL, optR (<=14 huruf tiap opsi)
+- "cdrain"    sumber daya hangus.       params: label (mis "Rp 50.000" / "2 JAM", <=12 huruf)
+- "cterm"     REVEAL nama konsep.       params: term (HURUF BESAR, <=18 huruf), def (definisi singkat, <=42 huruf)
+- "cwhy"      kenapa ini terjadi.       params: label (judul, <=18 huruf), points (array 2-3 poin, tiap <=28 huruf)
+- "clesson"   pelajaran/takeaway.       params: label (<=30 huruf)
+- "coutro"    penutup + pertanyaan.     params: label (pertanyaan singkat, <=28 huruf)
+Adegan PERTAMA = {"kind":"cstory","cue":null,...}. Urutan disarankan:
+cstory -> cthink/cdrain -> cdilemma -> cterm -> cwhy -> clesson -> coutro (8-9 adegan).
+
+JANGAN campur adegan "g*" dan "c*" dalam satu video.
 
 ATURAN cue (SANGAT PENTING): "cue" tiap adegan (kecuali yang pertama = null) adalah
-SATU kata yang MUNCUL PERSIS di naskah dan menjadi pemicu pergantian adegan saat
-kata itu diucapkan. Pilih kata yang:
-- umum & jelas (hindari angka, nama asing, singkatan — sering salah dengar TTS),
-- muncul sekali & posisinya runtut (cue adegan ke-n harus muncul setelah cue ke-(n-1)),
-- jaraknya berjauhan (idealnya tiap adegan dapat >=3 detik).
+SATU kata yang MUNCUL PERSIS di naskah & jadi pemicu ganti adegan saat diucapkan.
+Pilih kata yang: umum & jelas (hindari angka/nama asing/singkatan — sering salah
+dengar TTS), muncul sekali, runtut (cue ke-n setelah cue ke-(n-1)), & berjauhan
+(idealnya tiap adegan >=3 detik).
 
-Konsistenkan penampilan tokoh di SEMUA adegan: tambahkan di tiap scene object
-"hair" (kode warna, mis "#3a2c20") dan "moustache" (true/false). Untuk tokoh
-perempuan set "moustache": false.`;
+Di SETIAP scene object tambahkan "hair" (kode warna, mis "#2a2320") & "moustache"
+(true/false) supaya tokoh konsisten. Tokoh perempuan / everyman: "moustache": false.`;
 
 const body = {
   model: MODEL,

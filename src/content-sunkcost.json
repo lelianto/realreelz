@@ -1,0 +1,91 @@
+{
+  "template": "stickman",
+  "name": "SUNK COST",
+  "title": "Sunk Cost Fallacy",
+  "script": "Kamu nonton film di bioskop. Baru lima belas menit, filmnya ternyata membosankan. Tapi kamu sudah terlanjur bayar tiket, jadi kamu memaksakan diri bertahan sampai habis. Pernah begitu? Padahal uang tiketmu tidak akan kembali, mau kamu tonton atau tidak. Tetap duduk hanya membuatmu rugi dua kali, uang dan waktu. Inilah yang disebut sunk cost fallacy, jebakan biaya hangus. Otak kita benci merasa sia-sia, jadi kita terus melanjutkan hal yang sudah jelas merugikan, hanya karena sudah terlanjur berkorban. Kita selalu melihat ke belakang, bukan ke depan. Padahal keputusan yang baik harusnya hanya memikirkan masa depan. Biaya yang sudah hilang, biarkan hilang. Jadi lain kali, jangan bertanya sudah berapa banyak yang kukeluarkan. Tanyakan, apakah ini masih layak kulanjutkan?",
+  "elevenVoiceId": "nPczCjzI2devNBz1zQrb",
+  "elevenStability": 0.45,
+  "elevenStyle": 0.2,
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#ffd23f",
+  "captionFixes": {},
+  "keywords": [
+    "bioskop",
+    "terlanjur",
+    "kembali",
+    "rugi",
+    "hangus",
+    "sia-sia",
+    "depan",
+    "layak"
+  ],
+  "storyScenes": [
+    {
+      "kind": "cstory",
+      "cue": null,
+      "label": "Di bioskop",
+      "bubble": "Filmnya ngebosenin...",
+      "mood": "sad",
+      "hair": "#2a2320",
+      "moustache": false
+    },
+    {
+      "kind": "cthink",
+      "cue": "terlanjur",
+      "bubble": "Udah bayar, sayang kalau pergi",
+      "mood": "sad",
+      "hair": "#2a2320",
+      "moustache": false
+    },
+    {
+      "kind": "cdrain",
+      "cue": "kembali",
+      "label": "Rp 50.000",
+      "hair": "#2a2320",
+      "moustache": false
+    },
+    {
+      "kind": "cdilemma",
+      "cue": "rugi",
+      "optL": "Tetap nonton",
+      "optR": "Pergi aja",
+      "hair": "#2a2320",
+      "moustache": false
+    },
+    {
+      "kind": "cterm",
+      "cue": "disebut",
+      "term": "SUNK COST FALLACY",
+      "def": "Biaya yang sudah hangus, tak akan kembali",
+      "hair": "#2a2320",
+      "moustache": false
+    },
+    {
+      "kind": "cwhy",
+      "cue": "benci",
+      "label": "KENAPA TERJEBAK?",
+      "points": [
+        "Otak benci merasa sia-sia",
+        "Fokus ke masa lalu, bukan depan",
+        "Lanjut demi 'pengorbanan'"
+      ],
+      "hair": "#2a2320",
+      "moustache": false
+    },
+    {
+      "kind": "clesson",
+      "cue": "memikirkan",
+      "label": "Biaya hangus? Relakan.",
+      "hair": "#2a2320",
+      "moustache": false
+    },
+    {
+      "kind": "coutro",
+      "cue": "lain",
+      "label": "Masih layak dilanjutkan?",
+      "hair": "#2a2320",
+      "moustache": false
+    }
+  ]
+}

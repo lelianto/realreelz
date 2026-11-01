@@ -1,8 +1,8 @@
 {
   "template": "stickman",
-  "name": "MARIE CURIE",
-  "title": "Marie Curie",
-  "script": "Wanita ini meneliti sesuatu yang bersinar dalam gelap, dan itu perlahan merenggut nyawanya. Namanya Marie Curie, lahir di Polandia tahun seribu delapan ratus enam puluh tujuh. Saat itu, perempuan sulit diterima di dunia sains, dan banyak yang meragukannya. Tapi ia terus bekerja di laboratorium sederhana, meneliti batuan yang memancarkan energi misterius. Energi itu ia namai radioaktivitas. Lalu ia menemukan dua unsur baru, polonium dan radium. Tahun seribu sembilan ratus tiga, ia menjadi perempuan pertama yang meraih Hadiah Nobel, bahkan kemudian meraihnya dua kali. Penemuannya membuka jalan bagi pengobatan kanker dan sinar X di seluruh dunia. Marie Curie membuktikan bahwa rasa penasaran bisa mengubah dunia.",
+  "name": "SUNK COST",
+  "title": "Sunk Cost Fallacy",
+  "script": "Kamu nonton film di bioskop. Baru lima belas menit, filmnya ternyata membosankan. Tapi kamu sudah terlanjur bayar tiket, jadi kamu memaksakan diri bertahan sampai habis. Pernah begitu? Padahal uang tiketmu tidak akan kembali, mau kamu tonton atau tidak. Tetap duduk hanya membuatmu rugi dua kali, uang dan waktu. Inilah yang disebut sunk cost fallacy, jebakan biaya hangus. Otak kita benci merasa sia-sia, jadi kita terus melanjutkan hal yang sudah jelas merugikan, hanya karena sudah terlanjur berkorban. Kita selalu melihat ke belakang, bukan ke depan. Padahal keputusan yang baik harusnya hanya memikirkan masa depan. Biaya yang sudah hilang, biarkan hilang. Jadi lain kali, jangan bertanya sudah berapa banyak yang kukeluarkan. Tanyakan, apakah ini masih layak kulanjutkan?",
   "elevenVoiceId": "nPczCjzI2devNBz1zQrb",
   "elevenStability": 0.45,
   "elevenStyle": 0.2,
@@ -11,70 +11,80 @@
   "accent": "#ffd23f",
   "captionFixes": {},
   "keywords": [
-    "bersinar",
-    "Curie",
-    "meragukannya",
-    "radioaktivitas",
-    "radium",
-    "Nobel",
-    "kanker",
-    "penasaran",
-    "dunia"
+    "bioskop",
+    "terlanjur",
+    "kembali",
+    "rugi",
+    "hangus",
+    "sia-sia",
+    "depan",
+    "layak"
   ],
   "storyScenes": [
     {
-      "kind": "gintro",
+      "kind": "cstory",
       "cue": null,
+      "label": "Di bioskop",
+      "bubble": "Filmnya ngebosenin...",
       "mood": "sad",
-      "hair": "#3a2c20",
+      "hair": "#2a2320",
       "moustache": false
     },
     {
-      "kind": "gportrait",
-      "cue": "Namanya",
-      "label": "1867 · POLANDIA",
-      "hair": "#3a2c20",
+      "kind": "cthink",
+      "cue": "terlanjur",
+      "bubble": "Udah bayar, sayang kalau pergi",
+      "mood": "sad",
+      "hair": "#2a2320",
       "moustache": false
     },
     {
-      "kind": "grival",
-      "cue": "diterima",
-      "bubbleL": "Mustahil",
-      "bubbleR": "Perempuan?",
-      "hair": "#3a2c20",
+      "kind": "cdrain",
+      "cue": "kembali",
+      "label": "Rp 50.000",
+      "hair": "#2a2320",
       "moustache": false
     },
     {
-      "kind": "gwork",
-      "cue": "laboratorium",
-      "prop": "flask",
-      "hair": "#3a2c20",
+      "kind": "cdilemma",
+      "cue": "rugi",
+      "optL": "Tetap nonton",
+      "optR": "Pergi aja",
+      "hair": "#2a2320",
       "moustache": false
     },
     {
-      "kind": "gbreakthrough",
-      "cue": "menemukan",
-      "label": "RADIUM",
-      "hair": "#3a2c20",
+      "kind": "cterm",
+      "cue": "disebut",
+      "term": "SUNK COST FALLACY",
+      "def": "Biaya yang sudah hangus, tak akan kembali",
+      "hair": "#2a2320",
       "moustache": false
     },
     {
-      "kind": "gaward",
-      "cue": "Nobel",
-      "label": "NOBEL 1903",
-      "hair": "#3a2c20",
+      "kind": "cwhy",
+      "cue": "benci",
+      "label": "KENAPA TERJEBAK?",
+      "points": [
+        "Otak benci merasa sia-sia",
+        "Fokus ke masa lalu, bukan depan",
+        "Lanjut demi 'pengorbanan'"
+      ],
+      "hair": "#2a2320",
       "moustache": false
     },
     {
-      "kind": "gimpact",
-      "cue": "kanker",
-      "hair": "#3a2c20",
+      "kind": "clesson",
+      "cue": "memikirkan",
+      "label": "Biaya hangus? Relakan.",
+      "hair": "#2a2320",
       "moustache": false
     },
     {
-      "kind": "gclose",
-      "cue": "membuktikan",
-      "hair": "#3a2c20",
+      "kind": "coutro",
+      "cue": "lain",
+      "label": "Masih layak dilanjutkan?",
+      "hair": "#2a2320",
       "moustache": false
     }
   ]

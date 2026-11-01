@@ -58,10 +58,17 @@ Mau tanpa web? Generate kontennya saja lalu pakai alur manual di bawah:
 npm run generate "Alan Turing, bapak ilmu komputer"   # -> src/content.json
 ```
 
-> Generator hanya memakai adegan generik (`gintro`, `gportrait`, `gwork`,
-> `gstruggle`, `grival`, `gbreakthrough`, `gimpact`, `gaward`, `gclose`), jadi
-> topik baru tidak butuh kode baru. Tokoh perempuan tetap tampil generik —
-> karakter stickman belum punya gaya rambut khusus.
+> Generator memilih **format** otomatis dari topiknya, pakai adegan generik saja
+> (tidak perlu kode baru per topik):
+>
+> - **Biografi** (topik = tokoh/penemu): `gintro`, `gportrait`, `gwork`,
+>   `gstruggle`, `grival`, `gbreakthrough`, `gimpact`, `gaward`, `gclose`.
+> - **Konsep / mental model** (topik = bias/istilah/model, mis "sunk cost
+>   fallacy"): cerita relatable dulu → makna → `cstory`, `cthink`, `cdilemma`,
+>   `cdrain`, `cterm`, `cwhy`, `clesson`, `coutro`.
+>
+> Contoh konsep: `npm run generate "sunk cost fallacy"`. Tokoh perempuan /
+> everyman tetap tampil generik — karakter stickman belum punya gaya rambut khusus.
 
 ## Alur pakai (manual)
 
@@ -97,7 +104,7 @@ Dispatcher ada di `src/Reel.tsx` (membaca `content.template`):
 | `tips`       | `src/content-tips.json`      | Listicle: kartu infografis, counter, step dots |
 | `reflective` | `src/content-reflective.json`| Renungan: teks besar sinkron suara, quote card |
 | `planet`     | `src/content-planet.json`    | Diagram 3D (Three.js) planet + label SVG |
-| `stickman`   | `src/content-stickman.json`, `-fleming`, `-wright` | Animasi 2D stickman, adegan ganti mengikuti kata pemicu |
+| `stickman`   | `-stickman`, `-fleming`, `-wright` (biografi) · `-sunkcost` (konsep) | Animasi 2D stickman, adegan ganti mengikuti kata pemicu. Dua format: biografi (`g*`) & konsep cerita→makna (`c*`) |
 
 ### Catatan render per template
 

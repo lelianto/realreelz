@@ -16,6 +16,13 @@ export type StoryScene = {
   coat?: string;
   moustache?: boolean;
   old?: boolean;
+  // optional data read by the CONCEPT (c*) scenes
+  bubble?: string; // a single thought/speech line
+  optL?: string; // left option / path
+  optR?: string; // right option / path
+  term?: string; // the concept name revealed on cterm
+  def?: string; // short definition under the term
+  points?: string[]; // up to 3 short bullet lines on cwhy
 };
 
 const INK = '#1b1a22';
@@ -418,6 +425,97 @@ const GProp: React.FC<{prop?: string; x: number; y: number; f: number}> = ({prop
   );
 };
 
+// Wrap a string into lines of at most `max` characters (word-safe).
+const wrap = (s: string, max: number): string[] => {
+  const lines: string[] = [];
+  let cur = '';
+  for (const w of (s || '').split(' ')) {
+    if (cur && (cur + ' ' + w).length > max) {
+      lines.push(cur);
+      cur = w;
+    } else cur = cur ? cur + ' ' + w : w;
+  }
+  if (cur) lines.push(cur);
+  return lines;
+};
+
+// Small shared props used by the CONCEPT (c*) scenes.
+const TopTag: React.FC<{text: string}> = ({text}) => {
+  const w = Math.min(780, text.length * 24 + 90);
+  return (
+    <g>
+      <rect x={540 - w / 2} y={170} width={w} height={84} rx={42} fill="#0e0f16" opacity={0.82} stroke="#ffffff40" strokeWidth={3} />
+      <text x={540} y={226} textAnchor="middle" fontSize={44} fontWeight={800} fill="#fff" fontFamily="Arial, sans-serif">{text}</text>
+    </g>
+  );
+};
+
+const ThoughtCloud: React.FC<{x: number; y: number; text: string}> = ({x, y, text}) => {
+  const lines = wrap(text, 16);
+  const w = 640;
+  const h = 70 + lines.length * 62;
+  return (
+    <g>
+      {[0, 1, 2].map((i) => (
+        <circle key={i} cx={x - 110 + i * 34} cy={y + h / 2 + 52 + i * 46} r={13 + i * 7} fill="#fff" stroke={INK} strokeWidth={5} />
+      ))}
+      <rect x={x - w / 2} y={y - h / 2} width={w} height={h} rx={Math.min(h / 2, 150)} fill="#fff" stroke={INK} strokeWidth={8} />
+      <text x={x} y={y - (lines.length - 1) * 31 + 16} textAnchor="middle" fontSize={50} fontWeight={800} fill={INK} fontFamily="Arial, sans-serif">
+        {lines.map((l, i) => (
+          <tspan key={i} x={x} dy={i === 0 ? 0 : 62}>{l}</tspan>
+        ))}
+      </text>
+    </g>
+  );
+};
+
+const Coins: React.FC<{f: number; label?: string}> = ({f, label}) => (
+  <g>
+    <ellipse cx={540} cy={1200} rx={220} ry={58} fill="#0a0b11" stroke={INK} strokeWidth={8} />
+    {Array.from({length: 6}, (_, i) => {
+      const t = ((f * 6 + i * 44) % 260) / 260;
+      const cy = 640 + t * 560;
+      const op = t > 0.86 ? (1 - t) / 0.14 : 1;
+      return (
+        <g key={i} opacity={op} transform={`translate(${540 + Math.sin(i * 2.1) * 130} ${cy})`}>
+          <circle r={38} fill="#ffcf3f" stroke={INK} strokeWidth={6} />
+          <circle r={20} fill="none" stroke={INK} strokeWidth={5} opacity={0.5} />
+        </g>
+      );
+    })}
+    {label ? (
+      <g transform="translate(540 440)">
+        <rect x={-280} y={-72} width={560} height={134} rx={16} fill="#c9412f" stroke={INK} strokeWidth={9} />
+        <text y={20} textAnchor="middle" fontSize={64} fontWeight={900} fill="#fff" fontFamily="Arial Black, Arial">{label}</text>
+      </g>
+    ) : null}
+  </g>
+);
+
+const Note: React.FC<{points?: string[]; label?: string}> = ({points, label}) => {
+  const pts = (points ?? []).slice(0, 3);
+  return (
+    <g>
+      <rect x={110} y={350} width={860} height={660} rx={22} fill="#f6f3e8" stroke={INK} strokeWidth={10} />
+      {label ? <text x={540} y={470} textAnchor="middle" fontSize={60} fontWeight={900} fill="#c9412f" fontFamily="Arial Black, Arial">{label}</text> : null}
+      {pts.map((p, i) => {
+        const lines = wrap(p, 24);
+        const baseY = (label ? 580 : 480) + i * 150;
+        return (
+          <g key={i}>
+            <circle cx={180} cy={baseY - 15} r={13} fill={INK} />
+            <text x={222} y={baseY} fontSize={46} fontWeight={700} fill={INK} fontFamily="Arial, sans-serif">
+              {lines.map((l, j) => (
+                <tspan key={j} x={222} dy={j === 0 ? 0 : 54}>{l}</tspan>
+              ))}
+            </text>
+          </g>
+        );
+      })}
+    </g>
+  );
+};
+
 const SceneArt: React.FC<{scene: StoryScene; f: number; len: number; accent: string}> = ({scene, f, len, accent}) => {
   const kind = scene.kind;
   const hero = {hair: scene.hair, coat: scene.coat, moustache: scene.moustache, old: scene.old};
@@ -557,6 +655,140 @@ const SceneArt: React.FC<{scene: StoryScene; f: number; len: number; accent: str
         ))}
         <circle cx={760} cy={360} r={150} fill="#f2ecd3" stroke={INK} strokeWidth={9} />
         <path d="M0 1320 Q540 1190 1080 1320 V1920 H0 Z" fill="#223044" stroke={INK} strokeWidth={9} />
+        <Stick x={540} y={1540} {...hero} look="happy" scale={1.05} armL={120} />
+      </g>
+    );
+  }
+
+  // ====== CONCEPT scenes — story-first explainers (mental models etc.) ======
+  if (kind === 'cstory') {
+    return (
+      <g>
+        <rect width={W} height={H} fill="#3b4a63" />
+        <rect y={1480} width={W} height={440} fill="#28334a" />
+        <rect x={160} y={1300} width={760} height={56} rx={14} fill="#6b5236" stroke={INK} strokeWidth={8} />
+        {scene.prop ? <GProp prop={scene.prop} x={820} y={1300} f={f} /> : null}
+        {scene.bubble ? <ThoughtCloud x={700} y={650} text={scene.bubble} /> : null}
+        <Stick x={400} y={1540} {...hero} look={scene.mood ?? 'neutral'} talking scale={1.1} armR={40} />
+        {scene.label ? <TopTag text={scene.label} /> : null}
+      </g>
+    );
+  }
+  if (kind === 'cthink') {
+    return (
+      <g>
+        <rect width={W} height={H} fill="#2a2f3e" />
+        <rect y={1500} width={W} height={420} fill="#191d28" />
+        {scene.bubble ? <ThoughtCloud x={540} y={620} text={scene.bubble} /> : null}
+        <Stick x={540} y={1600} {...hero} look={scene.mood ?? 'sad'} scale={1.05} />
+      </g>
+    );
+  }
+  if (kind === 'cdilemma') {
+    const opts: Array<[string | undefined, number, string]> = [
+      [scene.optL, 290, '#c9412f'],
+      [scene.optR, 790, '#2f7d4f'],
+    ];
+    return (
+      <g>
+        <rect width={W} height={H} fill="#38415a" />
+        <rect y={1500} width={W} height={420} fill="#232a3d" />
+        {opts.map(([text, x, color], k) =>
+          text ? (
+            <g key={k}>
+              <line x1={540} y1={1180} x2={x} y2={560} stroke="#ffffff66" strokeWidth={10} strokeDasharray="4 20" strokeLinecap="round" />
+              <g transform={`translate(${x} 470)`}>
+                <rect x={-210} y={-82} width={420} height={164} rx={18} fill={color} stroke={INK} strokeWidth={9} />
+                <text y={16} textAnchor="middle" fontSize={48} fontWeight={900} fill="#fff" fontFamily="Arial Black, Arial">
+                  {wrap(text, 12).map((l, i, a) => (
+                    <tspan key={i} x={0} dy={i === 0 ? (a.length > 1 ? -22 : 0) : 56}>{l}</tspan>
+                  ))}
+                </text>
+              </g>
+            </g>
+          ) : null,
+        )}
+        <Stick x={540} y={1560} {...hero} look="shock" scale={1.1} armL={60} armR={60} />
+      </g>
+    );
+  }
+  if (kind === 'cdrain') {
+    return (
+      <g>
+        <rect width={W} height={H} fill="#5a4a2e" />
+        <rect y={1480} width={W} height={440} fill="#3a2f1d" />
+        <Coins f={f} label={scene.label} />
+        <Stick x={885} y={1540} {...hero} look="sad" scale={0.95} />
+      </g>
+    );
+  }
+  if (kind === 'cterm') {
+    const defLines = scene.def ? wrap(scene.def, 26) : [];
+    const termLines = wrap(scene.term ?? '', 16);
+    return (
+      <g>
+        <rect width={W} height={H} fill="#12162a" />
+        {Array.from({length: 16}, (_, i) => {
+          const a = (i / 16) * Math.PI * 2 + f / 70;
+          return <line key={i} x1={540 + Math.cos(a) * 180} y1={540 + Math.sin(a) * 180} x2={540 + Math.cos(a) * 720} y2={540 + Math.sin(a) * 720} stroke={accent} strokeWidth={10} opacity={0.5} />;
+        })}
+        <g transform={`translate(540 540) scale(${pop})`}>
+          <rect x={-450} y={-150} width={900} height={300} rx={24} fill={accent} stroke={INK} strokeWidth={12} />
+          <text x={0} y={termLines.length > 1 ? -16 : 28} textAnchor="middle" fontSize={termLines.length > 1 ? 70 : 90} fontWeight={900} fill={INK} fontFamily="Arial Black, Arial">
+            {termLines.map((l, i) => (
+              <tspan key={i} x={0} dy={i === 0 ? 0 : 82}>{l}</tspan>
+            ))}
+          </text>
+        </g>
+        {defLines.length ? (
+          <text x={540} y={840} textAnchor="middle" fontSize={44} fontWeight={700} fill="#dfe3ee" fontFamily="Arial, sans-serif">
+            {defLines.map((l, i) => (
+              <tspan key={i} x={540} dy={i === 0 ? 0 : 54}>{l}</tspan>
+            ))}
+          </text>
+        ) : null}
+        <Stick x={540} y={1620} {...hero} look="happy" scale={1.0} armL={120} />
+      </g>
+    );
+  }
+  if (kind === 'cwhy') {
+    return (
+      <g>
+        <rect width={W} height={H} fill="#1f3a34" />
+        <rect y={1500} width={W} height={420} fill="#14241f" />
+        <Note points={scene.points} label={scene.label} />
+        <Stick x={540} y={1600} {...hero} look="neutral" talking scale={0.98} armR={55} />
+      </g>
+    );
+  }
+  if (kind === 'clesson') {
+    return (
+      <g>
+        <rect width={W} height={H} fill="#14306b" />
+        {scene.label ? (
+          <g transform={`translate(540 600) scale(${pop})`}>
+            <text x={0} y={0} textAnchor="middle" fontSize={76} fontWeight={900} fill="#fff" stroke={INK} strokeWidth={3} paintOrder="stroke" fontFamily="Arial Black, Arial">
+              {wrap(scene.label, 16).map((l, i) => (
+                <tspan key={i} x={0} dy={i === 0 ? 0 : 92}>{l}</tspan>
+              ))}
+            </text>
+          </g>
+        ) : null}
+        <rect y={1500} width={W} height={420} fill="#0e1f47" />
+        <Stick x={540} y={1600} {...hero} look="happy" scale={1.1} armL={140} armR={140} />
+      </g>
+    );
+  }
+  if (kind === 'coutro') {
+    return (
+      <g>
+        <rect width={W} height={H} fill="#141c44" />
+        {Array.from({length: 26}, (_, i) => (
+          <circle key={i} cx={rand(i + 8) * W} cy={rand(i + 60) * 950} r={4} fill="#fff" />
+        ))}
+        <circle cx={760} cy={340} r={140} fill="#f2ecd3" stroke={INK} strokeWidth={9} />
+        <path d="M0 1320 Q540 1190 1080 1320 V1920 H0 Z" fill="#223044" stroke={INK} strokeWidth={9} />
+        {scene.label ? <TopTag text={scene.label} /> : null}
         <Stick x={540} y={1540} {...hero} look="happy" scale={1.05} armL={120} />
       </g>
     );
@@ -1520,6 +1752,503 @@ const SceneArt: React.FC<{scene: StoryScene; f: number; len: number; accent: str
         <path d="M0 1340 Q540 1180 1080 1340 V1920 H0 Z" fill="#1b2e22" stroke={INK} strokeWidth={10} />
 
         <Stick x={540} y={1540} {...oldGalileo} look="happy" scale={1.15} armL={135} armR={135} />
+      </g>
+    );
+  }
+
+  const marie = {hair: '#453023', coat: '#242331', moustache: false};
+  const pierre = {hair: '#2c221a', coat: '#3a4454', moustache: true};
+  const soldier = {hair: '#2c221a', coat: '#4c5a30', moustache: false};
+
+  if (kind === 'curieHook') {
+    return (
+      <g>
+        {sky('#4a5568', '#2d3748')}
+
+        <rect x={60} y={280} width={140} height={1220} rx={10} fill="#718096" stroke={INK} strokeWidth={9} />
+        <rect x={880} y={280} width={140} height={1220} rx={10} fill="#718096" stroke={INK} strokeWidth={9} />
+        <rect x={40} y={250} width={180} height={50} rx={6} fill="#4a5568" stroke={INK} strokeWidth={7} />
+        <rect x={860} y={250} width={180} height={50} rx={6} fill="#4a5568" stroke={INK} strokeWidth={7} />
+
+        <rect x={200} y={350} width={680} height={1150} fill="none" stroke="#1a202c" strokeWidth={12} />
+        {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
+          <line key={i} x1={240 + i * 85} y1={350} x2={240 + i * 85} y2={1500} stroke="#1a202c" strokeWidth={10} />
+        ))}
+        <path d="M200 650 Q540 450 880 650" fill="none" stroke="#1a202c" strokeWidth={10} />
+        <path d="M200 950 Q540 750 880 950" fill="none" stroke="#1a202c" strokeWidth={10} />
+
+        <circle cx={540} cy={820} r={55} fill="#4a5568" stroke={INK} strokeWidth={8} />
+        <rect x={515} y={800} width={50} height={60} rx={6} fill="#ffd23f" stroke={INK} strokeWidth={6} />
+        <path d="M525 800 V775 Q540 760 555 775 V800" fill="none" stroke={INK} strokeWidth={6} />
+
+        <rect x={360} y={640} width={360} height={100} rx={14} fill="#801818" stroke={INK} strokeWidth={8} />
+        <text x={540} y={705} textAnchor="middle" fontSize={42} fontWeight={900} fill="#fff" fontFamily="Arial Black, Arial">
+          HANYA PRIA
+        </text>
+
+        <g transform={`translate(540 275) scale(${pop}) translate(-540 -275)`}>
+          <rect x={180} y={215} width={720} height={120} rx={18} fill="#7a1f1d" stroke={INK} strokeWidth={8} />
+          <text
+            x={540}
+            y={275}
+            textAnchor="middle"
+            dominantBaseline="central"
+            fontSize={56}
+            fontWeight={900}
+            fill="#ffd23f"
+            fontFamily="Arial Black, Arial"
+          >
+            DILARANG KULIAH
+          </text>
+        </g>
+
+        <Stick x={340} y={1540} {...marie} look="sad" scale={1.08} armR={25} armL={15} talking />
+        <circle cx={340} cy={1540 - 590 * 1.08} r={28} fill="#453023" stroke={INK} strokeWidth={6} />
+      </g>
+    );
+  }
+
+  if (kind === 'curieSecretClass') {
+    return (
+      <g>
+        <rect width={W} height={H} fill="#26211e" />
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <line key={i} x1={0} y1={i * 240 + 80} x2={W} y2={i * 240 + 80} stroke="#1b1715" strokeWidth={5} />
+        ))}
+        <rect y={1500} width={W} height={420} fill="#181412" />
+        <rect y={1492} width={W} height={12} fill={INK} />
+
+        <rect x={160} y={440} width={760} height={420} rx={14} fill="#183024" stroke="#63452f" strokeWidth={14} />
+        <text x={200} y={520} fontSize={44} fontWeight={900} fill="#e2f5ea" fontFamily="Arial Black, Arial">
+          E = mc²
+        </text>
+        <text x={420} y={520} fontSize={40} fontWeight={900} fill="#9fe6b8" fontFamily="Arial Black, Arial">
+          ATOM: U-92
+        </text>
+        <circle cx={260} cy={640} r={26} fill="none" stroke="#fff" strokeWidth={5} />
+        <circle cx={360} cy={600} r={18} fill="none" stroke="#fff" strokeWidth={4} />
+        <line x1={286} y1={630} x2={342} y2={606} stroke="#fff" strokeWidth={5} />
+        <circle cx={380} cy={700} r={22} fill="none" stroke="#fff" strokeWidth={4} />
+        <line x1={284} y1={650} x2={360} y2={690} stroke="#fff" strokeWidth={5} />
+        <text x={520} y={660} fontSize={38} fontWeight={900} fill="#ffd23f" fontFamily="Arial Black, Arial">
+          RADIOAKTIF?
+        </text>
+        <text x={200} y={790} fontSize={36} fontWeight={700} fill="#d1e7dd" fontFamily="monospace">
+          λ = h / p  (WARSAWA 1890)
+        </text>
+
+        <rect x={760} y={1180} width={180} height={32} fill="#69462f" stroke={INK} strokeWidth={7} />
+        <rect x={830} y={1212} width={30} height={288} fill="#4d3221" stroke={INK} strokeWidth={6} />
+        <rect x={835} y={1120} width={20} height={60} fill="#ede5d1" stroke={INK} strokeWidth={4} />
+        <ellipse cx={845} cy={1105} rx={9} ry={15} fill="#ffaa00" />
+        <circle cx={845} cy={1105} r={38} fill="#ffe680" opacity={0.25} />
+
+        <g transform={`translate(540 275) scale(${pop}) translate(-540 -275)`}>
+          <rect x={200} y={215} width={680} height={120} rx={18} fill="#17151e" stroke="#fff" strokeWidth={7} />
+          <text
+            x={540}
+            y={275}
+            textAnchor="middle"
+            dominantBaseline="central"
+            fontSize={54}
+            fontWeight={900}
+            fill="#ffd23f"
+            fontFamily="Arial Black, Arial"
+          >
+            KAMPUS RAHASIA
+          </text>
+        </g>
+
+        <Stick x={360} y={1540} {...marie} look="neutral" scale={1.05} armR={65} armL={20} talking />
+        <circle cx={360} cy={1540 - 590 * 1.05} r={28} fill="#453023" stroke={INK} strokeWidth={6} />
+
+        <Stick x={820} y={1540} hair="#6b5b4d" coat="#3a404a" look="happy" scale={0.95} armL={110} flip />
+      </g>
+    );
+  }
+
+  if (kind === 'curieParisAttic') {
+    return (
+      <g>
+        <rect width={W} height={H} fill="#232634" />
+        <path d="M0 180 L1080 720 V1500 H0 Z" fill="#1b1c27" />
+        <line x1={0} y1={180} x2={1080} y2={720} stroke="#3b3749" strokeWidth={24} />
+
+        <rect x={600} y={320} width={340} height={380} fill="#10192e" stroke={INK} strokeWidth={11} />
+        <line x1={770} y1={320} x2={770} y2={700} stroke={INK} strokeWidth={8} />
+        <line x1={600} y1={510} x2={940} y2={510} stroke={INK} strokeWidth={8} />
+        <Rain area={[610, 330, 320, 360]} count={16} />
+
+        <rect x={240} y={1160} width={520} height={42} fill="#694832" stroke={INK} strokeWidth={8} />
+        <rect x={280} y={1202} width={35} height={298} fill="#4d3221" stroke={INK} strokeWidth={7} />
+        <rect x={680} y={1202} width={35} height={298} fill="#4d3221" stroke={INK} strokeWidth={7} />
+
+        <ellipse cx={420} cy={1145} rx={38} ry={20} fill="#9c633a" stroke={INK} strokeWidth={6} />
+        <path d="M520 1135 H565 V1155 Q565 1162 542 1162 Q520 1162 520 1155 Z" fill="#e8e8ed" stroke={INK} strokeWidth={5} />
+        <path d="M535 1130 Q530 1110 538 1095" fill="none" stroke="#fff" opacity={0.6} strokeWidth={4} strokeLinecap="round" />
+
+        <rect x={610} y={1110} width={110} height={24} rx={3} fill="#a83232" stroke={INK} strokeWidth={5} />
+        <rect x={605} y={1134} width={120} height={26} rx={3} fill="#2f5a8a" stroke={INK} strokeWidth={5} />
+
+        <g transform={`translate(540 275) scale(${pop}) translate(-540 -275)`}>
+          <rect x={180} y={215} width={720} height={120} rx={18} fill="#1e3250" stroke="#fff" strokeWidth={7} />
+          <text
+            x={540}
+            y={275}
+            textAnchor="middle"
+            dominantBaseline="central"
+            fontSize={52}
+            fontWeight={900}
+            fill="#ffd23f"
+            fontFamily="Arial Black, Arial"
+          >
+            LOTENG DINGIN PARIS
+          </text>
+        </g>
+
+        <rect y={1500} width={W} height={420} fill="#14141d" />
+        <rect y={1492} width={W} height={12} fill={INK} />
+
+        <Stick x={310} y={1540} {...marie} look="neutral" scale={1.05} armR={50} talking />
+        <circle cx={310} cy={1540 - 590 * 1.05} r={28} fill="#453023" stroke={INK} strokeWidth={6} />
+      </g>
+    );
+  }
+
+  if (kind === 'curieShedLab') {
+    const dripY = (f * 18) % 650;
+    return (
+      <g>
+        <rect width={W} height={H} fill="#3b2b20" />
+        {[0, 1, 2, 3, 4].map((i) => (
+          <line key={i} x1={i * 220 + 80} y1={0} x2={i * 220 + 80} y2={1500} stroke="#2a1e16" strokeWidth={6} />
+        ))}
+        <rect y={1500} width={W} height={420} fill="#221711" />
+        <rect y={1492} width={W} height={12} fill={INK} />
+
+        <line x1={840} y1={350 + dripY} x2={840} y2={380 + dripY} stroke="#7cc8ee" strokeWidth={7} strokeLinecap="round" />
+        <rect x={810} y={1410} width={60} height={90} rx={6} fill="#697485" stroke={INK} strokeWidth={7} />
+
+        <rect x={420} y={1200} width={240} height={300} rx={8} fill="#803828" stroke={INK} strokeWidth={9} />
+        <rect x={480} y={1320} width={120} height={120} rx={30} fill="#ff4800" stroke={INK} strokeWidth={7} />
+        <ellipse cx={540} cy={1380} rx={35} ry={45} fill="#ffcc00" />
+
+        <ellipse cx={540} cy={1150} rx={170} ry={110} fill="#2a282f" stroke={INK} strokeWidth={11} />
+        <ellipse cx={540} cy={1100} rx={160} ry={50} fill="#47433f" stroke={INK} strokeWidth={8} />
+        {[0, 1, 2, 3].map((i) => (
+          <circle key={i} cx={450 + i * 60 + Math.sin(f / 3 + i) * 15} cy={1095 + (i % 2) * 10} r={12} fill="#706a65" />
+        ))}
+        {Array.from({length: 4}, (_, i) => {
+          const sy = ((f * 6 + i * 90) % 360);
+          return (
+            <ellipse
+              key={i}
+              cx={500 + i * 30 + Math.sin(f / 8 + i) * 20}
+              cy={1030 - sy}
+              rx={25 + i * 8}
+              ry={18 + i * 5}
+              fill="#ffffff35"
+            />
+          );
+        })}
+
+        <line x1={360} y1={1220} x2={520} y2={1080} stroke="#1b1a22" strokeWidth={14} strokeLinecap="round" />
+
+        <g transform={`translate(540 275) scale(${pop}) translate(-540 -275)`}>
+          <rect x={160} y={215} width={760} height={120} rx={18} fill="#17151e" stroke="#fff" strokeWidth={7} />
+          <text
+            x={540}
+            y={275}
+            textAnchor="middle"
+            dominantBaseline="central"
+            fontSize={52}
+            fontWeight={900}
+            fill="#ffd23f"
+            fontFamily="Arial Black, Arial"
+          >
+            GUDANG BIJIH MINERAL
+          </text>
+        </g>
+
+        <Stick x={260} y={1540} {...marie} look="neutral" scale={1.04} armR={115} armL={40} talking />
+        <circle cx={260} cy={1540 - 590 * 1.04} r={28} fill="#453023" stroke={INK} strokeWidth={6} />
+
+        <rect x={880} y={1350} width={120} height={150} rx={22} fill="#8c775a" stroke={INK} strokeWidth={8} />
+        <text x={940} y={1440} textAnchor="middle" fontSize={30} fontWeight={900} fill="#fff" fontFamily="Arial Black, Arial">
+          BIJIH
+        </text>
+        <Stick x={820} y={1540} {...pierre} look="happy" scale={1.04} armL={85} armR={35} flip />
+      </g>
+    );
+  }
+
+  if (kind === 'curieRadiumGlow') {
+    return (
+      <g>
+        <rect width={W} height={H} fill="#060e09" />
+
+        <circle cx={660} cy={760} r={280 + Math.sin(f / 6) * 20} fill="#52ff88" opacity={0.16} />
+        <circle cx={660} cy={760} r={180 + Math.sin(f / 6) * 12} fill="#52ff88" opacity={0.3} />
+        <circle cx={660} cy={760} r={90} fill="#b8ffce" opacity={0.5} />
+
+        {Array.from({length: 12}, (_, i) => {
+          const a = (i / 12) * Math.PI * 2 + f / 28;
+          return (
+            <line
+              key={i}
+              x1={660 + Math.cos(a) * 90}
+              y1={760 + Math.sin(a) * 90}
+              x2={660 + Math.cos(a) * 310}
+              y2={760 + Math.sin(a) * 310}
+              stroke="#52ff88"
+              strokeWidth={10}
+              strokeLinecap="round"
+              opacity={0.6}
+            />
+          );
+        })}
+
+        <rect x={280} y={980} width={560} height={36} fill="#14241b" stroke={INK} strokeWidth={8} />
+        <rect x={340} y={1016} width={30} height={484} fill="#0d1711" stroke={INK} strokeWidth={7} />
+        <rect x={770} y={1016} width={30} height={484} fill="#0d1711" stroke={INK} strokeWidth={7} />
+
+        <g transform="translate(420 980)">
+          <Flask x={0} y={0} fill="#38ef7d" level={0.55} />
+          <rect x={-90} y={-240} width={180} height={44} rx={10} fill="#0d2818" stroke="#38ef7d" strokeWidth={3} />
+          <text x={0} y={-210} textAnchor="middle" fontSize={26} fontWeight={900} fill="#fff" fontFamily="Arial Black, Arial">
+            POLONIUM
+          </text>
+        </g>
+
+        <g transform="translate(660 980) scale(1.15) translate(-660 -980)">
+          <Flask x={660} y={980} fill="#00ff66" level={0.75} />
+          <rect x={570} y={740} width={180} height={44} rx={10} fill="#0d2818" stroke="#52ff88" strokeWidth={4} />
+          <text x={660} y={770} textAnchor="middle" fontSize={28} fontWeight={900} fill="#52ff88" fontFamily="Arial Black, Arial">
+            RADIUM
+          </text>
+        </g>
+
+        <g transform={`translate(540 275) scale(${pop}) translate(-540 -275)`}>
+          <rect x={140} y={215} width={800} height={120} rx={18} fill="#092113" stroke="#52ff88" strokeWidth={7} />
+          <text
+            x={540}
+            y={275}
+            textAnchor="middle"
+            dominantBaseline="central"
+            fontSize={48}
+            fontWeight={900}
+            fill="#52ff88"
+            fontFamily="Arial Black, Arial"
+          >
+            BERCAHAYA DI KEGELAPAN
+          </text>
+        </g>
+
+        <rect y={1500} width={W} height={420} fill="#0a120c" />
+        <rect y={1492} width={W} height={12} fill={INK} />
+
+        <Stick x={220} y={1540} {...marie} look="shock" scale={1.08} armR={130} armL={45} />
+        <circle cx={220} cy={1540 - 590 * 1.08} r={28} fill="#453023" stroke={INK} strokeWidth={6} />
+
+        <Stick x={880} y={1540} {...pierre} look="happy" scale={1.05} armL={120} armR={40} flip />
+      </g>
+    );
+  }
+
+  if (kind === 'curieDoubleNobel') {
+    return (
+      <g>
+        <rect width={W} height={H} fill="#4a121c" />
+        {[0, 1, 2, 3, 4].map((i) => (
+          <rect key={i} x={i * 240 + 40} width={120} height={1500} fill="#360c14" />
+        ))}
+        <path d="M370 0 L150 1500 H590 Z" fill="#ffeaa7" opacity={0.16} />
+        <path d="M710 0 L490 1500 H930 Z" fill="#ffeaa7" opacity={0.16} />
+
+        <g transform="translate(370 720)">
+          <circle r={140} fill="#ffd23f" stroke={INK} strokeWidth={9} />
+          <circle r={120} fill="#ffc107" stroke="#b38600" strokeWidth={5} />
+          <text x={0} y={-30} textAnchor="middle" fontSize={42} fontWeight={900} fill={INK} fontFamily="Arial Black, Arial">
+            NOBEL
+          </text>
+          <text x={0} y={20} textAnchor="middle" fontSize={34} fontWeight={900} fill="#802000" fontFamily="Arial Black, Arial">
+            FISIKA
+          </text>
+          <text x={0} y={75} textAnchor="middle" fontSize={44} fontWeight={900} fill={INK} fontFamily="Arial Black, Arial">
+            1903
+          </text>
+        </g>
+
+        <g transform="translate(710 720)">
+          <circle r={140} fill="#ffd23f" stroke={INK} strokeWidth={9} />
+          <circle r={120} fill="#ffc107" stroke="#b38600" strokeWidth={5} />
+          <text x={0} y={-30} textAnchor="middle" fontSize={42} fontWeight={900} fill={INK} fontFamily="Arial Black, Arial">
+            NOBEL
+          </text>
+          <text x={0} y={20} textAnchor="middle" fontSize={34} fontWeight={900} fill="#802000" fontFamily="Arial Black, Arial">
+            KIMIA
+          </text>
+          <text x={0} y={75} textAnchor="middle" fontSize={44} fontWeight={900} fill={INK} fontFamily="Arial Black, Arial">
+            1911
+          </text>
+        </g>
+
+        <g transform={`translate(540 275) scale(${pop}) translate(-540 -275)`}>
+          <rect x={180} y={215} width={720} height={120} rx={18} fill="#ffd23f" stroke={INK} strokeWidth={8} />
+          <text
+            x={540}
+            y={275}
+            textAnchor="middle"
+            dominantBaseline="central"
+            fontSize={56}
+            fontWeight={900}
+            fill={INK}
+            fontFamily="Arial Black, Arial"
+          >
+            2 HADIAH NOBEL
+          </text>
+        </g>
+
+        <rect y={1500} width={W} height={420} fill="#24080e" />
+        <rect y={1492} width={W} height={12} fill={INK} />
+
+        <Stick x={540} y={1540} {...marie} look="happy" scale={1.12} armL={135} armR={135} talking />
+        <circle cx={540} cy={1540 - 590 * 1.12} r={28} fill="#453023" stroke={INK} strokeWidth={6} />
+      </g>
+    );
+  }
+
+  if (kind === 'curieAmbulance') {
+    return (
+      <g>
+        {sky('#556270', '#3b3126')}
+
+        <line x1={0} y1={1200} x2={W} y2={1200} stroke="#2c2825" strokeWidth={5} />
+        {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
+          <path key={i} d={`M${i * 140} 1180 L${i * 140 + 20} 1220 M${i * 140 + 20} 1180 L${i * 140} 1220`} stroke="#2c2825" strokeWidth={4} />
+        ))}
+
+        <g transform="translate(140 850)">
+          <rect x={0} y={120} width={480} height={280} rx={16} fill="#4a5840" stroke={INK} strokeWidth={9} />
+          <path d="M0 240 L-90 280 V400 H0 Z" fill="#3d4934" stroke={INK} strokeWidth={8} />
+          <rect x={-70} y={260} width={60} height={70} fill="#94c4d9" stroke={INK} strokeWidth={6} />
+          <g transform="translate(-30 400)">
+            <circle r={60} fill="#252427" stroke={INK} strokeWidth={8} />
+            <circle r={25} fill="#706d6b" stroke={INK} strokeWidth={6} />
+          </g>
+          <g transform="translate(390 400)">
+            <circle r={60} fill="#252427" stroke={INK} strokeWidth={8} />
+            <circle r={25} fill="#706d6b" stroke={INK} strokeWidth={6} />
+          </g>
+
+          <circle cx={240} cy={230} r={65} fill="#fff" stroke={INK} strokeWidth={6} />
+          <rect x={223} y={185} width={34} height={90} rx={4} fill="#d32f2f" />
+          <rect x={195} y={213} width={90} height={34} rx={4} fill="#d32f2f" />
+
+          <rect x={90} y={325} width={300} height={50} rx={8} fill="#1d2419" stroke="#fff" strokeWidth={4} />
+          <text x={240} y={360} textAnchor="middle" fontSize={30} fontWeight={900} fill="#fff" fontFamily="Arial Black, Arial">
+            PETITE CURIE
+          </text>
+        </g>
+
+        <g transform="translate(740 880)">
+          <rect x={0} y={0} width={260} height={320} rx={14} fill="#0d2430" stroke="#48cae4" strokeWidth={8} />
+          <path d="M130 50 V270" stroke="#caf0f8" strokeWidth={34} strokeLinecap="round" />
+          <circle cx={110} cy={50} r={18} fill="#caf0f8" />
+          <circle cx={150} cy={50} r={18} fill="#caf0f8" />
+          <circle cx={110} cy={270} r={18} fill="#caf0f8" />
+          <circle cx={150} cy={270} r={18} fill="#caf0f8" />
+          <circle cx={145} cy={160} r={12} fill="#ff3333" stroke="#fff" strokeWidth={4} />
+          <text x={130} y={305} textAnchor="middle" fontSize={26} fontWeight={900} fill="#48cae4" fontFamily="Arial Black, Arial">
+            RONTGEN X-RAY
+          </text>
+        </g>
+
+        <g transform={`translate(540 275) scale(${pop}) translate(-540 -275)`}>
+          <rect x={160} y={215} width={760} height={120} rx={18} fill="#17151e" stroke="#fff" strokeWidth={7} />
+          <text
+            x={540}
+            y={275}
+            textAnchor="middle"
+            dominantBaseline="central"
+            fontSize={50}
+            fontWeight={900}
+            fill="#ffd23f"
+            fontFamily="Arial Black, Arial"
+          >
+            MOBIL RONTGEN KELILING
+          </text>
+        </g>
+
+        <Stick x={210} y={1540} {...marie} look="happy" scale={1.05} armR={95} armL={30} talking />
+        <circle cx={210} cy={1540 - 590 * 1.05} r={28} fill="#453023" stroke={INK} strokeWidth={6} />
+
+        <Stick x={900} y={1540} {...soldier} look="happy" scale={0.92} armL={45} flip />
+        <rect x={870} y={1540 - 530 * 0.92} width={65} height={26} rx={6} fill="#fff" stroke={INK} strokeWidth={5} />
+      </g>
+    );
+  }
+
+  if (kind === 'curieEnd') {
+    return (
+      <g>
+        <rect width={W} height={H} fill="#050a12" />
+
+        {Array.from({length: 44}, (_, i) => (
+          <circle
+            key={i}
+            cx={rand(i * 17) * W}
+            cy={rand(i * 31) * 1250}
+            r={3 + rand(i) * 5}
+            fill="#fff"
+            opacity={0.35 + Math.sin(f / 5 + i) * 0.45}
+          />
+        ))}
+
+        <path d="M0 650 Q270 450 540 650 T1080 650" fill="none" stroke="#52ff88" opacity={0.22} strokeWidth={80} />
+        <path d="M0 750 Q270 550 540 750 T1080 750" fill="none" stroke="#48cae4" opacity={0.18} strokeWidth={70} />
+
+        <ellipse
+          cx={540}
+          cy={680}
+          rx={340}
+          ry={140}
+          fill="none"
+          stroke="#52ff88"
+          strokeWidth={7}
+          strokeDasharray="18 14"
+          transform="rotate(-30 540 680)"
+        />
+        <ellipse
+          cx={540}
+          cy={680}
+          rx={340}
+          ry={140}
+          fill="none"
+          stroke="#7fd4ff"
+          strokeWidth={7}
+          strokeDasharray="18 14"
+          transform="rotate(30 540 680)"
+        />
+        <ellipse
+          cx={540}
+          cy={680}
+          rx={340}
+          ry={140}
+          fill="none"
+          stroke="#ffd23f"
+          strokeWidth={7}
+          strokeDasharray="18 14"
+          transform="rotate(90 540 680)"
+        />
+
+        <circle cx={540} cy={680} r={46} fill="#ffd23f" stroke={INK} strokeWidth={7} />
+        <circle cx={540} cy={680} r={80} fill="#ffd23f" opacity={0.25} />
+
+        <path d="M0 1340 Q540 1180 1080 1340 V1920 H0 Z" fill="#152b1b" stroke={INK} strokeWidth={10} />
+
+        <Stick x={540} y={1540} {...marie} look="happy" scale={1.15} armL={140} armR={140} />
+        <circle cx={540} cy={1540 - 590 * 1.15} r={30} fill="#453023" stroke={INK} strokeWidth={6} />
       </g>
     );
   }
