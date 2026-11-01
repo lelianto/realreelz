@@ -1,89 +1,96 @@
 {
   "template": "stickman",
-  "name": "SUNK COST",
-  "title": "Sunk Cost Fallacy",
-  "script": "Kamu nonton film di bioskop. Baru lima belas menit, filmnya ternyata membosankan. Tapi kamu sudah terlanjur bayar tiket, jadi kamu memaksakan diri bertahan sampai habis. Pernah begitu? Padahal uang tiketmu tidak akan kembali, mau kamu tonton atau tidak. Tetap duduk hanya membuatmu rugi dua kali, uang dan waktu. Inilah yang disebut sunk cost fallacy, jebakan biaya hangus. Otak kita benci merasa sia-sia, jadi kita terus melanjutkan hal yang sudah jelas merugikan, hanya karena sudah terlanjur berkorban. Kita selalu melihat ke belakang, bukan ke depan. Padahal keputusan yang baik harusnya hanya memikirkan masa depan. Biaya yang sudah hilang, biarkan hilang. Jadi lain kali, jangan bertanya sudah berapa banyak yang kukeluarkan. Tanyakan, apakah ini masih layak kulanjutkan?",
+  "name": "DUNNING-KRUGER",
+  "title": "Dunning-Kruger Effect",
+  "script": "Kamu baru menonton dua video tentang suatu topik, lalu tiba-tiba merasa sudah menjadi ahli. Kamu mulai percaya diri, merasa paham segalanya, bahkan berani mendebat siapa pun. Tapi begitu masuk lebih dalam, kamu sadar ternyata masalahnya jauh lebih rumit dari yang kamu bayangkan. Fenomena ini disebut efek Dunning Kruger. Orang yang baru tahu sedikit justru paling percaya diri, sementara para ahli sejati malah sering ragu. Kenapa bisa begitu? Karena untuk benar-benar menyadari betapa sedikitnya yang kita pahami, kita justru butuh lebih banyak ilmu. Semakin dangkal pengetahuan, semakin besar rasa percaya diri yang keliru. Jadi, makin banyak kamu belajar, makin kamu sadar betapa luasnya hal yang belum kamu ketahui. Itu bukan kelemahan, itu tanda kamu makin bijak. Lain kali sebelum merasa paling benar, tanyakan, apakah aku benar-benar paham, atau baru tahu kulitnya saja?",
   "elevenVoiceId": "nPczCjzI2devNBz1zQrb",
   "elevenStability": 0.45,
   "elevenStyle": 0.2,
   "music": "music.mp3",
   "musicVolume": 0.08,
   "accent": "#ffd23f",
-  "captionFixes": {},
+  "captionFixes": {
+    "Daning": "Dunning",
+    "effekt": "efek"
+  },
   "keywords": [
-    "bioskop",
-    "terlanjur",
-    "kembali",
-    "rugi",
-    "hangus",
-    "sia-sia",
-    "depan",
-    "layak"
+    "ahli",
+    "percaya",
+    "dalam",
+    "rumit",
+    "sedikit",
+    "ragu",
+    "dangkal",
+    "belajar",
+    "bijak",
+    "paham"
   ],
   "storyScenes": [
     {
       "kind": "cstory",
       "cue": null,
-      "label": "Di bioskop",
-      "bubble": "Filmnya ngebosenin...",
-      "mood": "sad",
+      "label": "Baru belajar",
+      "bubble": "Gampang, aku paham semua!",
+      "mood": "happy",
       "hair": "#2a2320",
       "moustache": false
     },
     {
       "kind": "cthink",
-      "cue": "terlanjur",
-      "bubble": "Udah bayar, sayang kalau pergi",
-      "mood": "sad",
+      "cue": "percaya",
+      "bubble": "Aku sudah jago banget",
+      "mood": "happy",
       "hair": "#2a2320",
       "moustache": false
     },
     {
-      "kind": "cdrain",
-      "cue": "kembali",
-      "label": "Rp 50.000",
-      "hair": "#2a2320",
-      "moustache": false
-    },
-    {
-      "kind": "cdilemma",
-      "cue": "rugi",
-      "optL": "Tetap nonton",
-      "optR": "Pergi aja",
+      "kind": "cstory",
+      "cue": "dalam",
+      "label": "Kenyataan",
+      "bubble": "Kok ternyata serumit ini?",
+      "mood": "shock",
       "hair": "#2a2320",
       "moustache": false
     },
     {
       "kind": "cterm",
       "cue": "disebut",
-      "term": "SUNK COST FALLACY",
-      "def": "Biaya yang sudah hangus, tak akan kembali",
+      "term": "DUNNING-KRUGER",
+      "def": "Makin sedikit tahu, makin pede merasa ahli",
+      "hair": "#2a2320",
+      "moustache": false
+    },
+    {
+      "kind": "cdilemma",
+      "cue": "justru",
+      "optL": "Pemula: PEDE",
+      "optR": "Ahli: RAGU",
       "hair": "#2a2320",
       "moustache": false
     },
     {
       "kind": "cwhy",
-      "cue": "benci",
-      "label": "KENAPA TERJEBAK?",
+      "cue": "menyadari",
+      "label": "KENAPA BEGITU?",
       "points": [
-        "Otak benci merasa sia-sia",
-        "Fokus ke masa lalu, bukan depan",
-        "Lanjut demi 'pengorbanan'"
+        "Tahu sedikit, ngerasa tahu semua",
+        "Sadar belum tahu butuh ilmu lebih",
+        "Makin dangkal, makin pede keliru"
       ],
       "hair": "#2a2320",
       "moustache": false
     },
     {
       "kind": "clesson",
-      "cue": "memikirkan",
-      "label": "Biaya hangus? Relakan.",
+      "cue": "belajar",
+      "label": "Makin tahu, makin rendah hati",
       "hair": "#2a2320",
       "moustache": false
     },
     {
       "kind": "coutro",
-      "cue": "lain",
-      "label": "Masih layak dilanjutkan?",
+      "cue": "Lain",
+      "label": "Paham, atau baru kulitnya?",
       "hair": "#2a2320",
       "moustache": false
     }
