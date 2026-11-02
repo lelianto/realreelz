@@ -1,0 +1,23 @@
+{
+  "template": "stickman",
+  "name": "HEDY LAMARR",
+  "title": "Hedy Lamarr",
+  "script": "Di era keemasan Hollywood, Hedy Lamarr dijuluki perempuan tercantik di dunia. Tapi di balik lampu sorot, hidupnya terkurung. Suami pertamanya seorang pedagang senjata yang sangat posesif, melarangnya bekerja dan mengawasi setiap langkahnya di rumah mewah mereka. Hedy merasa seperti burung dalam sangkar emas. Konon pada suatu malam, dia menyamar dan diam-diam kabur dari rumah itu demi mengejar kebebasannya. Yang tak banyak orang tahu, di balik wajah cantiknya tersembunyi otak seorang penemu. Saat perang berkecamuk, dia merancang sistem lompat frekuensi untuk memandu torpedo agar tak bisa diganggu musuh. Idenya diabaikan selama puluhan tahun. Padahal gagasan itu kini menjadi dasar teknologi wifi dan bluetooth yang kita pakai setiap hari. Dia memang cantik, tapi yang abadi justru kecerdasannya.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#c98bff",
+  "hue": 280,
+  "hair": "#1a1714",
+  "moustache": false,
+  "captionFixes": {"frekwensi": "frekuensi", "wifai": "wifi", "keamasan": "keemasan", "Lamar": "Lamarr", "posisif": "posesif", "sangka": "sangkar", "remas": "emas", "diambiam": "diam-diam", "diganggung": "diganggu", "Ideanya": "Idenya"},
+  "keywords": ["Hollywood", "tercantik", "terkurung", "kabur", "frekuensi", "wifi", "kecerdasan"],
+  "storyScenes": [
+    {"kind": "gportrait", "cue": null, "label": "Hedy Lamarr"},
+    {"kind": "cdilemma", "cue": "terkurung", "optL": "Terkenal", "optR": "Terkurung"},
+    {"kind": "gescape", "cue": "kabur"},
+    {"kind": "gidea", "cue": "merancang", "label": "LOMPAT FREKUENSI"},
+    {"kind": "gimpact", "cue": "wifi"},
+    {"kind": "gquote", "cue": "abadi", "label": "Kecantikan memudar, kecerdasan abadi", "mood": "neutral"}
+  ]
+}

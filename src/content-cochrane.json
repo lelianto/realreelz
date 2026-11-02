@@ -1,0 +1,23 @@
+{
+  "template": "stickman",
+  "name": "JOSEPHINE COCHRANE",
+  "title": "Josephine Cochrane",
+  "script": "Josephine Cochrane adalah seorang nyonya kaya yang gemar mengadakan jamuan makan. Tapi dia kesal karena pelayannya sering memecahkan piring porselen mahal warisan keluarganya. Saat suaminya meninggal, dia justru mewarisi tumpukan utang yang besar. Daripada menyerah, dia berkata, kalau tidak ada yang mau membuatnya, maka aku yang akan membuatnya sendiri. Di sebuah gudang, dia merancang mesin yang menyemprotkan air untuk mencuci piring secara otomatis. Dia mengukur setiap piring agar pas di dalam rak kawat buatannya. Mesin cuci piring praktis pertama di dunia pun lahir dari tangan seorang perempuan. Pada Pameran Dunia tahun seribu delapan ratus sembilan puluh tiga, mesinnya memenangkan penghargaan dan membuat semua orang takjub. Kini, mesin cuci piring ada di jutaan dapur di seluruh dunia.",
+  "edgeVoiceId": "id-ID-GadisNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#ff7be6",
+  "hue": 300,
+  "hair": "#241a20",
+  "moustache": false,
+  "captionFixes": {"Josep": "Josephine", "Hine": "", "rakawat": "rak kawat"},
+  "keywords": ["jamuan", "piring", "utang", "sendiri", "mesin", "Pameran", "dapur"],
+  "storyScenes": [
+    {"kind": "gkitchen", "cue": null},
+    {"kind": "cdrain", "cue": "utang", "label": "Warisan utang"},
+    {"kind": "gidea", "cue": "sendiri", "label": "BIKIN SENDIRI"},
+    {"kind": "gwork", "cue": "merancang", "label": "MESIN CUCI PIRING"},
+    {"kind": "fair", "cue": "Pameran"},
+    {"kind": "gimpact", "cue": "jutaan"}
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "template": "stickman",
+  "name": "GUGLIELMO MARCONI",
+  "title": "Guglielmo Marconi",
+  "script": "Semua orang tahu kisah tenggelamnya Titanic. Tapi sedikit yang tahu bahwa Guglielmo Marconi, penemu radio nirkabel, sebenarnya ditawari tiket gratis di kapal nahas itu. Beruntung, dia memilih berangkat lebih awal dengan kapal lain beberapa hari sebelumnya. Marconi adalah pria yang sejak muda terobsesi mengirim pesan tanpa kabel menembus lautan. Banyak yang menertawakan idenya sebagai mimpi yang mustahil. Namun pada malam Titanic menabrak gunung es, justru alat ciptaannyalah yang menyelamatkan ratusan nyawa. Operator radio di kapal mengirim sinyal darurat, lalu kapal terdekat datang menolong lebih dari tujuh ratus orang. Teknologi yang dulu ditertawakan ternyata menjadi penjaga keselamatan di lautan. Kadang penemuan yang dianggap sia-sia justru lahir untuk menyelamatkan.",
+  "edgeVoiceId": "id-ID-GadisNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#4db6ff",
+  "hue": 200,
+  "hair": "#2a241e",
+  "moustache": true,
+  "captionFixes": {"nirkabe": "nirkabel", "titanik": "Titanic", "titanic": "Titanic", "Google": "Guglielmo", "Elmo": "", "radionir": "radio", "kabel": "nirkabel", "pesantan": "pesan tanpa", "pakabel": "kabel", "S": "es", "ala": "alat", "cipta": "ciptaannyalah", "anyalah": ""},
+  "keywords": ["Titanic", "tiket", "radio", "nirkabel", "lautan", "menyelamatkan", "nyawa"],
+  "storyScenes": [
+    {"kind": "gship", "cue": null},
+    {"kind": "gportrait", "cue": "Marconi", "label": "Guglielmo Marconi"},
+    {"kind": "gidea", "cue": "terobsesi", "label": "RADIO NIRKABEL"},
+    {"kind": "gimpact", "cue": "menyelamatkan"},
+    {"kind": "clesson", "cue": "Kadang", "label": "Yang ditertawakan bisa menyelamatkan"}
+  ]
+}

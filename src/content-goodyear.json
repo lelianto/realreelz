@@ -1,0 +1,22 @@
+{
+  "template": "stickman",
+  "name": "CHARLES GOODYEAR",
+  "title": "Charles Goodyear",
+  "script": "Charles Goodyear punya satu obsesi yang nyaris menghancurkan hidupnya, yaitu menyempurnakan karet. Pada masa itu karet tak berguna, lengket saat panas dan retak saat dingin. Goodyear yakin dia bisa memperbaikinya, dan dia rela menghabiskan setiap sen yang dia punya. Dia berkali-kali dipenjara karena utang, bahkan terus bereksperimen dari balik jeruji. Keluarganya jatuh miskin dan kelaparan. Lalu suatu hari, secara tak sengaja dia menjatuhkan campuran karet dan belerang ke atas tungku yang panas. Ajaibnya, karet itu justru mengeras sempurna dan tahan panas. Itulah proses vulkanisasi yang kelak mengubah dunia. Tapi ironisnya, Goodyear sendiri meninggal dengan utang yang sangat besar. Perusahaan ban terkenal yang memakai namanya pun baru berdiri puluhan tahun setelah dia tiada, tanpa kaitan apa pun dengannya.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#ff6a4d",
+  "hue": 10,
+  "hair": "#241c18",
+  "moustache": true,
+  "captionFixes": {"vulkanisai": "vulkanisasi", "beleran": "belerang", "Carus": "Charles", "Godiar": "Goodyear", "karetta": "karet tak", "tersengaja": "tak sengaja", "fulcanisasi": "vulkanisasi"},
+  "keywords": ["obsesi", "karet", "dipenjara", "utang", "belerang", "vulkanisasi", "ironisnya"],
+  "storyScenes": [
+    {"kind": "messyLab", "cue": null},
+    {"kind": "gjail", "cue": "penjara"},
+    {"kind": "gbreakthrough", "cue": "mengeras", "label": "VULKANISASI"},
+    {"kind": "cdrain", "cue": "ironisnya", "label": "Utang besar"},
+    {"kind": "clesson", "cue": "Perusahaan", "label": "Namanya terkenal, dirinya terlupakan"}
+  ]
+}

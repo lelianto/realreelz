@@ -1,0 +1,22 @@
+{
+  "template": "stickman",
+  "name": "RUDOLF DIESEL",
+  "title": "Rudolf Diesel",
+  "script": "Pada malam tanggal dua puluh sembilan September seribu sembilan ratus tiga belas, Rudolf Diesel naik kapal menyeberangi selat menuju Inggris. Dia makan malam dengan tenang, lalu masuk ke kabinnya. Keesokan paginya, kabin itu kosong. Rudolf Diesel lenyap tanpa jejak di tengah lautan. Padahal dialah penemu mesin diesel yang namanya kini dipakai di seluruh dunia. Mesin ciptaannya jauh lebih hemat dan kuat, menggerakkan kapal, truk, dan juga kereta. Tapi anehnya, meski penemuannya begitu terkenal, Diesel justru terlilit utang yang menumpuk menjelang kematiannya. Sampai hari ini, tidak ada yang tahu pasti apa yang terjadi malam itu. Apakah dia terjatuh, mengakhiri hidupnya, atau dibunuh karena rahasia mesinnya. Hilangnya sang penemu tetap menjadi misteri yang tak pernah terpecahkan.",
+  "edgeVoiceId": "id-ID-GadisNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#7b86ff",
+  "hue": 240,
+  "hair": "#241f1a",
+  "moustache": true,
+  "captionFixes": {"disel": "diesel", "Keseokan": "Keesokan", "lenyaptan": "lenyap", "mengahiri": "mengakhiri", "menggerakan": "menggerakkan"},
+  "keywords": ["kapal", "lenyap", "lautan", "diesel", "mesin", "utang", "misteri"],
+  "storyScenes": [
+    {"kind": "gnews", "cue": null, "label": "PENEMU HILANG DI LAUT"},
+    {"kind": "gportrait", "cue": "Padahal", "label": "Rudolf Diesel"},
+    {"kind": "gwork", "cue": "hemat", "label": "MESIN DIESEL"},
+    {"kind": "cdrain", "cue": "terlilit", "label": "Terlilit utang"},
+    {"kind": "gquote", "cue": "misteri", "label": "Hilangnya tetap jadi misteri", "mood": "sad"}
+  ]
+}

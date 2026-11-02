@@ -1,0 +1,22 @@
+{
+  "template": "stickman",
+  "name": "WILHELM RONTGEN",
+  "title": "Wilhelm Rontgen",
+  "script": "Pada suatu malam di tahun seribu delapan ratus sembilan puluh lima, Wilhelm Rontgen bekerja sendirian di laboratoriumnya. Tanpa sengaja dia menemukan sinar misterius yang bisa menembus benda padat, sesuatu yang belum pernah dilihat siapa pun. Untuk membuktikannya, dia meminta istrinya meletakkan tangan di depan sebuah pelat. Saat bayangan muncul, sang istri melihat tulang tangannya sendiri lengkap dengan cincin pernikahannya. Konon dengan ngeri dia berkata, aku telah melihat kematianku. Penemuan itu mengguncang dunia kedokteran. Tapi Rontgen justru menolak mematenkannya. Dia percaya temuan ini milik seluruh umat manusia dan harus bisa dipakai siapa saja secara gratis. Dia bahkan menyumbangkan uang hadiahnya. Hingga kini, sinar X menyelamatkan jutaan nyawa setiap hari.",
+  "edgeVoiceId": "id-ID-GadisNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#2fd0a8",
+  "hue": 160,
+  "hair": "#2e2922",
+  "moustache": true,
+  "captionFixes": {"kematianmu": "kematianku", "Rönggen": "Röntgen", "pelak": "pelat", "seng": "sang", "menolat": "menolak"},
+  "keywords": ["malam", "sinar", "tulang", "cincin", "kematianku", "gratis", "nyawa"],
+  "storyScenes": [
+    {"kind": "gwork", "cue": null, "prop": "flask"},
+    {"kind": "gxray", "cue": "meletakkan"},
+    {"kind": "gquote", "cue": "kematianku", "label": "Aku telah melihat kematianku", "mood": "shock"},
+    {"kind": "ggive", "cue": "gratis"},
+    {"kind": "coutro", "cue": "menyelamatkan", "label": "Sinar X menyelamatkan jutaan nyawa"}
+  ]
+}

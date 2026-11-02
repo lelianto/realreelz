@@ -906,6 +906,236 @@ const SceneArt: React.FC<{scene: StoryScene; f: number; len: number; accent: str
     );
   }
 
+  // ====== GENERIC human-interest scenes (added for the "lives" series) ======
+  // All hue-aware, all keep a visible stickman, read `scene.label`/`mood`.
+  if (kind === 'galone') {
+    // a lone figure in a vast dark room, one faint shaft of light from a window
+    const flick = 0.07 + Math.sin(f / 9) * 0.015;
+    return (
+      <g>
+        <rect width={W} height={H} fill={bgc(225, 16, 9)} />
+        <rect y={1520} width={W} height={400} fill={bgc(225, 14, 6)} />
+        <rect y={1512} width={W} height={10} fill={INK} />
+        <rect x={690} y={150} width={300} height={600} fill={bgc(210, 34, 20)} stroke={INK} strokeWidth={12} />
+        <path d="M840 150 V750 M690 450 H990" stroke={INK} strokeWidth={9} />
+        <path d="M690 750 L990 750 L900 1520 L560 1520 Z" fill="#ffe9b0" opacity={flick} />
+        <Stick x={430} y={1560} {...hero} look={scene.mood ?? 'sad'} scale={1.12} />
+      </g>
+    );
+  }
+  if (kind === 'gbird') {
+    return (
+      <g>
+        <rect width={W} height={H} fill={bgc(214, 30, 22)} />
+        <circle cx={840} cy={400} r={150} fill="#f2ecd3" opacity={0.55} stroke={INK} strokeWidth={6} />
+        <Bird x={720} y={520} seed={f} />
+        <Bird x={910} y={610} seed={f + 7} />
+        <Bird x={300} y={650} seed={f + 3} flip />
+        <rect y={1500} width={W} height={420} fill={bgc(220, 32, 14)} />
+        <Stick x={540} y={1570} {...hero} look="happy" scale={1.12} armL={46} armR={46} />
+        <g transform="translate(540 1232)">
+          <ellipse cx={0} cy={0} rx={48} ry={30} fill="#f5f3ea" stroke={INK} strokeWidth={6} />
+          <circle cx={40} cy={-20} r={21} fill="#f5f3ea" stroke={INK} strokeWidth={6} />
+          <path d="M58 -22 l24 7 l-24 9 Z" fill="#e2a33a" stroke={INK} strokeWidth={3} />
+          <circle cx={44} cy={-24} r={4} fill={INK} />
+        </g>
+      </g>
+    );
+  }
+  if (kind === 'gquote') {
+    const lines = wrap(scene.label ?? '', 18);
+    const startY = 720 - (lines.length - 1) * 46;
+    return (
+      <g>
+        <rect width={W} height={H} fill={bgc(232, 22, 13)} />
+        <text x={150} y={520} fontSize={300} fontWeight={900} fill={accent} opacity={0.4} fontFamily="Georgia, serif">&#8220;</text>
+        <text x={540} y={startY} textAnchor="middle" fontSize={78} fontWeight={900} fill="#fff" fontFamily="Georgia, serif" fontStyle="italic">
+          {lines.map((l, i) => (
+            <tspan key={i} x={540} dy={i === 0 ? 0 : 92}>{l}</tspan>
+          ))}
+        </text>
+        <Stick x={540} y={1620} {...hero} look={scene.mood ?? 'sad'} scale={0.86} />
+      </g>
+    );
+  }
+  if (kind === 'gnews') {
+    const head = wrap(scene.label ?? '', 16);
+    return (
+      <g>
+        <rect width={W} height={H} fill={bgc(28, 16, 26)} />
+        <g transform="translate(540 700) rotate(-3)">
+          <rect x={-430} y={-560} width={860} height={1120} fill="#efe9da" stroke={INK} strokeWidth={10} />
+          <text x={0} y={-470} textAnchor="middle" fontSize={52} fontWeight={900} fill={INK} fontFamily="Georgia, serif" letterSpacing={4}>KABAR HARIAN</text>
+          <line x1={-390} y1={-432} x2={390} y2={-432} stroke={INK} strokeWidth={5} />
+          <text x={0} y={-330} textAnchor="middle" fontSize={76} fontWeight={900} fill="#9b1d1d" fontFamily="Arial Black, Arial">
+            {head.map((l, i) => (
+              <tspan key={i} x={0} dy={i === 0 ? 0 : 86}>{l}</tspan>
+            ))}
+          </text>
+          {Array.from({length: 7}, (_, i) => (
+            <line key={i} x1={-380} y1={-120 + i * 68} x2={380} y2={-120 + i * 68} stroke="#b9b3a3" strokeWidth={9} />
+          ))}
+          <rect x={-380} y={360} width={340} height={180} fill="#d9d3c3" stroke={INK} strokeWidth={5} />
+        </g>
+        <Stick x={250} y={1720} {...hero} look="shock" scale={0.72} />
+      </g>
+    );
+  }
+  if (kind === 'gship') {
+    const sway = Math.sin(f / 22) * 10;
+    return (
+      <g>
+        <rect width={W} height={H} fill={bgc(220, 46, 12)} />
+        {Array.from({length: 40}, (_, i) => (
+          <circle key={i} cx={rand(i + 4) * W} cy={rand(i + 40) * 900} r={3} fill="#fff" opacity={0.8} />
+        ))}
+        <circle cx={300} cy={330} r={120} fill="#f2ecd3" opacity={0.85} stroke={INK} strokeWidth={6} />
+        <rect y={1180} width={W} height={740} fill={bgc(220, 52, 18)} />
+        {Array.from({length: 6}, (_, i) => (
+          <path key={i} d={`M0 ${1250 + i * 120} Q270 ${1230 + i * 120} 540 ${1250 + i * 120} T1080 ${1250 + i * 120}`} fill="none" stroke={bgc(220, 40, 30)} strokeWidth={8} opacity={0.7} />
+        ))}
+        <g transform={`translate(540 ${1130 + sway}) rotate(${sway * 0.15})`}>
+          <path d="M-370 40 L370 40 L300 150 L-300 150 Z" fill="#141b2e" stroke={INK} strokeWidth={9} />
+          <rect x={-300} y={-30} width={600} height={72} fill="#1d2740" stroke={INK} strokeWidth={8} />
+          {[-180, -60, 60, 180].map((fx) => (
+            <rect key={fx} x={fx - 28} y={-150} width={56} height={120} rx={8} fill="#3a2320" stroke={INK} strokeWidth={7} />
+          ))}
+          {[-250, -170, -90, -10, 70, 150, 230].map((px) => (
+            <circle key={px} cx={px} cy={10} r={11} fill="#ffd76a" />
+          ))}
+          <Stick x={-20} y={-30} {...hero} look="neutral" scale={0.34} />
+        </g>
+      </g>
+    );
+  }
+  if (kind === 'gxray') {
+    const glow = 0.5 + Math.sin(f / 7) * 0.12;
+    const fingers: [number, number][] = [
+      [-120, -140],
+      [-60, -170],
+      [0, -180],
+      [60, -170],
+      [118, -150],
+    ];
+    return (
+      <g>
+        <rect width={W} height={H} fill={bgc(192, 42, 9)} />
+        <g transform="translate(600 760)">
+          <rect x={-240} y={-320} width={480} height={660} rx={22} fill={bgc(186, 60, 20)} stroke={accent} strokeWidth={10} opacity={0.92} />
+          <circle r={260} fill="#bfe8ff" opacity={0.12 * (glow / 0.5)} />
+          <g stroke="#eaf6ff" strokeWidth={13} strokeLinecap="round" fill="none" opacity={0.92}>
+            <path d="M-70 300 L-50 150 M70 300 L50 150" />
+            {fingers.map(([fx, fy], i) => (
+              <g key={i}>
+                <line x1={fx * 0.5} y1={140} x2={fx} y2={fy} />
+                <line x1={fx} y1={fy} x2={fx * 1.25} y2={fy - 120} />
+                <circle cx={fx} cy={fy} r={7} fill="#eaf6ff" />
+              </g>
+            ))}
+            <path d="M-80 150 Q0 120 80 150" />
+          </g>
+          <circle cx={-60} cy={-50} r={16} fill="none" stroke="#ffd76a" strokeWidth={9} />
+        </g>
+        <Stick x={210} y={1660} {...hero} look="shock" scale={0.86} />
+      </g>
+    );
+  }
+  if (kind === 'gescape') {
+    const step = interpolate(f, [0, Math.max(len, 1)], [0, 1], {extrapolateRight: 'clamp'});
+    const gx = interpolate(step, [0, 1], [430, 700]);
+    return (
+      <g>
+        <rect width={W} height={H} fill={bgc(265, 30, 9)} />
+        {Array.from({length: 24}, (_, i) => (
+          <circle key={i} cx={rand(i + 2) * W} cy={rand(i + 30) * 760} r={3} fill="#fff" opacity={0.7} />
+        ))}
+        <rect y={1500} width={W} height={420} fill={bgc(265, 22, 6)} />
+        <rect x={650} y={360} width={360} height={1150} fill={bgc(265, 24, 14)} stroke={INK} strokeWidth={10} />
+        <path d="M700 420 L980 420 L980 1500 L700 1500 Z" fill={bgc(45, 70, 36)} opacity={0.9} stroke={INK} strokeWidth={8} />
+        <path d="M700 420 L820 470 L820 1500 L700 1500 Z" fill={bgc(45, 55, 24)} stroke={INK} strokeWidth={6} />
+        <circle cx={1010} cy={320} r={110} fill="#f2ecd3" opacity={0.7} stroke={INK} strokeWidth={6} />
+        <Stick x={gx} y={1560} {...hero} walking look="shock" scale={1.02} />
+      </g>
+    );
+  }
+  if (kind === 'gfield') {
+    const vpx = 540;
+    const vpy = 820;
+    return (
+      <g>
+        <rect width={W} height={H} fill={bgc(96, 44, 58)} />
+        <circle cx={820} cy={320} r={110} fill="#ffe08a" opacity={0.85} />
+        <rect y={780} width={W} height={1140} fill={bgc(96, 42, 36)} />
+        {Array.from({length: 11}, (_, i) => {
+          const bx = (i / 10) * (W + 900) - 450;
+          return <line key={`f${i}`} x1={bx} y1={1920} x2={vpx} y2={vpy} stroke={bgc(96, 46, 28)} strokeWidth={10} opacity={0.75} />;
+        })}
+        {Array.from({length: 4}, (_, i) => {
+          const yy = vpy + 40 + i * i * 30;
+          return <line key={`h${i}`} x1={0} y1={yy} x2={W} y2={yy} stroke={bgc(96, 40, 30)} strokeWidth={6} opacity={0.5} />;
+        })}
+        <Stick x={330} y={1700} {...hero} look="neutral" scale={1.04} />
+      </g>
+    );
+  }
+  if (kind === 'ggive') {
+    const pulse = 0.22 + Math.sin(f / 8) * 0.06;
+    return (
+      <g>
+        <rect width={W} height={H} fill={bgc(44, 44, 26)} />
+        <rect y={1500} width={W} height={420} fill={bgc(40, 40, 16)} />
+        {Array.from({length: 14}, (_, i) => {
+          const a = (i / 14) * Math.PI * 2 + f / 60;
+          return <line key={i} x1={540 + Math.cos(a) * 130} y1={1150 + Math.sin(a) * 130} x2={540 + Math.cos(a) * 420} y2={1150 + Math.sin(a) * 420} stroke={accent} strokeWidth={10} strokeLinecap="round" opacity={0.5} />;
+        })}
+        <circle cx={540} cy={1150} r={210} fill={accent} opacity={pulse} />
+        <Stick x={540} y={1620} {...hero} look="happy" scale={1.1} armL={58} armR={58} />
+        <g transform="translate(540 1150)">
+          <circle r={74} fill="#fff3b0" stroke={INK} strokeWidth={7} />
+          <path d="M0 -34 C-30 -62 -74 -30 0 26 C74 -30 30 -62 0 -34 Z" fill="#e4572e" stroke={INK} strokeWidth={5} />
+        </g>
+      </g>
+    );
+  }
+  if (kind === 'gjail') {
+    return (
+      <g>
+        <rect width={W} height={H} fill={bgc(30, 12, 16)} />
+        <rect y={1500} width={W} height={420} fill={bgc(30, 10, 9)} />
+        <rect x={360} y={220} width={360} height={360} fill={bgc(220, 30, 18)} stroke={INK} strokeWidth={12} />
+        {[0, 1, 2].map((i) => (
+          <rect key={i} x={430 + i * 110} y={220} width={16} height={360} fill="#0d0e13" />
+        ))}
+        <circle cx={540} cy={360} r={70} fill="#f2ecd3" opacity={0.6} />
+        <Stick x={540} y={1560} {...hero} look="sad" scale={1.1} />
+        {Array.from({length: 7}, (_, i) => (
+          <rect key={`b${i}`} x={i * 165 + 30} y={0} width={26} height={H} fill="#24242b" stroke={INK} strokeWidth={5} />
+        ))}
+      </g>
+    );
+  }
+  if (kind === 'gkitchen') {
+    return (
+      <g>
+        <rect width={W} height={H} fill={bgc(300, 26, 30)} />
+        {Array.from({length: 7}, (_, i) => (
+          <line key={`v${i}`} x1={i * 160} y1={0} x2={i * 160} y2={1180} stroke={bgc(300, 20, 24)} strokeWidth={4} />
+        ))}
+        <rect y={1140} width={W} height={60} fill="#b98a5a" stroke={INK} strokeWidth={8} />
+        <rect y={1200} width={W} height={720} fill={bgc(300, 18, 20)} />
+        <Dish x={760} y={1120} r={130} />
+        <Dish x={760} y={1092} r={130} />
+        <Dish x={760} y={1064} r={130} />
+        <g transform="translate(470 1030)">
+          <circle r={96} fill="#d7e2e8" stroke={INK} strokeWidth={7} />
+          <circle r={60} fill="#ecd98f" stroke={INK} strokeWidth={4} />
+          <path d="M70 -66 L96 -40 L62 -30 Z" fill={bgc(300, 26, 30)} stroke={INK} strokeWidth={4} />
+        </g>
+        <Stick x={250} y={1560} {...hero} look="neutral" talking scale={1.05} armR={52} />
+      </g>
+    );
+  }
+
   // ====== CONCEPT scenes — story-first explainers (mental models etc.) ======
   if (kind === 'cpot') {
     // boiling-frog pot: a frog sits in water that heats up with `heat` (0..1)
