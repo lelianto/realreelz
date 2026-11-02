@@ -1,0 +1,19 @@
+{
+  "template": "chronicle",
+  "name": "PERANG TROYA",
+  "title": "Perang Troya",
+  "script": "Selama sepuluh tahun lamanya, pasukan Yunani mengepung kota Troya, tetapi tembok kota itu tak pernah bisa ditembus. Ribuan prajurit telah gugur, dan perang seakan tidak akan pernah berujung. Sampai akhirnya, seorang Yunani bernama Odysseus memiliki sebuah gagasan yang licik. Mereka membangun sebuah kuda kayu raksasa, lalu berpura-pura menyerah dan berlayar pergi menjauh. Orang Troya mengira kuda itu adalah hadiah tanda kemenangan, lalu menariknya masuk ke dalam kota. Padahal di dalam perut kuda itu, bersembunyi puluhan pasukan Yunani. Malam harinya, mereka keluar diam-diam dan membuka gerbang kota dari dalam. Hanya dalam satu malam, Troya yang perkasa pun jatuh dan hancur menjadi abu. Terkadang, satu ide yang cerdik jauh lebih mematikan daripada sepuluh tahun kekuatan.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#d7a23f",
+  "keywords": ["Yunani", "Troya", "prajurit", "kuda", "licik", "jatuh", "perang", "ide"],
+  "captionFixes": {"Odiseus": "Odysseus", "Odiseous": "Odysseus", "Troja": "Troya", "tembo": "tembok", "perajuri": "prajurit", "kayuraksasa": "kayu raksasa"},
+  "chronScenes": [
+    {"kind": "title", "cue": null, "label": "Perang Troya", "sub": "Kota yang tak tertembus"},
+    {"kind": "battle", "cue": "gugur", "label": "Sepuluh Tahun Perang"},
+    {"kind": "horse", "cue": "kuda", "label": "Kuda Kayu Raksasa"},
+    {"kind": "ruin", "cue": "jatuh", "label": "Troya Pun Jatuh"},
+    {"kind": "outro", "cue": "cerdik", "label": "Satu ide cerdik lebih mematikan dari kekuatan"}
+  ]
+}

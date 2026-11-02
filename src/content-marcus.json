@@ -1,0 +1,19 @@
+{
+  "template": "chronicle",
+  "name": "MARCUS AURELIUS",
+  "title": "Marcus Aurelius",
+  "script": "Dia adalah orang yang paling berkuasa di dunia, seorang kaisar Romawi bernama Marcus Aurelius. Tetapi tidak seperti kaisar yang lain, dia tidak pernah haus akan kemewahan maupun tahta. Sebagian besar masa pemerintahannya justru dihabiskan di medan perang, di perbatasan utara yang dingin dan keras. Di dalam tenda militer, setiap malam dia menulis catatan kecil hanya untuk dirinya sendiri. Tulisan itu bukan perintah untuk rakyat, melainkan pengingat untuk menenangkan jiwanya sendiri. Salah satu pesannya berbunyi, kamu memiliki kuasa penuh atas pikiranmu, bukan atas kejadian di luar sana. Di situlah letak kekuatanmu yang sesungguhnya. Dia bahkan tidak pernah berniat menerbitkannya. Namun catatan pribadi itu kini dikenal sebagai Meditations, salah satu buku filsafat yang paling berpengaruh sepanjang sejarah.",
+  "edgeVoiceId": "id-ID-GadisNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#d7a23f",
+  "keywords": ["kaisar", "Romawi", "tahta", "perang", "catatan", "pikiranmu", "filsafat", "berpengaruh"],
+  "captionFixes": {"Aurelias": "Aurelius", "Aurelios": "Aurelius", "Markus": "Marcus", "melahinkan": "melainkan", "Disitulah": "Di situlah"},
+  "chronScenes": [
+    {"kind": "bust", "cue": null, "label": "Marcus Aurelius", "sub": "Kaisar sekaligus filsuf"},
+    {"kind": "battle", "cue": "pemerintahannya", "label": "Hidup di Medan Perang"},
+    {"kind": "scroll", "cue": "catatan", "label": "Catatan Malam", "points": ["Ditulis di tenda militer", "Di perbatasan utara"]},
+    {"kind": "quote", "cue": "pikiranmu", "quote": "Kamu berkuasa atas pikiranmu, bukan atas dunia di luar.", "author": "Marcus Aurelius"},
+    {"kind": "outro", "cue": "berpengaruh", "label": "Catatan pribadi yang kini mengubah dunia"}
+  ]
+}

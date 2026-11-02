@@ -1,0 +1,19 @@
+{
+  "template": "chronicle",
+  "name": "SUN TZU",
+  "title": "Sun Tzu",
+  "script": "Lebih dari dua ribu lima ratus tahun lalu, di daratan Tiongkok kuno, seorang jenderal bernama Sun Tzu menuliskan sebuah kitab tipis. Kitab itu berjudul Seni Perang. Isinya bukan tentang cara membunuh, melainkan cara menang tanpa harus bertempur. Sun Tzu percaya bahwa puncak tertinggi dari peperangan adalah menaklukkan musuh tanpa pertempuran sama sekali. Suatu hari dia berkata, kenalilah dirimu dan kenalilah lawanmu, maka seratus pertarungan pun tidak akan membuatmu kalah. Baginya, perang sejati dimenangkan di dalam pikiran, jauh sebelum pedang dihunus. Ribuan tahun kemudian, ajarannya justru dibaca para pemimpin bisnis, atlet, dan jutaan orang biasa. Sebuah kitab kecil tentang perang, yang ternyata mengajarkan kita cara memenangkan hidup.",
+  "edgeVoiceId": "id-ID-GadisNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#d7a23f",
+  "keywords": ["perang", "menang", "bertempur", "musuh", "pikiran", "ajarannya", "hidup", "kitab"],
+  "captionFixes": {"Suntzu": "Sun Tzu", "Suntsu": "Sun Tzu", "Sanzu": "Sun Tzu", "Tiong": "Tiongkok", "Kokuno": "kuno", "general": "jenderal", "melayinkan": "melainkan", "menaklukan": "menaklukkan"},
+  "chronScenes": [
+    {"kind": "scroll", "cue": null, "label": "Seni Perang", "points": ["Sun Tzu", "Tiongkok Kuno"]},
+    {"kind": "battle", "cue": "bertempur", "label": "Menang Tanpa Bertempur"},
+    {"kind": "quote", "cue": "berkata", "quote": "Kenali dirimu dan kenali lawanmu.", "author": "Sun Tzu"},
+    {"kind": "map", "cue": "kemudian", "label": "Tiongkok Kuno", "sub": "Ajarannya menyebar ke dunia"},
+    {"kind": "outro", "cue": "memenangkan", "label": "Kitab perang yang mengajarkan cara menang dalam hidup"}
+  ]
+}
