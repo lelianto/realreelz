@@ -17,6 +17,7 @@ import * as THREE from 'three';
 import rawContent from './content.json';
 import {StickmanStory, type StoryScene} from './Stickman';
 import {ChronicleStory, type ChronScene} from './Chronicle';
+import {FieldnotesStory, type FieldScene} from './Fieldnotes';
 
 type Scene = {
   type: 'intro' | 'tip' | 'outro';
@@ -69,6 +70,11 @@ type Content = {
   captionFixes?: Record<string, string>;
   // chronicle template (sepia history)
   chronScenes?: ChronScene[];
+  // fieldnotes template (editorial "special edition" clipping)
+  masthead?: string;
+  edition?: string;
+  dateTag?: string;
+  fieldScenes?: FieldScene[];
 };
 
 const content = rawContent as unknown as Content;
@@ -114,6 +120,8 @@ export const Reel: React.FC = () => {
       <ChronicleReel />
     ) : content.template === 'planet' ? (
       <PlanetReel />
+    ) : content.template === 'fieldnotes' ? (
+      <FieldnotesReel />
     ) : content.template === 'reflective' ? (
       <ReflectiveReel />
     ) : (
@@ -197,6 +205,39 @@ const useCaptions = () => {
       });
   }, [handle]);
   return data;
+};
+
+// ============================================================================
+// FIELDNOTES template — editorial "special edition" clipping (Catatan style)
+// ============================================================================
+const FieldnotesReel: React.FC = () => {
+  const data = useCaptions();
+  const words = useMemo(() => {
+    const fixes = content.captionFixes ?? {};
+    return (data?.words ?? [])
+      .map((w) => {
+        const bare = w.text.replace(/[.,?!:]+$/, '');
+        const fix = fixes[bare];
+        return fix === undefined ? w : {...w, text: w.text.replace(bare, fix)};
+      })
+      .filter((w) => w.text.trim() !== '');
+  }, [data]);
+  return (
+    <AbsoluteFill style={{background: '#1c1915'}}>
+      <SharedAudio />
+      {words.length ? (
+        <FieldnotesStory
+          words={words}
+          scenes={(content.fieldScenes as FieldScene[]) ?? []}
+          masthead={content.masthead ?? 'CATATAN'}
+          edition={content.edition ?? 'EDISI KHUSUS'}
+          dateTag={content.dateTag}
+          keywords={content.keywords ?? []}
+          accent={content.accent ?? '#b23a2e'}
+        />
+      ) : null}
+    </AbsoluteFill>
+  );
 };
 
 // ============================================================================

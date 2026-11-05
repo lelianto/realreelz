@@ -1,0 +1,77 @@
+{
+  "template": "fieldnotes",
+  "name": "SESAT PIKIR",
+  "title": "Sunk Cost Fallacy",
+  "masthead": "CATATAN NALAR",
+  "edition": "EDISI KHUSUS",
+  "dateTag": "SESAT PIKIR No.07",
+  "accent": "#b23a2e",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": [
+    "sunk",
+    "hangus",
+    "rugi",
+    "otak",
+    "tiket",
+    "masa",
+    "depan",
+    "depanmu",
+    "hilang",
+    "mulai",
+    "terlanjur"
+  ],
+  "captionFixes": {},
+  "script": "Pernah nonton film yang jelek banget, tapi kamu tetap bertahan sampai habis, cuma karena sudah terlanjur beli tiket? Itu namanya sunk cost fallacy, atau jebakan biaya hangus. Uang tiket tadi sudah hilang. Mau kamu lanjut nonton atau berhenti, uangnya tetap tidak akan kembali. Masalahnya, otak kita benci sekali rasa rugi. Jadi kita terus menyiram waktu dan tenaga ke sesuatu yang sudah jelas merugikan, hanya supaya pengorbanan sebelumnya terasa tidak sia-sia. Tanda kamu terjebak itu sebenarnya sederhana. Kamu bertahan di pekerjaan, hubungan, atau proyek yang bikin lelah, dengan alasan sudah terlanjur jauh. Padahal keputusan yang benar tidak diukur dari berapa banyak yang sudah kamu keluarkan, tapi dari apa yang terbaik untuk masa depanmu. Yang sudah hilang, biarkan hilang. Mulai hari ini, biasakan tanya satu hal. Kalau aku baru mulai dari nol sekarang, apakah aku tetap akan memilih jalan ini?",
+  "fieldScenes": [
+    {
+      "kind": "cover",
+      "cue": null,
+      "label": "Biaya Hangus",
+      "highlight": "Hangus",
+      "sub": "Kenapa kita bertahan pada sesuatu yang sudah jelas merugikan."
+    },
+    {
+      "kind": "define",
+      "cue": "sunk",
+      "kicker": "ISTILAH",
+      "label": "Sunk Cost Fallacy",
+      "sub": "Jebakan Biaya Hangus",
+      "def": "Mengambil keputusan berdasarkan hal yang sudah terlanjur dikeluarkan, bukan manfaat ke depan."
+    },
+    {
+      "kind": "insight",
+      "cue": "otak",
+      "kicker": "KENAPA TERJADI",
+      "label": "Otak kita benci rugi.",
+      "note": "Yang sudah keluar tidak akan kembali. Tapi kita terus menambah waktu dan tenaga, hanya demi terasa tidak sia-sia."
+    },
+    {
+      "kind": "checklist",
+      "cue": "tanda",
+      "kicker": "PERIKSA DIRI",
+      "label": "Tanda kamu terjebak:",
+      "items": [
+        "Bertahan karena sudah terlanjur jauh",
+        "Menghitung yang sudah hilang, bukan yang di depan",
+        "Takut pengorbanan terasa sia-sia"
+      ]
+    },
+    {
+      "kind": "statement",
+      "cue": "terbaik",
+      "label": "Keputusan benar bukan soal masa lalu.",
+      "highlight": "Ini soal masa depan.",
+      "sub": "Yang sudah hilang, biarkan hilang."
+    },
+    {
+      "kind": "outro",
+      "cue": "mulai",
+      "kicker": "COBA TANYA",
+      "label": "Kalau aku baru mulai dari nol sekarang, apakah aku tetap memilih jalan ini?",
+      "note": "Simpan & bagikan ke orang yang perlu dengar ini.",
+      "handle": "@ceritastik"
+    }
+  ]
+}
