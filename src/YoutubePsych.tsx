@@ -4,6 +4,7 @@
 // (animated SVG historical/psychological diagrams + structured dossier panel),
 // chapter transition bumpers, and broadcast lower-third karaoke subtitles.
 import React, {useMemo} from 'react';
+import {DEFAULT_HANDLE} from './brand';
 import {
   AbsoluteFill,
   Audio,
@@ -1967,7 +1968,7 @@ export const YoutubePsychStory: React.FC<{
   words,
   scenes,
   chapters,
-  watermark = '@lelianto_',
+  watermark = DEFAULT_HANDLE,
   channelName = 'LOGIKA & PIKIRAN',
   keywords = [],
   accent = YT_PALETTE.gold,
@@ -2551,7 +2552,7 @@ export const YoutubePsychVideo: React.FC = () => {
         scenes={(ytContent.ytScenes as YtScene[]) ?? []}
         chapters={(ytContent.chapters as YtChapter[]) ?? []}
         title={ytContent.title}
-        watermark={ytContent.watermark ?? '@lelianto_'}
+        watermark={ytContent.watermark ?? DEFAULT_HANDLE}
         channelName={ytContent.channelName ?? 'LOGIKA & PIKIRAN'}
         keywords={ytContent.keywords ?? []}
         accent={ytContent.accent ?? YT_PALETTE.gold}

@@ -6,6 +6,7 @@
 // follow cue words in the narration, exactly like the chronicle/stickman
 // templates (same FIRST-substring cue resolver — keep cues unique + increasing).
 import {AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {DEFAULT_HANDLE} from './brand';
 
 export type EspWord = {text: string; fromMs: number; toMs: number};
 export type EspScene = {
@@ -477,7 +478,7 @@ const SceneArt: React.FC<{scene: EspScene; f: number; len: number}> = ({scene, f
       <g transform={`translate(${W / 2} 1300)`} opacity={spring({frame: f - 10, fps, durationInFrames: 10, config: {damping: 13}})}>
         <rect x="-260" y="-58" width="520" height="104" rx="52" fill={NAVI} />
         <text x="0" y="14" textAnchor="middle" fontFamily={DISP} fontStyle="italic" fontSize="52" fill={INK}>
-          {scene.small ?? '@rakyatrebahanid'}
+          {scene.small ?? DEFAULT_HANDLE}
         </text>
       </g>
     </>

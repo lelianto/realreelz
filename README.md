@@ -1,11 +1,30 @@
 # Reels Generator
 
+> **English summary.** A faceless vertical-video (1080×1920) generator built on
+> [Remotion](https://remotion.dev). Pipeline: script → TTS voice (edge-tts by
+> default, free, no key; ElevenLabs/Piper optional) → word-level captions
+> (whisper.cpp) → rendered MP4. Ships ~15 animated templates (stickman stories,
+> explainer, chronicle, parable, collage, storycard, esports, …), an optional web
+> app that turns one prompt into a finished video via the Claude API, and a
+> YouTube-to-Reels clipper. Docs below are in Indonesian; quickstart:
+>
+> ```bash
+> npm install
+> python3 -m venv .venv && .venv/bin/pip install edge-tts
+> cp .env.example .env               # set REMOTION_HANDLE, optional API keys
+> cp src/content-stickman.json src/content.json
+> npm run build:audio:edge && npm run render   # -> out/reel.mp4
+> ```
+>
+> Licensed MIT (code only). Remotion has its own license, see [Lisensi](#catatan-lisensi).
+
 Generator video reels vertikal (1080×1920) berbahasa Indonesia, tanpa wajah.
 Pipeline: naskah → suara (TTS) → caption otomatis → render video. Suara default
 pakai **edge-tts** (suara neural Microsoft, gratis & tanpa API key); ElevenLabs
 dan Piper tersedia sebagai alternatif.
 
-> Repo **private**. Lihat [Catatan lisensi](#catatan-lisensi) sebelum dipakai komersial atau dipublikasikan.
+> Lihat [Catatan lisensi](#catatan-lisensi) sebelum dipakai komersial. Kontribusi
+> dipersilakan, baca [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ---
 
@@ -13,24 +32,28 @@ dan Piper tersedia sebagai alternatif.
 
 - **Node.js** (18+) dan **npm**
 - **ffmpeg** / **ffprobe** di PATH (`brew install ffmpeg`)
-- **Google Chrome** terpasang — render memakai Chrome sistem, bukan Chromium bawaan
-  Remotion (yang sering crash di macOS versi baru).
+- **Chrome / Chromium** (disarankan). Di macOS, Google Chrome di `/Applications`
+  otomatis dipakai karena Chromium bawaan Remotion sering crash di macOS versi
+  baru. Di OS lain set `CHROME_PATH` di `.env`, atau biarkan kosong untuk memakai
+  browser bawaan Remotion. Logikanya ada di `remotion.config.ts`.
 - Untuk caption: **whisper.cpp** (otomatis di-download & di-build oleh
   `@remotion/install-whisper-cpp` saat pertama kali `npm run captions`).
-- Untuk TTS gratis (edge-tts / Piper): **Python** di `.venv`. Di mesin ini venv
-  dibuat dengan `/usr/bin/python3` (Xcode CLT), karena Homebrew Python di sini
-  rusak:
+- Untuk TTS gratis (edge-tts / Piper) dan clipper: **Python 3** di `.venv`:
   ```bash
-  /usr/bin/python3 -m venv .venv
-  .venv/bin/pip install edge-tts piper-tts
+  python3 -m venv .venv
+  .venv/bin/pip install edge-tts piper-tts yt-dlp
   ```
+  (Di macOS, kalau Homebrew Python bermasalah, pakai `/usr/bin/python3`.)
 
 ## Setup
 
 ```bash
 npm install
-cp .env.example .env     # isi ANTHROPIC_API_KEY (untuk web app)
+cp .env.example .env     # isi REMOTION_HANDLE, dan ANTHROPIC_API_KEY untuk web app
 ```
+
+`REMOTION_HANDLE` adalah handle sosmed default (mis. `@akunmu`) yang tampil di
+watermark dan kartu outro. File konten bisa menimpanya lewat field `"watermark"`.
 
 Aset/hal ini **tidak** ikut di repo (sengaja) dan harus kamu sediakan sendiri:
 
@@ -166,8 +189,7 @@ Dispatcher ada di `src/Reel.tsx` (membaca `content.template`):
 
 - **planet** butuh flag WebGL — tambahkan `--gl=angle`:
   ```bash
-  npx remotion render Reel out/planet.mp4 --gl=angle \
-    --browser-executable="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+  npx remotion render Reel out/planet.mp4 --gl=angle
   ```
 - Untuk kualitas lebih tinggi (mengurangi shimmer teks), tambahkan `--crf=16`.
 - **stickman**: `storyScenes[]` menentukan urutan adegan (`cue` = kata pemicu di
@@ -185,6 +207,7 @@ src/
   Explainer.tsx    template modern vector explainer (karakter proporsional + visual metafora)
   Stickman.tsx     template stickman (semua adegan = SVG)
   ClippedReel.tsx  template YouTube to Reels clipper
+  brand.ts         handle default (REMOTION_HANDLE) untuk watermark/outro
   content*.json    konten tiap video
 scripts/
   tts-eleven.mjs   TTS ElevenLabs
@@ -193,12 +216,29 @@ scripts/
 public/            aset hasil generate (gitignored) — taruh music.mp3 di sini
 ```
 
+## Upload ke YouTube (opsional)
+
+`scripts/upload-youtube.mjs` mengisi form YouTube Studio lewat Chrome yang sudah
+login dan dijalankan dengan `--remote-debugging-port=9222`:
+
+```bash
+node scripts/upload-youtube.mjs out/reel.mp4 --title "Judul" --description-file desc.txt
+```
+
 ## Catatan lisensi
+
+- **Kode di repo ini**: MIT, lihat [LICENSE](LICENSE).
 
 - **Remotion** TIDAK sepenuhnya gratis: bebas untuk individu, organisasi ≤3
   karyawan, dan nonprofit, tapi perusahaan for-profit yang lebih besar wajib
   membeli Company License. Lihat `node_modules/remotion/LICENSE.md`.
 - **ElevenLabs** paket Free hanya untuk penggunaan non-komersial.
 - **Musik & suara** tidak dibundel; pastikan kamu punya hak atas aset yang kamu pakai.
+- **Clipper YouTube** (`npm run clip`) mengunduh potongan video orang lain lewat
+  yt-dlp. Pastikan kamu punya izin dari pemilik konten dan patuh pada ToS YouTube.
+- **edge-tts** memakai endpoint Read Aloud Microsoft yang tidak resmi; bisa berubah
+  atau berhenti sewaktu-waktu, dan penggunaannya tunduk pada ketentuan Microsoft.
+- File `src/content-*.json` adalah contoh naskah dari channel penulis. Silakan
+  dipakai sebagai referensi format, tapi buat naskahmu sendiri untuk dipublikasikan.
 - Naskah biografi (Tesla/Fleming/Wright) ditulis dari pengetahuan umum dan sebagian
   berupa legenda populer — verifikasi faktanya sebelum dipublikasikan.

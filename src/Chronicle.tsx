@@ -4,6 +4,7 @@
 // slow Ken Burns move. Scene cuts follow cue words in the narration, exactly
 // like the stickman template.
 import {AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {DEFAULT_HANDLE} from './brand';
 
 export type ChronWord = {text: string; fromMs: number; toMs: number};
 export type ChronScene = {
@@ -523,7 +524,7 @@ const SceneArt: React.FC<{scene: ChronScene; f: number}> = ({scene, f}) => {
       <g transform={`translate(${W / 2} 1360)`}>
         <rect x="-210" y="-54" width="420" height="92" rx="46" fill={GOLD} />
         <text x="0" y="8" textAnchor="middle" fontFamily="Georgia, serif" fontWeight="700"
-          fontSize="46" fill={DARK}>@ceritastik</text>
+          fontSize="46" fill={DARK}>{DEFAULT_HANDLE}</text>
       </g>
     </>
   );

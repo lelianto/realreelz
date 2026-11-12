@@ -1,8 +1,9 @@
 // "AiProductivity" template: Professional Motion-Graphics Explainer for IG Reels
 // Niche: AI for Productivity & AI Side Jobs / Side Hustles
-// Branded for @lelianto_ with sleek dark-mode SaaS UI, node pipelines, kinetic charts,
+// Branded with sleek dark-mode SaaS UI, node pipelines, kinetic charts,
 // bento cards, and synchronized karaoke subtitles.
 import React, {useEffect, useMemo, useState} from 'react';
+import {DEFAULT_HANDLE} from './brand';
 import {
   AbsoluteFill,
   Audio,
@@ -1490,7 +1491,7 @@ const SceneMindset: React.FC<{frame: number; fps: number}> = ({frame, fps}) => {
 };
 
 // ============================================================================
-// SCENE 8: OUTRO CTA CARD FOR @lelianto_
+// SCENE 8: OUTRO CTA CARD
 // ============================================================================
 const SceneOutro: React.FC<{frame: number; fps: number; handle: string}> = ({frame, fps, handle}) => {
   const enter = spring({frame, fps, config: {damping: 12}});
@@ -2705,7 +2706,7 @@ export const AiProductivityStory: React.FC<{
   words,
   scenes,
   name = 'AI × SIDE JOB',
-  watermark = '@lelianto_',
+  watermark = DEFAULT_HANDLE,
   keywords = [],
   accent = AI_PALETTE.cyan,
 }) => {
@@ -2910,7 +2911,7 @@ export const AiProductivityStory: React.FC<{
         </span>
       </div>
 
-      {/* TOP-RIGHT PERSISTENT INSTAGRAM WATERMARK (@lelianto_) */}
+      {/* TOP-RIGHT PERSISTENT INSTAGRAM WATERMARK */}
       <div
         style={{
           position: 'absolute',
@@ -3150,7 +3151,7 @@ export const AiReel: React.FC = () => {
           words={words}
           scenes={(aiContent.aiScenes as AiScene[]) ?? []}
           name={aiContent.name ?? 'CHATGPT × LINKEDIN'}
-          watermark={aiContent.watermark ?? '@lelianto_'}
+          watermark={aiContent.watermark ?? DEFAULT_HANDLE}
           keywords={aiContent.keywords ?? []}
           accent={aiContent.accent ?? '#00f2fe'}
         />

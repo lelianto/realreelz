@@ -5,6 +5,7 @@
 // Scene cuts follow cue words in the narration, exactly like the chronicle
 // and stickman templates.
 import {AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {DEFAULT_HANDLE} from './brand';
 
 export type FieldWord = {text: string; fromMs: number; toMs: number};
 export type FieldScene = {
@@ -380,9 +381,9 @@ const SceneBody: React.FC<{scene: FieldScene; f: number; accent: string}> = ({sc
             ))
           : null}
         <g transform="translate(110 1360)">
-          <rect x="0" y="-52" width={(scene.handle ?? '@ceritastik').length * 24 + 60} height="86" rx="43" fill={INK} />
+          <rect x="0" y="-52" width={(scene.handle ?? DEFAULT_HANDLE).length * 24 + 60} height="86" rx="43" fill={INK} />
           <text x="30" y="6" fontFamily={MAST} fontWeight="700" fontSize="44" fill={PAPER}>
-            {scene.handle ?? '@ceritastik'}
+            {scene.handle ?? DEFAULT_HANDLE}
           </text>
         </g>
       </g>

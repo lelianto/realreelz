@@ -34,3 +34,10 @@ npm-debug.log*
 # editors
 .vscode/
 .idea/
+
+# ffmpeg two-pass leftovers
+ffmpeg2pass*
+
+# local AI-tool / assistant state
+.claude/
+.commandcode/

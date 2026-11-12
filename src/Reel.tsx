@@ -1,4 +1,5 @@
 import {useEffect, useMemo, useState} from 'react';
+import {DEFAULT_HANDLE} from './brand';
 import {
   AbsoluteFill,
   Audio,
@@ -144,7 +145,7 @@ const Watermark: React.FC = () => {
           textShadow: '0 2px 10px rgba(0,0,0,0.55)',
         }}
       >
-        {content.watermark ?? '@ceritastik'}
+        {content.watermark ?? DEFAULT_HANDLE}
       </div>
     </AbsoluteFill>
   );
@@ -320,7 +321,7 @@ const YoutubePsychReel: React.FC = () => {
           scenes={(content.ytScenes as YtScene[]) ?? []}
           chapters={(content.chapters as YtChapter[]) ?? []}
           title={content.title}
-          watermark={content.watermark ?? '@lelianto_'}
+          watermark={content.watermark ?? DEFAULT_HANDLE}
           channelName={content.channelName ?? 'LOGIKA & PIKIRAN'}
           keywords={content.keywords ?? []}
           accent={content.accent ?? '#e5b84b'}
@@ -331,7 +332,7 @@ const YoutubePsychReel: React.FC = () => {
 };
 
 // ============================================================================
-// AI PRODUCTIVITY & SIDE JOB template — Motion Graphics for @lelianto_
+// AI PRODUCTIVITY & SIDE JOB template — Motion Graphics
 // ============================================================================
 const AiProductivityReel: React.FC = () => {
   const data = useCaptions();
@@ -353,7 +354,7 @@ const AiProductivityReel: React.FC = () => {
           words={words}
           scenes={(content.aiScenes as AiScene[]) ?? []}
           name={content.name ?? 'AI × SIDE JOB'}
-          watermark={content.watermark ?? '@lelianto_'}
+          watermark={content.watermark ?? DEFAULT_HANDLE}
           keywords={content.keywords ?? []}
           accent={content.accent ?? '#00f2fe'}
         />

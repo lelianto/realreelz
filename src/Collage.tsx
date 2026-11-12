@@ -6,6 +6,7 @@
 // narration exactly like the chronicle/stickman templates. When there is no
 // narration yet (preview), scenes are spread evenly so the look is still
 // visible in the Studio.
+import {DEFAULT_HANDLE} from './brand';
 import {
   AbsoluteFill,
   interpolate,
@@ -470,7 +471,7 @@ const SceneArt: React.FC<{scene: CollageScene; f: number}> = ({scene, f}) => {
         <g transform={`translate(${W / 2} 1480) rotate(-3)`}>
           <rect x="-250" y="-58" width="500" height="104" rx="12" fill={INK} />
           <text x="0" y="12" textAnchor="middle" fontFamily="'Arial Black', Arial, sans-serif"
-            fontWeight="900" fontSize="58" fill={PAPER}>@ceritastik</text>
+            fontWeight="900" fontSize="58" fill={PAPER}>{DEFAULT_HANDLE}</text>
         </g>
       </>
     );

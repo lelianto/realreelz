@@ -1,8 +1,11 @@
 {
   "name": "reels",
   "version": "1.0.0",
-  "private": true,
-  "description": "Faceless Indonesian reels generator — Remotion + Piper/ElevenLabs (TTS) + whisper.cpp (captions)",
+  "description": "Faceless vertical reels generator (Indonesian-first): Remotion + edge-tts/ElevenLabs/Piper (TTS) + whisper.cpp (captions)",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
   "type": "module",
   "scripts": {
     "tts": "node scripts/tts.mjs",
@@ -13,7 +16,7 @@
     "build:audio:eleven": "npm run tts:eleven && npm run captions",
     "build:audio:edge": "npm run tts:edge && npm run captions",
     "studio": "remotion studio",
-    "render": "remotion render Reel out/reel.mp4 --browser-executable=\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\"",
+    "render": "remotion render Reel out/reel.mp4",
     "render:yt": "node scripts/render-yt.mjs",
     "all": "npm run build:audio && npm run render",
     "generate": "node scripts/generate-content.mjs",
@@ -22,14 +25,14 @@
   },
   "dependencies": {
     "@react-three/fiber": "^9.8.2",
-    "@remotion/captions": "latest",
-    "@remotion/cli": "latest",
-    "@remotion/install-whisper-cpp": "latest",
-    "@remotion/media-utils": "latest",
-    "@remotion/three": "^4.0.539",
+    "@remotion/captions": "4.0.539",
+    "@remotion/cli": "4.0.539",
+    "@remotion/install-whisper-cpp": "4.0.539",
+    "@remotion/media-utils": "4.0.539",
+    "@remotion/three": "4.0.539",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "remotion": "latest",
+    "remotion": "4.0.539",
     "three": "^0.187.0"
   },
   "devDependencies": {

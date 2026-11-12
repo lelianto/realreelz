@@ -11,14 +11,13 @@ const TEMP_VIDEO = path.join(BIN, 'yt-video-only.mp4');
 const FINAL_OUT = path.join(OUT_DIR, 'youtube-psych.mp4');
 const VOICE = path.join(ROOT, 'public', 'voiceover-yt.wav');
 const MUSIC = path.join(ROOT, 'public', 'music.mp3');
-const CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 
 mkdirSync(BIN, {recursive: true});
 mkdirSync(OUT_DIR, {recursive: true});
 
 console.log('🎬 Step 1/2: Rendering 16:9 Full HD (1920x1080) visual frames via Remotion…');
 execSync(
-  `npx remotion render YoutubeLong "${TEMP_VIDEO}" --image-format=jpeg --jpeg-quality=92 --concurrency=8 --browser-executable="${CHROME}"`,
+  `npx remotion render YoutubeLong "${TEMP_VIDEO}" --image-format=jpeg --jpeg-quality=92 --concurrency=8`,
   {stdio: 'inherit'},
 );
 

@@ -263,7 +263,7 @@ console.log(`   ✓ Wrote captions (${captions.length} words) and metadata to sr
 console.log(`\n🎬 4. Rendering vertical 9:16 Reel with Remotion...`);
 const outMp4 = path.isAbsolute(customOut) ? customOut : path.join(ROOT, customOut);
 execSync(
-  `npx remotion render ClippedReel "${outMp4}" --browser-executable="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --concurrency=4`,
+  `npx remotion render ClippedReel "${outMp4}" --concurrency=4`,
   {stdio: 'inherit'},
 );
 

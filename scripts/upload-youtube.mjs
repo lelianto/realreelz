@@ -1,13 +1,27 @@
 // Automate uploading reel to YouTube Studio via Chrome Remote Debugging (port 9222)
 import puppeteer from 'puppeteer-core';
 import path from 'node:path';
-import {existsSync} from 'node:fs';
+import {existsSync, readFileSync} from 'node:fs';
 
-const VIDEO_PATH = path.resolve('out/reel-curie.mp4');
-const TITLE = 'Wanita Ini Dilarang Kuliah Tapi Raih 2 Nobel! | Kisah Marie Curie #Shorts';
-const DESCRIPTION = `Wanita ini dilarang kuliah di tanah airnya, tapi berhasil meraih dua Hadiah Nobel. Kisah inspiratif perjuangan Marie Curie dari loteng dingin Paris hingga menemukan Radium dan Polonium.
+// Usage:
+//   node scripts/upload-youtube.mjs <video.mp4> --title "..." [--description "..." | --description-file desc.txt]
+// Chrome must already be running with --remote-debugging-port=9222 and signed in to YouTube Studio.
+const args = process.argv.slice(2);
+const flag = (name) => {
+  const i = args.indexOf(name);
+  return i >= 0 ? args[i + 1] : undefined;
+};
+const positional = args.filter((a, i) => !a.startsWith('--') && !(i > 0 && args[i - 1].startsWith('--')));
 
-#MarieCurie #Sains #Inspirasi #Sejarah #Shorts #CeritaStik`;
+if (!positional[0] || !flag('--title')) {
+  console.error('Usage: node scripts/upload-youtube.mjs <video.mp4> --title "..." [--description "..." | --description-file file.txt]');
+  process.exit(1);
+}
+
+const VIDEO_PATH = path.resolve(positional[0]);
+const TITLE = flag('--title');
+const descFile = flag('--description-file');
+const DESCRIPTION = descFile ? readFileSync(descFile, 'utf8') : (flag('--description') ?? '');
 
 if (!existsSync(VIDEO_PATH)) {
   console.error(`Error: Video not found at ${VIDEO_PATH}`);
