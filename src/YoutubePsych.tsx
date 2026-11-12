@@ -3,11 +3,13 @@
 // Features: Multi-chapter timeline HUD, running timecode, split widescreen stage
 // (animated SVG historical/psychological diagrams + structured dossier panel),
 // chapter transition bumpers, and broadcast lower-third karaoke subtitles.
-import React, {useMemo} from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
 import {DEFAULT_HANDLE} from './brand';
 import {
   AbsoluteFill,
   Audio,
+  continueRender,
+  delayRender,
   getRemotionEnvironment,
   interpolate,
   spring,
@@ -17,7 +19,6 @@ import {
 } from 'remotion';
 import type {Caption} from '@remotion/captions';
 import ytRawContent from './content-youtube-psych.json';
-import ytRawCaptions from '../public/captions-yt.json';
 
 export type YtWord = {text: string; fromMs: number; toMs: number};
 
@@ -2495,8 +2496,10 @@ const tokensToWords = (tokens: YtWord[]): YtWord[] => {
   return words;
 };
 
-const STATIC_YT_WORDS: YtWord[] = (() => {
-  const safe = (ytRawCaptions as Caption[]) ?? [];
+// Captions are generated into public/ (gitignored), so load them at runtime
+// instead of importing them: a fresh clone without captions still builds.
+const buildYtWords = (captions: Caption[]): YtWord[] => {
+  const safe = captions ?? [];
   const raw = tokensToWords(
     safe.map((c) => ({text: c.text, fromMs: c.startMs, toMs: c.endMs})),
   );
@@ -2508,10 +2511,19 @@ const STATIC_YT_WORDS: YtWord[] = (() => {
       return fix === undefined ? w : {...w, text: w.text.replace(bare, fix)};
     })
     .filter((w) => w.text.trim() !== '');
-})();
+};
 
 export const YoutubePsychVideo: React.FC = () => {
   const {durationInFrames} = useVideoConfig();
+  const [handle] = useState(() => delayRender('Loading captions-yt.json'));
+  const [ytWords, setYtWords] = useState<YtWord[]>([]);
+  useEffect(() => {
+    fetch(staticFile('captions-yt.json'))
+      .then((r) => (r.ok ? r.json() : []))
+      .then((caps: Caption[]) => setYtWords(buildYtWords(caps)))
+      .catch(() => setYtWords([]))
+      .finally(() => continueRender(handle));
+  }, [handle]);
 
   const ytContent = ytRawContent as {
     name?: string;
@@ -2548,7 +2560,7 @@ export const YoutubePsychVideo: React.FC = () => {
         />
       )}
       <YoutubePsychStory
-        words={STATIC_YT_WORDS}
+        words={ytWords}
         scenes={(ytContent.ytScenes as YtScene[]) ?? []}
         chapters={(ytContent.chapters as YtChapter[]) ?? []}
         title={ytContent.title}
