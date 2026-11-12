@@ -2415,7 +2415,7 @@ const SceneGmailSend: React.FC<{frame: number; fps: number}> = ({frame, fps}) =>
           fontWeight={800}
           fontSize={21}
         >
-          Project Specialist - Lelianto (Portofolio &amp; CV ATS)
+          Project Specialist - Alex (Portofolio &amp; CV ATS)
         </text>
         <line x1={-405} y1={-96} x2={405} y2={-96} stroke="rgba(255,255,255,0.12)" strokeWidth={1.5} />
 
@@ -2452,7 +2452,7 @@ const SceneGmailSend: React.FC<{frame: number; fps: number}> = ({frame, fps}) =>
           fontWeight={900}
           fontSize={22}
         >
-          📎 CV_Lelianto_Tailored_ATS_94.pdf  ·  Portofolio.pdf
+          📎 CV_Alex_Tailored_ATS_94.pdf  ·  Portofolio.pdf
         </text>
 
         {/* Send Button + Sent Status */}

@@ -1,5 +1,5 @@
 {
-  "name": "reels",
+  "name": "realreelz",
   "version": "1.0.0",
   "description": "Faceless vertical reels generator (Indonesian-first): Remotion + edge-tts/ElevenLabs/Piper (TTS) + whisper.cpp (captions)",
   "license": "MIT",
