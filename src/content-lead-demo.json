@@ -1,0 +1,84 @@
+{
+  "template": "lead",
+  "brand": {
+    "name": "produkmu",
+    "tag": "/demo",
+    "mascot": "rocket"
+  },
+  "accent": "#E8922A",
+  "target": "Target: tagihan pertama < 2 menit",
+  "disclaimer": "Contoh fiktif untuk demo template. Ganti nama produk, langkah, penawaran, dan URL dengan milikmu sendiri.",
+  "music": "music.mp3",
+  "musicVolume": 0.12,
+  "leadScenes": [
+    {
+      "kind": "hook",
+      "durSec": 4.5,
+      "tags": ["#umkm", "#freelancer", "#bisnisonline"],
+      "heading": "Tagihan pertama\ndalam 2 menit.",
+      "accentWord": "2 menit.",
+      "sub": "Dari daftar akun sampai uang masuk rekening. Tanpa Excel, tanpa bolak-balik chat, tanpa biaya bulanan.",
+      "kicker": "> 5 langkah. Gas."
+    },
+    {
+      "kind": "step",
+      "durSec": 5.5,
+      "heading": "Daftar cukup pakai email.",
+      "widget": {"type": "input", "label": "Email bisnis", "value": "halo@tokomu.id", "button": "Buat akun ✓"},
+      "sub": "Tanpa kartu kredit. Tanpa form panjang. Langsung masuk dashboard."
+    },
+    {
+      "kind": "step",
+      "durSec": 6,
+      "heading": "Hubungkan cara bayar pelangganmu.",
+      "widget": {
+        "type": "checklist",
+        "items": [
+          {"label": "QRIS", "pending": "Menunggu...", "done": "Terhubung"},
+          {"label": "Transfer Bank", "pending": "Menunggu...", "done": "Terhubung"},
+          {"label": "E-wallet", "pending": "Menunggu...", "done": "Terhubung"}
+        ]
+      },
+      "sub": "pilih metode → isi data rekening → aktif. Selesai."
+    },
+    {
+      "kind": "step",
+      "durSec": 6,
+      "heading": "Buat tagihan. Atau lewat API.",
+      "widget": {
+        "type": "code",
+        "toast": "Disalin. Tanpa install SDK.",
+        "tabs": [
+          {"label": "TypeScript", "code": "await fetch(\"https://api.produkmu.com/v1/invoices\", {\n  method: \"POST\",\n  headers: { Authorization: `Bearer ${KEY}` },\n  body: JSON.stringify({\n    customer: \"budi@contoh.com\",\n    amount: 250000,\n    due_in_days: 7,\n  }),\n});"},
+          {"label": "Python", "code": "r = requests.post(\n  \"https://api.produkmu.com/v1/invoices\",\n  headers={\"Authorization\": f\"Bearer {KEY}\"},\n  json={\n    \"customer\": \"budi@contoh.com\",\n    \"amount\": 250000,\n    \"due_in_days\": 7,\n  },\n)"},
+          {"label": "cURL", "code": "curl -X POST \\\n  https://api.produkmu.com/v1/invoices \\\n  -H \"Authorization: Bearer $KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"customer\":\"budi@contoh.com\",\n       \"amount\":250000,\n       \"due_in_days\":7}'"}
+        ]
+      }
+    },
+    {
+      "kind": "step",
+      "durSec": 5.5,
+      "heading": "Kirim. Pantau sampai lunas.",
+      "widget": {
+        "type": "timeline",
+        "status": "201 Created",
+        "body": "{ \"status\": \"terkirim\" }",
+        "events": ["terkirim", "dibuka pelanggan", "dibayar via QRIS", "lunas"]
+      }
+    },
+    {
+      "kind": "step",
+      "durSec": 5,
+      "heading": "Lihat uangmu bertambah.",
+      "widget": {"type": "stat", "prefix": "Rp ", "value": 12500000, "label": "tertagih bulan ini, tanpa satu pun chat nagih"}
+    },
+    {
+      "kind": "cta",
+      "durSec": 6.5,
+      "heading": "Kirim tagihan\npertamamu hari ini.",
+      "offer": "50 tagihan pertama gratis.",
+      "sub": "Bayar per transaksi, tanpa biaya bulanan.",
+      "button": "produkmu.com"
+    }
+  ]
+}

@@ -7,6 +7,8 @@ import {YoutubePsychVideo} from './YoutubePsych';
 import {CollageStory, type CollageScene} from './Collage';
 import {StorycardStory, type StorycardScene, type StorycardTheme} from './Storycard';
 import {EsportsStory, type EspScene} from './Esports';
+import {LeadStory, leadDurationSec, type LeadBrand, type LeadScene} from './Lead';
+import leadContent from './content-lead-demo.json';
 import esportsContent from './content-navi.json';
 import content from './content.json';
 import collageContent from './content-collage.json';
@@ -40,7 +42,11 @@ export const RemotionRoot: React.FC = () => {
 
           // A template can pin its own length via "durationSec" (e.g. a 3D demo
           // with no voiceover). Otherwise the duration follows the voiceover.
-          const fixed = (content as {durationSec?: number}).durationSec;
+          const c = content as {durationSec?: number; template?: string; script?: string; leadScenes?: LeadScene[]};
+          // A silent lead reel is as long as the sum of its scenes' durSec.
+          const fixed =
+            c.durationSec ??
+            (c.template === 'lead' && !c.script ? leadDurationSec(c.leadScenes ?? []) : undefined);
           if (typeof fixed === 'number') {
             return {...dim, durationInFrames: Math.ceil(fixed * FPS)};
           }
@@ -155,6 +161,24 @@ export const RemotionRoot: React.FC = () => {
           words: [] as {text: string; fromMs: number; toMs: number}[],
           scenes: (esportsContent.espScenes ?? []) as EspScene[],
           keywords: (esportsContent.keywords ?? []) as string[],
+        }}
+      />
+      {/* Silent preview of the content-lead marketing template (fictional demo):
+          length = sum of the scenes' durSec, exactly like the silent story ad. */}
+      <Composition
+        id="LeadPreview"
+        component={LeadStory}
+        durationInFrames={Math.ceil((leadDurationSec(leadContent.leadScenes as LeadScene[]) ?? 39) * FPS)}
+        fps={FPS}
+        width={WIDTH}
+        height={HEIGHT}
+        defaultProps={{
+          words: [] as {text: string; fromMs: number; toMs: number}[],
+          scenes: leadContent.leadScenes as LeadScene[],
+          brand: leadContent.brand as LeadBrand,
+          target: leadContent.target,
+          disclaimer: leadContent.disclaimer,
+          accent: leadContent.accent,
         }}
       />
       {/* Light-mode preview of the same storycard content. */}

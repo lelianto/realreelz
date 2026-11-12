@@ -27,6 +27,7 @@ import {YoutubePsychStory, type YtChapter, type YtScene} from './YoutubePsych';
 import {FieldnotesStory, type FieldScene} from './Fieldnotes';
 import {StorycardStory, type StorycardScene, type StorycardTheme} from './Storycard';
 import {EsportsStory, type EspScene} from './Esports';
+import {LeadStory, type LeadBrand, type LeadScene} from './Lead';
 
 type Scene = {
   type: 'intro' | 'tip' | 'outro';
@@ -103,6 +104,11 @@ type Content = {
   storycardScenes?: StorycardScene[];
   // esports template (MLBB/MPL match-recap hype scoreboard)
   espScenes?: EspScene[];
+  // lead template (content-lead marketing walkthrough: hook -> steps -> cta)
+  brand?: LeadBrand;
+  target?: string;
+  disclaimer?: string;
+  leadScenes?: LeadScene[];
 };
 
 const content = rawContent as unknown as Content;
@@ -120,7 +126,8 @@ const Watermark: React.FC = () => {
     content.template === 'ai-productivity' ||
     content.template === 'youtube-psych' ||
     content.template === 'storycard' ||
-    content.template === 'esports'
+    content.template === 'esports' ||
+    content.template === 'lead'
   ) {
     return null; // Custom HUD / badge rendered inside template
   }
@@ -170,6 +177,8 @@ export const Reel: React.FC = () => {
       <ChronicleReel />
     ) : content.template === 'esports' ? (
       <EsportsReel />
+    ) : content.template === 'lead' ? (
+      <LeadReel />
     ) : content.template === 'collage' ? (
       <CollageReel />
     ) : content.template === 'parable' ? (
@@ -498,6 +507,41 @@ const ChronicleReel: React.FC = () => {
 // ============================================================================
 // ESPORTS template — MLBB/MPL match-recap hype scoreboard, SVG scenes on cues
 // ============================================================================
+// ============================================================================
+// LEAD template — content-lead marketing walkthrough (product demo story).
+// Silent by default (per-scene durSec, music only); with a `script` it plays
+// the voiceover and cuts scenes on cue words.
+// ============================================================================
+const LeadReel: React.FC = () => {
+  const narrated = Boolean(content.script);
+  const data = useCaptions();
+  const words = useMemo(() => {
+    if (!narrated) return [];
+    const fixes = content.captionFixes ?? {};
+    return (data?.words ?? [])
+      .map((w) => {
+        const bare = w.text.replace(/[.,?!:]+$/, '');
+        const fix = fixes[bare];
+        return fix === undefined ? w : {...w, text: w.text.replace(bare, fix)};
+      })
+      .filter((w) => w.text.trim() !== '');
+  }, [data, narrated]);
+  return (
+    <AbsoluteFill style={{background: '#E9EEF2'}}>
+      {narrated ? <SharedAudio /> : <MusicTrack />}
+      <LeadStory
+        words={words}
+        scenes={content.leadScenes ?? []}
+        brand={content.brand ?? {name: content.name ?? 'brand'}}
+        target={content.target}
+        disclaimer={content.disclaimer}
+        keywords={content.keywords ?? []}
+        accent={content.accent}
+      />
+    </AbsoluteFill>
+  );
+};
+
 const EsportsReel: React.FC = () => {
   const data = useCaptions();
   const words = useMemo(() => {
