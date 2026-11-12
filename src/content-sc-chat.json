@@ -1,0 +1,71 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Marah di Chat",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["pesan", "nada", "teks", "kesalahpahaman", "konflik", "panggilan", "konteks", "tafsir"],
+  "captionFixes": {},
+  "script": "Pesan singkat tanpa tanda baca terasa seperti bentakan. Itu karena teks kehilangan nada, wajah, dan jeda. Otak kita benci kekosongan, jadi ia mengisinya dengan nada terburuk yang pernah kita dengar. Satu kata oke bisa berarti baik, bisa juga berarti aku sedang marah. Dan karena tidak ada wajah untuk dikoreksi, kesalahpahaman tumbuh cepat. Cara memperbaikinya, jangan menyelesaikan konflik penting lewat chat. Pindah ke panggilan, atau tunggu sampai bertemu. Kalau harus menulis, tambahkan konteks dan pertanyaan, bukan tuduhan. Karena yang kamu baca bukan nada mereka, tapi nada yang kamu bawa.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Kebiasaan sehari-hari",
+      "heading": "Pesan singkat terasa seperti bentakan.",
+      "accentWord": "bentakan",
+      "accentTone": "coral",
+      "card": {
+        "from": "chat.app",
+        "tag": "OKE",
+        "title": "Balasannya: oke.",
+        "body": "Tiga huruf, seribu tafsir."
+      },
+      "sub": "Teks tidak membawa wajah, jadi kita mengisinya sendiri."
+    },
+    {
+      "kind": "how",
+      "cue": "Otak",
+      "kicker": "Cara kerjanya di otak",
+      "heading": "Teks kehilangan nada, wajah, dan jeda.",
+      "accentWord": "kehilangan nada",
+      "lines": [
+        "Kekosongan diisi nada terburuk.",
+        "Oke bisa berarti baik, bisa berarti marah.",
+        "Tanpa wajah, kesalahpahaman tumbuh cepat."
+      ],
+      "badges": [
+        {"text": "Tulisan bukan suara", "tone": "muted"},
+        {"text": "Konflik penting jangan lewat chat", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "kesalahpahaman",
+      "kicker": "Cara memperbaikinya",
+      "heading": "Konflik penting jangan diselesaikan lewat chat.",
+      "accentWord": "jangan",
+      "cards": [
+        "Panggilan",
+        "Bertemu langsung",
+        "Konteks yang jelas",
+        "Pertanyaan, bukan tuduhan"
+      ],
+      "highlight": "Kalau harus menulis, tambahkan konteks sebelum kesimpulan."
+    },
+    {
+      "kind": "cta",
+      "cue": "panggilan",
+      "kicker": "Yang perlu disadari",
+      "heading": "Pindah ke suara sebelum salah paham.",
+      "accentWord": "suara",
+      "accentTone": "accent",
+      "big": "TELEPON",
+      "sub": "Teks tanpa nada diisi oleh perasaanmu sendiri.",
+      "pill": "Kalau penting, jangan lewat chat"
+    }
+  ]
+}

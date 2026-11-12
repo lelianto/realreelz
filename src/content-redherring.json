@@ -1,0 +1,19 @@
+{
+  "template": "parable",
+  "name": "RED HERRING",
+  "title": "Ikan Asin di Tengah Ruangan",
+  "script": "Kamu bertanya soal anggaran yang hilang, dan jawabannya tentang prestasi di bidang olahraga. Itulah red herring, ikan asin yang dilempar ke tengah ruangan. Namanya datang dari cara melatih anjing agar berhenti mengejar kelinci, dengan melempar ikan berbau menyengat. Dalam debat, trik ini mengalihkan perhatian ke topik lain yang lebih mudah dipertahankan. Bukan kebohongan, tapi pengalihan. Dan sayangnya, pengalihan bekerja sangat baik pada ingatan kita yang pendek. Cara melawannya, catat pertanyaan aslimu, lalu ulangi. Kamu belum menjawab pertanyaan saya. Karena orang yang benar-benar punya jawaban tidak perlu mengganti topik pembicaraan.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#e0b24a",
+  "keywords": ["anggaran", "red herring", "ikan", "anjing", "kelinci", "debat", "pengalihan", "ulangi", "jawaban", "mengganti"],
+  "captionFixes": {},
+  "parableScenes": [
+    {"kind": "title", "cue": null, "label": "Ikan Asin di Tengah Ruangan", "sub": "Negeri Konoha"},
+    {"kind": "cave", "cue": "herring", "label": "Fokus Dialihkan ke Bayangan"},
+    {"kind": "quote", "cue": "debat", "quote": "Bukan kebohongan, tapi pengalihan.", "author": "Fallacy Red Herring"},
+    {"kind": "silence", "cue": "ulangi", "label": "Ulangi Pertanyaan Aslimu"},
+    {"kind": "outro", "cue": "benar-benar", "label": "Yang Punya Jawaban Tak Ganti Topik"}
+  ]
+}

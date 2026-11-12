@@ -50,12 +50,18 @@ mkdirSync(path.join(ROOT, 'public'), {recursive: true});
 mkdirSync(BIN, {recursive: true});
 const txt = path.join(BIN, 'edge-input.txt');
 const mp3 = path.join(BIN, 'edge-out.mp3');
-writeFileSync(txt, script);
+// Spoken text preprocessing:
+// Convert "AI" / "A.I." to "Ei Ai" so Indonesian neural voice pronounces it properly
+const spokenScript = script
+  .replace(/\bAI\b/g, 'Ei Ai')
+  .replace(/\bA\.I\.\b/g, 'Ei Ai');
+
+writeFileSync(txt, spokenScript);
 
 console.log(`🔊 edge-tts — voice ${voice}${rate ? ` rate ${rate}` : ''}…`);
 const args = ['--voice', voice, '--file', txt, '--write-media', mp3];
-if (rate) args.push('--rate', rate);
-if (pitch) args.push('--pitch', pitch);
+if (rate) args.push(`--rate=${rate}`);
+if (pitch) args.push(`--pitch=${pitch}`);
 const res = spawnSync(EDGE, args, {stdio: ['ignore', 'inherit', 'inherit']});
 if (res.status !== 0) {
   console.error('edge-tts failed', res.error ?? '');

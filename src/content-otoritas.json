@@ -1,0 +1,20 @@
+{
+  "template": "parable",
+  "name": "APPEAL TO AUTHORITY",
+  "title": "Nama Besar Bukan Bukti",
+  "script": "Kalau dia sudah bilang begitu, berarti benar. Itulah appeal to authority, menyandarkan kebenaran pada siapa yang bicara. Di Negeri Konoha, setiap kebijakan dibungkus dengan nama besar. Seorang pejabat dianggap otomatis benar karena jabatannya. Padahal keahlian punya batas. Seorang dokter hebat belum tentu paham ekonomi, dan seorang profesor belum tentu jujur. Otoritas bisa menjadi petunjuk awal, tapi bukan bukti akhir. Bahkan para ahli bisa salah, bisa dibayar, dan bisa punya kepentingan. Cara sehatnya, dengarkan mereka, lalu periksa sendiri. Tanyakan, apa datanya, dan siapa yang diuntungkan. Karena kebenaran tidak pernah bergantung pada tinggi jabatan, tapi pada bukti yang bisa diuji.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#e0b24a",
+  "keywords": ["authority", "Konoha", "pejabat", "jabatannya", "dokter", "profesor", "Otoritas", "ahli", "periksa", "diuji"],
+  "captionFixes": {},
+  "parableScenes": [
+    {"kind": "title", "cue": null, "label": "Nama Besar Bukan Bukti", "sub": "Negeri Konoha"},
+    {"kind": "throne", "cue": "Konoha", "label": "Kebenaran dari Jabatan"},
+    {"kind": "emperor", "cue": "jabatannya", "label": "Nama Besar, Bukti Kosong"},
+    {"kind": "quote", "cue": "dokter", "quote": "Dokter hebat belum tentu paham ekonomi.", "author": "Fallacy Appeal to Authority"},
+    {"kind": "pillar", "cue": "periksa", "label": "Otoritas Bisa Retak"},
+    {"kind": "outro", "cue": "diuji", "label": "Bukti yang Bisa Diuji"}
+  ]
+}

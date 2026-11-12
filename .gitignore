@@ -12,6 +12,7 @@ node_modules/
 
 # rendered output
 out/
+.tmp/
 
 # generated media & assets in public/ (all recreated by the pipeline:
 # voiceover.wav, voiceover.src.mp3, music.mp3, captions.json, …)

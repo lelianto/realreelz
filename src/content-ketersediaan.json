@@ -1,0 +1,20 @@
+{
+  "template": "explainer",
+  "name": "BIAS KETERSEDIAAN",
+  "title": "Bias Ketersediaan: Kenapa Kita Takut Hal yang Salah",
+  "script": "Kenapa kita takut naik pesawat, tapi santai saja naik motor? Jawabannya bukan statistik, tapi bias ketersediaan. Otak menilai risiko dari seberapa mudah sebuah kejadian terbayang. Kecelakaan pesawat selalu jadi berita besar, ditayangkan berulang-ulang dengan gambar yang mengerikan. Sementara kecelakaan motor terjadi setiap hari dan tidak pernah masuk kamera. Akibatnya, kita merasa pesawat jauh lebih berbahaya, padahal kenyataannya sebaliknya. Pola yang sama membuat kita takut pada hal yang jarang, dan abai pada bahaya yang biasa. Berita bukan cermin dunia, ia adalah apa yang paling banyak ditonton. Jadi sebelum takut, tanyakan satu hal: apa data sebenarnya? Karena rasa takut yang salah arah bisa lebih berbahaya daripada risikonya sendiri.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#5aa9ff",
+  "keywords": ["takut", "pesawat", "motor", "ketersediaan", "Otak", "risiko", "berita", "terbayang", "berbahaya", "data"],
+  "captionFixes": {},
+  "explainerScenes": [
+    {"kind": "hook", "cue": null, "label": "Takut yang Salah Sasaran", "mood": "shock", "pose": "holding", "prop": "phone"},
+    {"kind": "brain", "cue": "Otak", "label": "Risiko dari Ingatan", "mood": "thinking", "pose": "thinking"},
+    {"kind": "desk", "cue": "berita", "label": "Yang Tayang, Yang Ditakuti", "mood": "neutral", "pose": "holding", "prop": "phone"},
+    {"kind": "iceberg", "cue": "sebaliknya", "label": "Risiko yang Terbalik", "mood": "sad", "pose": "shrug"},
+    {"kind": "eureka", "cue": "tanyakan", "label": "Cek Datanya", "mood": "happy", "pose": "eureka"},
+    {"kind": "trophy", "cue": "risikonya", "label": "Takut yang Salah Itu Mahal", "mood": "determined", "pose": "presenting"}
+  ]
+}

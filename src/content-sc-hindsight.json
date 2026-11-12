@@ -1,0 +1,71 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Seharusnya Sudah Terlihat",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["seharusnya", "hindsight", "hasil", "masa lalu", "petunjuk", "keputusan", "keberuntungan", "ketidakadilan"],
+  "captionFixes": {},
+  "script": "Setelah kecelakaan terjadi, semua orang berkata, seharusnya itu sudah terlihat. Itu hindsight bias, merasa tahu setelah tahu hasilnya. Setelah jawabannya ada, otak menata ulang masa lalu seolah petunjuknya jelas sejak awal. Padahal saat itu, informasinya tidak lengkap dan waktunya sempit. Akibatnya, kita terlalu keras menilai keputusan orang lain, dan terlalu yakin pada ramalan kita sendiri. Ini juga membuat kita lupa bahwa keberuntungan berperan besar. Cara melawannya, tanyakan apa yang diketahui saat itu, bukan setelahnya. Tulis keputusan sebelum hasilnya keluar. Karena menilai masa lalu dengan informasi hari ini bukan kebijaksanaan, itu hanya ketidakadilan.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Setelah semuanya selesai",
+      "heading": "Setelah tahu hasilnya, semuanya terasa jelas.",
+      "accentWord": "terasa jelas",
+      "accentTone": "coral",
+      "card": {
+        "from": "berita-hari-ini.id",
+        "tag": "SEHARUSNYA",
+        "title": "Seharusnya itu sudah terlihat",
+        "body": "Padahal saat itu informasinya belum lengkap."
+      },
+      "sub": "Petunjuk terlihat jelas hanya setelah hasilnya diketahui."
+    },
+    {
+      "kind": "how",
+      "cue": "otak",
+      "kicker": "Cara kerjanya di otak",
+      "heading": "Otak menata ulang masa lalu seolah rapi.",
+      "accentWord": "menata ulang",
+      "lines": [
+        "Petunjuk lama ditarik ke depan.",
+        "Detail yang tidak ada ikut ditambahkan.",
+        "Hasil akhir terasa seperti kepastian awal."
+      ],
+      "badges": [
+        {"text": "Tahu hasil bukan tahu sebab", "tone": "muted"},
+        {"text": "Nilai dengan informasi saat itu", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "Akibatnya",
+      "kicker": "Efek jangka panjangnya",
+      "heading": "Kita menilai terlalu keras, dan terlalu yakin.",
+      "accentWord": "terlalu keras",
+      "cards": [
+        "Menilai keputusan orang lain",
+        "Yakin pada ramalan sendiri",
+        "Lupa peran keberuntungan",
+        "Merasa pintar belakangan"
+      ],
+      "highlight": "Menilai masa lalu dengan informasi hari ini tidak adil."
+    },
+    {
+      "kind": "cta",
+      "cue": "Cara",
+      "kicker": "Cara melawannya",
+      "heading": "Tanyakan apa yang diketahui saat itu.",
+      "accentWord": "saat itu",
+      "accentTone": "accent",
+      "big": "SAAT ITU",
+      "sub": "Tulis keputusan sebelum hasilnya keluar.",
+      "pill": "Tahu hasil bukan berarti tahu sebab"
+    }
+  ]
+}

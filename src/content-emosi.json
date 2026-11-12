@@ -1,0 +1,19 @@
+{
+  "template": "parable",
+  "name": "APPEAL TO EMOTION",
+  "title": "Perasaan Bukan Bukti",
+  "script": "Pikirkan anak-anak yang kelaparan. Kalau kamu tidak setuju dengan kebijakan ini, berarti kamu tidak peduli pada mereka. Itulah appeal to emotion, mengganti argumen dengan perasaan. Rasa kasihan, rasa takut, dan rasa marah memang menggerakkan orang, tapi tidak membuktikan apa pun. Sebuah kebijakan bisa salah walaupun niatnya menyentuh. Dan bisa benar walaupun disampaikan dengan dingin. Emosi bukan musuh berpikir, ia hanya bukan bukti. Cara memisahkannya, dengarkan dulu perasaannya, lalu tanyakan datanya. Karena keputusan yang hanya didorong emosi sering berakhir menyesal, saat air mata sudah kering dan tagihannya datang.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#e0b24a",
+  "keywords": ["kelaparan", "emotion", "perasaan", "kasihan", "kebijakan", "menyentuh", "Emosi", "bukti", "datanya", "tagihannya"],
+  "captionFixes": {},
+  "parableScenes": [
+    {"kind": "title", "cue": null, "label": "Perasaan Bukan Bukti", "sub": "Negeri Konoha"},
+    {"kind": "arena", "cue": "emotion", "label": "Panggung Emosi"},
+    {"kind": "quote", "cue": "menyentuh", "quote": "Kebijakan bisa salah walau niatnya menyentuh.", "author": "Fallacy Appeal to Emotion"},
+    {"kind": "scales", "cue": "Emosi", "label": "Emosi Menimpa Data"},
+    {"kind": "outro", "cue": "menyesal", "label": "Air Mata Kering, Tagihan Datang"}
+  ]
+}

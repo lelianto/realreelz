@@ -1,0 +1,71 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Penipuan Online dan Rasa Malu",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["penipuan", "laporan", "kerugian", "korban", "malu", "blokir", "lapor", "rekening"],
+  "captionFixes": {},
+  "script": "Penipuan online di Indonesia sudah bukan kejadian langka. Data OJK melalui Indonesia Anti-Scam Centre mencatat lebih dari enam ratus ribu laporan dengan kerugian dilaporkan mencapai sembilan koma satu triliun rupiah. Yang menarik, korban termuda yang tercatat berusia delapan tahun. Artinya, penipu tidak memilih usia, hanya memilih kelengahan. Rasa malu sering membuat korban diam, padahal kecepatan melapor menentukan apakah dana bisa ditahan. Jadi kalau kamu atau keluargamu tertipu, jangan menunggu. Blokir rekeningnya, lapor ke bank, lalu laporkan ke kanal resmi. Karena penipu menang bukan karena pintar, tapi karena kita diam terlalu lama.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Viral dan berulang",
+      "heading": "Penipuan online bukan lagi kejadian langka.",
+      "accentWord": "bukan lagi kejadian langka",
+      "accentTone": "coral",
+      "card": {
+        "from": "iasc.ojk.go.id",
+        "tag": "608.168 LAPORAN",
+        "title": "Kerugian dilaporkan Rp9,1 triliun",
+        "body": "Korban termuda yang tercatat berusia 8 tahun."
+      },
+      "sub": "Angka ini hanya yang dilaporkan. Banyak korban memilih diam."
+    },
+    {
+      "kind": "how",
+      "cue": "korban",
+      "kicker": "Kenapa sulit berhenti",
+      "heading": "Penipu tidak memilih usia, hanya kelengahan.",
+      "accentWord": "kelengahan",
+      "lines": [
+        "Rasa malu membuat korban diam.",
+        "Kecepatan lapor menentukan dana ditahan.",
+        "Semakin cepat, semakin besar peluang kembali."
+      ],
+      "badges": [
+        {"text": "Malu membuat penipu menang dua kali", "tone": "muted"},
+        {"text": "Lapor cepat, bukan lapor sempurna", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "Blokir",
+      "kicker": "Yang harus dilakukan",
+      "heading": "Kalau tertipu, jangan menunggu.",
+      "accentWord": "jangan menunggu",
+      "cards": [
+        "Blokir rekening",
+        "Lapor ke bank",
+        "Lapor ke kanal resmi",
+        "Simpan semua bukti"
+      ],
+      "highlight": "Menunggu sehari bisa membuat dana sudah berpindah tangan."
+    },
+    {
+      "kind": "cta",
+      "cue": "Karena",
+      "kicker": "Yang perlu diingat",
+      "heading": "Penipu menang karena kita diam.",
+      "accentWord": "kita diam",
+      "accentTone": "accent",
+      "big": "LAPOR",
+      "sub": "Jangan tunggu sampai malu mengalahkan kerugian.",
+      "pill": "Simpan bukti, lapor cepat, jangan menghilang"
+    }
+  ]
+}

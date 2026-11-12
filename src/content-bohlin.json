@@ -1,0 +1,30 @@
+{
+  "template": "stickman",
+  "name": "NILS BOHLIN",
+  "title": "Nils Bohlin",
+  "script": "Setiap tahun, puluhan ribu orang tewas di jalan raya. Tubuh manusia terlempar saat tabrakan, dan sabuk pengaman saat itu hanya mengikat pinggang sehingga justru meremukkan perut. Nils Bohlin, seorang insinyur di Volvo, melihat masalah itu setiap hari dan yakin ada jalan keluarnya. Dia memahami satu prinsip sederhana: tubuh harus ditahan di tiga titik, yaitu bahu, dada, dan pinggul. Setelah bertahun-tahun mengukur dan menguji, dia menciptakan sabuk pengaman tiga titik yang kita pakai sampai hari ini. Penemuan itu bisa menyelamatkan jutaan nyawa, dan bisa membuat Volvo sangat kaya. Tapi perusahaan itu justru membuka patennya secara gratis untuk semua pabrikan. Alasannya sederhana: nyawa lebih penting daripada laba. Kini, sabuk itu telah menyelamatkan lebih dari satu juta orang di seluruh dunia. Kadang, keputusan paling menguntungkan adalah membiarkan dunia memakai idemu.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#ff9f43",
+  "hue": 25,
+  "hair": "#332a22",
+  "moustache": false,
+  "captionFixes": {
+    "abrakan": "tabrakan",
+    "sabu": "sabuk",
+    "meremukan": "meremukkan",
+    "patenya": "patennya"
+  },
+  "keywords": ["Bohlin", "Volvo", "tabrakan", "sabuk", "pinggang", "prinsip", "tiga titik", "paten", "gratis", "nyawa"],
+  "storyScenes": [
+    {"kind": "gintro", "cue": null},
+    {"kind": "gstruggle", "cue": "tabrakan"},
+    {"kind": "gportrait", "cue": "Bohlin", "label": "Nils Bohlin"},
+    {"kind": "gidea", "cue": "prinsip"},
+    {"kind": "gbreakthrough", "cue": "menciptakan", "label": "SABUK 3 TITIK"},
+    {"kind": "ggive", "cue": "gratis"},
+    {"kind": "gimpact", "cue": "Kini"},
+    {"kind": "gclose", "cue": "Kadang"}
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Kritik dan Rasa Defensif",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["kritik", "membela", "ancaman", "jeda", "informasi", "benar", "menyakitkan", "mendengar"],
+  "captionFixes": {},
+  "script": "Kritik datang, dan tubuhmu langsung panas. Sebelum berpikir, mulutmu sudah membela diri. Itu reaksi normal. Otak memperlakukan kritik seperti ancaman fisik, jadi ia melindungi lebih dulu. Masalahnya, pembelaan cepat membuat kita kehilangan informasi yang berguna. Cara memisahkannya, beri jeda. Katakan, aku perlu waktu memikirkannya. Lalu tanyakan satu hal: bagian mana yang benar. Kamu tidak harus setuju dengan semuanya. Cukup ambil satu persen yang bisa dipakai. Karena kritik yang paling menyakitkan sering menyimpan hal yang paling perlu kamu dengar.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Kebiasaan sehari-hari",
+      "heading": "Kritik datang, mulut membela sebelum berpikir.",
+      "accentWord": "membela sebelum berpikir",
+      "accentTone": "coral",
+      "card": {
+        "from": "komentar.app",
+        "tag": "KRITIK",
+        "title": "Kamu terlalu lambat",
+        "body": "Reaksi pertama: membela diri."
+      },
+      "sub": "Yang panas bukan hanya perasaan, tapi juga cara kita mendengar."
+    },
+    {
+      "kind": "how",
+      "cue": "Otak",
+      "kicker": "Cara kerjanya di otak",
+      "heading": "Otak memperlakukan kritik seperti ancaman.",
+      "accentWord": "seperti ancaman",
+      "lines": [
+        "Pembelaan datang otomatis.",
+        "Informasi berguna ikut tertutup.",
+        "Reaksi bukan keputusan."
+      ],
+      "badges": [
+        {"text": "Defensif itu normal, bukan takdir", "tone": "muted"},
+        {"text": "Beri jeda sebelum menjawab", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "beri",
+      "kicker": "Cara memisahkannya",
+      "heading": "Beri jeda sebelum menjawab.",
+      "accentWord": "jeda",
+      "cards": [
+        "Tarik napas",
+        "Minta waktu",
+        "Cari bagian yang benar",
+        "Ambil satu persen"
+      ],
+      "highlight": "Kamu tidak harus setuju dengan semuanya untuk mengambil yang berguna."
+    },
+    {
+      "kind": "cta",
+      "cue": "Karena",
+      "kicker": "Yang perlu diingat",
+      "heading": "Kritik menyakitkan sering menyimpan hal penting.",
+      "accentWord": "hal penting",
+      "accentTone": "accent",
+      "big": "1 PERSEN",
+      "sub": "Ambil bagian yang benar, buang sisanya dengan sadar.",
+      "pill": "Jangan biarkan ego menutup telinga"
+    }
+  ]
+}

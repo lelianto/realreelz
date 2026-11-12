@@ -1,0 +1,71 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Bandros yang Akhirnya Laris",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["bandros", "dagangan", "sepi", "kemasan", "varian", "inovasi", "pelanggan", "diperbarui"],
+  "captionFixes": {},
+  "script": "Seorang ayah berjualan bandros keliling selama tiga puluh dua tahun. Rasanya tidak berubah, tapi dagangannya dulu sering sepi. Lalu anaknya mengubah tampilan, menambah varian rasa, dan mengemasnya lebih rapi. Sejak itu, usaha itu viral dan selalu laris. Ceritanya sederhana, tapi pelajarannya besar. Banyak usaha bukan gagal karena produknya buruk, tapi karena tidak pernah diperbarui. Rasa yang sama bisa terasa baru lewat kemasan dan cerita. Cara menirunya, lihat satu hal yang paling sering dikeluhkan pelanggan, lalu perbaiki itu dulu. Karena inovasi tidak selalu berarti mesin baru, kadang hanya berani mengubah hal kecil yang sudah lama diabaikan.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Kisah viral",
+      "heading": "Rasa sama, dagangan tetap sepi.",
+      "accentWord": "tetap sepi",
+      "accentTone": "coral",
+      "card": {
+        "from": "catatan-usaha.id",
+        "tag": "32 TAHUN",
+        "title": "Bandros keliling, sepi pembeli",
+        "body": "Produknya enak, tapi tidak ada yang berubah."
+      },
+      "sub": "Bertahan lama bukan berarti tumbuh."
+    },
+    {
+      "kind": "how",
+      "cue": "Sejak",
+      "kicker": "Apa yang berubah",
+      "heading": "Banyak usaha bukan gagal karena produknya.",
+      "accentWord": "bukan gagal karena produknya",
+      "lines": [
+        "Yang berubah: tampilan, varian, kemasan.",
+        "Rasa yang sama bisa terasa baru.",
+        "Viral datang setelah ada yang diperbaiki."
+      ],
+      "badges": [
+        {"text": "Produk enak tidak menjual dirinya sendiri", "tone": "muted"},
+        {"text": "Perbaiki satu hal yang dikeluhkan", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "Cara",
+      "kicker": "Yang biasanya diabaikan",
+      "heading": "Perbaiki satu hal yang paling dikeluhkan.",
+      "accentWord": "paling dikeluhkan",
+      "cards": [
+        "Tampilan",
+        "Varian rasa",
+        "Kemasan",
+        "Cara menjual"
+      ],
+      "highlight": "Pelanggan sering pergi bukan karena rasa, tapi karena pengalaman."
+    },
+    {
+      "kind": "cta",
+      "cue": "kadang",
+      "kicker": "Yang perlu diingat",
+      "heading": "Inovasi kadang hanya berani mengubah hal kecil.",
+      "accentWord": "hal kecil",
+      "accentTone": "accent",
+      "big": "PERBARUI",
+      "sub": "Tidak perlu mesin baru untuk terlihat baru.",
+      "pill": "Yang lama diabaikan biasanya yang paling cepat berdampak"
+    }
+  ]
+}

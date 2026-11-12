@@ -1,0 +1,71 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Kenapa Susah Berhenti Scroll",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["scrolling", "notifikasi", "umpan", "ketagihan", "layar", "jarak", "batas", "dirancang"],
+  "captionFixes": {},
+  "script": "Kamu buka ponsel cuma untuk cek satu notifikasi, lalu dua puluh menit kemudian masih scrolling. Itu bukan kurang disiplin. Itu desain. Umpan sosial tidak datang di waktu yang bisa ditebak, dan ketidakpastian itulah yang membuat otak terus menunggu. Kadang menarik, kadang membosankan, dan justru campuran itu yang paling membuat ketagihan. Layar tidak punya ujung, jadi tidak ada titik alami untuk berhenti. Cara memutusnya, jangan andalkan niat. Beri jarak fisik, matikan notifikasi, dan tentukan kapan kamu selesai sebelum membuka. Karena aplikasi dirancang oleh orang yang dibayar untuk membuatmu bertahan, dan kamu melawannya hanya dengan tekad.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Kebiasaan sehari-hari",
+      "heading": "Scrolling tidak punya titik berhenti.",
+      "accentWord": "titik berhenti",
+      "accentTone": "coral",
+      "card": {
+        "from": "feed.app",
+        "tag": "20 MENIT",
+        "title": "Cuma cek satu notifikasi",
+        "body": "Dua puluh menit kemudian, masih scrolling."
+      },
+      "sub": "Bukan karena kamu lemah, tapi karena layarnya tidak dirancang untuk berhenti."
+    },
+    {
+      "kind": "how",
+      "cue": "Umpan",
+      "kicker": "Cara kerjanya di otak",
+      "heading": "Hadiah yang tidak pasti paling membuat ketagihan.",
+      "accentWord": "tidak pasti",
+      "lines": [
+        "Umpan datang di waktu yang acak.",
+        "Kadang menarik, kadang kosong.",
+        "Otak terus menunggu yang berikutnya."
+      ],
+      "badges": [
+        {"text": "Ketidakpastian mengunci perhatian", "tone": "muted"},
+        {"text": "Beri batas sebelum membuka", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "Layar",
+      "kicker": "Kenapa sulit berhenti",
+      "heading": "Tidak ada ujung, jadi tidak ada alasan berhenti.",
+      "accentWord": "tidak ada ujung",
+      "cards": [
+        "Notifikasi mati",
+        "Jarak fisik dari ponsel",
+        "Batas waktu yang jelas",
+        "Niat saja tidak cukup"
+      ],
+      "highlight": "Yang tidak punya ujung harus kamu akhiri sendiri."
+    },
+    {
+      "kind": "cta",
+      "cue": "dirancang",
+      "kicker": "Cara memutusnya",
+      "heading": "Aplikasi dibuat untuk menahanmu, bukan membantumu berhenti.",
+      "accentWord": "menahanmu",
+      "accentTone": "accent",
+      "big": "TUTUP",
+      "sub": "Tentukan kapan selesai, sebelum kamu membuka.",
+      "pill": "Lawan desain dengan jarak, bukan tekad"
+    }
+  ]
+}

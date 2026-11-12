@@ -45,11 +45,15 @@ if (!existsSync(MODEL)) {
 const {script, voicePitch = 0} = JSON.parse(
   readFileSync(path.join(ROOT, 'src', 'content.json'), 'utf8'),
 );
+const spokenScript = (script || '')
+  .replace(/\bAI\b/g, 'Ei Ai')
+  .replace(/\bA\.I\.\b/g, 'Ei Ai');
+
 console.log('🔊 Synthesizing voiceover…');
 const res = spawnSync(
   PIPER,
   ['-m', MODEL, '-c', CONFIG, '-f', OUT, '--sentence-silence', '0.35'],
-  {input: script, stdio: ['pipe', 'inherit', 'inherit']},
+  {input: spokenScript, stdio: ['pipe', 'inherit', 'inherit']},
 );
 
 if (res.status !== 0) {

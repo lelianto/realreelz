@@ -1,0 +1,71 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Mendengar untuk Menjawab",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["mendengar", "jawaban", "menyiapkan", "mengerti", "ulangi", "koreksi", "percakapan", "paham"],
+  "captionFixes": {},
+  "script": "Kamu sedang bercerita, dan lawan bicaramu sudah menyiapkan jawaban sebelum kamu selesai. Itu mendengar untuk menjawab, bukan untuk mengerti. Kita menunggu giliran, bukan menangkap isi. Akibatnya, banyak percakapan berjalan paralel, dua orang berbicara tentang hal yang berbeda. Cara memperbaikinya sederhana tapi sulit. Sebelum membalas, ulangi dulu apa yang kamu dengar dengan kata-katamu. Kalau salah, mereka akan mengoreksi. Kalau benar, percakapan baru benar-benar mulai. Karena mendengar bukan menunggu diam, tapi memastikan kamu paham sebelum menjawab.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Kebiasaan sehari-hari",
+      "heading": "Menunggu giliran bicara bukan mendengar.",
+      "accentWord": "bukan mendengar",
+      "accentTone": "coral",
+      "card": {
+        "from": "obrolan.app",
+        "tag": "PARALEL",
+        "title": "Dua orang bicara, dua topik",
+        "body": "Saling menunggu giliran, bukan saling mengerti."
+      },
+      "sub": "Keduanya merasa didengar, padahal tidak ada yang menangkap isi."
+    },
+    {
+      "kind": "how",
+      "cue": "Kita",
+      "kicker": "Cara kerjanya",
+      "heading": "Kita menyiapkan jawaban sebelum selesai mendengar.",
+      "accentWord": "jawaban",
+      "lines": [
+        "Banyak percakapan berjalan paralel.",
+        "Dua orang membahas hal berbeda.",
+        "Semua merasa sudah bicara."
+      ],
+      "badges": [
+        {"text": "Menunggu giliran bukan mendengar", "tone": "muted"},
+        {"text": "Ulangi dulu sebelum menjawab", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "ulangi",
+      "kicker": "Cara memperbaikinya",
+      "heading": "Ulangi dulu apa yang kamu dengar.",
+      "accentWord": "ulangi dulu",
+      "cards": [
+        "Dengar sampai habis",
+        "Ulangi dengan kata sendiri",
+        "Minta koreksi",
+        "Baru menjawab"
+      ],
+      "highlight": "Kalau ulangannya salah, justru di situ percakapan mulai benar."
+    },
+    {
+      "kind": "cta",
+      "cue": "Karena",
+      "kicker": "Yang perlu diingat",
+      "heading": "Mendengar bukan menunggu diam.",
+      "accentWord": "menunggu diam",
+      "accentTone": "accent",
+      "big": "ULANGI",
+      "sub": "Pastikan kamu paham sebelum menyiapkan bantahan.",
+      "pill": "Mengerti dulu, menjawab kemudian"
+    }
+  ]
+}

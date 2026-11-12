@@ -1,0 +1,122 @@
+{
+  "template": "stickman",
+  "format": "duel",
+  "name": "EDISON",
+  "title": "Edison vs Tesla",
+  "script": "Dua jenius, satu perang. Thomas Edison melawan Nikola Tesla. Tahun seribu delapan ratus delapan puluh empat, Tesla datang ke Amerika dan bekerja untuk Edison. Konon dia dijanjikan bonus lima puluh ribu dolar kalau berhasil memperbaiki mesin Edison. Tesla berhasil, tapi bonusnya tidak pernah dibayar. Edison menang licik. Lalu datang perang arus. Edison membela arus searah, Tesla membela arus bolak balik. Edison berkampanye bahwa arus Tesla berbahaya. Tapi pada tahun seribu delapan ratus sembilan puluh tiga, arus bolak balik menerangi pameran dunia di Chicago. Tesla membalas. Ronde terakhir, soal hidup. Edison meninggal kaya dengan lebih dari seribu paten. Tesla meninggal miskin dan sendirian. Tapi listrik di rumahmu hari ini adalah arus bolak balik milik Tesla. Jadi, menurutmu siapa pemenangnya?",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#ffd23f",
+  "hue": 20,
+  "hair": "#4a3a2e",
+  "moustache": false,
+  "rival": {
+    "name": "TESLA",
+    "accent": "#5ad1ff",
+    "hue": 220,
+    "hair": "#1c1a17",
+    "moustache": true,
+    "coat": "#2b2742"
+  },
+  "captionFixes": {
+    "Konan": "Konon",
+    "genius": "jenius"
+  },
+  "keywords": [
+    "Edison",
+    "Tesla",
+    "licik",
+    "arus",
+    "Chicago",
+    "paten",
+    "miskin",
+    "pemenangnya"
+  ],
+  "storyScenes": [
+    {
+      "kind": "gintro",
+      "cue": null,
+      "who": "split",
+      "mood": "angry"
+    },
+    {
+      "kind": "gportrait",
+      "cue": "melawan",
+      "who": "split"
+    },
+    {
+      "kind": "gship",
+      "cue": "Amerika",
+      "who": "b",
+      "year": 1884
+    },
+    {
+      "kind": "gwork",
+      "cue": "dijanjikan",
+      "who": "b",
+      "prop": "gear",
+      "round": "BONUS $50.000"
+    },
+    {
+      "kind": "cdrain",
+      "cue": "dibayar",
+      "who": "b",
+      "label": "$50.000"
+    },
+    {
+      "kind": "gbreakthrough",
+      "cue": "licik",
+      "label": "LICIK!",
+      "point": "a"
+    },
+    {
+      "kind": "gidea",
+      "cue": "arus",
+      "who": "split",
+      "round": "PERANG ARUS"
+    },
+    {
+      "kind": "gnews",
+      "cue": "berbahaya",
+      "label": "ARUS TESLA BERBAHAYA!"
+    },
+    {
+      "kind": "gimpact",
+      "cue": "Chicago",
+      "who": "b",
+      "year": 1893,
+      "point": "b"
+    },
+    {
+      "kind": "galone",
+      "cue": "terakhir",
+      "who": "split",
+      "mood": "neutral",
+      "round": "WARISAN"
+    },
+    {
+      "kind": "gaward",
+      "cue": "kaya",
+      "label": "1000+ PATEN",
+      "point": "a"
+    },
+    {
+      "kind": "galone",
+      "cue": "miskin",
+      "who": "b",
+      "mood": "sad"
+    },
+    {
+      "kind": "gidea",
+      "cue": "rumahmu",
+      "who": "b",
+      "point": "b"
+    },
+    {
+      "kind": "gportrait",
+      "cue": "pemenangnya",
+      "who": "split"
+    }
+  ]
+}

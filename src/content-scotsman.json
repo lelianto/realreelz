@@ -1,0 +1,20 @@
+{
+  "template": "parable",
+  "name": "NO TRUE SCOTSMAN",
+  "title": "Tidak Ada yang Benar-benar",
+  "script": "Semua orang baik pasti setuju dengan kami. Tapi dia orang baik, dan tidak setuju. Berarti dia bukan orang baik yang sebenarnya. Itulah no true Scotsman, ketika definisi diubah agar klaimmu tidak pernah salah. Setiap bukti yang membantah langsung dikeluarkan dari kelompok. Contohnya, tidak ada dokter sejati yang meragukan pengobatan ini, lalu dokter yang meragukannya disebut bukan dokter sejati. Lingkaran ini membuat keyakinan kebal dari koreksi. Cara memutusnya, minta definisinya sejak awal, sebelum bukti muncul. Karena aturan yang berubah setiap kali kalah bukanlah aturan, itu hanya cara menjaga harga diri.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#e0b24a",
+  "keywords": ["Scotsman", "definisi", "kelompok", "Contohnya", "dokter", "sejati", "Lingkaran", "koreksi", "definisinya", "harga diri"],
+  "captionFixes": {},
+  "parableScenes": [
+    {"kind": "title", "cue": null, "label": "Orang Baik yang Sebenarnya", "sub": "Negeri Konoha"},
+    {"kind": "divide", "cue": "Scotsman", "label": "Siapa yang Benar-benar Termasuk?"},
+    {"kind": "quote", "cue": "Contohnya", "quote": "Tidak ada dokter sejati yang meragukannya.", "author": "Fallacy No True Scotsman"},
+    {"kind": "pillar", "cue": "Lingkaran", "label": "Keyakinan Kebal Koreksi"},
+    {"kind": "silence", "cue": "definisinya", "label": "Definisi Diubah Saat Kalah"},
+    {"kind": "outro", "cue": "Karena", "label": "Aturan yang Berubah Bukan Aturan"}
+  ]
+}

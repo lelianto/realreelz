@@ -1,0 +1,23 @@
+{
+  "template": "stickman",
+  "name": "EFEK JANGKAR",
+  "title": "Efek Anchoring",
+  "script": "Sebuah toko menempelkan harga seratus ribu, lalu mencoretnya menjadi lima puluh ribu. Kamu merasa mendapat barang murah, padahal mungkin harga wajarnya memang lima puluh ribu. Inilah efek jangkar. Angka pertama yang kamu lihat menjadi patokan, dan otak malas menghitung ulang. Penelitian menunjukkan, bahkan hakim memberi hukuman lebih berat hanya karena angka dadu yang lebih tinggi. Di gaji, tawaran pertama menentukan seluruh negosiasi. Di diskon, coretan harga lama mengunci persepsimu. Cara melawannya, jangan mulai dari angka mereka. Tentukan nilaimu sendiri sebelum melihat penawaran. Karena angka pertama bukan kebenaran, ia hanya jangkar yang ditanam agar kamu berhenti bertanya.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#a3e635",
+  "hue": 95,
+  "hair": "#332a22",
+  "moustache": true,
+  "captionFixes": {},
+  "keywords": ["harga", "jangkar", "patokan", "hakim", "hukuman", "gaji", "negosiasi", "diskon", "Tentukan", "nilaimu"],
+  "storyScenes": [
+    {"kind": "cstory", "cue": null, "label": "Efek Jangkar", "prop": "coin"},
+    {"kind": "cterm", "cue": "jangkar", "term": "EFEK JANGKAR", "def": "Angka pertama mengunci penilaianmu"},
+    {"kind": "cthink", "cue": "patokan", "bubble": "Angka pertama jadi patokan"},
+    {"kind": "cwhy", "cue": "gaji", "points": ["Tawaran pertama", "Menentukan seluruh negosiasi", "Bukan nilai sebenarnya"]},
+    {"kind": "cdrain", "cue": "diskon", "label": "Harga coret"},
+    {"kind": "clesson", "cue": "Tentukan", "label": "Tentukan nilaimu sebelum melihat angka mereka"}
+  ]
+}

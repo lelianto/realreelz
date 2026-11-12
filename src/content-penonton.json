@@ -1,0 +1,23 @@
+{
+  "template": "stickman",
+  "name": "EFEK PENONTON",
+  "title": "Efek Penonton",
+  "script": "Seorang pria jatuh di tengah jalan. Puluhan orang melihat, tapi tidak ada yang bergerak. Fenomena ini disebut efek penonton. Semakin banyak orang yang menyaksikan, semakin kecil kemungkinan ada yang menolong. Bukan karena mereka jahat. Setiap orang berpikir, pasti ada orang lain yang lebih pantas dan lebih siap. Tanggung jawab itu terbagi, sampai tidak ada yang merasa bertanggung jawab. Dalam situasi darurat, kerumunan justru menjadi selimut yang menenangkan hati nurani. Cara memutusnya sederhana, yaitu jangan menunggu. Tunjuk satu orang, dan minta bantuan langsung. Kamu, yang berbaju biru, tolong panggil ambulans. Begitu satu orang bergerak, yang lain akan mengikuti. Keberanian menular, sama seperti diam.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#ff6a4d",
+  "hue": 8,
+  "hair": "#241c18",
+  "moustache": false,
+  "captionFixes": {},
+  "keywords": ["jatuh", "penonton", "menolong", "Tanggung jawab", "kerumunan", "Tunjuk", "ambulans", "Keberanian", "menular", "diam"],
+  "storyScenes": [
+    {"kind": "cstory", "cue": null, "label": "Efek Penonton"},
+    {"kind": "cterm", "cue": "penonton", "term": "EFEK PENONTON", "def": "Semakin ramai, semakin diam"},
+    {"kind": "cdilemma", "cue": "menolong", "optL": "Bergerak", "optR": "Menunggu"},
+    {"kind": "cwhy", "cue": "Tanggung", "points": ["Tanggung jawab terbagi", "Tidak ada yang merasa pemilik", "Semua menunggu yang lain"]},
+    {"kind": "cstory", "cue": "Tunjuk", "bubble": "Kamu, panggil ambulans!"},
+    {"kind": "clesson", "cue": "Keberanian", "label": "Keberanian menular, diam juga"}
+  ]
+}

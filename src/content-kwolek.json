@@ -1,0 +1,30 @@
+{
+  "template": "stickman",
+  "name": "STEPHANIE KWOLEK",
+  "title": "Stephanie Kwolek",
+  "script": "Stephanie Kwolek tidak pernah bercita-cita mengubah dunia. Dia hanya ingin menjadi ilmuwan, dan bekerja di laboratorium bahan kimia. Suatu hari di tahun seribu sembilan ratus enam puluh empat, dia mencampur dua bahan dan mendapat cairan keruh yang terlihat seperti kegagalan. Rekan-rekannya menyarankan cairan itu dibuang. Tapi Kwolek penasaran, dan memutuskan memintalnya menjadi serat. Mesin pemintalnya sempat macet. Saat serat itu akhirnya keluar, hasilnya mengejutkan, lima kali lebih kuat dari baja tetapi sangat ringan. Itulah Kevlar. Hari ini, serat itu melindungi petugas pemadam kebakaran, atlet, dan ribuan polisi lewat rompi anti peluru. Kwolek menerima banyak penghargaan, tetapi dia tetap rendah hati, dan menyebut penemuannya sebagai keberuntungan yang diikuti rasa ingin tahu. Kegagalan yang diperiksa dengan teliti bisa menjadi penemuan terbesar dalam hidupmu.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#a3e635",
+  "hue": 95,
+  "hair": "#3a2f2a",
+  "moustache": false,
+  "captionFixes": {
+    "Stepani": "Stephanie",
+    "Kualik": "Kwolek",
+    "menyerangkan": "menyarankan",
+    "bajet": "baja"
+  },
+  "keywords": ["Stephanie", "Kwolek", "ilmuwan", "laboratorium", "keruh", "dibuang", "serat", "Kevlar", "pemadam", "rompi"],
+  "storyScenes": [
+    {"kind": "gintro", "cue": null},
+    {"kind": "gportrait", "cue": "laboratorium", "label": "Stephanie Kwolek"},
+    {"kind": "gwork", "cue": "mencampur", "prop": "flask"},
+    {"kind": "gstruggle", "cue": "dibuang"},
+    {"kind": "gbreakthrough", "cue": "Kevlar", "label": "KEVLAR"},
+    {"kind": "gimpact", "cue": "pemadam"},
+    {"kind": "gquote", "cue": "rendah", "label": "Keberuntungan yang diikuti rasa ingin tahu"},
+    {"kind": "gclose", "cue": "hidupmu"}
+  ]
+}

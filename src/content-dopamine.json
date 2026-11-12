@@ -1,0 +1,83 @@
+{
+  "template": "explainer",
+  "name": "DOPAMIN",
+  "title": "Jebakan Dopamin: Kenapa Kita Susah Fokus?",
+  "script": "Pernahkah kamu berniat fokus belajar atau kerja, tapi malah berakhir scrolling HP berjam-jam? Di dalam otakmu, ada zat kimia bernama dopamin. Dopamin sebenarnya bukan membuatmu bahagia, melainkan membuatmu penasaran dan terus ketagihan. Setiap kali kamu melihat layar dan mendapat notifikasi, otakmu dibanjiri hadiah instan tanpa perlu usaha apa pun. Akibatnya, hal-hal penting seperti membaca buku, belajar mendalam, atau mengejar impian terasa sangat hambar dan membosankan. Kita perlahan menenggelamkan potensi diri ke dalam jebakan kesenangan sesaat. Padahal, semua karya besar di dunia lahir dari kebosanan dan kerja keras yang panjang. Mulai hari ini, letakkan ponselmu, hadapi kebosanan itu, dan rebut kembali kendali masa depanmu.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#ffd23f",
+  "keywords": [
+    "fokus",
+    "scrolling",
+    "otakmu",
+    "dopamin",
+    "ketagihan",
+    "notifikasi",
+    "instan",
+    "membosankan",
+    "jebakan",
+    "kebosanan",
+    "rebut",
+    "kendali"
+  ],
+  "captionFixes": {
+    "Doppamin": "dopamin",
+    "melayinkan": "melainkan",
+    "HP": "ponsel",
+    "hp": "ponsel"
+  },
+  "explainerScenes": [
+    {
+      "kind": "hook",
+      "cue": null,
+      "label": "Jebakan Scrolling",
+      "mood": "shock",
+      "pose": "holding",
+      "prop": "phone"
+    },
+    {
+      "kind": "brain",
+      "cue": "kimia",
+      "label": "Zat Rasa Penasaran",
+      "mood": "thinking",
+      "pose": "thinking"
+    },
+    {
+      "kind": "desk",
+      "cue": "notifikasi",
+      "label": "Distraksi Tiap Detik",
+      "mood": "neutral",
+      "pose": "holding",
+      "prop": "coffee"
+    },
+    {
+      "kind": "iceberg",
+      "cue": "membosankan",
+      "label": "Kenikmatan Semu",
+      "mood": "sad",
+      "pose": "shrug"
+    },
+    {
+      "kind": "eureka",
+      "cue": "jebakan",
+      "label": "Titik Balik Kesadaran",
+      "mood": "happy",
+      "pose": "eureka"
+    },
+    {
+      "kind": "rocket",
+      "cue": "kebosanan",
+      "label": "Kekuatan Fokus Mendalam",
+      "mood": "determined",
+      "pose": "presenting"
+    },
+    {
+      "kind": "trophy",
+      "cue": "rebut",
+      "label": "Kuasai Masa Depanmu",
+      "mood": "happy",
+      "pose": "celebrate"
+    }
+  ]
+}

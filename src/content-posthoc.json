@@ -1,0 +1,22 @@
+{
+  "template": "stickman",
+  "name": "POST HOC",
+  "title": "Sesudah Berarti Sebab",
+  "script": "Setiap kali aku minum jamu ini, pilekku sembuh dalam tiga hari. Jadi jamu ini menyembuhkan pilek. Itulah post hoc, sesudah berarti sebab. Kita melihat dua hal terjadi berurutan, lalu langsung menyimpulkan yang pertama menyebabkan yang kedua. Padahal pilek memang sembuh sendiri dalam beberapa hari. Contoh lain, harga saham naik setelah presiden berganti baju, lalu baju itu disebut membawa keberuntungan. Otak kita benci kebetulan, jadi ia menciptakan cerita sebab-akibat dari apa saja yang berdekatan. Cara memeriksanya, tanyakan apa yang terjadi tanpa perlakuan itu, lalu bandingkan. Karena urutan waktu bukan bukti sebab, ia hanya petunjuk untuk mencari bukti.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#4fd1c5",
+  "hue": 178,
+  "hair": "#2a2622",
+  "moustache": true,
+  "captionFixes": {},
+  "keywords": ["jamu", "pilek", "post hoc", "berurutan", "saham", "presiden", "Otak", "kebetulan", "bandingkan", "bukti"],
+  "storyScenes": [
+    {"kind": "cstory", "cue": null, "label": "Sesudah Berarti Sebab"},
+    {"kind": "cterm", "cue": "hoc", "term": "POST HOC", "def": "Berurutan bukan berarti menyebabkan"},
+    {"kind": "cwhy", "cue": "Contoh", "points": ["Saham naik sesudah kejadian", "Kebetulan dicari sebabnya", "Otak benci ketidakpastian"]},
+    {"kind": "cthink", "cue": "Otak", "bubble": "Kebetulan terasa menakutkan"},
+    {"kind": "clesson", "cue": "bandingkan", "label": "Bandingkan dengan tanpa perlakuan"}
+  ]
+}

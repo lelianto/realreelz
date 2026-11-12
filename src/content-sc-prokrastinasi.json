@@ -1,0 +1,71 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Kenapa Kita Menunda",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["menunda", "malas", "tidak nyaman", "takut", "lega", "langkah", "mulai", "emosi"],
+  "captionFixes": {},
+  "script": "Kamu punya tugas penting, tapi malah mencuci piring dan membuka ponsel. Itu bukan malas. Itu menghindari rasa tidak nyaman. Otak melihat tugas itu sebagai ancaman kecil: takut salah, takut tidak sempurna, takut dinilai. Jadi ia mencari pelarian yang terasa aman. Dan rasa lega sesaat itu justru menguatkan kebiasaan menunda. Semakin sering, semakin otomatis. Cara keluar dari siklus ini bukan menunggu semangat, tapi memperkecil langkah pertama. Buka dokumennya saja. Tulis satu kalimat buruk saja. Setelah mulai, rasa takut itu biasanya menyusut. Karena menunda jarang soal waktu. Ia hampir selalu soal emosi yang belum dihadapi.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Kebiasaan sehari-hari",
+      "heading": "Menunda bukan soal malas, tapi soal rasa.",
+      "accentWord": "rasa",
+      "accentTone": "coral",
+      "card": {
+        "from": "tugas-kantor.app",
+        "tag": "DITUNDA",
+        "title": "Tugas penting, tenggat besok",
+        "body": "Tapi kamu malah mencuci piring dan membuka ponsel."
+      },
+      "sub": "Bukan karena tidak tahu caranya, tapi karena ada rasa yang dihindari."
+    },
+    {
+      "kind": "how",
+      "cue": "Otak",
+      "kicker": "Cara kerjanya di otak",
+      "heading": "Otak kabur dari rasa tidak nyaman.",
+      "accentWord": "tidak nyaman",
+      "lines": [
+        "Tugas terasa seperti ancaman kecil.",
+        "Takut salah, takut tidak sempurna, takut dinilai.",
+        "Pelarian memberi lega sesaat."
+      ],
+      "badges": [
+        {"text": "Lega sesaat = penguat kebiasaan", "tone": "muted"},
+        {"text": "Mulai kecil, rasa takut menyusut", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "Cara",
+      "kicker": "Yang sebenarnya terjadi",
+      "heading": "Yang menunda bukan waktu, tapi emosi.",
+      "accentWord": "emosi",
+      "cards": [
+        "Takut dinilai",
+        "Ingin sempurna",
+        "Tugas terasa besar",
+        "Tidak tahu mulai dari mana"
+      ],
+      "highlight": "Kecilkan langkah pertama, bukan niatnya."
+    },
+    {
+      "kind": "cta",
+      "cue": "Karena",
+      "kicker": "Cara keluar",
+      "heading": "Mulai dari langkah paling kecil:",
+      "accentWord": "paling kecil",
+      "accentTone": "accent",
+      "big": "SATU KALIMAT",
+      "sub": "Buka dokumennya. Tulis satu kalimat buruk. Mulai.",
+      "pill": "Menunda itu soal emosi, bukan waktu"
+    }
+  ]
+}

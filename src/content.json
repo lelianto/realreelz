@@ -1,94 +1,100 @@
 {
-  "template": "stickman",
-  "name": "SURVIVORSHIP",
-  "title": "Survivorship Bias",
-  "script": "Kamu sering melihat miliarder yang dulu berani keluar dari bangku kuliah, lalu menyimpulkan bahwa sekolah itu tidak penting. Kamu pun mulai berpikir untuk ikut berhenti saja, karena toh mereka semua terlihat berhasil. Tapi tunggu dulu, kamu hanya melihat segelintir orang yang berhasil. Bagaimana dengan jutaan orang yang juga keluar, lalu gagal, dan tidak pernah terdengar kabarnya? Fenomena ini disebut survivorship bias, atau bias orang yang selamat. Kita terbiasa belajar hanya dari para pemenang, sementara yang kalah perlahan menghilang dari cerita. Saat Perang Dunia Kedua, militer ingin memperkuat badan pesawat di bagian yang paling banyak terkena peluru. Padahal justru bagian yang jarang terkena itulah yang harus diperkuat, karena pesawat yang tertembak di sana tidak pernah pulang. Jadi sebelum meniru resep sukses siapa pun, tanyakan, siapa yang mencoba hal serupa tapi kabarnya tak pernah sampai ke kita? Kebenaran sering bersembunyi di balik mereka yang diam.",
-  "elevenVoiceId": "nPczCjzI2devNBz1zQrb",
+  "template": "esports",
+  "watermark": "@rakyatrebahanid",
+  "title": "NAVI 3-2 TLID — MPL ID S18",
+  "accent": "#FFE23D",
   "edgeVoiceId": "id-ID-ArdiNeural",
   "music": "music.mp3",
   "musicVolume": 0.08,
-  "accent": "#ffd23f",
-  "captionFixes": {},
   "keywords": [
-    "sukses",
-    "kuliah",
-    "berhenti",
-    "gagal",
-    "terdengar",
-    "pemenang",
-    "pesawat",
-    "peluru",
-    "meniru",
-    "diam"
+    "navi",
+    "tiga",
+    "menang",
+    "taklukkan",
+    "tiket",
+    "m8",
+    "juara",
+    "grand",
+    "final",
+    "joshua",
+    "karss",
+    "aprho"
   ],
-  "storyScenes": [
+  "captionFixes": {},
+  "script": "Malam ini, sejarah manis tercipta buat fans NAVI. Di panggung Upper Bracket Final MPL Indonesia, NAVI ketemu raksasa, Team Liquid ID. Hasilnya? NAVI menang tiga lawan dua. Dramatis sampai game terakhir. Jalannya nggak gampang. Alter Ego mereka sikat tiga satu, lalu Liquid ID tumbang di laga lima game. Skuad ini tampil ganas. Joshua di jungler, Karss di exp lane, dan Aprho ngatur tempo dari roamer. Hadiahnya? Satu tiket pertama ke M8 World Championship di Turki, Januari nanti. Tapi cerita belum selesai. Grand Final sudah menanti tanggal delapan November. Jadi, siap antar NAVI jadi juara? Follow buat update MPL tiap hari.",
+  "espScenes": [
     {
-      "kind": "cstory",
+      "kind": "title",
       "cue": null,
-      "label": "Lihat yang sukses",
-      "bubble": "Berarti kuliah nggak penting!",
-      "mood": "happy",
-      "hair": "#2a2320",
-      "moustache": false
+      "kicker": "MPL ID S18 • PLAYOFFS",
+      "label": "NAVI",
+      "sub": "Taklukkan Team Liquid ID"
     },
     {
-      "kind": "cthink",
-      "cue": "berhenti",
-      "bubble": "Aku ikut berhenti aja deh",
-      "mood": "happy",
-      "hair": "#2a2320",
-      "moustache": false
+      "kind": "versus",
+      "cue": "panggung",
+      "kicker": "UPPER BRACKET FINAL",
+      "label": "Upper Bracket Final",
+      "teamL": "NAVI",
+      "teamR": "TLID",
+      "sub": "Satu tiket ke M8 dipertaruhkan"
     },
     {
-      "kind": "cstory",
-      "cue": "tunggu",
-      "label": "Yang tak terlihat",
-      "bubble": "Lho, yang gagal ke mana?",
-      "mood": "shock",
-      "hair": "#2a2320",
-      "moustache": false
+      "kind": "score",
+      "cue": "hasilnya",
+      "kicker": "SKOR AKHIR",
+      "teamL": "NAVI",
+      "teamR": "TLID",
+      "scoreL": 3,
+      "scoreR": 2,
+      "winner": "L",
+      "bo": "Best of 5"
     },
     {
-      "kind": "cterm",
-      "cue": "disebut",
-      "term": "SURVIVORSHIP BIAS",
-      "def": "Cuma lihat yang berhasil, yang gagal tak terlihat",
-      "hair": "#2a2320",
-      "moustache": false
+      "kind": "road",
+      "cue": "gampang",
+      "kicker": "JALAN MENUJU FINAL",
+      "label": "Jalan Mereka",
+      "steps": [
+        {"opp": "Alter Ego", "score": "3-1"},
+        {"opp": "Liquid ID", "score": "3-2"}
+      ]
     },
     {
-      "kind": "cdilemma",
-      "cue": "pemenang",
-      "optL": "Yang terlihat",
-      "optR": "Yang hilang",
-      "hair": "#2a2320",
-      "moustache": false
+      "kind": "roster",
+      "cue": "skuad",
+      "kicker": "SKUAD NAVI",
+      "label": "Sang Bintang",
+      "sub": "Born to win",
+      "players": [
+        {"name": "Joshua", "role": "Jungler"},
+        {"name": "Karss", "role": "EXP Lane"},
+        {"name": "Aprho", "role": "Roamer"}
+      ]
     },
     {
-      "kind": "cwhy",
-      "cue": "militer",
-      "label": "CONTOH KLASIK",
-      "points": [
-        "PD II: pesawat pulang penuh peluru",
-        "Militer mau perkuat bagian itu",
-        "Harusnya bagian yang tak kena"
-      ],
-      "hair": "#2a2320",
-      "moustache": false
+      "kind": "ticket",
+      "cue": "hadiah",
+      "kicker": "HADIAHNYA",
+      "label": "Tiket ke M8",
+      "big": "Tiket Pertama",
+      "small": "Turki • 3–23 Jan"
     },
     {
-      "kind": "clesson",
-      "cue": "meniru",
-      "label": "Cari yang tak terdengar",
-      "hair": "#2a2320",
-      "moustache": false
+      "kind": "next",
+      "cue": "belum",
+      "kicker": "BELUM SELESAI",
+      "label": "Grand Final Menanti",
+      "small": "Grand Final",
+      "big": "8 NOV",
+      "sub": "Satu langkah lagi ke gelar juara"
     },
     {
-      "kind": "coutro",
-      "cue": "bersembunyi",
-      "label": "Siapa yang tak bersuara?",
-      "hair": "#2a2320",
-      "moustache": false
+      "kind": "outro",
+      "cue": "siap",
+      "label": "Born to Win",
+      "sub": "NAVI melaju ke M8",
+      "small": "@rakyatrebahanid"
     }
   ]
 }

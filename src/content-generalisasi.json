@@ -1,0 +1,20 @@
+{
+  "template": "explainer",
+  "name": "GENERALISASI TERGESA",
+  "title": "Hasty Generalization: Sedikit Contoh, Besar Kesimpulan",
+  "script": "Dua orang dari kota itu kasar padamu, lalu kamu menyimpulkan semua orang di sana kasar. Itulah generalisasi tergesa-gesa. Kita mengambil sedikit contoh, lalu menarik kesimpulan untuk seluruh dunia. Otak melakukannya karena cepat dan hemat energi, tapi cepat bukan berarti benar. Satu video buruk membuat kita menilai satu profesi. Satu pengalaman pahit membuat kita menghindari seluruh jenis makanan. Masalahnya, contoh kecil mudah dimiringkan oleh kebetulan. Cara memperbaikinya, tanyakan ukuran sampelnya. Apakah dua orang cukup untuk mewakili sejuta orang? Karena kesimpulan besar menuntut bukti besar, bukan sekadar cerita yang paling berkesan.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#5aa9ff",
+  "keywords": ["kasar", "generalisasi", "contoh", "kesimpulan", "Otak", "profesi", "pengalaman", "kebetulan", "sampelnya", "sejuta"],
+  "captionFixes": {},
+  "explainerScenes": [
+    {"kind": "hook", "cue": null, "label": "Dua Orang, Sejuta Kesimpulan", "mood": "neutral", "pose": "thinking"},
+    {"kind": "brain", "cue": "Otak", "label": "Cepat, Tapi Tidak Benar", "mood": "thinking", "pose": "thinking"},
+    {"kind": "desk", "cue": "profesi", "label": "Satu Video, Satu Profesi", "mood": "neutral", "pose": "holding", "prop": "phone"},
+    {"kind": "iceberg", "cue": "kebetulan", "label": "Contoh Kecil Mudah Miring", "mood": "sad", "pose": "shrug"},
+    {"kind": "eureka", "cue": "sampelnya", "label": "Cek Ukuran Sampel", "mood": "happy", "pose": "eureka"},
+    {"kind": "trophy", "cue": "sejuta", "label": "Bukti Besar untuk Klaim Besar", "mood": "determined", "pose": "presenting"}
+  ]
+}

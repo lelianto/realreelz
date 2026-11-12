@@ -1,0 +1,31 @@
+{
+  "template": "stickman",
+  "name": "PERCY SPENCER",
+  "title": "Percy Spencer",
+  "script": "Percy Spencer tumbuh di pedesaan Amerika tanpa ayah, dan berhenti sekolah saat usia dua belas tahun. Dia belajar tentang listrik sendirian, lalu menjadi ahli radar untuk militer. Suatu hari, ketika berdiri di dekat tabung magnetron yang menyala, dia merasakan sesuatu yang aneh. Cokelat di dalam kantongnya meleleh. Spencer curiga bukan panas biasa yang bekerja, melainkan gelombang mikro. Dia lalu mencoba hal yang lebih berani, menaruh telur, dan telur itu meledak di depan wajahnya. Percobaan berikutnya berhasil, jagung meletus dalam hitungan detik tanpa api. Pada tahun seribu sembilan ratus empat puluh lima, dia mematenkan oven gelombang mikro. Dunia yang dulu harus menyalakan tungku berjam-jam kini bisa memasak dalam dua menit. Pelajarannya, rasa ingin tahu bisa lahir dari hal paling sepele, bahkan dari cokelat yang meleleh di saku.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#ffd23f",
+  "hue": 45,
+  "hair": "#2a2119",
+  "moustache": false,
+  "captionFixes": {
+    "Percis": "Percy",
+    "perdisaan": "pedesaan",
+    "Coklat": "Cokelat",
+    "jago": "jagung",
+    "mematengkan": "mematenkan"
+  },
+  "keywords": ["Spencer", "listrik", "radar", "magnetron", "Cokelat", "meleleh", "mikro", "telur", "jagung", "mematenkan"],
+  "storyScenes": [
+    {"kind": "gintro", "cue": null},
+    {"kind": "gstruggle", "cue": "sekolah"},
+    {"kind": "gportrait", "cue": "radar", "label": "Percy Spencer"},
+    {"kind": "gkitchen", "cue": "Cokelat"},
+    {"kind": "gidea", "cue": "mikro"},
+    {"kind": "gbreakthrough", "cue": "mematenkan", "label": "MICROWAVE"},
+    {"kind": "gimpact", "cue": "Dunia"},
+    {"kind": "gclose", "cue": "Pelajarannya"}
+  ]
+}

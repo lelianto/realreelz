@@ -1,0 +1,21 @@
+{
+  "template": "explainer",
+  "name": "BIAS KONFIRMASI",
+  "title": "Bias Konfirmasi: Kita Mencari Bukti, Bukan Kebenaran",
+  "script": "Kamu sudah percaya sesuatu, lalu kamu mencari bukti yang mendukungnya. Itulah bias konfirmasi. Otak kita tidak mencari kebenaran, ia mencari kenyamanan. Ketika kamu percaya bahwa orang tertentu jahat, kamu akan mengingat setiap kesalahannya dan melupakan semua kebaikannya. Ketika kamu percaya sebuah investasi pasti untung, kamu hanya membaca berita yang mendukung dan mengabaikan semua tanda bahaya. Media sosial memperparah ini, karena algoritma terus menyuapimu dengan pendapat yang sama sampai dunia terasa seperti cermin. Cara melawannya sederhana tapi menyakitkan, yaitu cari bukti yang membantah keyakinanmu. Tanyakan pada dirimu, apa yang akan membuatku berubah pikiran. Kalau jawabannya tidak ada, kamu bukan sedang berpikir, kamu sedang membela diri.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#ffd23f",
+  "keywords": ["percaya", "konfirmasi", "Otak", "kebenaran", "kenyamanan", "mengingat", "mengabaikan", "algoritma", "membantah", "berpikir"],
+  "captionFixes": {},
+  "explainerScenes": [
+    {"kind": "hook", "cue": null, "label": "Bukti yang Dicari", "mood": "neutral", "pose": "thinking"},
+    {"kind": "brain", "cue": "Otak", "label": "Otak Cari Nyaman", "mood": "thinking", "pose": "thinking"},
+    {"kind": "desk", "cue": "mengingat", "label": "Ingat Salahnya Saja", "mood": "neutral", "pose": "holding", "prop": "book"},
+    {"kind": "iceberg", "cue": "mengabaikan", "label": "Tanda Bahaya di Bawah", "mood": "sad", "pose": "shrug"},
+    {"kind": "eureka", "cue": "melawannya", "label": "Cari yang Membantah", "mood": "happy", "pose": "eureka"},
+    {"kind": "rocket", "cue": "Tanyakan", "label": "Uji Keyakinanmu", "mood": "determined", "pose": "presenting"},
+    {"kind": "trophy", "cue": "berpikir", "label": "Berpikir atau Membela Diri?", "mood": "happy", "pose": "celebrate"}
+  ]
+}

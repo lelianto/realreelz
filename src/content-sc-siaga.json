@@ -1,0 +1,71 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Selalu Siaga Kerja",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["pesan", "kerja", "notifikasi", "batas", "istirahat", "fokus", "darurat", "libur"],
+  "captionFixes": {},
+  "script": "Pesan kerja masuk jam sepuluh malam, dan kamu membalas dalam dua menit. Lambat laun, itu menjadi standar. Itu bukan dedikasi, itu batas yang tidak pernah kamu pasang. Ketika pekerjaan bisa masuk kapan saja, otak tidak pernah benar-benar berhenti bekerja. Istirahat jadi setengah, fokus jadi setengah, dan kelelahan menumpuk tanpa terasa. Cara memperbaikinya, tentukan jam kerja yang jelas dan sampaikan ke tim. Matikan notifikasi di luar jam itu. Kalau benar-benar darurat, orang akan menelepon, bukan mengirim pesan. Karena selalu tersedia bukan tanda profesional, kadang itu tanda kamu tidak punya batas.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Kebiasaan kerja",
+      "heading": "Balas dua menit, jadi standar selamanya.",
+      "accentWord": "standar selamanya",
+      "accentTone": "coral",
+      "card": {
+        "from": "chat-kerja.app",
+        "tag": "22.10",
+        "title": "Pesan masuk jam sepuluh malam",
+        "body": "Dibalas dua menit, lalu dianggap biasa."
+      },
+      "sub": "Sekali cepat dibalas, selamanya dianggap harus cepat."
+    },
+    {
+      "kind": "how",
+      "cue": "Ketika",
+      "kicker": "Yang terjadi pada otak",
+      "heading": "Kalau kerja bisa kapan saja, otak tidak berhenti.",
+      "accentWord": "tidak berhenti",
+      "lines": [
+        "Istirahat jadi setengah.",
+        "Fokus jadi setengah.",
+        "Lelah menumpuk tanpa terasa."
+      ],
+      "badges": [
+        {"text": "Selalu siaga bukan dedikasi", "tone": "muted"},
+        {"text": "Batas jelas membuat kerja lebih baik", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "tentukan",
+      "kicker": "Cara memperbaikinya",
+      "heading": "Tentukan jam kerja dan sampaikan ke tim.",
+      "accentWord": "jam kerja",
+      "cards": [
+        "Jam kerja jelas",
+        "Notifikasi mati",
+        "Darurat lewat telepon",
+        "Libur tetap libur"
+      ],
+      "highlight": "Orang akan menghormati batas yang kamu nyatakan, bukan yang kamu sembunyikan."
+    },
+    {
+      "kind": "cta",
+      "cue": "Karena",
+      "kicker": "Yang perlu diingat",
+      "heading": "Selalu tersedia bukan tanda profesional.",
+      "accentWord": "bukan tanda profesional",
+      "accentTone": "accent",
+      "big": "BATAS",
+      "sub": "Kalau semuanya darurat, tidak ada yang benar-benar darurat.",
+      "pill": "Balas cepat bukan berarti harus selalu siap"
+    }
+  ]
+}

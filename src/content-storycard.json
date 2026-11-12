@@ -1,0 +1,81 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Sunk Cost Fallacy",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": [
+    "hangus",
+    "rugi",
+    "terlanjur",
+    "hilang",
+    "masa",
+    "depan",
+    "nol",
+    "berhenti",
+    "lanjut"
+  ],
+  "captionFixes": {},
+  "script": "Pernah nonton film yang jelek banget, tapi kamu tetap bertahan sampai habis, cuma karena sudah terlanjur beli tiket? Itu namanya sunk cost fallacy, jebakan biaya hangus. Begini cara kerjanya di otak. Uang tiket tadi sudah hilang. Mau kamu lanjut atau berhenti, uangnya tetap tidak kembali. Tapi otak kita benci sekali rasa rugi, jadi kita terus menyiram waktu ke sesuatu yang sudah jelas merugikan. Jebakan ini muncul di banyak tempat. Di pekerjaan yang bikin lelah. Di hubungan yang sudah selesai. Di proyek yang tidak jalan. Di investasi yang terus turun. Semuanya dibela dengan satu alasan, sudah terlanjur jauh. Padahal keputusan yang benar tidak diukur dari yang sudah hilang, tapi dari masa depanmu. Jadi mulai hari ini, tanyakan satu hal. Kalau aku baru mulai dari nol sekarang, apakah aku tetap memilih jalan ini?",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Sesat pikir sehari-hari",
+      "heading": "Kenapa kita bertahan di hal yang jelas rugi?",
+      "accentWord": "rugi",
+      "accentTone": "coral",
+      "card": {
+        "from": "tiket-bioskop.id",
+        "tag": "RUGI",
+        "title": "Filmnya jelek banget",
+        "body": "Tapi sayang, tiketnya sudah terlanjur dibeli..."
+      },
+      "sub": "Kita tonton sampai habis cuma karena sudah bayar."
+    },
+    {
+      "kind": "how",
+      "cue": "begini",
+      "kicker": "Cara kerjanya di otak",
+      "heading": "Biaya yang hangus tidak bisa kembali.",
+      "accentWord": "hangus",
+      "mono": false,
+      "lines": [
+        "Uang tiket sudah hilang, apa pun pilihanmu.",
+        "Lanjut atau berhenti, uangnya tetap tidak kembali.",
+        "Tapi otak benci rasa rugi, jadi kita terus bertahan."
+      ],
+      "badges": [
+        {"text": "Yang sudah keluar = biaya hangus", "tone": "muted"},
+        {"text": "Keputusan benar lihat ke depan", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "banyak",
+      "kicker": "Tempat jebakan ini muncul",
+      "heading": "Satu alasan yang sama: sudah terlanjur jauh.",
+      "accentWord": "terlanjur jauh",
+      "cards": [
+        "Pekerjaan yang melelahkan",
+        "Hubungan yang selesai",
+        "Proyek yang mandek",
+        "Investasi yang turun"
+      ],
+      "highlight": "Masa lalu tidak kembali. Yang dinilai: masa depanmu."
+    },
+    {
+      "kind": "cta",
+      "cue": "mulai",
+      "kicker": "Cara keluar dari jebakan",
+      "heading": "Tanyakan satu hal sebelum memutuskan:",
+      "big": "DARI NOL",
+      "accentTone": "accent",
+      "sub": "\"Kalau aku baru mulai sekarang,\napakah aku tetap memilih jalan ini?\"",
+      "pill": "Yang hangus, biarkan hangus"
+    }
+  ]
+}

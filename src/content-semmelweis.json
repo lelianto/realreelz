@@ -1,0 +1,29 @@
+{
+  "template": "stickman",
+  "name": "IGNAZ SEMMELWEIS",
+  "title": "Ignaz Semmelweis",
+  "script": "Tahun seribu delapan ratus empat puluh tujuh, di sebuah rumah sakit di Wina, ratusan ibu meninggal setelah melahirkan. Para dokter saat itu tidak tahu penyebabnya. Ignaz Semmelweis, seorang dokter muda, memperhatikan sesuatu yang janggal. Di bangsal tempat mahasiswa kedokteran bekerja, kematian jauh lebih banyak daripada di bangsal tempat para bidan bekerja. Rahasianya mengerikan. Para mahasiswa datang langsung dari ruang mayat, lalu memeriksa pasien tanpa mencuci tangan. Semmelweis memerintahkan semua orang mencuci tangan dengan larutan kapur. Hasilnya luar biasa, kematian turun drastis. Tapi alih-alih diakui, idenya dianggap menghina. Para dokter merasa dituduh kotor. Semmelweis dipecat, dikucilkan, dan meninggal di rumah sakit jiwa. Beberapa tahun kemudian, teori kuman membuktikan bahwa dia benar. Kadang, orang yang menyelamatkan nyawa justru dihancurkan oleh ego orang lain.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#4fd1c5",
+  "hue": 175,
+  "hair": "#241f1c",
+  "moustache": true,
+  "captionFixes": {
+    "Igna": "Ignaz",
+    "Semelweys": "Semmelweis",
+    "ali-ali": "alih-alih"
+  },
+  "keywords": ["meninggal", "Wina", "Semmelweis", "bangsal", "mayat", "mencuci", "kapur", "kuman", "dipecat"],
+  "storyScenes": [
+    {"kind": "gintro", "cue": null, "mood": "sad"},
+    {"kind": "gportrait", "cue": "Ignaz", "label": "Ignaz Semmelweis"},
+    {"kind": "gstruggle", "cue": "bangsal"},
+    {"kind": "room", "cue": "mayat"},
+    {"kind": "gbreakthrough", "cue": "kapur", "label": "CUCI TANGAN"},
+    {"kind": "cdrain", "cue": "dipecat", "label": "Dikucilkan"},
+    {"kind": "gnews", "cue": "kuman", "label": "SEMMELWEIS BENAR"},
+    {"kind": "gclose", "cue": "Kadang"}
+  ]
+}

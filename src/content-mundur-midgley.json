@@ -1,0 +1,98 @@
+{
+  "template": "stickman",
+  "format": "mundur",
+  "name": "THOMAS MIDGLEY",
+  "title": "Thomas Midgley Jr.",
+  "script": "Tahun seribu sembilan ratus empat puluh empat. Seorang penemu terkenal ditemukan tewas, terjerat oleh alat ciptaannya sendiri. Namanya Thomas Midgley. Bagaimana bisa? Mari mundur ke tahun seribu sembilan ratus dua puluh satu. Midgley menemukan bahwa timbal bisa membuat mesin mobil tidak lagi ngelitik. Lahirlah bensin bertimbal. Tapi timbal adalah racun. Dia sendiri sampai jatuh sakit. Lalu di depan wartawan, dia mencuci tangan dengan cairan timbal untuk membuktikan bahwa itu aman. Tahun seribu sembilan ratus tiga puluh, dia menciptakan freon untuk kulkas, yang kelak merusak lapisan ozon. Tahun seribu sembilan ratus empat puluh, polio membuatnya lumpuh. Dia merancang sistem tali dan katrol untuk mengangkat tubuhnya dari kasur. Dan alat itulah yang akhirnya menjeratnya. Satu orang, dua penemuan yang merusak bumi.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#9be15d",
+  "hue": 90,
+  "hair": "#3a2f28",
+  "moustache": false,
+  "captionFixes": {},
+  "keywords": [
+    "tewas",
+    "Midgley",
+    "mundur",
+    "bertimbal",
+    "racun",
+    "aman",
+    "freon",
+    "ozon",
+    "katrol",
+    "bumi"
+  ],
+  "storyScenes": [
+    {
+      "kind": "galone",
+      "cue": null,
+      "mood": "sad",
+      "grade": "mono",
+      "year": 1944
+    },
+    {
+      "kind": "gportrait",
+      "cue": "Namanya",
+      "label": "THOMAS MIDGLEY",
+      "grade": "mono"
+    },
+    {
+      "kind": "gwork",
+      "cue": "mundur",
+      "prop": "flask",
+      "year": 1921,
+      "yearNote": "23 TAHUN SEBELUMNYA"
+    },
+    {
+      "kind": "gidea",
+      "cue": "ngelitik"
+    },
+    {
+      "kind": "gbreakthrough",
+      "cue": "bertimbal",
+      "label": "BENSIN BERTIMBAL"
+    },
+    {
+      "kind": "gstruggle",
+      "cue": "racun"
+    },
+    {
+      "kind": "gnews",
+      "cue": "wartawan",
+      "label": "TIMBAL ITU AMAN!",
+      "year": 1924
+    },
+    {
+      "kind": "gkitchen",
+      "cue": "freon",
+      "year": 1930
+    },
+    {
+      "kind": "galone",
+      "cue": "polio",
+      "mood": "sad",
+      "year": 1940
+    },
+    {
+      "kind": "gwork",
+      "cue": "katrol",
+      "prop": "gear"
+    },
+    {
+      "kind": "gintro",
+      "cue": "menjeratnya",
+      "mood": "sad",
+      "grade": "mono",
+      "year": 1944,
+      "transition": "flash"
+    },
+    {
+      "kind": "gquote",
+      "cue": "penemuan",
+      "label": "Satu orang, dua penemuan yang merusak bumi.",
+      "grade": "sepia"
+    }
+  ]
+}

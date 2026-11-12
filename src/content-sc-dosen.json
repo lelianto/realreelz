@@ -1,0 +1,71 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Dosen yang Viral karena Mengajar",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["dosen", "mengajar", "interaktif", "perhatian", "materi", "menyampaikan", "audiens", "presentasi"],
+  "captionFixes": {},
+  "script": "Seorang dosen di Medan viral bukan karena skandal, tapi karena cara mengajarnya. Kelasnya interaktif, penampilannya rapi, dan materinya tidak membosankan. Banyak yang menyebutnya menyegarkan, sebagian lain meragukan. Tapi ada satu hal yang jarang dibahas. Perhatian mahasiswa bukan hadiah, ia hasil dari cara menyampaikan. Materi yang sama bisa masuk atau terlewat, tergantung bagaimana ia dibawakan. Pelajarannya tidak hanya untuk dosen, tapi untuk siapa pun yang pernah presentasi atau mengajar. Cara menyampaikan bukan pelengkap, ia bagian dari isi. Karena orang lupa apa yang kamu katakan, tapi ingat bagaimana kamu membuat mereka merasa.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Viral pekan ini",
+      "heading": "Kelas yang sama bisa membosankan atau hidup.",
+      "accentWord": "hidup",
+      "accentTone": "coral",
+      "card": {
+        "from": "video-viral.app",
+        "tag": "VIRAL",
+        "title": "Dosen mengajar dengan cara berbeda",
+        "body": "Sebagian memuji, sebagian meragukan."
+      },
+      "sub": "Yang diperdebatkan sering penampilannya, bukan isi kelasnya."
+    },
+    {
+      "kind": "how",
+      "cue": "Perhatian",
+      "kicker": "Yang jarang dibahas",
+      "heading": "Perhatian bukan hadiah, tapi hasil cara menyampaikan.",
+      "accentWord": "cara menyampaikan",
+      "lines": [
+        "Materi sama, hasil bisa berbeda.",
+        "Gaya membuka pintu, isi menahan.",
+        "Yang diingat: rasa saat belajar."
+      ],
+      "badges": [
+        {"text": "Perhatian tidak bisa dipaksakan", "tone": "muted"},
+        {"text": "Sampaikan dengan cara yang bisa diikuti", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "Pelajarannya",
+      "kicker": "Untuk siapa pun yang presentasi",
+      "heading": "Cara menyampaikan adalah bagian dari isi.",
+      "accentWord": "bagian dari isi",
+      "cards": [
+        "Buka dengan pertanyaan",
+        "Beri contoh nyata",
+        "Libatkan audiens",
+        "Tutup dengan satu pesan"
+      ],
+      "highlight": "Isi yang baik bisa hilang karena penyampaian yang buruk."
+    },
+    {
+      "kind": "cta",
+      "cue": "lupa",
+      "kicker": "Yang perlu diingat",
+      "heading": "Orang ingat caranya, bukan cuma materinya.",
+      "accentWord": "caranya",
+      "accentTone": "accent",
+      "big": "CARA",
+      "sub": "Materi yang sama bisa masuk atau terlewat.",
+      "pill": "Sampaikan supaya bisa diikuti, bukan cuma didengar"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Mengeluh Tanpa Solusi",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["mengeluh", "lega", "masalah", "tindakan", "berubah", "menerima", "beban", "kalimat"],
+  "captionFixes": {},
+  "script": "Kamu mengeluh soal pekerjaan, dan temanmu ikut mengeluh. Setelah itu, tidak ada yang berubah. Mengeluh memang melegakan, tapi hanya sebentar. Otak mencatat bahwa masalah sudah dibicarakan, lalu merasa sudah sedikit diselesaikan. Padahal tidak ada satu pun tindakan yang berubah. Yang lebih berbahaya, kebiasaan ini membuat kita nyaman dengan masalah yang sama selama bertahun-tahun. Cara memutarnya, ubah satu kalimat. Setelah mengeluh, tanyakan, bagian mana yang bisa aku ubah hari ini. Kalau tidak ada, mungkin yang perlu diubah adalah cara menerimanya. Karena keluhan yang tidak berujung tindakan hanya memindahkan beban, bukan menyelesaikannya.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Kebiasaan sehari-hari",
+      "heading": "Mengeluh melegakan, tapi tidak mengubah apa pun.",
+      "accentWord": "tidak mengubah apa pun",
+      "accentTone": "coral",
+      "card": {
+        "from": "grup-chat.app",
+        "tag": "KELUHAN",
+        "title": "Ngobrol satu jam soal kerjaan",
+        "body": "Selesai ngobrol, masalahnya tetap sama."
+      },
+      "sub": "Rasa lega datang cepat, perubahan datang belakangan, atau tidak sama sekali."
+    },
+    {
+      "kind": "how",
+      "cue": "Otak",
+      "kicker": "Kenapa terasa selesai",
+      "heading": "Otak merasa beres karena sudah dibicarakan.",
+      "accentWord": "sudah dibicarakan",
+      "lines": [
+        "Lega hanya sebentar.",
+        "Tidak ada tindakan yang berubah.",
+        "Masalah sama bertahan bertahun-tahun."
+      ],
+      "badges": [
+        {"text": "Bicara bukan bertindak", "tone": "muted"},
+        {"text": "Tutup keluhan dengan satu langkah", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "tanyakan",
+      "kicker": "Cara memutarnya",
+      "heading": "Ubah satu kalimat setelah mengeluh.",
+      "accentWord": "satu kalimat",
+      "cards": [
+        "Apa yang bisa diubah",
+        "Siapa yang bisa membantu",
+        "Kapan mulai",
+        "Atau: terima dulu"
+      ],
+      "highlight": "Keluhan yang jelas sering berubah menjadi rencana."
+    },
+    {
+      "kind": "cta",
+      "cue": "Karena",
+      "kicker": "Yang perlu diingat",
+      "heading": "Keluhan tanpa tindakan cuma memindahkan beban.",
+      "accentWord": "memindahkan beban",
+      "accentTone": "accent",
+      "big": "SATU LANGKAH",
+      "sub": "Setelah mengeluh, tanyakan apa yang bisa dilakukan hari ini.",
+      "pill": "Lega boleh, berhenti di situ jangan"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "template": "parable",
+  "name": "ROTI DAN SIRKUS",
+  "title": "Roti dan Sirkus",
+  "script": "Mau rakyat tetap diam? Jangan beri mereka keadilan. Beri mereka tontonan. Di Negeri Konoha, setiap kali ada masalah besar, tiba tiba muncul hiburan baru yang ramai dibicarakan semua orang. Dua ribu tahun lalu, di Romawi kuno, para penguasa menemukan rumus yang sama. Mereka menyebutnya roti dan sirkus. Beri rakyat makanan gratis dan pertunjukan megah, maka mereka akan lupa menuntut hak hak mereka. Sementara rakyat sibuk bersorak di arena, keputusan penting diam diam dibuat di balik istana. Panggungnya berubah, tapi tipuannya tetap sama. Semakin keras kita bersorak, semakin mudah kita dikendalikan.",
+  "edgeVoiceId": "id-ID-GadisNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#e0b24a",
+  "keywords": ["keadilan", "tontonan", "Konoha", "hiburan", "Romawi", "roti", "sirkus", "istana", "dikendalikan"],
+  "captionFixes": {"Kenoha": "Konoha", "Konoa": "Konoha", "pemuasa": "penguasa"},
+  "parableScenes": [
+    {"kind": "title", "cue": null, "label": "Beri Mereka Tontonan", "sub": "Negeri Konoha"},
+    {"kind": "arena", "cue": "hiburan", "label": "Selalu ada hiburan baru"},
+    {"kind": "bread", "cue": "roti", "label": "Roti dan Sirkus", "sub": "Romawi kuno"},
+    {"kind": "throne", "cue": "istana", "label": "Keputusan dibuat di balik istana"},
+    {"kind": "outro", "cue": "Semakin", "label": "Makin keras bersorak, makin mudah dikendalikan"}
+  ]
+}

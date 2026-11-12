@@ -1,0 +1,71 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Mie Instan di Gunung",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["mie", "gunung", "omzet", "lokasi", "pesaing", "kebutuhan", "konteks", "harga"],
+  "captionFixes": {},
+  "script": "Pedagang mie instan di kawasan pegunungan bisa meraup omzet sekitar dua koma enam juta rupiah sehari. Kedengarannya mustahil untuk makanan seharga belasan ribu. Tapi hitungannya masuk akal. Tempat itu dingin, jauh dari rumah, dan orang datang dalam keadaan lapar setelah lelah mendaki. Di situ, mie instan bukan sekadar makanan, tapi kehangatan yang tidak ada saingannya. Pelajarannya bukan soal mie, tapi soal posisi. Produk biasa bisa menjadi luar biasa kalau berada di tempat yang tepat, pada waktu yang tepat. Jadi sebelum menambah modal, tanyakan dulu, masalah apa yang benar-benar ada di lokasi itu. Karena keuntungan sering datang dari konteks, bukan dari resep rahasia.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Kisah viral",
+      "heading": "Mie instan biasa, omzet jutaan sehari.",
+      "accentWord": "omzet jutaan",
+      "accentTone": "coral",
+      "card": {
+        "from": "catatan-usaha.id",
+        "tag": "Rp2,6 JUTA/HARI",
+        "title": "Jualan di kawasan gunung",
+        "body": "Menu sederhana, tapi tidak ada pesaing di sekitar."
+      },
+      "sub": "Yang dijual bukan cuma mie, tapi kehangatan."
+    },
+    {
+      "kind": "how",
+      "cue": "Tempat",
+      "kicker": "Kenapa masuk akal",
+      "heading": "Bukan mienya, tapi tempatnya.",
+      "accentWord": "tempatnya",
+      "lines": [
+        "Dingin, jauh, dan lapar setelah mendaki.",
+        "Mie instan jadi kehangatan.",
+        "Harga wajar terasa layak di konteks itu."
+      ],
+      "badges": [
+        {"text": "Produk biasa di posisi jarang", "tone": "muted"},
+        {"text": "Konteks menentukan nilai", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "Pelajarannya",
+      "kicker": "Yang bisa ditiru",
+      "heading": "Produk biasa bisa luar biasa di posisi tepat.",
+      "accentWord": "posisi tepat",
+      "cards": [
+        "Lokasi sepi pesaing",
+        "Kebutuhan mendesak",
+        "Waktu yang tepat",
+        "Konteks yang jelas"
+      ],
+      "highlight": "Sebelum menambah modal, cari masalah yang benar-benar ada di lokasi."
+    },
+    {
+      "kind": "cta",
+      "cue": "Karena",
+      "kicker": "Yang perlu diingat",
+      "heading": "Keuntungan sering datang dari konteks.",
+      "accentWord": "konteks",
+      "accentTone": "accent",
+      "big": "POSISI",
+      "sub": "Bukan resep rahasia, tapi tempat dan waktu.",
+      "pill": "Produk sama, nilai bisa berbeda"
+    }
+  ]
+}

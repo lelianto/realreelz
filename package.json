@@ -14,8 +14,10 @@
     "build:audio:edge": "npm run tts:edge && npm run captions",
     "studio": "remotion studio",
     "render": "remotion render Reel out/reel.mp4 --browser-executable=\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\"",
+    "render:yt": "node scripts/render-yt.mjs",
     "all": "npm run build:audio && npm run render",
     "generate": "node scripts/generate-content.mjs",
+    "clip": "node scripts/clip-pipeline.mjs",
     "web": "node scripts/server.mjs"
   },
   "dependencies": {
@@ -33,6 +35,7 @@
   "devDependencies": {
     "@types/react": "19.0.0",
     "@types/three": "^0.187.0",
+    "puppeteer-core": "^25.16.0",
     "typescript": "^5.6.0"
   }
 }

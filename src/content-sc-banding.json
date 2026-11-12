@@ -1,0 +1,71 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Bandingkan Dirimu",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["ponsel", "membandingkan", "media sosial", "sorotan", "kamera", "momen", "keinginan", "pembanding"],
+  "captionFixes": {},
+  "script": "Kamu membuka ponsel, dan tiba-tiba hidupmu terasa kurang. Padahal tidak ada yang berubah, kecuali apa yang kamu lihat. Manusia menilai dirinya dengan membandingkan, dan media sosial membuat perbandingan itu tanpa batas. Dulu kita membandingkan dengan tetangga. Sekarang dengan seluruh dunia, dan hanya versi terbaiknya. Masalahnya, kita membandingkan sorotan mereka dengan rasa bosan kita sendiri. Cara memutusnya, sadari bahwa kamera selalu memilih momen. Tidak ada yang mengunggah hari yang biasa. Lalu ganti pertanyaannya. Bukan, siapa yang lebih jauh, tapi, apa yang benar-benar aku inginkan. Karena pembanding yang paling adil bukan orang lain di layar, tapi dirimu sendiri.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Sesat pikir sehari-hari",
+      "heading": "Hidupmu terasa kurang, padahal tidak ada yang berubah.",
+      "accentWord": "tidak ada yang berubah",
+      "accentTone": "coral",
+      "card": {
+        "from": "media-sosial.app",
+        "tag": "BANDINGKAN",
+        "title": "Semua orang terlihat lebih jauh",
+        "body": "Padahal yang kamu lihat hanya versi terbaik mereka."
+      },
+      "sub": "Yang berubah bukan hidupmu, tapi apa yang kamu lihat."
+    },
+    {
+      "kind": "how",
+      "cue": "Manusia",
+      "kicker": "Cara kerjanya di otak",
+      "heading": "Manusia menilai diri lewat perbandingan.",
+      "accentWord": "perbandingan",
+      "lines": [
+        "Dulu: pembandingnya tetangga.",
+        "Sekarang: seluruh dunia, versi terbaiknya.",
+        "Sorotan mereka dibanding rasa bosan kita."
+      ],
+      "badges": [
+        {"text": "Layar memperluas pembanding", "tone": "muted"},
+        {"text": "Pembanding terbaik: dirimu kemarin", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "kamera",
+      "kicker": "Yang tidak pernah diunggah",
+      "heading": "Kamera selalu memilih momen.",
+      "accentWord": "memilih momen",
+      "cards": [
+        "Hari yang biasa",
+        "Rasa bosan",
+        "Kegagalan kecil",
+        "Rutinitas yang melelahkan"
+      ],
+      "highlight": "Tidak ada yang mengunggah hari yang biasa."
+    },
+    {
+      "kind": "cta",
+      "cue": "Karena",
+      "kicker": "Ganti pertanyaannya",
+      "heading": "Pembanding paling adil bukan orang lain di layar.",
+      "accentWord": "bukan orang lain",
+      "accentTone": "accent",
+      "big": "DIRIMU",
+      "sub": "Bukan siapa yang lebih jauh, tapi apa yang benar-benar kamu inginkan.",
+      "pill": "Bandingkan dengan dirimu sendiri"
+    }
+  ]
+}

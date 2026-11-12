@@ -1,0 +1,71 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Kejar FYP dan Masuk Beranda",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["viral", "beranda", "algoritma", "tren", "manfaat", "penonton", "format", "kepercayaan"],
+  "captionFixes": {},
+  "script": "Setiap kali mengunggah, kita berharap masuk beranda. Tagar pencari perhatian pun ramai, dari masuk beranda sampai tips algoritma. Tapi mengejar viral punya jebakan. Kalau tujuanmu hanya dilihat, kamu akan meniru apa pun yang sedang ramai, dan berhenti jadi dirimu. Yang lebih penting, viral bukan ukuran hasil. Satu video ramai belum tentu menghasilkan pembeli, murid, atau kepercayaan. Cara berpikir yang lebih sehat, tentukan dulu satu hal yang ingin kamu berikan. Baru pikirkan formatnya. Karena algoritma memilih video yang ditonton sampai habis, dan penonton bertahan pada hal yang benar-benar berguna.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Tren kreator",
+      "heading": "Setiap unggahan berharap masuk beranda.",
+      "accentWord": "masuk beranda",
+      "accentTone": "coral",
+      "card": {
+        "from": "tiktok.app",
+        "tag": "#MASUKBERANDA",
+        "title": "Sudah posting tiga puluh video",
+        "body": "Semua meniru tren, tidak ada yang diingat."
+      },
+      "sub": "Yang dikejar tayangan, yang hilang arah."
+    },
+    {
+      "kind": "how",
+      "cue": "Kalau",
+      "kicker": "Jebakan mengejar viral",
+      "heading": "Kalau tujuanmu cuma dilihat, kamu akan meniru.",
+      "accentWord": "meniru",
+      "lines": [
+        "Viral bukan ukuran hasil.",
+        "Ramai belum tentu menghasilkan.",
+        "Kepercayaan lebih lambat, tapi bertahan."
+      ],
+      "badges": [
+        {"text": "Tayangan bukan pelanggan", "tone": "muted"},
+        {"text": "Satu manfaat jelas lebih kuat", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "Cara",
+      "kicker": "Cara berpikir yang lebih sehat",
+      "heading": "Tentukan dulu yang ingin kamu berikan.",
+      "accentWord": "ingin kamu berikan",
+      "cards": [
+        "Satu masalah",
+        "Satu penonton",
+        "Satu manfaat jelas",
+        "Baru pilih format"
+      ],
+      "highlight": "Format mengikuti manfaat, bukan sebaliknya."
+    },
+    {
+      "kind": "cta",
+      "cue": "Karena",
+      "kicker": "Yang perlu diingat",
+      "heading": "Penonton bertahan pada yang berguna.",
+      "accentWord": "berguna",
+      "accentTone": "accent",
+      "big": "MANFAAT",
+      "sub": "Algoritma mengikuti penonton, bukan sebaliknya.",
+      "pill": "Kejar manfaat, bukan tayangan"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "template": "stickman",
+  "name": "ARGUMEN SIRKULAR",
+  "title": "Circular Reasoning",
+  "script": "Kenapa aturan ini benar? Karena dibuat oleh orang yang pasti benar. Kenapa dia pasti benar? Karena dia yang membuat aturan itu. Itulah argumen sirkular, berputar tanpa pernah mendarat. Premisnya sudah menganggap kesimpulannya benar, jadi tidak ada bukti baru yang masuk. Kedengarannya konyol kalau dibuat sederhana, tapi versi besarnya ada di mana-mana. Iklan berkata produk ini terbaik karena satu-satunya yang direkomendasikan, dan ia direkomendasikan karena katanya terbaik. Buku ini benar karena kitab ini mengatakannya. Cara memutusnya, minta satu bukti dari luar lingkaran. Karena argumen yang hanya menunjuk dirinya sendiri tidak membuktikan apa pun, ia hanya berputar lebih cepat.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#8f7bff",
+  "hue": 262,
+  "hair": "#2b2a33",
+  "moustache": false,
+  "captionFixes": {},
+  "keywords": ["aturan", "sirkular", "premis", "konyol", "Iklan", "direkomendasikan", "Buku", "bukti", "lingkaran", "berputar"],
+  "storyScenes": [
+    {"kind": "cstory", "cue": null, "label": "Argumen Sirkular"},
+    {"kind": "cterm", "cue": "sirkular", "term": "CIRCULAR REASONING", "def": "Premis menganggap kesimpulan sudah benar"},
+    {"kind": "cwhy", "cue": "konyol", "points": ["Versi kecil: konyol", "Versi besar: di mana-mana", "Contoh: iklan dan buku"]},
+    {"kind": "cstory", "cue": "Iklan", "bubble": "Terbaik karena direkomendasikan"},
+    {"kind": "clesson", "cue": "memutusnya", "label": "Minta bukti dari luar lingkaran"}
+  ]
+}

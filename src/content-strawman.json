@@ -1,0 +1,20 @@
+{
+  "template": "parable",
+  "name": "STRAW MAN",
+  "title": "Orang-orangan Sawah",
+  "script": "Kamu berdebat, dan lawanmu tidak menjawab argumenmu. Dia membuat versi palsu dari pendapatmu, lalu memukulinya sampai hancur. Itulah straw man, orang-orangan sawah. Di Negeri Konoha, setiap usulan yang masuk akal diubah menjadi tuntutan yang ekstrem. Kamu minta anggaran diaudit, lalu dituduh ingin membubarkan negara. Kamu minta data dibuka, lalu dituduh bekerja untuk musuh. Versi palsu itu jauh lebih mudah dikalahkan daripada argumen aslimu. Dan penonton yang tidak membaca detail akan mengira kamu memang kalah. Cara melawannya, jangan membela versi palsu itu. Kembalikan percakapan ke kalimat aslimu, lalu minta mereka menjawab yang sebenarnya. Karena menang melawan orang-orangan sawah bukanlah kemenangan, itu hanya teater.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#e0b24a",
+  "keywords": ["argumenmu", "palsu", "straw man", "Konoha", "dituduh", "penonton", "Kembalikan", "kemenangan", "teater"],
+  "captionFixes": {},
+  "parableScenes": [
+    {"kind": "title", "cue": null, "label": "Orang-orangan Sawah", "sub": "Negeri Konoha"},
+    {"kind": "puppet", "cue": "palsu", "label": "Versi Palsu yang Dipukul", "sub": "Straw Man"},
+    {"kind": "quote", "cue": "dituduh", "quote": "Minta audit, dituduh ingin membubarkan negara.", "author": "Fallacy Straw Man"},
+    {"kind": "arena", "cue": "penonton", "label": "Penonton Menilai Versi Palsu"},
+    {"kind": "silence", "cue": "Kembalikan", "label": "Kembalikan ke Kalimat Aslimu"},
+    {"kind": "outro", "cue": "teater", "label": "Itu Bukan Menang, Itu Teater"}
+  ]
+}

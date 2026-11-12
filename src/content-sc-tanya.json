@@ -1,0 +1,71 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Malu Bertanya",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["bertanya", "menebak", "bodoh", "mahal", "spesifik", "bingung", "kesalahan", "waktu"],
+  "captionFixes": {},
+  "script": "Kamu tidak paham tugasnya, tapi diam saja karena takut terlihat bodoh. Akhirnya kamu mengerjakan hal yang salah selama berjam-jam. Itu biaya tidak bertanya. Kita mengira bertanya menunjukkan kelemahan, padahal menebak jauh lebih mahal. Satu pertanyaan dua menit bisa menghemat satu hari kerja. Dan orang yang bertanya dengan jelas biasanya dianggap lebih serius, bukan lebih lambat. Cara bertanya yang baik, sebutkan apa yang sudah kamu coba, lalu tanyakan bagian yang spesifik. Karena kebingungan yang disimpan tidak hilang, ia hanya tumbuh sampai menjadi kesalahan.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Kebiasaan kerja",
+      "heading": "Diam karena takut terlihat bodoh.",
+      "accentWord": "takut terlihat bodoh",
+      "accentTone": "coral",
+      "card": {
+        "from": "tugas.app",
+        "tag": "SALAH",
+        "title": "Mengerjakan tugas yang salah",
+        "body": "Berjam-jam, karena tidak bertanya."
+      },
+      "sub": "Malu dua menit ditukar dengan kerja sia-sia seharian."
+    },
+    {
+      "kind": "how",
+      "cue": "Kita",
+      "kicker": "Hitungannya",
+      "heading": "Menebak jauh lebih mahal daripada bertanya.",
+      "accentWord": "lebih mahal",
+      "lines": [
+        "Bertanya dianggap kelemahan.",
+        "Satu pertanyaan hemat satu hari.",
+        "Yang bertanya terlihat lebih serius."
+      ],
+      "badges": [
+        {"text": "Malu itu sebentar, salah itu lama", "tone": "muted"},
+        {"text": "Tanya spesifik, bukan mengambang", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "Cara",
+      "kicker": "Cara bertanya yang baik",
+      "heading": "Sebut yang sudah dicoba, lalu tanya spesifik.",
+      "accentWord": "spesifik",
+      "cards": [
+        "Apa yang sudah dicoba",
+        "Bagian yang macet",
+        "Contoh yang diharapkan",
+        "Batas waktu"
+      ],
+      "highlight": "Pertanyaan yang jelas menunjukkan kamu sudah berusaha."
+    },
+    {
+      "kind": "cta",
+      "cue": "kebingungan",
+      "kicker": "Yang perlu diingat",
+      "heading": "Kebingungan yang disimpan hanya tumbuh.",
+      "accentWord": "hanya tumbuh",
+      "accentTone": "accent",
+      "big": "TANYA",
+      "sub": "Lebih baik terlihat bertanya daripada terlihat yakin tapi salah.",
+      "pill": "Dua menit bertanya, satu hari terselamatkan"
+    }
+  ]
+}

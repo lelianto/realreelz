@@ -1,0 +1,28 @@
+{
+  "template": "stickman",
+  "format": "tebak",
+  "name": "LOUIS BRAILLE",
+  "title": "Tebak Siapa: Louis Braille",
+  "script": "Coba tebak siapa dia. Petunjuk pertama, saat berumur tiga tahun, dia bermain di bengkel ayahnya dan sebuah alat tajam melukai matanya. Infeksinya menyebar, dan di umur lima tahun kedua matanya buta total. Petunjuk kedua, di sekolah, buku untuk anak tunanetra sangat besar, berat, dan hampir mustahil dibaca. Petunjuk ketiga, dia terinspirasi kode rahasia tentara yang bisa dibaca dengan jari dalam gelap. Di umur lima belas tahun, dia menyederhanakannya menjadi enam titik timbul. Sudah tahu? Dialah Louis Braille. Sayangnya, sistemnya baru diakui resmi dua tahun setelah dia meninggal. Hari ini, huruf Braille dipakai jutaan orang di seluruh dunia, dari buku sampai tombol lift. Tulis di komentar, kamu berhasil menebak di petunjuk ke berapa?",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#ffb84d",
+  "hue": 30,
+  "hair": "#5b3a22",
+  "moustache": false,
+  "captionFixes": {},
+  "keywords": ["tebak", "bengkel", "buta", "tentara", "titik", "Braille", "jutaan", "menebak"],
+  "storyScenes": [
+    {"kind": "gintro", "cue": null, "mood": "neutral", "hint": 1},
+    {"kind": "gwork", "cue": "bengkel", "prop": "gear"},
+    {"kind": "galone", "cue": "buta", "mood": "sad"},
+    {"kind": "gstruggle", "cue": "sekolah", "hint": 2},
+    {"kind": "gidea", "cue": "tentara", "hint": 3},
+    {"kind": "gbreakthrough", "cue": "titik", "label": "6 TITIK"},
+    {"kind": "gportrait", "cue": "Dialah", "label": "LOUIS BRAILLE", "reveal": true},
+    {"kind": "gnews", "cue": "diakui", "label": "AKHIRNYA DIAKUI", "year": 1854},
+    {"kind": "gimpact", "cue": "jutaan"},
+    {"kind": "gclose", "cue": "komentar"}
+  ]
+}

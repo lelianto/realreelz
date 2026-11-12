@@ -1,0 +1,71 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Kelelahan Memutuskan",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["keputusan", "pilihan", "energi", "lelah", "default", "menu", "aturan", "baterai"],
+  "captionFixes": {},
+  "script": "Dari bangun tidur sampai malam, kamu mengambil ratusan keputusan kecil. Itu sebabnya malam hari jadi waktu paling buruk untuk memilih. Namanya kelelahan memutuskan. Setiap pilihan memakai energi yang sama, bahkan yang sepele seperti mau makan apa. Semakin lelah, semakin mudah kamu mengambil pilihan default, menghindar, atau membeli sesuatu supaya cepat selesai. Cara mengatasinya bukan menambah semangat, tapi mengurangi jumlah pilihan. Tetapkan menu, jadwal, dan aturan sederhana untuk hal yang berulang. Karena kehendak bukan sumber daya tanpa batas, ia lebih seperti baterai yang perlu diisi ulang.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Kebiasaan sehari-hari",
+      "heading": "Malam jadi waktu terburuk untuk memilih.",
+      "accentWord": "terburuk",
+      "accentTone": "coral",
+      "card": {
+        "from": "keputusan.app",
+        "tag": "LELAH",
+        "title": "Mau makan apa?",
+        "body": "Pertanyaan sepele yang terasa berat."
+      },
+      "sub": "Bukan karena pilihannya sulit, tapi karena energinya sudah habis."
+    },
+    {
+      "kind": "how",
+      "cue": "Setiap",
+      "kicker": "Cara kerjanya",
+      "heading": "Setiap pilihan memakai energi yang sama.",
+      "accentWord": "energi yang sama",
+      "lines": [
+        "Ratusan keputusan kecil sejak pagi.",
+        "Semakin lelah, semakin mudah ambil default.",
+        "Menghindar atau membeli supaya cepat selesai."
+      ],
+      "badges": [
+        {"text": "Kehendak punya batas harian", "tone": "muted"},
+        {"text": "Kurangi pilihan, bukan tambah semangat", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "Tetapkan",
+      "kicker": "Yang bisa diotomatiskan",
+      "heading": "Kurangi jumlah pilihan, bukan menambah semangat.",
+      "accentWord": "jumlah pilihan",
+      "cards": [
+        "Menu mingguan",
+        "Jadwal tetap",
+        "Aturan sederhana",
+        "Default yang baik"
+      ],
+      "highlight": "Pilihan yang berulang tidak perlu diputuskan setiap hari."
+    },
+    {
+      "kind": "cta",
+      "cue": "Karena",
+      "kicker": "Yang perlu dipahami",
+      "heading": "Kehendak itu baterai, bukan sumur tanpa dasar.",
+      "accentWord": "baterai",
+      "accentTone": "accent",
+      "big": "KURANGI",
+      "sub": "Simpan energi memilih untuk hal yang benar-benar penting.",
+      "pill": "Bukan malas, cuma kehabisan bahan bakar"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Jebakan Bayar Nanti",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["cicilan", "bunga", "tagihan", "gaji", "total", "penghasilan", "masa depan", "harga"],
+  "captionFixes": {},
+  "script": "Cicilannya cuma lima puluh ribu sebulan, terasa ringan. Itu jebakan bayar nanti. Angka kecil membuat kita berhenti menghitung total, dan kita lupa bahwa bunga bekerja untuk mereka, bukan untuk kita. Satu cicilan terasa aman. Tiga cicilan mulai mengunci gaji. Enam cicilan membuat kamu bekerja untuk tagihan, bukan untuk tabungan. Yang paling berbahaya bukan bunganya, tapi kebiasaan menganggap semuanya terjangkau. Cara memeriksanya, jumlahkan semua cicilanmu, lalu bandingkan dengan penghasilan. Kalau lebih dari sepertiga, kamu sedang menjual masa depanmu. Karena kemudahan hari ini selalu punya harga, hanya saja ditagih nanti.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Kebiasaan sehari-hari",
+      "heading": "Cicilan kecil terasa ringan, sampai dijumlahkan.",
+      "accentWord": "sampai dijumlahkan",
+      "accentTone": "coral",
+      "card": {
+        "from": "paylater.app",
+        "tag": "Rp50.000/BULAN",
+        "title": "Cuma lima puluh ribu",
+        "body": "Terasa ringan, karena tidak pernah dihitung totalnya."
+      },
+      "sub": "Satu tagihan kecil terasa aman. Enam tagihan kecil mengubah hidupmu."
+    },
+    {
+      "kind": "how",
+      "cue": "Angka",
+      "kicker": "Cara kerjanya",
+      "heading": "Angka kecil membuat kita berhenti menghitung.",
+      "accentWord": "berhenti menghitung",
+      "lines": [
+        "Bunga bekerja untuk mereka, bukan untukmu.",
+        "Satu cicilan terasa aman.",
+        "Enam cicilan mengunci penghasilanmu."
+      ],
+      "badges": [
+        {"text": "Yang bahaya: kebiasaan, bukan bunganya", "tone": "muted"},
+        {"text": "Jumlahkan semua sebelum menambah satu lagi", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "Tiga",
+      "kicker": "Efek menumpuknya",
+      "heading": "Dari aman, jadi mengunci.",
+      "accentWord": "mengunci",
+      "cards": [
+        "Satu cicilan: aman",
+        "Tiga cicilan: gaji terkunci",
+        "Enam cicilan: kerja untuk tagihan",
+        "Semua cicilan: masa depan terjual"
+      ],
+      "highlight": "Bandingkan total cicilan dengan penghasilanmu, bukan dengan rasa ringan."
+    },
+    {
+      "kind": "cta",
+      "cue": "Cara",
+      "kicker": "Cara memeriksanya",
+      "heading": "Kemudahan hari ini selalu ditagih nanti.",
+      "accentWord": "ditagih nanti",
+      "accentTone": "accent",
+      "big": "TOTAL",
+      "sub": "Kalau cicilan lewat sepertiga penghasilan, kamu sedang menjual masa depan.",
+      "pill": "Hitung totalnya, bukan angsuran per bulan"
+    }
+  ]
+}

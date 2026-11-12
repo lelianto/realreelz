@@ -1,0 +1,23 @@
+{
+  "template": "stickman",
+  "name": "DIKOTOMI PALSU",
+  "title": "False Dilemma",
+  "script": "Kamu harus memilih, mendukung kami atau melawan kami. Itulah dikotomi palsu. Argumen ini menyembunyikan semua pilihan lain, lalu memaksamu memilih di antara dua hal yang sama buruknya. Di Negeri Konoha, setiap kritik diubah menjadi pengkhianatan. Kamu tidak setuju dengan kebijakan, lalu dituduh membenci negara. Padahal bisa saja kamu mencintai negara ini dan tetap mengkritik kebijakannya. Hidup jarang hanya punya dua pintu. Selalu ada pilihan ketiga, keempat, dan seterusnya, yang sengaja tidak disebut. Cara melawannya, tolak pertanyaannya. Katakan, itu bukan satu-satunya pilihan. Karena siapa pun yang memaksamu memilih dua pintu, biasanya sedang menyembunyikan pintu yang lain.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#4fd1c5",
+  "hue": 175,
+  "hair": "#26221f",
+  "moustache": false,
+  "captionFixes": {},
+  "keywords": ["memilih", "dikotomi", "menyembunyikan", "Konoha", "pengkhianatan", "kebijakan", "ketiga", "keempat", "tolak", "pintu"],
+  "storyScenes": [
+    {"kind": "cdilemma", "cue": null, "optL": "Mendukung", "optR": "Melawan"},
+    {"kind": "cterm", "cue": "dikotomi", "term": "DIKOTOMI PALSU", "def": "Dua pilihan, sisanya disembunyikan"},
+    {"kind": "cthink", "cue": "menyembunyikan", "bubble": "Selalu ada pintu ketiga"},
+    {"kind": "cstory", "cue": "Konoha", "bubble": "Kritik diubah jadi pengkhianatan"},
+    {"kind": "cwhy", "cue": "keempat", "points": ["Selalu ada opsi lain", "Sengaja tidak disebut", "Tanyakan: siapa yang untung?"]},
+    {"kind": "clesson", "cue": "tolak", "label": "Tolak pertanyaannya"}
+  ]
+}

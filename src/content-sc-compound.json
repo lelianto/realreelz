@@ -1,0 +1,72 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Kekuatan Satu Persen",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["persen", "compound", "bunga", "perubahan", "konsisten", "kebiasaan", "kecil", "heroik"],
+  "captionFixes": {},
+  "script": "Satu persen lebih baik setiap hari terasa tidak berarti. Tapi satu persen yang sama, selama satu tahun, menjadi tiga puluh tujuh kali lipat. Itu kekuatan efek compound. Kebanyakan orang berhenti karena hasilnya tidak terlihat di minggu pertama. Padahal perubahan kecil bekerja seperti bunga majemuk: awalnya datar, lalu melengkung naik. Masalahnya, otak kita menuntut bukti cepat. Jadi kita memilih usaha besar yang jarang, daripada usaha kecil yang konsisten. Padahal yang besar jarang bertahan. Cara memulainya, pilih satu kebiasaan yang terlalu kecil untuk ditolak. Dua menit membaca, satu halaman menulis. Karena hasil besar bukan lahir dari hari yang heroik, tapi dari hari biasa yang diulang.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Kenapa kita berhenti",
+      "heading": "Hasil kecil terasa seperti tidak ada hasil.",
+      "accentWord": "tidak ada hasil",
+      "accentTone": "coral",
+      "card": {
+        "from": "jurnal-harian.app",
+        "tag": "BERHENTI",
+        "title": "Target 100 hari, berhenti di hari ke-3",
+        "body": "Karena hasilnya belum terlihat, padahal baru dimulai."
+      },
+      "sub": "Yang tampak datar di awal bisa melengkung naik nanti."
+    },
+    {
+      "kind": "how",
+      "cue": "bunga",
+      "kicker": "Cara kerjanya",
+      "heading": "Perubahan kecil bekerja seperti bunga majemuk.",
+      "accentWord": "bunga majemuk",
+      "mono": true,
+      "lines": [
+        "Awalnya datar, hampir tak terasa.",
+        "Lalu melengkung naik tanpa disadari.",
+        "1% sehari x 1 tahun = 37 kali."
+      ],
+      "badges": [
+        {"text": "Otak menuntut bukti cepat", "tone": "muted"},
+        {"text": "Konsisten mengalahkan besar", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "kebiasaan",
+      "kicker": "Pilih yang terlalu kecil untuk ditolak",
+      "heading": "Mulai dari kebiasaan yang terasa sepele.",
+      "accentWord": "sepele",
+      "cards": [
+        "Dua menit membaca",
+        "Satu halaman menulis",
+        "Sepuluh menit jalan",
+        "Satu tarikan napas"
+      ],
+      "highlight": "Usaha besar jarang bertahan, usaha kecil yang diulang bertahan."
+    },
+    {
+      "kind": "cta",
+      "cue": "bukan",
+      "kicker": "Yang sebenarnya menentukan",
+      "heading": "Hasil besar lahir dari hari biasa yang diulang.",
+      "accentWord": "hari biasa",
+      "accentTone": "accent",
+      "big": "1% SAJA",
+      "sub": "Bukan hari yang heroik, tapi hari yang tidak kamu lewatkan.",
+      "pill": "Kecil, konsisten, berulang"
+    }
+  ]
+}

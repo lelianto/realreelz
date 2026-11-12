@@ -1,0 +1,71 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Multitasking Itu Ilusi",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["multitasking", "perhatian", "berpindah", "pergantian", "lelah", "blok waktu", "gangguan", "fokus"],
+  "captionFixes": {},
+  "script": "Kamu membalas pesan sambil rapat, lalu merasa produktif. Padahal otak tidak benar-benar mengerjakan dua hal sekaligus. Ia berpindah cepat, dan setiap perpindahan meninggalkan sisa perhatian. Ilmuwan menyebutnya biaya pergantian. Setiap kali kembali, kamu butuh waktu untuk masuk lagi. Dalam sehari, sisa-sisa itu menumpuk menjadi kelelahan yang tidak jelas asalnya. Yang lebih buruk, pekerjaan yang paling penting biasanya yang paling mudah ditinggal. Cara memperbaikinya, kerjakan satu hal dalam satu blok waktu, lalu tutup gangguannya. Karena perhatian bukan lampu sorot yang bisa dibelah, ia lebih seperti kamera yang hanya fokus pada satu titik.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Sesat pikir sehari-hari",
+      "heading": "Merasa produktif, padahal perhatian terbelah.",
+      "accentWord": "terbelah",
+      "accentTone": "coral",
+      "card": {
+        "from": "rapat-online.app",
+        "tag": "MULTITASK",
+        "title": "Balas pesan sambil rapat",
+        "body": "Merasa produktif, tapi tidak menangkap apa pun."
+      },
+      "sub": "Dua layar terbuka, tidak ada yang benar-benar dikerjakan."
+    },
+    {
+      "kind": "how",
+      "cue": "Ilmuwan",
+      "kicker": "Cara kerjanya di otak",
+      "heading": "Otak tidak paralel, ia berganti cepat.",
+      "accentWord": "berganti cepat",
+      "lines": [
+        "Setiap perpindahan meninggalkan sisa perhatian.",
+        "Kembali butuh waktu untuk masuk lagi.",
+        "Sisa itu menumpuk jadi kelelahan."
+      ],
+      "badges": [
+        {"text": "Biaya pergantian nyata", "tone": "muted"},
+        {"text": "Satu blok, satu pekerjaan", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "Cara",
+      "kicker": "Yang paling sering ditinggal",
+      "heading": "Pekerjaan penting biasanya yang paling mudah ditinggal.",
+      "accentWord": "paling mudah ditinggal",
+      "cards": [
+        "Rapat sambil chat",
+        "Kerja sambil scroll",
+        "Belajar sambil nonton",
+        "Istirahat sambil cek email"
+      ],
+      "highlight": "Gangguan kecil memotong pekerjaan yang butuh fokus."
+    },
+    {
+      "kind": "cta",
+      "cue": "Karena",
+      "kicker": "Cara memperbaikinya",
+      "heading": "Perhatian hanya fokus pada satu titik.",
+      "accentWord": "satu titik",
+      "accentTone": "accent",
+      "big": "SATU BLOK",
+      "sub": "Kerjakan satu hal, tutup gangguannya.",
+      "pill": "Multitasking itu ilusi, bukan kemampuan"
+    }
+  ]
+}

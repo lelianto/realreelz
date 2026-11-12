@@ -1,6 +1,27 @@
 // Flat 2D stickman storytelling template: every character and background is
 // drawn as SVG, scene cuts follow cue words in the narration.
 import {AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {
+  Confetti,
+  FlashFx,
+  FormatDefs,
+  PointFloat,
+  REWIND_BACK,
+  RewindFx,
+  RoundBanner,
+  Scoreboard,
+  SplitFrame,
+  TRANS_LEN,
+  TebakHud,
+  VsBadge,
+  Vignette,
+  YearRail,
+  YearStamp,
+  ease,
+  type Rival,
+  type StoryFormat,
+  type Transition,
+} from './StickFormats';
 
 export type StoryWord = {text: string; fromMs: number; toMs: number};
 export type StoryScene = {
@@ -26,6 +47,18 @@ export type StoryScene = {
   // optional data for ANIMAL characters / analogies
   char?: string; // 'frog' | 'sheep' | 'ant' | 'wolf' | 'fox' | 'mouse' | 'lion' (default: stickman)
   heat?: number; // 0..1 water temperature for the cpot (boiling-frog) scene
+  // optional FORMAT data (see StickFormats.tsx)
+  transition?: Transition; // how this scene enters (default depends on format)
+  year?: string | number; // slams a year stamp in (and drives the mundur year rail)
+  yearNote?: string; // small line under the year stamp, e.g. "23 TAHUN SEBELUMNYA"
+  grade?: 'mono' | 'sepia'; // colour grade for this scene
+  hint?: number; // tebak: hint number shown in the HUD (carries forward)
+  reveal?: boolean; // tebak: first scene where the hero is no longer a silhouette
+  silhouette?: boolean; // internal: draw the hero as a black silhouette
+  who?: 'a' | 'b' | 'split'; // duel: hero A, rival B, or split screen
+  b?: Partial<StoryScene>; // duel split: overrides for the right-hand (rival) half
+  round?: string; // duel: round banner title
+  point?: 'a' | 'b'; // duel: who scores when this scene starts
 };
 
 const INK = '#1b1a22';
@@ -58,6 +91,7 @@ type StickProps = {
   moustache?: boolean;
   bowTie?: boolean;
   flip?: boolean;
+  silhouette?: boolean;
 };
 
 const Limb: React.FC<{x: number; y: number; len: number; angle: number; hand?: boolean}> = ({
@@ -93,6 +127,7 @@ const Stick: React.FC<StickProps> = ({
   moustache,
   bowTie = false,
   flip = false,
+  silhouette = false,
 }) => {
   const frame = useCurrentFrame();
   const bob = Math.sin(frame / 9) * 4;
@@ -104,6 +139,10 @@ const Stick: React.FC<StickProps> = ({
 
   return (
     <g transform={`translate(${x} ${y + bob}) scale(${(flip ? -1 : 1) * scale} ${scale})`}>
+      {silhouette ? (
+        <text x={0} y={-640 + Math.sin(frame / 7) * 10} textAnchor="middle" fontSize={150} fontWeight={900} fill="#fff" stroke={INK} strokeWidth={8} paintOrder="stroke" fontFamily="Arial Black, Arial" transform={flip ? 'scale(-1 1)' : undefined}>?</text>
+      ) : null}
+      <g filter={silhouette ? 'url(#stkSil)' : undefined}>
       {/* legs + shoes (origin is the ground point) */}
       <Limb x={-22} y={-205} len={190} angle={swing} hand={false} />
       <Limb x={22} y={-205} len={190} angle={-swing} hand={false} />
@@ -161,6 +200,7 @@ const Stick: React.FC<StickProps> = ({
       ) : (
         <path d="M-22 -436 Q0 -416 22 -436" fill="none" stroke={INK} strokeWidth={7} strokeLinecap="round" />
       )}
+      </g>
     </g>
   );
 };
@@ -760,6 +800,7 @@ const SceneArt: React.FC<{scene: StoryScene; f: number; len: number; accent: str
     coat: scene.coat,
     moustache: scene.moustache ?? baseMoustache,
     old: scene.old,
+    silhouette: scene.silhouette,
   };
   const {fps} = useVideoConfig();
   const seed = Math.floor(f / 3);
@@ -2893,6 +2934,64 @@ const Subtitle: React.FC<{words: StoryWord[]; keywords: string[]; accent: string
 // ---------------------------------------------------------------------------
 // Root
 // ---------------------------------------------------------------------------
+type Look = {accent: string; hue: number; baseHair?: string; baseMoustache?: boolean};
+type TimelineItem = {scene: StoryScene; from: number};
+
+// Draws one timeline item at local frame `f`: a single scene, a rival (who:'b')
+// scene, or a split screen, wrapped in its colour grade.
+const SceneFrame: React.FC<{
+  item: TimelineItem;
+  idx: number;
+  f: number;
+  len: number;
+  a: Look;
+  rival?: Rival;
+  silhouette: boolean;
+}> = ({item, idx, f, len, a, rival, silhouette}) => {
+  const scene = silhouette ? {...item.scene, silhouette: true} : item.scene;
+  const b: Look = rival
+    ? {accent: rival.accent ?? a.accent, hue: rival.hue ?? a.hue, baseHair: rival.hair, baseMoustache: rival.moustache}
+    : a;
+  const asRival = (s: StoryScene): StoryScene => ({...s, coat: s.coat ?? rival?.coat, old: s.old ?? rival?.old});
+  const art = (s: StoryScene, l: Look, k: string) => (
+    <SceneArt key={k} scene={s} f={f} len={len} accent={l.accent} hue={l.hue} baseHair={l.baseHair} baseMoustache={l.baseMoustache} />
+  );
+  let body: React.ReactNode;
+  if (scene.who === 'split' && rival) {
+    const right = asRival({...scene, ...(scene.b ?? {})});
+    body = (
+      <>
+        <SplitFrame id={`sp${idx}`} f={f} accentL={a.accent} accentR={b.accent} left={art(scene, a, `l${scene.kind}${idx}`)} right={art(right, b, `r${right.kind}${idx}`)} />
+        <VsBadge f={f} />
+      </>
+    );
+  } else if (scene.who === 'b' && rival) {
+    body = art(asRival(scene), b, scene.kind + idx);
+  } else {
+    body = art(scene, a, scene.kind + idx);
+  }
+  const grade = scene.grade === 'mono' ? 'url(#gradeMono)' : scene.grade === 'sepia' ? 'url(#gradeSepia)' : undefined;
+  return (
+    <g filter={grade}>
+      {body}
+      {grade ? <Vignette /> : null}
+    </g>
+  );
+};
+
+const defaultTransition = (format: StoryFormat, cur: StoryScene, prev?: StoryScene, lastYear?: string | number): Transition => {
+  if (!prev) return 'cut';
+  if (cur.transition) return cur.transition;
+  if (format === 'tebak') return cur.reveal ? 'flash' : 'whip';
+  if (format === 'duel') return cur.who === 'split' ? 'iris' : 'whip';
+  if (format === 'mundur') {
+    // compare with the latest year seen so far, not just the previous scene
+    if (cur.year !== undefined && lastYear !== undefined && Number(cur.year) < Number(lastYear)) return 'rewind';
+    return cur.year !== undefined ? 'whip' : 'cut';
+  }
+  return 'cut';
+};
+
 export const StickmanStory: React.FC<{
   words: StoryWord[];
   scenes: StoryScene[];
@@ -2902,7 +3001,9 @@ export const StickmanStory: React.FC<{
   hue?: number; // per-video background hue offset (deg); 0 = original palette
   baseHair?: string; // per-video default hair colour (scene.hair overrides)
   baseMoustache?: boolean; // per-video default moustache (scene.moustache overrides)
-}> = ({words, scenes, name, keywords, accent, hue = 0, baseHair, baseMoustache}) => {
+  format?: StoryFormat;
+  rival?: Rival; // duel: the second inventor
+}> = ({words, scenes, name, keywords, accent, hue = 0, baseHair, baseMoustache, format = 'bio', rival}) => {
   const frame = useCurrentFrame();
   const {fps, durationInFrames} = useVideoConfig();
 
@@ -2913,42 +3014,158 @@ export const StickmanStory: React.FC<{
   });
   const timeline = scenes
     .map((s, i) => ({scene: s, from: starts[i]}))
-    .filter((s): s is {scene: StoryScene; from: number} => s.from !== null);
+    .filter((s): s is TimelineItem => s.from !== null);
   const idx = timeline.reduce((best, s, i) => (frame >= s.from ? i : best), 0);
   const item = timeline[idx];
   const scene = item.scene;
   const end = timeline[idx + 1]?.from ?? durationInFrames;
   const f = frame - item.from;
   const len = end - item.from;
+  const a: Look = {accent, hue, baseHair, baseMoustache};
+
+  // tebak: silhouette until the reveal scene
+  const revealIdx = format === 'tebak' ? timeline.findIndex((t) => t.scene.reveal) : -1;
+  const hidden = (i: number) => format === 'tebak' && (revealIdx === -1 || i < revealIdx);
+
+  // transition into the current scene
+  const prevItem = timeline[idx - 1];
+  const lastYear = timeline
+    .slice(0, idx)
+    .map((t) => t.scene.year)
+    .filter((y) => y !== undefined)
+    .pop();
+  const tr = defaultTransition(format, scene, prevItem?.scene, lastYear);
+  const tl = TRANS_LEN[tr];
+  const inTrans = !!prevItem && tl > 0 && f < tl;
+  const p = inTrans ? ease(f / tl) : 1;
+  const prevLen = prevItem ? item.from - prevItem.from : 0;
+  const prevF = tr === 'rewind' ? Math.max(0, prevLen - f * 5) : prevLen + f;
+
+  const curFrame = <SceneFrame item={item} idx={idx} f={f} len={len} a={a} rival={rival} silhouette={hidden(idx)} />;
+  const prevFrame = prevItem ? (
+    <SceneFrame item={prevItem} idx={idx - 1} f={prevF} len={prevLen} a={a} rival={rival} silhouette={hidden(idx - 1)} />
+  ) : null;
+
+  let stage: React.ReactNode = curFrame;
+  if (inTrans && tr === 'whip') {
+    stage = (
+      <g filter="url(#whipBlur)">
+        <g transform={`translate(${-W * p} 0)`}>{prevFrame}</g>
+        <g transform={`translate(${W * (1 - p)} 0)`}>{curFrame}</g>
+      </g>
+    );
+  } else if (inTrans && tr === 'iris') {
+    const r = p * 1250;
+    stage = (
+      <>
+        {prevFrame}
+        <clipPath id={`iris${idx}`}>
+          <circle cx={540} cy={900} r={r} />
+        </clipPath>
+        <g clipPath={`url(#iris${idx})`}>{curFrame}</g>
+        <circle cx={540} cy={900} r={r} fill="none" stroke={accent} strokeWidth={18} />
+        <circle cx={540} cy={900} r={r} fill="none" stroke={INK} strokeWidth={6} />
+      </>
+    );
+  } else if (inTrans && tr === 'rewind' && f < REWIND_BACK) {
+    stage = (
+      <g filter="url(#vhs)" transform={`translate(${(rand(f) - 0.5) * 40} 0)`}>
+        {prevFrame}
+      </g>
+    );
+  } else if (inTrans && tr === 'rewind') {
+    stage = <g transform={`translate(${(rand(f + 3) - 0.5) * 24 * (1 - p)} 0)`}>{curFrame}</g>;
+  }
+  const blur = inTrans && tr === 'whip' ? Math.sin(Math.PI * (f / tl)) * 70 : 0;
 
   // each cut lands with a small punch-in, then the camera creeps forward
   const punch = spring({frame: f, fps, config: {damping: 14}, durationInFrames: 12});
   const zoom = interpolate(punch, [0, 1], [1.08, 1]) + (f / Math.max(len, 1)) * 0.05;
 
+  // ---- overlays (not zoomed) ----
+  const yearStart = tr === 'rewind' ? REWIND_BACK : tl > 0 ? Math.round(tl / 2) : 0;
+  const yearsSoFar = timeline.slice(0, idx + 1).filter((t) => t.scene.year !== undefined);
+  const curYear = yearsSoFar[yearsSoFar.length - 1]?.scene.year;
+  const prevYear = yearsSoFar[yearsSoFar.length - 2]?.scene.year ?? curYear;
+  const lastYearItem = yearsSoFar[yearsSoFar.length - 1];
+  const allYears = [...new Set(timeline.filter((t) => t.scene.year !== undefined).map((t) => Number(t.scene.year)))].sort((x, y) => x - y);
+
+  let scoreA = 0;
+  let scoreB = 0;
+  let lastA = -1;
+  let lastB = -1;
+  for (const t of timeline.slice(0, idx + 1)) {
+    if (t.scene.point === 'a') {
+      scoreA++;
+      lastA = t.from;
+    }
+    if (t.scene.point === 'b') {
+      scoreB++;
+      lastB = t.from;
+    }
+  }
+  const hintN = timeline.slice(0, idx + 1).reduce((h, t, i) => t.scene.hint ?? (h === 0 ? i + 1 : h), 0) || idx + 1;
+  const roundN = timeline.slice(0, idx + 1).filter((t) => t.scene.round).length;
+  const sideAccent = scene.who === 'b' && rival?.accent ? rival.accent : accent;
+  const showName = format === 'bio' || format === 'mundur' || (format === 'tebak' && !hidden(idx));
+
   return (
     <AbsoluteFill style={{background: '#000', overflow: 'hidden'}}>
       <AbsoluteFill style={{transform: `scale(${zoom})`, transformOrigin: '50% 58%'}}>
         <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`}>
-          <SceneArt key={scene.kind + idx} scene={scene} f={f} len={len} accent={accent} hue={hue} baseHair={baseHair} baseMoustache={baseMoustache} />
+          <FormatDefs accent={accent} blur={blur} />
+          {stage}
         </svg>
       </AbsoluteFill>
-      <div
-        style={{
-          position: 'absolute',
-          top: 74,
-          left: 54,
-          padding: '12px 24px',
-          borderRadius: 14,
-          background: '#17151e',
-          border: '4px solid #fff',
-          color: '#fff',
-          fontFamily: '"Arial Black", Arial, sans-serif',
-          fontWeight: 900,
-          fontSize: 34,
-        }}
-      >
-        {name}
-      </div>
+      <AbsoluteFill>
+        <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`}>
+          {inTrans && tr === 'flash' ? <FlashFx f={f} /> : null}
+          {inTrans && tr === 'rewind' ? <RewindFx f={f} seed={idx * 31} /> : null}
+          {format === 'tebak' && revealIdx >= 0 && idx === revealIdx ? <Confetti f={f} colors={[accent, '#fff', '#ff6b6b', '#5ad1ff']} /> : null}
+          {format === 'tebak' && hidden(idx) ? <TebakHud f={f} hint={hintN} accent={accent} /> : null}
+          {format === 'mundur' && curYear !== undefined && lastYearItem ? (
+            <YearRail years={allYears} from={Number(prevYear)} to={Number(curYear)} f={frame - lastYearItem.from - yearStart} accent={accent} />
+          ) : null}
+          {scene.year !== undefined ? <YearStamp f={f - yearStart} year={String(scene.year)} note={scene.yearNote} accent={sideAccent} /> : null}
+          {format === 'duel' && rival ? (
+            <>
+              <Scoreboard
+                nameA={name}
+                nameB={rival.name}
+                a={scoreA}
+                b={scoreB}
+                accentA={accent}
+                accentB={rival.accent ?? accent}
+                bumpA={lastA < 0 ? 999 : frame - lastA}
+                bumpB={lastB < 0 ? 999 : frame - lastB}
+              />
+              {scene.round ? <RoundBanner f={f - Math.round(tl / 2)} round={scene.round} n={roundN} accent={sideAccent} /> : null}
+              {scene.point ? <PointFloat f={f} side={scene.point} accent={scene.point === 'b' ? rival.accent ?? accent : accent} /> : null}
+            </>
+          ) : null}
+        </svg>
+      </AbsoluteFill>
+      {showName ? (
+        <div
+          style={{
+            position: 'absolute',
+            top: format === 'mundur' ? 40 : 74,
+            left: 54,
+            padding: '12px 24px',
+            borderRadius: 14,
+            background: '#17151e',
+            border: '4px solid #fff',
+            color: '#fff',
+            fontFamily: '"Arial Black", Arial, sans-serif',
+            fontWeight: 900,
+            fontSize: 34,
+            transform: format === 'tebak' && idx === revealIdx ? `scale(${spring({frame: f - 6, fps, config: {damping: 10}, durationInFrames: 14})})` : undefined,
+            transformOrigin: 'left center',
+          }}
+        >
+          {name}
+        </div>
+      ) : null}
       <Subtitle words={words} keywords={keywords} accent={accent} />
     </AbsoluteFill>
   );

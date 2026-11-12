@@ -1,0 +1,72 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Cara Cek Berita Palsu",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["pesan", "sumber", "hoaks", "emosi", "marah", "memeriksa", "meneruskan", "menyebarkan"],
+  "captionFixes": {},
+  "script": "Sebuah pesan diteruskan di grup keluarga, lengkap dengan foto dan tulisan yang meyakinkan. Sebelum kamu meneruskan, tanyakan tiga hal. Siapa yang pertama kali menulis ini? Apakah ada sumber resmi yang bisa dibuka? Dan apakah judulnya sengaja dibuat marah? Hoaks jarang menipu lewat logika, ia menipu lewat emosi. Rasa takut dan marah membuat kita berhenti memeriksa. Yang paling sering dipalsukan justru hal yang kita sudah ingin percaya. Cara paling sederhana, cari kalimat utamanya di mesin pencari, lalu lihat apakah hanya situs mencurigakan yang membahasnya. Karena meneruskan pesan bukan tindakan netral. Kamu ikut menyebarkan, apakah itu benar atau tidak.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Di grup keluarga",
+      "heading": "Pesan yang meyakinkan belum tentu benar.",
+      "accentWord": "belum tentu benar",
+      "accentTone": "coral",
+      "card": {
+        "from": "grup-keluarga.chat",
+        "tag": "DITERUSKAN",
+        "title": "AWAS! Ini yang tidak diberitakan media",
+        "body": "Lengkap dengan foto dan tulisan yang terlihat resmi."
+      },
+      "sub": "Semakin membuat marah, semakin cepat diteruskan."
+    },
+    {
+      "kind": "how",
+      "cue": "tanyakan",
+      "kicker": "Tiga pertanyaan sebelum meneruskan",
+      "heading": "Periksa sumbernya, bukan perasaannya.",
+      "accentWord": "sumbernya",
+      "mono": true,
+      "lines": [
+        "1. Siapa yang pertama menulis ini?",
+        "2. Ada sumber resmi yang bisa dibuka?",
+        "3. Judulnya sengaja dibuat marah?"
+      ],
+      "badges": [
+        {"text": "Hoaks menipu lewat emosi", "tone": "muted"},
+        {"text": "Cek dulu, baru teruskan", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "Hoaks",
+      "kicker": "Kenapa trik ini berhasil",
+      "heading": "Yang dipalsukan biasanya yang ingin kita percaya.",
+      "accentWord": "ingin kita percaya",
+      "cards": [
+        "Rasa takut",
+        "Rasa marah",
+        "Keyakinan lama",
+        "Kabar yang menguntungkan"
+      ],
+      "highlight": "Emosi membuat kita berhenti memeriksa."
+    },
+    {
+      "kind": "cta",
+      "cue": "Karena",
+      "kicker": "Cara sederhana",
+      "heading": "Meneruskan pesan bukan tindakan netral.",
+      "accentWord": "bukan tindakan netral",
+      "accentTone": "accent",
+      "big": "CEK DULU",
+      "sub": "Cari kalimat utamanya, lihat siapa yang membahasnya.",
+      "pill": "Kamu ikut menyebarkan, benar atau tidak"
+    }
+  ]
+}

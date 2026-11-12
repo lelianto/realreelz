@@ -1,0 +1,71 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Memori yang Menipu",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["ingatan", "memori", "rekonstruksi", "saksi", "percaya diri", "cerita", "bukti", "meyakinkan"],
+  "captionFixes": {},
+  "script": "Kamu yakin pernah melihat kejadian itu, padahal tidak. Memori bukan rekaman, ia rekonstruksi. Setiap kali mengingat, otak menyusun ulang cerita dari potongan yang tersisa, dan sering menambahkan detail yang tidak ada. Itu sebabnya dua saksi mata bisa jujur, tapi berbeda. Dan percaya diri bukan tanda akurat. Semakin sering sebuah cerita diceritakan, semakin rapi dan semakin dipercaya, meski isinya berubah. Media sosial menambah lapisan, karena ingatan kita bercampur dengan foto dan cerita orang lain. Cara menjaganya, catat hal penting saat terjadi, jangan menunggu. Karena ingatan yang paling meyakinkan belum tentu yang paling benar.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Ingatan vs kenyataan",
+      "heading": "Kamu yakin, padahal tidak pernah terjadi.",
+      "accentWord": "tidak pernah terjadi",
+      "accentTone": "coral",
+      "card": {
+        "from": "ingatan.app",
+        "tag": "PALSU",
+        "title": "Aku ingat kejadian itu",
+        "body": "Padahal buktinya tidak ada, dan ceritanya berubah."
+      },
+      "sub": "Memori terasa seperti rekaman, padahal ia buatan ulang."
+    },
+    {
+      "kind": "how",
+      "cue": "Setiap",
+      "kicker": "Cara kerjanya di otak",
+      "heading": "Memori bukan rekaman, tapi rekonstruksi.",
+      "accentWord": "rekonstruksi",
+      "lines": [
+        "Otak menyusun ulang dari potongan tersisa.",
+        "Detail baru ditambahkan tanpa disadari.",
+        "Percaya diri bukan tanda akurat."
+      ],
+      "badges": [
+        {"text": "Dua saksi jujur bisa berbeda", "tone": "muted"},
+        {"text": "Catat saat terjadi, jangan menunggu", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "Media",
+      "kicker": "Yang menambah lapisan",
+      "heading": "Ingatan bercampur dengan cerita orang lain.",
+      "accentWord": "cerita orang lain",
+      "cards": [
+        "Cerita yang diulang",
+        "Foto lama",
+        "Kesaksian orang lain",
+        "Versi yang paling rapi"
+      ],
+      "highlight": "Cerita yang paling rapi belum tentu yang paling benar."
+    },
+    {
+      "kind": "cta",
+      "cue": "catat",
+      "kicker": "Cara menjaganya",
+      "heading": "Ingatan yang meyakinkan belum tentu benar.",
+      "accentWord": "belum tentu benar",
+      "accentTone": "accent",
+      "big": "CATAT",
+      "sub": "Tulis hal penting saat terjadi, sebelum ceritanya berubah.",
+      "pill": "Percaya diri bukan bukti akurat"
+    }
+  ]
+}

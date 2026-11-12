@@ -1,0 +1,71 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Keluar dari Overthinking",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["pesan", "overthinking", "kemungkinan", "kepastian", "waspada", "kertas", "tindakan", "bencana"],
+  "captionFixes": {},
+  "script": "Kamu mengirim pesan, lalu menghabiskan satu jam memikirkan kenapa balasannya singkat. Itu overthinking. Otak mencoba melindungimu dengan menyiapkan semua kemungkinan buruk, tapi ia tidak pernah selesai. Semakin banyak kemungkinan, semakin sedikit kepastian. Akibatnya, tubuh tetap waspada meski tidak ada bahaya nyata. Cara memutusnya bukan memikirkan lebih keras, tapi memindahkan pikiran ke tubuh. Tulis kekhawatiranmu di kertas, beri batas waktu lima menit. Lalu lakukan satu tindakan kecil yang bisa dikendalikan. Karena sebagian besar bencana yang kamu bayangkan tidak pernah terjadi, dan yang benar-benar terjadi biasanya tidak seburuk itu.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Sesat pikir sehari-hari",
+      "heading": "Satu pesan singkat, satu jam overthinking.",
+      "accentWord": "overthinking",
+      "accentTone": "coral",
+      "card": {
+        "from": "chat.app",
+        "tag": "DIBACA",
+        "title": "Balasannya cuma: oke",
+        "body": "Kamu menghabiskan satu jam menebak artinya."
+      },
+      "sub": "Pikiran mengisi kekosongan dengan kemungkinan terburuk."
+    },
+    {
+      "kind": "how",
+      "cue": "Semakin",
+      "kicker": "Cara kerjanya di otak",
+      "heading": "Semakin banyak kemungkinan, semakin sedikit kepastian.",
+      "accentWord": "semakin sedikit kepastian",
+      "lines": [
+        "Otak menyiapkan semua kemungkinan buruk.",
+        "Tapi tidak pernah sampai selesai.",
+        "Tubuh tetap waspada tanpa bahaya nyata."
+      ],
+      "badges": [
+        {"text": "Berpikir keras bukan menyelesaikan", "tone": "muted"},
+        {"text": "Pindahkan pikiran ke tubuh", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "Tulis",
+      "kicker": "Cara memutus putarannya",
+      "heading": "Pikiran berputar butuh tindakan, bukan jawaban.",
+      "accentWord": "tindakan",
+      "cards": [
+        "Tulis kekhawatiranmu",
+        "Beri batas lima menit",
+        "Lakukan satu hal kecil",
+        "Tutup ponselnya"
+      ],
+      "highlight": "Kendalikan satu hal yang memang bisa dikendalikan."
+    },
+    {
+      "kind": "cta",
+      "cue": "Karena",
+      "kicker": "Yang sebenarnya terjadi",
+      "heading": "Sebagian besar bencana itu tidak pernah terjadi.",
+      "accentWord": "tidak pernah terjadi",
+      "accentTone": "accent",
+      "big": "5 MENIT",
+      "sub": "Beri waktu pada kekhawatiran, jangan sepanjang hari.",
+      "pill": "Berpikir bukan menggantikan bertindak"
+    }
+  ]
+}
