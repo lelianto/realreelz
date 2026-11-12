@@ -9,6 +9,8 @@ import {StorycardStory, type StorycardScene, type StorycardTheme} from './Storyc
 import {EsportsStory, type EspScene} from './Esports';
 import {LeadStory, leadDurationSec, type LeadBrand, type LeadScene} from './Lead';
 import leadContent from './content-lead-demo.json';
+import {GridStory, type GridHero, type GridScene} from './Gridstory';
+import gridContent from './content-gridstory-kopi.json';
 import esportsContent from './content-navi.json';
 import content from './content.json';
 import collageContent from './content-collage.json';
@@ -42,11 +44,12 @@ export const RemotionRoot: React.FC = () => {
 
           // A template can pin its own length via "durationSec" (e.g. a 3D demo
           // with no voiceover). Otherwise the duration follows the voiceover.
-          const c = content as {durationSec?: number; template?: string; script?: string; leadScenes?: LeadScene[]};
+          const c = content as {durationSec?: number; template?: string; script?: string; leadScenes?: LeadScene[]; gridScenes?: GridScene[]};
           // A silent lead reel is as long as the sum of its scenes' durSec.
           const fixed =
             c.durationSec ??
-            (c.template === 'lead' && !c.script ? leadDurationSec(c.leadScenes ?? []) : undefined);
+            (!c.script && c.template === 'lead' ? leadDurationSec(c.leadScenes ?? [])
+              : !c.script && c.template === 'gridstory' ? leadDurationSec(c.gridScenes ?? []) : undefined);
           if (typeof fixed === 'number') {
             return {...dim, durationInFrames: Math.ceil(fixed * FPS)};
           }
@@ -179,6 +182,23 @@ export const RemotionRoot: React.FC = () => {
           target: leadContent.target,
           disclaimer: leadContent.disclaimer,
           accent: leadContent.accent,
+        }}
+      />
+      {/* Silent preview of the gridstory template (general history w/ stickman). */}
+      <Composition
+        id="GridstoryPreview"
+        component={GridStory}
+        durationInFrames={Math.ceil((leadDurationSec(gridContent.gridScenes as GridScene[]) ?? 45) * FPS)}
+        fps={FPS}
+        width={WIDTH}
+        height={HEIGHT}
+        defaultProps={{
+          words: [] as {text: string; fromMs: number; toMs: number}[],
+          scenes: gridContent.gridScenes as GridScene[],
+          brand: gridContent.brand as LeadBrand,
+          topic: gridContent.topic,
+          hero: gridContent.hero as GridHero,
+          accent: gridContent.accent,
         }}
       />
       {/* Light-mode preview of the same storycard content. */}

@@ -1,0 +1,92 @@
+{
+  "template": "gridstory",
+  "brand": {"name": "arsip kecil", "tag": "/sejarah"},
+  "topic": "Topik: kenapa kopi dijuluki Java",
+  "accent": "#E8922A",
+  "hero": {"hair": "#22202a"},
+  "script": "Kenapa kopi di banyak negara dijuluki Java? Jawabannya ada di sejarah panjang tanah Jawa. Tahun 1696, kongsi dagang Belanda membawa bibit kopi arabika dari India ke Batavia. Sayangnya, percobaan pertama gagal karena bibitnya hanyut diterjang banjir. Tiga tahun kemudian kiriman kedua tumbuh subur, dan sejak 1711 biji kopi Jawa mulai dikirim ke Eropa. Namanya pun melekat sebagai sebutan untuk secangkir kopi. Lalu sekitar tahun 1876, penyakit karat daun menghancurkan kebun arabika. Petani pun beralih ke kopi robusta yang lebih tahan. Sampai sekarang, arabika dikenal lebih asam dan wangi, sementara robusta lebih pahit dengan kafein lebih tinggi. Kini Indonesia termasuk empat besar produsen kopi dunia. Jadi, setiap kali kamu menyeruput kopi, ingat perjalanan panjangnya. Ikuti akun ini untuk kisah sejarah lainnya.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["Java", "Jawa", "Belanda", "arabika", "banjir", "Eropa", "robusta", "produsen"],
+  "captionFixes": {},
+  "gridScenes": [
+    {
+      "kind": "title",
+      "durSec": 5,
+      "tags": ["#sejarah", "#kopi", "#nusantara"],
+      "heading": "Kenapa kopi\ndijuluki Java?",
+      "accentWord": "Java?",
+      "sub": "Jawabannya ada di sejarah panjang tanah Jawa."
+    },
+    {
+      "kind": "year",
+      "cue": "Tahun",
+      "durSec": 6,
+      "kicker": "VOC · bibit dari India",
+      "heading": "Bibit kopi pertama tiba.",
+      "year": 1696,
+      "place": "Batavia",
+      "prop": "book"
+    },
+    {
+      "kind": "fact",
+      "cue": "Sayangnya",
+      "durSec": 5,
+      "heading": "Percobaan pertama gagal.",
+      "text": "Bibit kopi arabika hanyut diterjang banjir sebelum sempat tumbuh.",
+      "bubble": "Yah, hanyut!",
+      "look": "sad"
+    },
+    {
+      "kind": "timeline",
+      "cue": "Tiga",
+      "durSec": 8,
+      "heading": "Dari Jawa ke seluruh dunia.",
+      "accentWord": "Jawa",
+      "events": [
+        {"year": "1696", "text": "Bibit pertama hanyut"},
+        {"year": "1699", "text": "Kiriman kedua tumbuh subur"},
+        {"year": "1711", "text": "Kopi Jawa mulai dikirim ke Eropa"},
+        {"year": "Kini", "text": "\"Java\" jadi julukan untuk kopi"}
+      ]
+    },
+    {
+      "kind": "idea",
+      "cue": "Lalu",
+      "durSec": 6,
+      "kicker": "Sekitar tahun 1876",
+      "heading": "Krisis karat daun.",
+      "rows": [
+        {"label": "Masalah", "text": "Karat daun menghancurkan kebun arabika"},
+        {"label": "Solusi", "text": "Beralih ke robusta yang lebih tahan"},
+        {"label": "Hasil", "text": "Kopi Jawa tetap bertahan"}
+      ]
+    },
+    {
+      "kind": "compare",
+      "cue": "Sampai",
+      "durSec": 7,
+      "heading": "Arabika vs robusta.",
+      "left": {"title": "Arabika", "points": ["Lebih asam", "Aroma lebih wangi", "Kafein lebih rendah"]},
+      "right": {"title": "Robusta", "points": ["Lebih pahit", "Lebih tahan penyakit", "Kafein lebih tinggi"]}
+    },
+    {
+      "kind": "stat",
+      "cue": "Kini",
+      "durSec": 5,
+      "heading": "Indonesia hari ini.",
+      "prefix": "Top ",
+      "value": 4,
+      "label": "produsen kopi terbesar di dunia"
+    },
+    {
+      "kind": "outro",
+      "cue": "Jadi",
+      "durSec": 5,
+      "heading": "Setiap cangkir\npunya sejarah.",
+      "sub": "Ikuti untuk kisah sejarah lainnya.",
+      "button": "Ikuti"
+    }
+  ]
+}

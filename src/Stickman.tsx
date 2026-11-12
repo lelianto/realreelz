@@ -76,7 +76,7 @@ const rand = (seed: number) => {
 // ---------------------------------------------------------------------------
 // Character
 // ---------------------------------------------------------------------------
-type StickProps = {
+export type StickProps = {
   x: number;
   y: number; // ground level, under the shoes
   scale?: number;
@@ -418,7 +418,7 @@ const Fox: React.FC<AnimalProps> = (p) => <Critter {...p} s={{fur: '#e07a32', be
 const Mouse: React.FC<AnimalProps> = (p) => <Critter {...p} s={{fur: '#9aa0a8', belly: '#d9dde2', snout: '#d9dde2', ear: 'round', tail: '#c7a9b0', headR: 92}} />;
 const Lion: React.FC<AnimalProps> = (p) => <Critter {...p} s={{fur: '#e3a23c', belly: '#f1d59e', snout: '#f4e6ca', ear: 'small', mane: '#b06a22'}} />;
 
-const Actor: React.FC<StickProps & {char?: string}> = ({char, ...p}) => {
+export const Actor: React.FC<StickProps & {char?: string}> = ({char, ...p}) => {
   switch (char) {
     case 'frog':
       return <Frog {...p} />;
@@ -462,7 +462,7 @@ const Bolt: React.FC<{from: [number, number]; to: [number, number]; seed: number
   );
 };
 
-const Bulb: React.FC<{x: number; y: number; on?: boolean; size?: number}> = ({x, y, on = true, size = 1}) => (
+export const Bulb: React.FC<{x: number; y: number; on?: boolean; size?: number}> = ({x, y, on = true, size = 1}) => (
   <g transform={`translate(${x} ${y}) scale(${size})`}>
     {on ? <circle r={90} fill="#ffe07a" opacity={0.28} /> : null}
     <circle r={42} fill={on ? '#fff3b0' : '#c9c6bb'} stroke={INK} strokeWidth={7} />
@@ -665,7 +665,7 @@ const Bubble: React.FC<{x: number; y: number; side: 'l' | 'r'; text: string}> = 
   </g>
 );
 
-const GProp: React.FC<{prop?: string; x: number; y: number; f: number}> = ({prop, x, y, f}) => {
+export const GProp: React.FC<{prop?: string; x: number; y: number; f: number}> = ({prop, x, y, f}) => {
   if (prop === 'flask') return <Flask x={x} y={y} fill="#8bd17c" level={0.5} />;
   if (prop === 'bulb') return <Bulb x={x} y={y - 130} />;
   if (prop === 'book')

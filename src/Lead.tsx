@@ -75,9 +75,9 @@ export type LeadProps = {
 };
 
 const W = 1080;
-const PAD = 88;
+export const PAD = 88;
 
-const C = {
+export const C = {
   bg: '#E9EEF2',
   dot: '#C3CBD3',
   ink: '#0E1116',
@@ -97,25 +97,25 @@ const C = {
   codeText: '#E6E8EB',
 };
 
-const MONO = "'JetBrains Mono', ui-monospace, Menlo, monospace";
-const SANS = "'Inter', 'Helvetica Neue', Arial, sans-serif";
+export const MONO = "'JetBrains Mono', ui-monospace, Menlo, monospace";
+export const SANS = "'Inter', 'Helvetica Neue', Arial, sans-serif";
 
-const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
-const clean = (s: string) =>
+export const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
+export const clean = (s: string) =>
   s
     .toLowerCase()
     .normalize('NFD')
     .replace(/[̀-ͯ]/g, '')
     .replace(/[^a-z0-9]/g, '');
 
-const AccentCtx = React.createContext('#E8922A');
-const useAccent = () => React.useContext(AccentCtx);
+export const AccentCtx = React.createContext('#E8922A');
+export const useAccent = () => React.useContext(AccentCtx);
 
 // ============================================================================
 // Fonts (Google Fonts, gated so the first frames never flash a fallback face)
 // ============================================================================
 let fontsInjected = false;
-const useLeadFonts = () => {
+export const useLeadFonts = () => {
   const [handle] = React.useState(() => delayRender('lead-fonts'));
   React.useEffect(() => {
     try {
@@ -202,7 +202,7 @@ const BrandMark: React.FC<{logo?: string; name: string; size: number}> = ({logo,
   );
 };
 
-const Header: React.FC<{brand: LeadBrand}> = ({brand}) => (
+export const Header: React.FC<{brand: LeadBrand}> = ({brand}) => (
   <div
     style={{
       position: 'absolute',
@@ -242,7 +242,7 @@ const Header: React.FC<{brand: LeadBrand}> = ({brand}) => (
 // ============================================================================
 // Shared bits
 // ============================================================================
-const Heading: React.FC<{text: string; accentWord?: string; size: number; center?: boolean}> = ({
+export const Heading: React.FC<{text: string; accentWord?: string; size: number; center?: boolean}> = ({
   text,
   accentWord,
   size,
@@ -273,7 +273,7 @@ const Heading: React.FC<{text: string; accentWord?: string; size: number; center
   );
 };
 
-const Badge: React.FC<{text: string; bg: string; color: string}> = ({text, bg, color}) => (
+export const Badge: React.FC<{text: string; bg: string; color: string}> = ({text, bg, color}) => (
   <span
     style={{
       fontFamily: SANS,
@@ -291,14 +291,14 @@ const Badge: React.FC<{text: string; bg: string; color: string}> = ({text, bg, c
   </span>
 );
 
-const Caret: React.FC<{color?: string; h?: number}> = ({color = C.ink, h = 34}) => {
+export const Caret: React.FC<{color?: string; h?: number}> = ({color = C.ink, h = 34}) => {
   const frame = useCurrentFrame();
   const on = Math.floor(frame / 15) % 2 === 0;
   return <span style={{display: 'inline-block', width: 6, height: h, marginLeft: 4, background: color, opacity: on ? 1 : 0, verticalAlign: 'middle'}} />;
 };
 
 // Fade + lift for an element appearing at scene fraction `at`.
-const reveal = (t: number, at: number, span = 0.08) => {
+export const reveal = (t: number, at: number, span = 0.08) => {
   const v = interpolate(t, [at, at + span], [0, 1], clamp);
   return {opacity: v, transform: `translateY(${(1 - v) * 24}px)`};
 };
@@ -853,7 +853,7 @@ const CtaScene: React.FC<{s: LeadScene; t: number; localF: number; brand: LeadBr
 // ============================================================================
 // Progress bar (steps only) + subtitles (narrated mode only)
 // ============================================================================
-const Progress: React.FC<{idx: number; total: number; t: number; target?: string}> = ({idx, total, t, target}) => {
+export const Progress: React.FC<{idx: number; total: number; t: number; target?: string}> = ({idx, total, t, target}) => {
   const accent = useAccent();
   return (
     <div style={{position: 'absolute', top: 358, left: PAD, right: PAD}}>
@@ -896,7 +896,7 @@ const groupWords = (words: LeadWord[]): Phrase[] => {
   return out;
 };
 
-const Subtitle: React.FC<{words: LeadWord[]; keywords: string[]}> = ({words, keywords}) => {
+export const Subtitle: React.FC<{words: LeadWord[]; keywords: string[]; top?: number}> = ({words, keywords, top = 1300}) => {
   const accent = useAccent();
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
@@ -909,7 +909,7 @@ const Subtitle: React.FC<{words: LeadWord[]; keywords: string[]}> = ({words, key
     <div
       style={{
         position: 'absolute',
-        top: 1300,
+        top,
         left: PAD,
         right: PAD,
         display: 'flex',
@@ -946,11 +946,14 @@ const Subtitle: React.FC<{words: LeadWord[]; keywords: string[]}> = ({words, key
 // ============================================================================
 // Timeline: cue-driven when narrated, durSec-driven (or even) when silent
 // ============================================================================
-type Seg = {scene: LeadScene; startF: number; endF: number};
-const buildTimeline = (scenes: LeadScene[], words: LeadWord[], fps: number, total: number): Seg[] => {
-  const list = scenes.length ? scenes : [{kind: 'hook', heading: ''} as LeadScene];
+type Timed = {cue?: string | null; durSec?: number};
+export type Seg<T> = {scene: T; startF: number; endF: number};
+// Shared scene clock: cue-driven when narrated, durSec-driven (or even) when silent.
+export const buildTimeline = <T extends Timed>(scenes: T[], words: LeadWord[], fps: number, total: number): Seg<T>[] => {
+  const list = scenes;
+  if (!list.length) return [];
   if (words.length && list.slice(1).some((s) => s.cue)) {
-    const segs: Seg[] = [];
+    const segs: Seg<T>[] = [];
     let cur = 0;
     let startF = 0;
     for (let i = 1; i < list.length; i++) {
@@ -980,7 +983,7 @@ const buildTimeline = (scenes: LeadScene[], words: LeadWord[], fps: number, tota
   });
 };
 
-export const leadDurationSec = (scenes: LeadScene[]): number | undefined => {
+export const leadDurationSec = (scenes: Timed[]): number | undefined => {
   if (!scenes.length || scenes.some((s) => !s.durSec)) return undefined;
   return scenes.reduce((a, s) => a + (s.durSec ?? 0), 0);
 };
@@ -1005,6 +1008,7 @@ export const LeadStory: React.FC<LeadProps> = ({
     [scenes, words, fps, durationInFrames],
   );
   const active = timeline.find((s) => frame >= s.startF && frame < s.endF) ?? timeline[timeline.length - 1];
+  if (!active) return <AbsoluteFill style={{background: C.bg}} />;
   const localF = frame - active.startF;
   const segLen = Math.max(1, active.endF - active.startF);
   const t = localF / segLen;

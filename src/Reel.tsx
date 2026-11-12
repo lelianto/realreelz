@@ -28,6 +28,7 @@ import {FieldnotesStory, type FieldScene} from './Fieldnotes';
 import {StorycardStory, type StorycardScene, type StorycardTheme} from './Storycard';
 import {EsportsStory, type EspScene} from './Esports';
 import {LeadStory, type LeadBrand, type LeadScene} from './Lead';
+import {GridStory, type GridHero, type GridScene} from './Gridstory';
 
 type Scene = {
   type: 'intro' | 'tip' | 'outro';
@@ -109,6 +110,10 @@ type Content = {
   target?: string;
   disclaimer?: string;
   leadScenes?: LeadScene[];
+  // gridstory template (general history/inventions, lead look + stickman host)
+  topic?: string;
+  hero?: GridHero;
+  gridScenes?: GridScene[];
 };
 
 const content = rawContent as unknown as Content;
@@ -127,7 +132,8 @@ const Watermark: React.FC = () => {
     content.template === 'youtube-psych' ||
     content.template === 'storycard' ||
     content.template === 'esports' ||
-    content.template === 'lead'
+    content.template === 'lead' ||
+    content.template === 'gridstory'
   ) {
     return null; // Custom HUD / badge rendered inside template
   }
@@ -179,6 +185,8 @@ export const Reel: React.FC = () => {
       <EsportsReel />
     ) : content.template === 'lead' ? (
       <LeadReel />
+    ) : content.template === 'gridstory' ? (
+      <GridstoryReel />
     ) : content.template === 'collage' ? (
       <CollageReel />
     ) : content.template === 'parable' ? (
@@ -535,6 +543,40 @@ const LeadReel: React.FC = () => {
         brand={content.brand ?? {name: content.name ?? 'brand'}}
         target={content.target}
         disclaimer={content.disclaimer}
+        keywords={content.keywords ?? []}
+        accent={content.accent}
+      />
+    </AbsoluteFill>
+  );
+};
+
+// ============================================================================
+// GRIDSTORY template — general storytelling (history, inventions) in the lead
+// look with a stickman host. Narrated when `script` is set, else silent.
+// ============================================================================
+const GridstoryReel: React.FC = () => {
+  const narrated = Boolean(content.script);
+  const data = useCaptions();
+  const words = useMemo(() => {
+    if (!narrated) return [];
+    const fixes = content.captionFixes ?? {};
+    return (data?.words ?? [])
+      .map((w) => {
+        const bare = w.text.replace(/[.,?!:]+$/, '');
+        const fix = fixes[bare];
+        return fix === undefined ? w : {...w, text: w.text.replace(bare, fix)};
+      })
+      .filter((w) => w.text.trim() !== '');
+  }, [data, narrated]);
+  return (
+    <AbsoluteFill style={{background: '#E9EEF2'}}>
+      {narrated ? <SharedAudio /> : <MusicTrack />}
+      <GridStory
+        words={words}
+        scenes={content.gridScenes ?? []}
+        brand={content.brand ?? {name: content.name ?? 'brand'}}
+        topic={content.topic}
+        hero={content.hero}
         keywords={content.keywords ?? []}
         accent={content.accent}
       />
