@@ -1,160 +1,157 @@
-# Reels Generator
+<div align="center">
 
-Generator video reels vertikal (1080×1920) berbahasa Indonesia, tanpa wajah.
-Pipeline: naskah → suara (TTS) → caption otomatis → render video. Suara default
-pakai **edge-tts** (suara neural Microsoft, gratis & tanpa API key); ElevenLabs
-dan Piper tersedia sebagai alternatif.
+# RealReelz
 
-> Repo **private**. Lihat [Catatan lisensi](#catatan-lisensi) sebelum dipakai komersial atau dipublikasikan.
+**Turn one prompt into a narrated, captioned, animated vertical video. No face, no editor.**
 
----
+[![CI](https://github.com/lelianto/realreelz/actions/workflows/ci.yml/badge.svg)](https://github.com/lelianto/realreelz/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![Node](https://img.shields.io/badge/node-%3E%3D18-339933?logo=node.js&logoColor=white)
+[![Built with Remotion](https://img.shields.io/badge/built%20with-Remotion-0B84F3)](https://remotion.dev)
 
-## Yang dibutuhkan
+**English** · [Bahasa Indonesia](README.id.md)
 
-- **Node.js** (18+) dan **npm**
-- **ffmpeg** / **ffprobe** di PATH (`brew install ffmpeg`)
-- **Google Chrome** terpasang — render memakai Chrome sistem, bukan Chromium bawaan
-  Remotion (yang sering crash di macOS versi baru).
-- Untuk caption: **whisper.cpp** (otomatis di-download & di-build oleh
-  `@remotion/install-whisper-cpp` saat pertama kali `npm run captions`).
-- Untuk TTS gratis (edge-tts / Piper): **Python** di `.venv`. Di mesin ini venv
-  dibuat dengan `/usr/bin/python3` (Xcode CLT), karena Homebrew Python di sini
-  rusak:
-  ```bash
-  /usr/bin/python3 -m venv .venv
-  .venv/bin/pip install edge-tts piper-tts
-  ```
+<img src="docs/gallery/hero.jpg" alt="Six RealReelz templates side by side" width="100%">
 
-## Setup
+</div>
+
+RealReelz is a faceless short-video generator for Reels, TikTok and Shorts,
+built on [Remotion](https://remotion.dev). You write a topic (or a script), and
+the pipeline produces a 1080×1920 MP4 with a natural voiceover, word-synced
+karaoke captions and an animated template that cuts scenes on cue words in the
+narration.
+
+It was built for Indonesian-language channels, so voices and examples default
+to Indonesian, but every piece (voice, captions, script language) is configurable.
+
+## Features
+
+- **Prompt to video.** A local web app (`npm run web`) sends your topic to the
+  Claude API, gets back a script plus scene list, then voices, captions and
+  renders it. About 2–5 minutes per video.
+- **Free voice by default.** [edge-tts](https://github.com/rany2/edge-tts) neural
+  voices with no API key. ElevenLabs and offline [Piper](https://github.com/rhasspy/piper) are optional.
+- **Word-level captions** from [whisper.cpp](https://github.com/ggerganov/whisper.cpp),
+  downloaded and built automatically on first run, with per-video fixes for misheard words.
+- **14+ animated templates**, all drawn in code (SVG, DOM, Three.js): no stock
+  footage or image generation required.
+- **Cue-driven scenes.** Each scene starts when its trigger word is spoken, so
+  visuals stay in sync with any voice or speed.
+- **YouTube to Reels clipper.** Finds the most-replayed moment of a long video,
+  crops it to 9:16 and adds karaoke captions (`npm run clip <url>`).
+- **One JSON file per video.** Everything a video needs lives in `src/content.json`,
+  easy to generate, diff and version.
+
+## Quickstart
+
+Requirements: Node.js 18+, Python 3, ffmpeg. Google Chrome is recommended on macOS.
 
 ```bash
+git clone https://github.com/lelianto/realreelz.git
+cd realreelz
 npm install
-cp .env.example .env     # isi ANTHROPIC_API_KEY (untuk web app)
+python3 -m venv .venv && .venv/bin/pip install edge-tts
+cp .env.example .env                              # set REMOTION_HANDLE=@yourhandle
+
+cp src/content-stickman.json src/content.json     # pick an example video
+npm run build:audio:edge                          # voiceover + captions
+npm run render                                    # -> out/reel.mp4
 ```
 
-Aset/hal ini **tidak** ikut di repo (sengaja) dan harus kamu sediakan sendiri:
+Preview and tweak any template live in the browser with `npm run studio`.
 
-- `public/music.mp3` — musik latar bebas royalti (mis. dari Pixabay).
-- `ANTHROPIC_API_KEY` di `.env` — hanya untuk web app / `npm run generate`.
-- `ELEVENLABS_API_KEY` di `.env` — **opsional**, hanya kalau mau suara ElevenLabs
-  (default sudah pakai edge-tts yang gratis).
+### Prompt to video (web app)
 
-## Cara cepat: web app (prompt → video)
-
-Cukup tulis satu tokoh/topik, biarkan pipeline-nya jalan sampai MP4 jadi. Pakai
-template **stickman generik** (tidak perlu menggambar adegan baru per tokoh).
+Add `ANTHROPIC_API_KEY` to `.env`, then:
 
 ```bash
-npm run web      # buka http://localhost:4000
+npm run web          # http://localhost:4000
 ```
 
-Cukup **satu** key di `.env`: `ANTHROPIC_API_KEY` (untuk mengubah prompt jadi
-naskah + daftar adegan; model default `claude-sonnet-5-5`, ganti via
-`ANTHROPIC_MODEL`). Suara pakai edge-tts yang gratis, jadi tidak perlu key lain.
-
-Alurnya (semua server-side, key tidak pernah ke browser): prompt →
-`scripts/generate-content.mjs` (LLM menulis `src/content.json`) → `tts:edge`
-→ `captions` → `remotion render` → MP4 bisa diputar & diunduh di halaman.
-Satu render jalan pada satu waktu. Proses ±2–5 menit.
-
-Mau pakai ElevenLabs di web app? Jalankan dengan `TTS_ENGINE=eleven npm run web`
-(perlu `ELEVENLABS_API_KEY`).
-
-Mau tanpa web? Generate kontennya saja lalu pakai alur manual di bawah:
+Or generate the content file only, without the web UI:
 
 ```bash
-npm run generate "Alan Turing, bapak ilmu komputer"   # -> src/content.json
+npm run generate "Alan Turing, father of computer science"   # -> src/content.json
 ```
 
-> Generator memilih **format** otomatis dari topiknya, pakai adegan generik saja
-> (tidak perlu kode baru per topik):
->
-> - **Biografi** (topik = tokoh/penemu): `gintro`, `gportrait`, `gwork`,
->   `gstruggle`, `grival`, `gbreakthrough`, `gimpact`, `gaward`, `gclose`.
-> - **Konsep / mental model** (topik = bias/istilah/model, mis "sunk cost
->   fallacy"): cerita relatable dulu → makna → `cstory`, `cthink`, `cdilemma`,
->   `cdrain`, `cterm`, `cwhy`, `clesson`, `coutro`.
->
-> Contoh konsep: `npm run generate "sunk cost fallacy"`. Tokoh perempuan /
-> everyman tetap tampil generik — karakter stickman belum punya gaya rambut khusus.
+## Templates
 
-## Alur pakai (manual)
+Pick a template with the `"template"` field in the content JSON. Each one has at
+least one example file in `src/content-*.json`.
 
-Semua konten diatur lewat `src/content.json`. Untuk ganti video, salin salah satu
-template ke `content.json`, lalu generate suara + caption, lalu render.
+| | | | |
+|:-:|:-:|:-:|:-:|
+| <img src="docs/gallery/stickman.jpg" width="190"><br>**stickman**<br><sub>biographies & concepts</sub> | <img src="docs/gallery/stickman-duel.jpg" width="190"><br>**stickman · duel**<br><sub>rivalry scoreboard</sub> | <img src="docs/gallery/stickman-tebak.jpg" width="190"><br>**stickman · tebak**<br><sub>guess-who reveal</sub> | <img src="docs/gallery/stickman-mundur.jpg" width="190"><br>**stickman · mundur**<br><sub>countdown timeline</sub> |
+| <img src="docs/gallery/explainer.jpg" width="190"><br>**explainer**<br><sub>vector explainer</sub> | <img src="docs/gallery/chronicle.jpg" width="190"><br>**chronicle**<br><sub>sepia history</sub> | <img src="docs/gallery/parable.jpg" width="190"><br>**parable**<br><sub>philosophy & fallacies</sub> | <img src="docs/gallery/collage.jpg" width="190"><br>**collage**<br><sub>torn-paper documentary</sub> |
+| <img src="docs/gallery/storycard.jpg" width="190"><br>**storycard**<br><sub>text story cards</sub> | <img src="docs/gallery/fieldnotes.jpg" width="190"><br>**fieldnotes**<br><sub>notebook concept</sub> | <img src="docs/gallery/esports.jpg" width="190"><br>**esports**<br><sub>tournament recap</sub> | <img src="docs/gallery/ai-productivity.jpg" width="190"><br>**ai-productivity**<br><sub>SaaS motion graphics</sub> |
+| <img src="docs/gallery/reflective.jpg" width="190"><br>**reflective**<br><sub>quotes & reflection</sub> | <img src="docs/gallery/planet.jpg" width="190"><br>**planet**<br><sub>3D diagram (Three.js)</sub> | | |
 
-```bash
-# 1. pilih template (contoh: stickman)
-cp src/content-stickman.json src/content.json
+Also included: `youtube-psych` (16:9 long-form documentary, `npm run render:yt`)
+and `ClippedReel` (the YouTube clipper output).
 
-# 2. buat suara + caption (edge-tts, gratis)
-npm run build:audio:edge    # = tts:edge + captions
-
-# 3. render
-npm run render              # -> out/reel.mp4
-```
-
-Pilihan TTS (semuanya menulis `public/voiceover.wav`):
-
-| Script | Mesin | Catatan |
-|--------|-------|---------|
-| `npm run tts:edge`   | edge-tts  | **Default.** Gratis, tanpa key, suara neural natural (`id-ID-ArdiNeural`/`GadisNeural`). Pilih suara: `npm run tts:edge list`. |
-| `npm run tts:eleven` | ElevenLabs | Kualitas tinggi, perlu `ELEVENLABS_API_KEY`, kuota terbatas. |
-| `npm run tts`        | Piper      | Open-source, offline, gratis; kualitas di bawah edge-tts. |
-
-- `npm run studio` — buka Remotion Studio untuk preview di browser.
-- `npm run build:audio:edge` / `:eleven` — gabungan `tts:*` + `captions`.
-
-> **Penting:** `voiceover.wav` dan `captions.json` hanya menyimpan narasi
-> **terakhir**. Setiap ganti ke template bernarasi, jalankan ulang `tts:*` +
-> `captions` (edge-tts gratis, jadi aman diulang).
-
-## Template
-
-Dispatcher ada di `src/Reel.tsx` (membaca `content.template`):
-
-| Template     | Konten                       | Gaya |
-|--------------|------------------------------|------|
-| `tips`       | `src/content-tips.json`      | Listicle: kartu infografis, counter, step dots |
-| `reflective` | `src/content-reflective.json`| Renungan: teks besar sinkron suara, quote card |
-| `planet`     | `src/content-planet.json`    | Diagram 3D (Three.js) planet + label SVG |
-| `stickman`   | `-stickman`, `-fleming`, `-wright` (biografi) · `-sunkcost` (konsep) | Animasi 2D stickman, adegan ganti mengikuti kata pemicu. Dua format: biografi (`g*`) & konsep cerita→makna (`c*`) |
-
-### Catatan render per template
-
-- **planet** butuh flag WebGL — tambahkan `--gl=angle`:
-  ```bash
-  npx remotion render Reel out/planet.mp4 --gl=angle \
-    --browser-executable="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
-  ```
-- Untuk kualitas lebih tinggi (mengurangi shimmer teks), tambahkan `--crf=16`.
-- **stickman**: `storyScenes[]` menentukan urutan adegan (`cue` = kata pemicu di
-  naskah). `keywords` jadi kuning di subtitle. `captionFixes` mengoreksi salah
-  dengar whisper. Topik baru butuh menggambar adegan baru di `src/Stickman.tsx`.
-  Cek dulu timing `cue` sebelum menggambar — kalau dua cue terlalu dekat,
-  adegannya berkelebat.
-
-## Struktur
+## How it works
 
 ```
-src/
-  Root.tsx         komposisi Remotion (1080x1920, durasi dari voiceover/durationSec)
-  Reel.tsx         dispatcher + template tips/reflective/planet
-  Stickman.tsx     template stickman (semua adegan = SVG)
-  content*.json    konten tiap video
-scripts/
-  tts-eleven.mjs   TTS ElevenLabs
-  tts.mjs          TTS Piper (open-source)
-  captions.mjs     caption via whisper.cpp
-public/            aset hasil generate (gitignored) — taruh music.mp3 di sini
+topic ──► generate-content (Claude API) ──► src/content.json
+                                                │
+          tts:edge | tts:eleven | tts ◄─────────┤  narration text
+                 │                              │
+          public/voiceover.wav ──► captions (whisper.cpp) ──► public/captions.json
+                                                │
+                       remotion render ◄────────┘  template + scenes + cues
+                              │
+                        out/reel.mp4
 ```
 
-## Catatan lisensi
+| Command | What it does |
+|---|---|
+| `npm run tts:edge` | Voiceover with edge-tts (default, free). `npm run tts:edge list` shows voices. |
+| `npm run tts:eleven` | Voiceover with ElevenLabs (needs `ELEVENLABS_API_KEY`). |
+| `npm run tts` | Voiceover with Piper (offline). |
+| `npm run captions` | Word-level captions from the voiceover. |
+| `npm run render` | Render `src/content.json` to `out/reel.mp4`. |
+| `npm run studio` | Live preview in Remotion Studio. |
+| `npm run web` | Prompt-to-video web app. |
+| `npm run clip <url>` | YouTube to vertical clip with captions. |
 
-- **Remotion** TIDAK sepenuhnya gratis: bebas untuk individu, organisasi ≤3
-  karyawan, dan nonprofit, tapi perusahaan for-profit yang lebih besar wajib
-  membeli Company License. Lihat `node_modules/remotion/LICENSE.md`.
-- **ElevenLabs** paket Free hanya untuk penggunaan non-komersial.
-- **Musik & suara** tidak dibundel; pastikan kamu punya hak atas aset yang kamu pakai.
-- Naskah biografi (Tesla/Fleming/Wright) ditulis dari pengetahuan umum dan sebagian
-  berupa legenda populer — verifikasi faktanya sebelum dipublikasikan.
+## Configuration
+
+All settings live in `.env` (see [.env.example](.env.example)):
+
+| Variable | Purpose |
+|---|---|
+| `REMOTION_HANDLE` | Default handle on watermarks and outro cards. A content file can override it with `"watermark"`. |
+| `ANTHROPIC_API_KEY` | Script generation for the web app and `npm run generate`. |
+| `ANTHROPIC_MODEL` | Optional model override for the generator. |
+| `EDGE_VOICE` | edge-tts voice, e.g. `id-ID-ArdiNeural`, `en-US-AriaNeural`. |
+| `ELEVENLABS_API_KEY`, `ELEVEN_VOICE_ID` | Only if you use ElevenLabs. |
+| `CHROME_PATH` | Browser for rendering. Defaults to Google Chrome on macOS, else Remotion's bundled browser. |
+
+Background music is not bundled: drop a royalty-free track at `public/music.mp3`.
+
+Full Indonesian documentation, including template authoring notes and clipper
+options, is in [README.id.md](README.id.md).
+
+## Contributing
+
+Bug reports, new templates and translations are welcome. Read
+[CONTRIBUTING.md](CONTRIBUTING.md) to get started.
+
+## License and responsible use
+
+The code is released under the [MIT License](LICENSE). Note that:
+
+- **Remotion** has its own license: free for individuals and companies of up to
+  3 people, larger for-profit companies need a [company license](https://remotion.dev/license).
+- **edge-tts** uses an unofficial Microsoft endpoint that may change at any time.
+  ElevenLabs' free tier is non-commercial.
+- **The clipper** downloads other people's videos. Only clip content you have
+  permission to use, and follow YouTube's Terms of Service.
+- The `src/content-*.json` files are example scripts from the author's channels.
+  Use them as format references and write your own for publishing.
+
+## Acknowledgements
+
+Built on [Remotion](https://remotion.dev), [whisper.cpp](https://github.com/ggerganov/whisper.cpp),
+[edge-tts](https://github.com/rany2/edge-tts), [Piper](https://github.com/rhasspy/piper),
+[yt-dlp](https://github.com/yt-dlp/yt-dlp) and [Three.js](https://threejs.org).

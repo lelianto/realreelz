@@ -1,0 +1,71 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Bias Optimisme",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["risiko", "optimisme", "statistik", "pencegahan", "persiapan", "keberanian", "taruhan", "rencana"],
+  "captionFixes": {},
+  "script": "Merokok tidak akan membuatku sakit, itu kan cuma kebiasaan. Itu bias optimisme, merasa risiko hanya berlaku untuk orang lain. Kita tahu statistiknya, tapi yakin angka itu tidak berlaku pada kita. Otak melakukannya untuk membuat hidup terasa bisa dijalani. Tanpa sedikit optimisme, kita tidak akan berani keluar rumah. Tapi bias ini membuat kita mengabaikan tindakan pencegahan yang murah. Cara menyeimbangkannya, ubah pertanyaannya. Bukan, apakah ini akan terjadi padaku, tapi kalau terjadi, apa yang bisa aku lakukan sekarang. Karena keberanian tanpa persiapan bukan optimisme, itu hanya taruhan.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Sesat pikir sehari-hari",
+      "heading": "Risiko itu selalu terasa untuk orang lain.",
+      "accentWord": "orang lain",
+      "accentTone": "coral",
+      "card": {
+        "from": "kebiasaan-harian.id",
+        "tag": "TIDAK AKAN",
+        "title": "Itu kan cuma kebiasaan",
+        "body": "Orang lain yang sakit, bukan aku."
+      },
+      "sub": "Statistiknya diakui, tapi selalu dianggap tidak berlaku pada diri sendiri."
+    },
+    {
+      "kind": "how",
+      "cue": "Otak",
+      "kicker": "Cara kerjanya di otak",
+      "heading": "Otak membuat risiko terasa jauh.",
+      "accentWord": "terasa jauh",
+      "lines": [
+        "Statistik diakui, tapi tidak untuk diri sendiri.",
+        "Sedikit optimisme membuat kita berani keluar.",
+        "Tapi membuat pencegahan terasa tidak perlu."
+      ],
+      "badges": [
+        {"text": "Optimisme tanpa rencana = taruhan", "tone": "muted"},
+        {"text": "Pencegahan murah, penyesalan mahal", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "Cara",
+      "kicker": "Cara menyeimbangkannya",
+      "heading": "Ubah pertanyaannya, jangan ramalannya.",
+      "accentWord": "Ubah pertanyaannya",
+      "cards": [
+        "Bukan: akan terjadi padaku?",
+        "Tapi: kalau terjadi, apa rencanaku?",
+        "Pencegahan murah",
+        "Persiapan sebelum panik"
+      ],
+      "highlight": "Rencana tidak menghapus risiko, tapi mengurangi biayanya."
+    },
+    {
+      "kind": "cta",
+      "cue": "Karena",
+      "kicker": "Yang sebenarnya",
+      "heading": "Keberanian tanpa persiapan cuma taruhan.",
+      "accentWord": "cuma taruhan",
+      "accentTone": "accent",
+      "big": "SIAPKAN",
+      "sub": "Bukan apakah akan terjadi, tapi apa yang kamu siapkan sekarang.",
+      "pill": "Optimis boleh, lupa bersiap jangan"
+    }
+  ]
+}

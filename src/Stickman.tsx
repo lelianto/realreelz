@@ -1,6 +1,27 @@
 // Flat 2D stickman storytelling template: every character and background is
 // drawn as SVG, scene cuts follow cue words in the narration.
 import {AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {
+  Confetti,
+  FlashFx,
+  FormatDefs,
+  PointFloat,
+  REWIND_BACK,
+  RewindFx,
+  RoundBanner,
+  Scoreboard,
+  SplitFrame,
+  TRANS_LEN,
+  TebakHud,
+  VsBadge,
+  Vignette,
+  YearRail,
+  YearStamp,
+  ease,
+  type Rival,
+  type StoryFormat,
+  type Transition,
+} from './StickFormats';
 
 export type StoryWord = {text: string; fromMs: number; toMs: number};
 export type StoryScene = {
@@ -26,6 +47,18 @@ export type StoryScene = {
   // optional data for ANIMAL characters / analogies
   char?: string; // 'frog' | 'sheep' | 'ant' | 'wolf' | 'fox' | 'mouse' | 'lion' (default: stickman)
   heat?: number; // 0..1 water temperature for the cpot (boiling-frog) scene
+  // optional FORMAT data (see StickFormats.tsx)
+  transition?: Transition; // how this scene enters (default depends on format)
+  year?: string | number; // slams a year stamp in (and drives the mundur year rail)
+  yearNote?: string; // small line under the year stamp, e.g. "23 TAHUN SEBELUMNYA"
+  grade?: 'mono' | 'sepia'; // colour grade for this scene
+  hint?: number; // tebak: hint number shown in the HUD (carries forward)
+  reveal?: boolean; // tebak: first scene where the hero is no longer a silhouette
+  silhouette?: boolean; // internal: draw the hero as a black silhouette
+  who?: 'a' | 'b' | 'split'; // duel: hero A, rival B, or split screen
+  b?: Partial<StoryScene>; // duel split: overrides for the right-hand (rival) half
+  round?: string; // duel: round banner title
+  point?: 'a' | 'b'; // duel: who scores when this scene starts
 };
 
 const INK = '#1b1a22';
@@ -58,6 +91,7 @@ type StickProps = {
   moustache?: boolean;
   bowTie?: boolean;
   flip?: boolean;
+  silhouette?: boolean;
 };
 
 const Limb: React.FC<{x: number; y: number; len: number; angle: number; hand?: boolean}> = ({
@@ -93,6 +127,7 @@ const Stick: React.FC<StickProps> = ({
   moustache,
   bowTie = false,
   flip = false,
+  silhouette = false,
 }) => {
   const frame = useCurrentFrame();
   const bob = Math.sin(frame / 9) * 4;
@@ -104,6 +139,10 @@ const Stick: React.FC<StickProps> = ({
 
   return (
     <g transform={`translate(${x} ${y + bob}) scale(${(flip ? -1 : 1) * scale} ${scale})`}>
+      {silhouette ? (
+        <text x={0} y={-640 + Math.sin(frame / 7) * 10} textAnchor="middle" fontSize={150} fontWeight={900} fill="#fff" stroke={INK} strokeWidth={8} paintOrder="stroke" fontFamily="Arial Black, Arial" transform={flip ? 'scale(-1 1)' : undefined}>?</text>
+      ) : null}
+      <g filter={silhouette ? 'url(#stkSil)' : undefined}>
       {/* legs + shoes (origin is the ground point) */}
       <Limb x={-22} y={-205} len={190} angle={swing} hand={false} />
       <Limb x={22} y={-205} len={190} angle={-swing} hand={false} />
@@ -161,6 +200,7 @@ const Stick: React.FC<StickProps> = ({
       ) : (
         <path d="M-22 -436 Q0 -416 22 -436" fill="none" stroke={INK} strokeWidth={7} strokeLinecap="round" />
       )}
+      </g>
     </g>
   );
 };
@@ -753,18 +793,28 @@ const Note: React.FC<{points?: string[]; label?: string}> = ({points, label}) =>
   );
 };
 
-const SceneArt: React.FC<{scene: StoryScene; f: number; len: number; accent: string}> = ({scene, f, len, accent}) => {
+const SceneArt: React.FC<{scene: StoryScene; f: number; len: number; accent: string; hue?: number; baseHair?: string; baseMoustache?: boolean}> = ({scene, f, len, accent, hue = 0, baseHair, baseMoustache}) => {
   const kind = scene.kind;
-  const hero = {hair: scene.hair, coat: scene.coat, moustache: scene.moustache, old: scene.old};
+  const hero = {
+    hair: scene.hair ?? baseHair,
+    coat: scene.coat,
+    moustache: scene.moustache ?? baseMoustache,
+    old: scene.old,
+    silhouette: scene.silhouette,
+  };
   const {fps} = useVideoConfig();
   const seed = Math.floor(f / 3);
   const pop = spring({frame: f, fps, config: {damping: 12}, durationInFrames: 16});
+  // Per-video background tint: the big scene backdrops are expressed as HSL and
+  // rotated by `hue` so each video reads as a distinct colour family, while the
+  // characters/props keep their natural colours.
+  const bgc = (h: number, s: number, l: number) => `hsl(${((h + hue) % 360 + 360) % 360} ${s}% ${l}%)`;
 
   // ====== GENERIC reusable scenes — parameterized, work for any inventor ======
   if (kind === 'gintro') {
     return (
       <g>
-        <rect width={W} height={H} fill="#20242e" />
+        <rect width={W} height={H} fill={bgc(225, 20, 15)} />
         <path d="M360 0 L720 0 L905 1500 H175 Z" fill="#2c3340" opacity={0.55} />
         <rect y={1500} width={W} height={420} fill="#14161d" />
         <Stick x={540} y={1560} {...hero} look={scene.mood ?? 'sad'} scale={1.15} talking armL={10} armR={10} />
@@ -774,7 +824,7 @@ const SceneArt: React.FC<{scene: StoryScene; f: number; len: number; accent: str
   if (kind === 'gportrait') {
     return (
       <g>
-        <rect width={W} height={H} fill="#2b3a52" />
+        <rect width={W} height={H} fill={bgc(218, 31, 25)} />
         <rect y={1500} width={W} height={420} fill="#1b2435" />
         {scene.label ? <Card y={320} text={scene.label} /> : null}
         <Stick x={540} y={1560} {...hero} look="neutral" scale={1.2} />
@@ -785,7 +835,7 @@ const SceneArt: React.FC<{scene: StoryScene; f: number; len: number; accent: str
     const lit = interpolate(f, [6, 36], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
     return (
       <g>
-        <rect width={W} height={H} fill={`hsl(220 28% ${12 + lit * 12}%)`} />
+        <rect width={W} height={H} fill={`hsl(${(((220 + hue) % 360) + 360) % 360} 28% ${12 + lit * 12}%)`} />
         <rect y={1500} width={W} height={420} fill="#14161d" />
         <circle cx={540} cy={790} r={200 * lit} fill="#ffe07a" opacity={0.26 * lit} />
         <Bulb x={540} y={840} on={lit > 0.4} size={1.7} />
@@ -796,7 +846,7 @@ const SceneArt: React.FC<{scene: StoryScene; f: number; len: number; accent: str
   if (kind === 'gwork') {
     return (
       <g>
-        <rect width={W} height={H} fill="#5a6b58" />
+        <rect width={W} height={H} fill={bgc(113, 10, 38)} />
         <rect y={1500} width={W} height={420} fill="#3a4538" />
         <rect x={470} y={1140} width={560} height={40} fill="#8a6a45" stroke={INK} strokeWidth={8} />
         <rect x={522} y={1180} width={28} height={320} fill="#6c5236" stroke={INK} strokeWidth={7} />
@@ -809,7 +859,7 @@ const SceneArt: React.FC<{scene: StoryScene; f: number; len: number; accent: str
   if (kind === 'gstruggle') {
     return (
       <g>
-        <rect width={W} height={H} fill="#6b5050" />
+        <rect width={W} height={H} fill={bgc(0, 15, 37)} />
         <rect y={1500} width={W} height={420} fill="#3a2a2a" />
         <text x={760} y={780} textAnchor="middle" fontSize={230} fontWeight={900} fill="#c9412f" stroke={INK} strokeWidth={9} paintOrder="stroke" fontFamily="Arial Black, Arial">?</text>
         <Stick x={300} y={1540} {...hero} look="sad" scale={1.1} />
@@ -819,7 +869,7 @@ const SceneArt: React.FC<{scene: StoryScene; f: number; len: number; accent: str
   if (kind === 'grival') {
     return (
       <g>
-        <rect width={W} height={H} fill="#c98a3f" />
+        <rect width={W} height={H} fill={bgc(35, 56, 52)} />
         <rect y={1500} width={W} height={420} fill="#5e3f24" />
         {scene.bubbleL ? <Bubble x={300} y={600} side="l" text={scene.bubbleL} /> : null}
         {scene.bubbleR ? <Bubble x={790} y={600} side="r" text={scene.bubbleR} /> : null}
@@ -831,7 +881,7 @@ const SceneArt: React.FC<{scene: StoryScene; f: number; len: number; accent: str
   if (kind === 'gbreakthrough') {
     return (
       <g>
-        <rect width={W} height={H} fill="#153a6b" />
+        <rect width={W} height={H} fill={bgc(212, 67, 25)} />
         {Array.from({length: 14}, (_, i) => {
           const a = (i / 14) * Math.PI * 2 + f / 55;
           return <line key={i} x1={540 + Math.cos(a) * 300} y1={740 + Math.sin(a) * 300} x2={540 + Math.cos(a) * 640} y2={740 + Math.sin(a) * 640} stroke={accent} strokeWidth={14} strokeLinecap="round" opacity={0.7} />;
@@ -850,7 +900,7 @@ const SceneArt: React.FC<{scene: StoryScene; f: number; len: number; accent: str
     const lit = interpolate(f, [0, 70], [0.15, 0.85], {extrapolateRight: 'clamp'});
     return (
       <g>
-        <rect width={W} height={H} fill="#0d1534" />
+        <rect width={W} height={H} fill={bgc(228, 60, 13)} />
         <Skyline lit={lit} />
         {f > 20 ? (
           <>
@@ -866,7 +916,7 @@ const SceneArt: React.FC<{scene: StoryScene; f: number; len: number; accent: str
   if (kind === 'gaward') {
     return (
       <g>
-        <rect width={W} height={H} fill="#5b1420" />
+        <rect width={W} height={H} fill={bgc(350, 63, 22)} />
         {[0, 1, 2, 3, 4, 5, 6].map((i) => (
           <rect key={i} x={i * 160 - 20} width={80} height={1500} fill="#74202b" />
         ))}
@@ -886,13 +936,243 @@ const SceneArt: React.FC<{scene: StoryScene; f: number; len: number; accent: str
   if (kind === 'gclose') {
     return (
       <g>
-        <rect width={W} height={H} fill="#141c44" />
+        <rect width={W} height={H} fill={bgc(230, 55, 17)} />
         {Array.from({length: 30}, (_, i) => (
           <circle key={i} cx={rand(i + 8) * W} cy={rand(i + 60) * 950} r={4} fill="#fff" />
         ))}
         <circle cx={760} cy={360} r={150} fill="#f2ecd3" stroke={INK} strokeWidth={9} />
         <path d="M0 1320 Q540 1190 1080 1320 V1920 H0 Z" fill="#223044" stroke={INK} strokeWidth={9} />
         <Stick x={540} y={1540} {...hero} look="happy" scale={1.05} armL={120} />
+      </g>
+    );
+  }
+
+  // ====== GENERIC human-interest scenes (added for the "lives" series) ======
+  // All hue-aware, all keep a visible stickman, read `scene.label`/`mood`.
+  if (kind === 'galone') {
+    // a lone figure in a vast dark room, one faint shaft of light from a window
+    const flick = 0.07 + Math.sin(f / 9) * 0.015;
+    return (
+      <g>
+        <rect width={W} height={H} fill={bgc(225, 16, 9)} />
+        <rect y={1520} width={W} height={400} fill={bgc(225, 14, 6)} />
+        <rect y={1512} width={W} height={10} fill={INK} />
+        <rect x={690} y={150} width={300} height={600} fill={bgc(210, 34, 20)} stroke={INK} strokeWidth={12} />
+        <path d="M840 150 V750 M690 450 H990" stroke={INK} strokeWidth={9} />
+        <path d="M690 750 L990 750 L900 1520 L560 1520 Z" fill="#ffe9b0" opacity={flick} />
+        <Stick x={430} y={1560} {...hero} look={scene.mood ?? 'sad'} scale={1.12} />
+      </g>
+    );
+  }
+  if (kind === 'gbird') {
+    return (
+      <g>
+        <rect width={W} height={H} fill={bgc(214, 30, 22)} />
+        <circle cx={840} cy={400} r={150} fill="#f2ecd3" opacity={0.55} stroke={INK} strokeWidth={6} />
+        <Bird x={720} y={520} seed={f} />
+        <Bird x={910} y={610} seed={f + 7} />
+        <Bird x={300} y={650} seed={f + 3} flip />
+        <rect y={1500} width={W} height={420} fill={bgc(220, 32, 14)} />
+        <Stick x={540} y={1570} {...hero} look="happy" scale={1.12} armL={46} armR={46} />
+        <g transform="translate(540 1232)">
+          <ellipse cx={0} cy={0} rx={48} ry={30} fill="#f5f3ea" stroke={INK} strokeWidth={6} />
+          <circle cx={40} cy={-20} r={21} fill="#f5f3ea" stroke={INK} strokeWidth={6} />
+          <path d="M58 -22 l24 7 l-24 9 Z" fill="#e2a33a" stroke={INK} strokeWidth={3} />
+          <circle cx={44} cy={-24} r={4} fill={INK} />
+        </g>
+      </g>
+    );
+  }
+  if (kind === 'gquote') {
+    const lines = wrap(scene.label ?? '', 18);
+    const startY = 720 - (lines.length - 1) * 46;
+    return (
+      <g>
+        <rect width={W} height={H} fill={bgc(232, 22, 13)} />
+        <text x={150} y={520} fontSize={300} fontWeight={900} fill={accent} opacity={0.4} fontFamily="Georgia, serif">&#8220;</text>
+        <text x={540} y={startY} textAnchor="middle" fontSize={78} fontWeight={900} fill="#fff" fontFamily="Georgia, serif" fontStyle="italic">
+          {lines.map((l, i) => (
+            <tspan key={i} x={540} dy={i === 0 ? 0 : 92}>{l}</tspan>
+          ))}
+        </text>
+        <Stick x={540} y={1620} {...hero} look={scene.mood ?? 'sad'} scale={0.86} />
+      </g>
+    );
+  }
+  if (kind === 'gnews') {
+    const head = wrap(scene.label ?? '', 16);
+    return (
+      <g>
+        <rect width={W} height={H} fill={bgc(28, 16, 26)} />
+        <g transform="translate(540 700) rotate(-3)">
+          <rect x={-430} y={-560} width={860} height={1120} fill="#efe9da" stroke={INK} strokeWidth={10} />
+          <text x={0} y={-470} textAnchor="middle" fontSize={52} fontWeight={900} fill={INK} fontFamily="Georgia, serif" letterSpacing={4}>KABAR HARIAN</text>
+          <line x1={-390} y1={-432} x2={390} y2={-432} stroke={INK} strokeWidth={5} />
+          <text x={0} y={-330} textAnchor="middle" fontSize={76} fontWeight={900} fill="#9b1d1d" fontFamily="Arial Black, Arial">
+            {head.map((l, i) => (
+              <tspan key={i} x={0} dy={i === 0 ? 0 : 86}>{l}</tspan>
+            ))}
+          </text>
+          {Array.from({length: 7}, (_, i) => (
+            <line key={i} x1={-380} y1={-120 + i * 68} x2={380} y2={-120 + i * 68} stroke="#b9b3a3" strokeWidth={9} />
+          ))}
+          <rect x={-380} y={360} width={340} height={180} fill="#d9d3c3" stroke={INK} strokeWidth={5} />
+        </g>
+        <Stick x={250} y={1720} {...hero} look="shock" scale={0.72} />
+      </g>
+    );
+  }
+  if (kind === 'gship') {
+    const sway = Math.sin(f / 22) * 10;
+    return (
+      <g>
+        <rect width={W} height={H} fill={bgc(220, 46, 12)} />
+        {Array.from({length: 40}, (_, i) => (
+          <circle key={i} cx={rand(i + 4) * W} cy={rand(i + 40) * 900} r={3} fill="#fff" opacity={0.8} />
+        ))}
+        <circle cx={300} cy={330} r={120} fill="#f2ecd3" opacity={0.85} stroke={INK} strokeWidth={6} />
+        <rect y={1180} width={W} height={740} fill={bgc(220, 52, 18)} />
+        {Array.from({length: 6}, (_, i) => (
+          <path key={i} d={`M0 ${1250 + i * 120} Q270 ${1230 + i * 120} 540 ${1250 + i * 120} T1080 ${1250 + i * 120}`} fill="none" stroke={bgc(220, 40, 30)} strokeWidth={8} opacity={0.7} />
+        ))}
+        <g transform={`translate(540 ${1130 + sway}) rotate(${sway * 0.15})`}>
+          <path d="M-370 40 L370 40 L300 150 L-300 150 Z" fill="#141b2e" stroke={INK} strokeWidth={9} />
+          <rect x={-300} y={-30} width={600} height={72} fill="#1d2740" stroke={INK} strokeWidth={8} />
+          {[-180, -60, 60, 180].map((fx) => (
+            <rect key={fx} x={fx - 28} y={-150} width={56} height={120} rx={8} fill="#3a2320" stroke={INK} strokeWidth={7} />
+          ))}
+          {[-250, -170, -90, -10, 70, 150, 230].map((px) => (
+            <circle key={px} cx={px} cy={10} r={11} fill="#ffd76a" />
+          ))}
+          <Stick x={-20} y={-30} {...hero} look="neutral" scale={0.34} />
+        </g>
+      </g>
+    );
+  }
+  if (kind === 'gxray') {
+    const glow = 0.5 + Math.sin(f / 7) * 0.12;
+    const fingers: [number, number][] = [
+      [-120, -140],
+      [-60, -170],
+      [0, -180],
+      [60, -170],
+      [118, -150],
+    ];
+    return (
+      <g>
+        <rect width={W} height={H} fill={bgc(192, 42, 9)} />
+        <g transform="translate(600 760)">
+          <rect x={-240} y={-320} width={480} height={660} rx={22} fill={bgc(186, 60, 20)} stroke={accent} strokeWidth={10} opacity={0.92} />
+          <circle r={260} fill="#bfe8ff" opacity={0.12 * (glow / 0.5)} />
+          <g stroke="#eaf6ff" strokeWidth={13} strokeLinecap="round" fill="none" opacity={0.92}>
+            <path d="M-70 300 L-50 150 M70 300 L50 150" />
+            {fingers.map(([fx, fy], i) => (
+              <g key={i}>
+                <line x1={fx * 0.5} y1={140} x2={fx} y2={fy} />
+                <line x1={fx} y1={fy} x2={fx * 1.25} y2={fy - 120} />
+                <circle cx={fx} cy={fy} r={7} fill="#eaf6ff" />
+              </g>
+            ))}
+            <path d="M-80 150 Q0 120 80 150" />
+          </g>
+          <circle cx={-60} cy={-50} r={16} fill="none" stroke="#ffd76a" strokeWidth={9} />
+        </g>
+        <Stick x={210} y={1660} {...hero} look="shock" scale={0.86} />
+      </g>
+    );
+  }
+  if (kind === 'gescape') {
+    const step = interpolate(f, [0, Math.max(len, 1)], [0, 1], {extrapolateRight: 'clamp'});
+    const gx = interpolate(step, [0, 1], [430, 700]);
+    return (
+      <g>
+        <rect width={W} height={H} fill={bgc(265, 30, 9)} />
+        {Array.from({length: 24}, (_, i) => (
+          <circle key={i} cx={rand(i + 2) * W} cy={rand(i + 30) * 760} r={3} fill="#fff" opacity={0.7} />
+        ))}
+        <rect y={1500} width={W} height={420} fill={bgc(265, 22, 6)} />
+        <rect x={650} y={360} width={360} height={1150} fill={bgc(265, 24, 14)} stroke={INK} strokeWidth={10} />
+        <path d="M700 420 L980 420 L980 1500 L700 1500 Z" fill={bgc(45, 70, 36)} opacity={0.9} stroke={INK} strokeWidth={8} />
+        <path d="M700 420 L820 470 L820 1500 L700 1500 Z" fill={bgc(45, 55, 24)} stroke={INK} strokeWidth={6} />
+        <circle cx={1010} cy={320} r={110} fill="#f2ecd3" opacity={0.7} stroke={INK} strokeWidth={6} />
+        <Stick x={gx} y={1560} {...hero} walking look="shock" scale={1.02} />
+      </g>
+    );
+  }
+  if (kind === 'gfield') {
+    const vpx = 540;
+    const vpy = 820;
+    return (
+      <g>
+        <rect width={W} height={H} fill={bgc(96, 44, 58)} />
+        <circle cx={820} cy={320} r={110} fill="#ffe08a" opacity={0.85} />
+        <rect y={780} width={W} height={1140} fill={bgc(96, 42, 36)} />
+        {Array.from({length: 11}, (_, i) => {
+          const bx = (i / 10) * (W + 900) - 450;
+          return <line key={`f${i}`} x1={bx} y1={1920} x2={vpx} y2={vpy} stroke={bgc(96, 46, 28)} strokeWidth={10} opacity={0.75} />;
+        })}
+        {Array.from({length: 4}, (_, i) => {
+          const yy = vpy + 40 + i * i * 30;
+          return <line key={`h${i}`} x1={0} y1={yy} x2={W} y2={yy} stroke={bgc(96, 40, 30)} strokeWidth={6} opacity={0.5} />;
+        })}
+        <Stick x={330} y={1700} {...hero} look="neutral" scale={1.04} />
+      </g>
+    );
+  }
+  if (kind === 'ggive') {
+    const pulse = 0.22 + Math.sin(f / 8) * 0.06;
+    return (
+      <g>
+        <rect width={W} height={H} fill={bgc(44, 44, 26)} />
+        <rect y={1500} width={W} height={420} fill={bgc(40, 40, 16)} />
+        {Array.from({length: 14}, (_, i) => {
+          const a = (i / 14) * Math.PI * 2 + f / 60;
+          return <line key={i} x1={540 + Math.cos(a) * 130} y1={1150 + Math.sin(a) * 130} x2={540 + Math.cos(a) * 420} y2={1150 + Math.sin(a) * 420} stroke={accent} strokeWidth={10} strokeLinecap="round" opacity={0.5} />;
+        })}
+        <circle cx={540} cy={1150} r={210} fill={accent} opacity={pulse} />
+        <Stick x={540} y={1620} {...hero} look="happy" scale={1.1} armL={58} armR={58} />
+        <g transform="translate(540 1150)">
+          <circle r={74} fill="#fff3b0" stroke={INK} strokeWidth={7} />
+          <path d="M0 -34 C-30 -62 -74 -30 0 26 C74 -30 30 -62 0 -34 Z" fill="#e4572e" stroke={INK} strokeWidth={5} />
+        </g>
+      </g>
+    );
+  }
+  if (kind === 'gjail') {
+    return (
+      <g>
+        <rect width={W} height={H} fill={bgc(30, 12, 16)} />
+        <rect y={1500} width={W} height={420} fill={bgc(30, 10, 9)} />
+        <rect x={360} y={220} width={360} height={360} fill={bgc(220, 30, 18)} stroke={INK} strokeWidth={12} />
+        {[0, 1, 2].map((i) => (
+          <rect key={i} x={430 + i * 110} y={220} width={16} height={360} fill="#0d0e13" />
+        ))}
+        <circle cx={540} cy={360} r={70} fill="#f2ecd3" opacity={0.6} />
+        <Stick x={540} y={1560} {...hero} look="sad" scale={1.1} />
+        {Array.from({length: 7}, (_, i) => (
+          <rect key={`b${i}`} x={i * 165 + 30} y={0} width={26} height={H} fill="#24242b" stroke={INK} strokeWidth={5} />
+        ))}
+      </g>
+    );
+  }
+  if (kind === 'gkitchen') {
+    return (
+      <g>
+        <rect width={W} height={H} fill={bgc(300, 26, 30)} />
+        {Array.from({length: 7}, (_, i) => (
+          <line key={`v${i}`} x1={i * 160} y1={0} x2={i * 160} y2={1180} stroke={bgc(300, 20, 24)} strokeWidth={4} />
+        ))}
+        <rect y={1140} width={W} height={60} fill="#b98a5a" stroke={INK} strokeWidth={8} />
+        <rect y={1200} width={W} height={720} fill={bgc(300, 18, 20)} />
+        <Dish x={760} y={1120} r={130} />
+        <Dish x={760} y={1092} r={130} />
+        <Dish x={760} y={1064} r={130} />
+        <g transform="translate(470 1030)">
+          <circle r={96} fill="#d7e2e8" stroke={INK} strokeWidth={7} />
+          <circle r={60} fill="#ecd98f" stroke={INK} strokeWidth={4} />
+          <path d="M70 -66 L96 -40 L62 -30 Z" fill={bgc(300, 26, 30)} stroke={INK} strokeWidth={4} />
+        </g>
+        <Stick x={250} y={1560} {...hero} look="neutral" talking scale={1.05} armR={52} />
       </g>
     );
   }
@@ -2654,13 +2934,76 @@ const Subtitle: React.FC<{words: StoryWord[]; keywords: string[]; accent: string
 // ---------------------------------------------------------------------------
 // Root
 // ---------------------------------------------------------------------------
+type Look = {accent: string; hue: number; baseHair?: string; baseMoustache?: boolean};
+type TimelineItem = {scene: StoryScene; from: number};
+
+// Draws one timeline item at local frame `f`: a single scene, a rival (who:'b')
+// scene, or a split screen, wrapped in its colour grade.
+const SceneFrame: React.FC<{
+  item: TimelineItem;
+  idx: number;
+  f: number;
+  len: number;
+  a: Look;
+  rival?: Rival;
+  silhouette: boolean;
+}> = ({item, idx, f, len, a, rival, silhouette}) => {
+  const scene = silhouette ? {...item.scene, silhouette: true} : item.scene;
+  const b: Look = rival
+    ? {accent: rival.accent ?? a.accent, hue: rival.hue ?? a.hue, baseHair: rival.hair, baseMoustache: rival.moustache}
+    : a;
+  const asRival = (s: StoryScene): StoryScene => ({...s, coat: s.coat ?? rival?.coat, old: s.old ?? rival?.old});
+  const art = (s: StoryScene, l: Look, k: string) => (
+    <SceneArt key={k} scene={s} f={f} len={len} accent={l.accent} hue={l.hue} baseHair={l.baseHair} baseMoustache={l.baseMoustache} />
+  );
+  let body: React.ReactNode;
+  if (scene.who === 'split' && rival) {
+    const right = asRival({...scene, ...(scene.b ?? {})});
+    body = (
+      <>
+        <SplitFrame id={`sp${idx}`} f={f} accentL={a.accent} accentR={b.accent} left={art(scene, a, `l${scene.kind}${idx}`)} right={art(right, b, `r${right.kind}${idx}`)} />
+        <VsBadge f={f} />
+      </>
+    );
+  } else if (scene.who === 'b' && rival) {
+    body = art(asRival(scene), b, scene.kind + idx);
+  } else {
+    body = art(scene, a, scene.kind + idx);
+  }
+  const grade = scene.grade === 'mono' ? 'url(#gradeMono)' : scene.grade === 'sepia' ? 'url(#gradeSepia)' : undefined;
+  return (
+    <g filter={grade}>
+      {body}
+      {grade ? <Vignette /> : null}
+    </g>
+  );
+};
+
+const defaultTransition = (format: StoryFormat, cur: StoryScene, prev?: StoryScene, lastYear?: string | number): Transition => {
+  if (!prev) return 'cut';
+  if (cur.transition) return cur.transition;
+  if (format === 'tebak') return cur.reveal ? 'flash' : 'whip';
+  if (format === 'duel') return cur.who === 'split' ? 'iris' : 'whip';
+  if (format === 'mundur') {
+    // compare with the latest year seen so far, not just the previous scene
+    if (cur.year !== undefined && lastYear !== undefined && Number(cur.year) < Number(lastYear)) return 'rewind';
+    return cur.year !== undefined ? 'whip' : 'cut';
+  }
+  return 'cut';
+};
+
 export const StickmanStory: React.FC<{
   words: StoryWord[];
   scenes: StoryScene[];
   name: string;
   keywords: string[];
   accent: string;
-}> = ({words, scenes, name, keywords, accent}) => {
+  hue?: number; // per-video background hue offset (deg); 0 = original palette
+  baseHair?: string; // per-video default hair colour (scene.hair overrides)
+  baseMoustache?: boolean; // per-video default moustache (scene.moustache overrides)
+  format?: StoryFormat;
+  rival?: Rival; // duel: the second inventor
+}> = ({words, scenes, name, keywords, accent, hue = 0, baseHair, baseMoustache, format = 'bio', rival}) => {
   const frame = useCurrentFrame();
   const {fps, durationInFrames} = useVideoConfig();
 
@@ -2671,42 +3014,158 @@ export const StickmanStory: React.FC<{
   });
   const timeline = scenes
     .map((s, i) => ({scene: s, from: starts[i]}))
-    .filter((s): s is {scene: StoryScene; from: number} => s.from !== null);
+    .filter((s): s is TimelineItem => s.from !== null);
   const idx = timeline.reduce((best, s, i) => (frame >= s.from ? i : best), 0);
   const item = timeline[idx];
   const scene = item.scene;
   const end = timeline[idx + 1]?.from ?? durationInFrames;
   const f = frame - item.from;
   const len = end - item.from;
+  const a: Look = {accent, hue, baseHair, baseMoustache};
+
+  // tebak: silhouette until the reveal scene
+  const revealIdx = format === 'tebak' ? timeline.findIndex((t) => t.scene.reveal) : -1;
+  const hidden = (i: number) => format === 'tebak' && (revealIdx === -1 || i < revealIdx);
+
+  // transition into the current scene
+  const prevItem = timeline[idx - 1];
+  const lastYear = timeline
+    .slice(0, idx)
+    .map((t) => t.scene.year)
+    .filter((y) => y !== undefined)
+    .pop();
+  const tr = defaultTransition(format, scene, prevItem?.scene, lastYear);
+  const tl = TRANS_LEN[tr];
+  const inTrans = !!prevItem && tl > 0 && f < tl;
+  const p = inTrans ? ease(f / tl) : 1;
+  const prevLen = prevItem ? item.from - prevItem.from : 0;
+  const prevF = tr === 'rewind' ? Math.max(0, prevLen - f * 5) : prevLen + f;
+
+  const curFrame = <SceneFrame item={item} idx={idx} f={f} len={len} a={a} rival={rival} silhouette={hidden(idx)} />;
+  const prevFrame = prevItem ? (
+    <SceneFrame item={prevItem} idx={idx - 1} f={prevF} len={prevLen} a={a} rival={rival} silhouette={hidden(idx - 1)} />
+  ) : null;
+
+  let stage: React.ReactNode = curFrame;
+  if (inTrans && tr === 'whip') {
+    stage = (
+      <g filter="url(#whipBlur)">
+        <g transform={`translate(${-W * p} 0)`}>{prevFrame}</g>
+        <g transform={`translate(${W * (1 - p)} 0)`}>{curFrame}</g>
+      </g>
+    );
+  } else if (inTrans && tr === 'iris') {
+    const r = p * 1250;
+    stage = (
+      <>
+        {prevFrame}
+        <clipPath id={`iris${idx}`}>
+          <circle cx={540} cy={900} r={r} />
+        </clipPath>
+        <g clipPath={`url(#iris${idx})`}>{curFrame}</g>
+        <circle cx={540} cy={900} r={r} fill="none" stroke={accent} strokeWidth={18} />
+        <circle cx={540} cy={900} r={r} fill="none" stroke={INK} strokeWidth={6} />
+      </>
+    );
+  } else if (inTrans && tr === 'rewind' && f < REWIND_BACK) {
+    stage = (
+      <g filter="url(#vhs)" transform={`translate(${(rand(f) - 0.5) * 40} 0)`}>
+        {prevFrame}
+      </g>
+    );
+  } else if (inTrans && tr === 'rewind') {
+    stage = <g transform={`translate(${(rand(f + 3) - 0.5) * 24 * (1 - p)} 0)`}>{curFrame}</g>;
+  }
+  const blur = inTrans && tr === 'whip' ? Math.sin(Math.PI * (f / tl)) * 70 : 0;
 
   // each cut lands with a small punch-in, then the camera creeps forward
   const punch = spring({frame: f, fps, config: {damping: 14}, durationInFrames: 12});
   const zoom = interpolate(punch, [0, 1], [1.08, 1]) + (f / Math.max(len, 1)) * 0.05;
 
+  // ---- overlays (not zoomed) ----
+  const yearStart = tr === 'rewind' ? REWIND_BACK : tl > 0 ? Math.round(tl / 2) : 0;
+  const yearsSoFar = timeline.slice(0, idx + 1).filter((t) => t.scene.year !== undefined);
+  const curYear = yearsSoFar[yearsSoFar.length - 1]?.scene.year;
+  const prevYear = yearsSoFar[yearsSoFar.length - 2]?.scene.year ?? curYear;
+  const lastYearItem = yearsSoFar[yearsSoFar.length - 1];
+  const allYears = [...new Set(timeline.filter((t) => t.scene.year !== undefined).map((t) => Number(t.scene.year)))].sort((x, y) => x - y);
+
+  let scoreA = 0;
+  let scoreB = 0;
+  let lastA = -1;
+  let lastB = -1;
+  for (const t of timeline.slice(0, idx + 1)) {
+    if (t.scene.point === 'a') {
+      scoreA++;
+      lastA = t.from;
+    }
+    if (t.scene.point === 'b') {
+      scoreB++;
+      lastB = t.from;
+    }
+  }
+  const hintN = timeline.slice(0, idx + 1).reduce((h, t, i) => t.scene.hint ?? (h === 0 ? i + 1 : h), 0) || idx + 1;
+  const roundN = timeline.slice(0, idx + 1).filter((t) => t.scene.round).length;
+  const sideAccent = scene.who === 'b' && rival?.accent ? rival.accent : accent;
+  const showName = format === 'bio' || format === 'mundur' || (format === 'tebak' && !hidden(idx));
+
   return (
     <AbsoluteFill style={{background: '#000', overflow: 'hidden'}}>
       <AbsoluteFill style={{transform: `scale(${zoom})`, transformOrigin: '50% 58%'}}>
         <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`}>
-          <SceneArt key={scene.kind + idx} scene={scene} f={f} len={len} accent={accent} />
+          <FormatDefs accent={accent} blur={blur} />
+          {stage}
         </svg>
       </AbsoluteFill>
-      <div
-        style={{
-          position: 'absolute',
-          top: 74,
-          left: 54,
-          padding: '12px 24px',
-          borderRadius: 14,
-          background: '#17151e',
-          border: '4px solid #fff',
-          color: '#fff',
-          fontFamily: '"Arial Black", Arial, sans-serif',
-          fontWeight: 900,
-          fontSize: 34,
-        }}
-      >
-        {name}
-      </div>
+      <AbsoluteFill>
+        <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`}>
+          {inTrans && tr === 'flash' ? <FlashFx f={f} /> : null}
+          {inTrans && tr === 'rewind' ? <RewindFx f={f} seed={idx * 31} /> : null}
+          {format === 'tebak' && revealIdx >= 0 && idx === revealIdx ? <Confetti f={f} colors={[accent, '#fff', '#ff6b6b', '#5ad1ff']} /> : null}
+          {format === 'tebak' && hidden(idx) ? <TebakHud f={f} hint={hintN} accent={accent} /> : null}
+          {format === 'mundur' && curYear !== undefined && lastYearItem ? (
+            <YearRail years={allYears} from={Number(prevYear)} to={Number(curYear)} f={frame - lastYearItem.from - yearStart} accent={accent} />
+          ) : null}
+          {scene.year !== undefined ? <YearStamp f={f - yearStart} year={String(scene.year)} note={scene.yearNote} accent={sideAccent} /> : null}
+          {format === 'duel' && rival ? (
+            <>
+              <Scoreboard
+                nameA={name}
+                nameB={rival.name}
+                a={scoreA}
+                b={scoreB}
+                accentA={accent}
+                accentB={rival.accent ?? accent}
+                bumpA={lastA < 0 ? 999 : frame - lastA}
+                bumpB={lastB < 0 ? 999 : frame - lastB}
+              />
+              {scene.round ? <RoundBanner f={f - Math.round(tl / 2)} round={scene.round} n={roundN} accent={sideAccent} /> : null}
+              {scene.point ? <PointFloat f={f} side={scene.point} accent={scene.point === 'b' ? rival.accent ?? accent : accent} /> : null}
+            </>
+          ) : null}
+        </svg>
+      </AbsoluteFill>
+      {showName ? (
+        <div
+          style={{
+            position: 'absolute',
+            top: format === 'mundur' ? 40 : 74,
+            left: 54,
+            padding: '12px 24px',
+            borderRadius: 14,
+            background: '#17151e',
+            border: '4px solid #fff',
+            color: '#fff',
+            fontFamily: '"Arial Black", Arial, sans-serif',
+            fontWeight: 900,
+            fontSize: 34,
+            transform: format === 'tebak' && idx === revealIdx ? `scale(${spring({frame: f - 6, fps, config: {damping: 10}, durationInFrames: 14})})` : undefined,
+            transformOrigin: 'left center',
+          }}
+        >
+          {name}
+        </div>
+      ) : null}
       <Subtitle words={words} keywords={keywords} accent={accent} />
     </AbsoluteFill>
   );

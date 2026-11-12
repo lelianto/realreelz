@@ -1,0 +1,71 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Pinjol Ilegal vs Resmi",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["pinjol", "ilegal", "OJK", "bunga", "utang", "daftar", "resmi", "tagihan"],
+  "captionFixes": {},
+  "script": "Pinjaman cair dalam lima menit, tanpa syarat ribet. Tapi bunganya bisa mencekik, dan penagihnya tidak mengenal batas. Sepanjang Januari sampai September dua ribu dua puluh enam, satgas resmi menghentikan seribu seratus sembilan puluh sembilan pinjol ilegal. Sementara itu, hanya sembilan puluh empat penyelenggara yang tercatat berizin OJK. Artinya, yang ilegal jauh lebih banyak daripada yang legal. Cara memeriksanya, buka daftar resmi OJK sebelum mengunduh aplikasi apa pun. Dan ingat, pinjaman bukan tambahan penghasilan, ia utang yang harus dibayar dengan bunga. Karena yang mudah di awal biasanya mahal di akhir.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Viral dan berulang",
+      "heading": "Cair lima menit, menagih bertahun-tahun.",
+      "accentWord": "bertahun-tahun",
+      "accentTone": "coral",
+      "card": {
+        "from": "pinjam-cepat.app",
+        "tag": "CAIR 5 MENIT",
+        "title": "Tanpa syarat, langsung transfer",
+        "body": "Bunganya tidak pernah dibicarakan di awal."
+      },
+      "sub": "Yang cepat di awal sering lambat diselesaikan."
+    },
+    {
+      "kind": "how",
+      "cue": "satgas",
+      "kicker": "Data terbaru",
+      "heading": "Yang ilegal jauh lebih banyak dari yang legal.",
+      "accentWord": "jauh lebih banyak",
+      "lines": [
+        "1.199 pinjol ilegal dihentikan Jan–Sep 2026.",
+        "Hanya 94 penyelenggara berizin OJK.",
+        "Pinjaman bukan tambahan penghasilan."
+      ],
+      "badges": [
+        {"text": "Nama aplikasi tidak menjamin legal", "tone": "muted"},
+        {"text": "Cek daftar OJK sebelum unduh", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "daftar",
+      "kicker": "Cara memeriksanya",
+      "heading": "Cek daftar resmi sebelum mengunduh.",
+      "accentWord": "daftar resmi",
+      "cards": [
+        "Cek daftar OJK",
+        "Baca bunga total",
+        "Hitung kemampuan bayar",
+        "Tolak agunan data pribadi"
+      ],
+      "highlight": "Pinjaman yang aman menjelaskan total biaya sebelum kamu setuju."
+    },
+    {
+      "kind": "cta",
+      "cue": "Karena",
+      "kicker": "Yang perlu diingat",
+      "heading": "Yang mudah di awal mahal di akhir.",
+      "accentWord": "mahal di akhir",
+      "accentTone": "accent",
+      "big": "CEK OJK",
+      "sub": "Utang tetap utang, meski prosesnya terasa seperti hadiah.",
+      "pill": "Legalitas dulu, baru kebutuhan"
+    }
+  ]
+}

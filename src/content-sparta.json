@@ -1,0 +1,19 @@
+{
+  "template": "chronicle",
+  "name": "300 SPARTA",
+  "title": "Leonidas & 300 Sparta",
+  "script": "Tahun empat ratus delapan puluh sebelum masehi, tiga ratus prajurit Sparta berdiri di sebuah celah sempit bernama Thermopylae. Di hadapan mereka, pasukan Persia yang jumlahnya ratusan ribu. Ketika musuh menyuruh mereka menyerahkan senjata, Raja Leonidas hanya menjawab dengan dua kata, datang dan ambillah. Bagi orang Sparta, hidup memang untuk berperang, dan gugur di medan tempur adalah kehormatan yang tertinggi. Selama tiga hari lamanya, tiga ratus orang itu menahan lautan pasukan musuh. Mereka semua akhirnya tewas, tetapi pengorbanan mereka membeli waktu yang menyelamatkan seluruh Yunani. Keberanian mereka berubah menjadi legenda yang abadi. Kadang, kekalahan yang terhormat justru jauh lebih kuat daripada sebuah kemenangan yang mudah.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#d7a23f",
+  "keywords": ["prajurit", "Sparta", "Persia", "Leonidas", "berperang", "menyelamatkan", "Yunani", "pengorbanan", "legenda"],
+  "captionFixes": {"Termopilai": "Thermopylae", "Thermopilai": "Thermopylae", "Termopile": "Thermopylae", "Termopilae": "Thermopylae", "Leonidus": "Leonidas", "calah": "celah", "persia": "Persia"},
+  "chronScenes": [
+    {"kind": "battle", "cue": null, "label": "300 Sparta", "sub": "Thermopylae, 480 SM"},
+    {"kind": "quote", "cue": "menjawab", "quote": "Datang dan ambillah.", "author": "Leonidas"},
+    {"kind": "temple", "cue": "kehormatan", "label": "Jalan Hidup Sparta"},
+    {"kind": "map", "cue": "menyelamatkan", "label": "Yunani Terselamatkan"},
+    {"kind": "ruin", "cue": "legenda", "label": "Legenda yang Abadi"}
+  ]
+}

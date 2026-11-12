@@ -1,0 +1,71 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Kenapa Nasihat Gagal",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["nasihat", "tahu", "bertindak", "rencana", "jadwal", "tindakan", "perubahan", "spesifik"],
+  "captionFixes": {},
+  "script": "Semua orang tahu olahraga itu penting, tapi sedikit yang benar-benar bergerak. Itu jurang antara tahu dan bertindak. Nasihat yang baik jarang gagal karena isinya salah, ia gagal karena tidak punya tempat di jadwalmu. Otak menyimpan pengetahuan sebagai informasi, bukan sebagai perintah. Jadi kita merasa sudah berubah hanya karena sudah setuju. Cara menutup jurangnya, ubah niat menjadi rencana yang spesifik. Bukan aku akan olahraga, tapi besok jam enam aku jalan kaki dua puluh menit dari depan rumah. Karena perubahan tidak dimulai dari tahu lebih banyak, tapi dari satu tindakan yang punya waktu dan tempat.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Kebiasaan sehari-hari",
+      "heading": "Tahu itu penting, tapi tidak bergerak.",
+      "accentWord": "tidak bergerak",
+      "accentTone": "coral",
+      "card": {
+        "from": "niat.app",
+        "tag": "BESOK",
+        "title": "Aku akan mulai olahraga",
+        "body": "Sudah diucapkan tiga tahun berturut-turut."
+      },
+      "sub": "Setuju dengan nasihat terasa seperti sudah berubah."
+    },
+    {
+      "kind": "how",
+      "cue": "Otak",
+      "kicker": "Cara kerjanya di otak",
+      "heading": "Pengetahuan bukan perintah untuk bertindak.",
+      "accentWord": "bukan perintah",
+      "lines": [
+        "Nasihat gagal karena tidak punya tempat di jadwal.",
+        "Otak menyimpan tahu sebagai informasi.",
+        "Setuju terasa seperti sudah berubah."
+      ],
+      "badges": [
+        {"text": "Tahu tanpa jadwal = tidak terjadi", "tone": "muted"},
+        {"text": "Rencana spesifik menutup jurangnya", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "rencana",
+      "kicker": "Cara menutup jurangnya",
+      "heading": "Niat harus berubah jadi rencana spesifik.",
+      "accentWord": "rencana spesifik",
+      "cards": [
+        "Jam yang jelas",
+        "Tempat yang jelas",
+        "Langkah pertama",
+        "Bukan cuma setuju"
+      ],
+      "highlight": "\"Besok jam enam, dua puluh menit, dari depan rumah.\""
+    },
+    {
+      "kind": "cta",
+      "cue": "perubahan",
+      "kicker": "Yang sebenarnya mengubah",
+      "heading": "Perubahan dimulai dari satu tindakan.",
+      "accentWord": "satu tindakan",
+      "accentTone": "accent",
+      "big": "BESOK 06.00",
+      "sub": "Beri tindakanmu waktu dan tempat, bukan cuma niat.",
+      "pill": "Tahu lebih banyak bukan berubah"
+    }
+  ]
+}

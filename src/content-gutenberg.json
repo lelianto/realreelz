@@ -1,0 +1,24 @@
+{
+  "template": "stickman",
+  "name": "GUTENBERG",
+  "title": "Johannes Gutenberg",
+  "script": "Sebelum tahun 1440, sebuah buku harus disalin dengan tangan selama berbulan-bulan, sehingga hanya orang kaya yang bisa memilikinya. Seorang pandai logam dari Jerman bernama Johannes Gutenberg ingin mengubah itu. Dia menggabungkan huruf logam yang bisa disusun ulang dengan sebuah alat pemeras anggur. Hasilnya adalah mesin cetak pertama yang bisa memproduksi halaman dengan sangat cepat. Tiba-tiba, satu judul buku bisa dicetak ribuan kali dalam waktu singkat. Pengetahuan yang dulu terkunci kini menyebar ke seluruh Eropa, memicu ledakan literasi dan ilmu pengetahuan. Satu mesin sederhana mengubah jalannya sejarah manusia selamanya.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "elevenVoiceId": "nPczCjzI2devNBz1zQrb",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#ffcf4d",
+  "hue": 35,
+  "hair": "#5a4c3a",
+  "moustache": true,
+  "captionFixes": {},
+  "keywords": ["buku", "Gutenberg", "logam", "memproduksi", "menyebar", "sejarah"],
+  "storyScenes": [
+    {"kind": "gintro", "cue": null, "mood": "neutral"},
+    {"kind": "gportrait", "cue": "Johannes", "label": "Gutenberg"},
+    {"kind": "gwork", "cue": "menggabungkan", "prop": "book"},
+    {"kind": "gbreakthrough", "cue": "memproduksi", "label": "MESIN CETAK"},
+    {"kind": "gimpact", "cue": "menyebar"},
+    {"kind": "gclose", "cue": "sejarah"}
+  ]
+}

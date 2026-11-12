@@ -1,0 +1,19 @@
+{
+  "template": "parable",
+  "name": "BANDWAGON",
+  "title": "Ikut-ikutan Bukan Bukti",
+  "script": "Semua orang percaya, jadi pasti benar. Itulah bandwagon, ikut-ikutan. Di Negeri Konoha, kebenaran dihitung dengan jumlah tangan yang diangkat. Ketika seribu orang berteriak hal yang sama, yang berbeda pendapat akan merasa dirinya rusak. Padahal sejarah penuh dengan mayoritas yang keliru. Dulu semua orang percaya bumi pusat alam semesta, dan yang membantah dianggap gila. Kerumunan memberi rasa aman, bukan kepastian. Popularitas sebuah keyakinan tidak menambah kebenarannya sedikit pun. Jadi ketika kamu merasa yakin karena semua orang yakin, berhentilah sebentar. Tanyakan, apa buktinya, bukan siapa yang percaya. Karena kebenaran tidak ditentukan oleh suara terbanyak, tapi oleh bukti yang bisa diperiksa.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#e0b24a",
+  "keywords": ["bandwagon", "ikut-ikutan", "Konoha", "kebenaran", "berbeda", "sejarah", "mayoritas", "bumi", "Popularitas", "Tanyakan"],
+  "captionFixes": {},
+  "parableScenes": [
+    {"kind": "title", "cue": null, "label": "Ikut-ikutan Bukan Bukti", "sub": "Negeri Konoha"},
+    {"kind": "arena", "cue": "Konoha", "label": "Kebenaran Dihitung dari Jumlah Tangan"},
+    {"kind": "silence", "cue": "berbeda", "label": "Yang Berbeda Dianggap Rusak"},
+    {"kind": "quote", "cue": "mayoritas", "quote": "Mayoritas pernah salah berkali-kali.", "author": "Fallacy Bandwagon"},
+    {"kind": "outro", "cue": "Tanyakan", "label": "Tanyakan Buktinya, Bukan Siapa yang Percaya"}
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "template": "parable",
+  "name": "AD HOMINEM",
+  "title": "Serang Orangnya, Bukan Argumennya",
+  "script": "Kalau kritikmu benar, mereka tidak akan menjawab isinya. Mereka akan menyerang pribadimu. Di Negeri Konoha, setiap kali ada yang mengkritik dengan data, jawabannya bukan bantahan. Tapi pertanyaan, kamu ini siapa, lulusan mana, dibayar oleh siapa. Dalam ilmu logika, ini namanya menyerang orangnya, bukan argumennya. Itu adalah tanda bahwa mereka kalah berdebat, tapi tidak mau mengakuinya. Karena kalau argumenmu memang lemah, mereka cukup membantahnya dengan fakta. Timbangan keadilan pun dibuat berat sebelah, suara yang benar justru diangkat tinggi lalu diabaikan. Jadi kalau kritikmu dijawab dengan hinaan, tersenyumlah. Artinya kamu sedang menang.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#e0b24a",
+  "keywords": ["kritikmu", "menyerang", "Konoha", "mengkritik", "argumennya", "logika", "kalah", "Timbangan", "keadilan", "hinaan", "menang"],
+  "captionFixes": {"Kenoha": "Konoha", "Konoa": "Konoha", "Kalo": "Kalau", "argumentnya": "argumennya", "argumentmu": "argumenmu"},
+  "parableScenes": [
+    {"kind": "title", "cue": null, "label": "Diserang, Bukan Dijawab", "sub": "Negeri Konoha"},
+    {"kind": "silence", "cue": "mengkritik", "label": "Kritik dijawab dengan serangan pribadi"},
+    {"kind": "quote", "cue": "logika", "quote": "Saat kalah berdebat, mereka menyerang orangnya.", "author": "Fallacy Ad Hominem"},
+    {"kind": "scales", "cue": "Timbangan", "label": "Keadilan dibuat berat sebelah"},
+    {"kind": "outro", "cue": "hinaan", "label": "Dijawab dengan hinaan? Kamu sedang menang"}
+  ]
+}

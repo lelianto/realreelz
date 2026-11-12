@@ -1,0 +1,21 @@
+{
+  "template": "collage",
+  "name": "SELAT HORMUZ",
+  "title": "Selat Kecil yang Bisa Guncang Dunia",
+  "script": "Bayangin, ada satu selat kecil di Timur Tengah namanya Selat Hormuz. Lebarnya cuma tiga puluh sembilan kilometer di titik tersempit. Tapi hampir seperempat minyak dunia lewat jalur sempit ini setiap hari. Kalau Iran menutup selat ini, harga minyak global langsung meledak. Kapal tanker raksasa harus antre melewati celah yang diawasi ketat. Sejak dulu, wilayah ini jadi titik panas rebutan kekuatan besar. Satu keputusan di selat sekecil ini bisa bikin ekonomi seluruh dunia ikut terancam.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.1,
+  "accent": "#b23a2c",
+  "keywords": ["hormuz", "minyak", "iran", "meledak", "terancam", "kekuatan"],
+  "captionFixes": {"hormus": "hormuz", "Hormus": "Hormuz"},
+  "collageScenes": [
+    {"kind": "title", "cue": null, "label": "Selat Hormuz", "sub": "Titik tersempit perdagangan minyak dunia", "bg": "kraft"},
+    {"kind": "map", "cue": "Timur", "label": "Gerbang Teluk Persia", "sub": "39 km di titik tersempit", "tag": "39km", "bg": "olive"},
+    {"kind": "object", "cue": "minyak", "subject": "drop", "label": "Seperempat minyak dunia", "bg": "terra"},
+    {"kind": "object", "cue": "tanker", "subject": "ship", "label": "Antre di celah sempit", "bg": "news"},
+    {"kind": "burst", "cue": "rebutan", "label": "Titik panas kekuatan besar", "bg": "news"},
+    {"kind": "object", "cue": "terancam", "subject": "globe", "label": "Ekonomi dunia ikut terancam", "bg": "terra"},
+    {"kind": "outro", "cue": null, "label": "Follow buat part 2", "bg": "kraft"}
+  ]
+}

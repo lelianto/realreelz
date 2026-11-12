@@ -1,0 +1,71 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Steak dari Jendela Apartemen",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["steak", "jendela", "viral", "pengalaman", "modal", "kualitas", "pelanggan", "detail"],
+  "captionFixes": {},
+  "script": "Sebuah restoran steak viral bukan karena tempatnya mewah, tapi karena menjual dari jendela apartemen. Tidak ada ruang makan. Pesanan diturunkan lewat jendela, dan pelanggan menunggu di bawah. Ide ini sederhana, murah, dan sama sekali tidak biasa. Dalam bisnis, perhatian langka, dan pengalaman aneh mudah dibicarakan. Tapi yang membuatnya bertahan bukan keanehannya, melainkan rasa dan pelayanan yang tetap masuk akal. Pelajarannya, kamu tidak butuh modal besar untuk berbeda. Kamu butuh satu detail yang membuat orang bercerita. Karena orang tidak membagikan daftar menu, mereka membagikan pengalaman yang belum pernah mereka alami.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Kisah viral",
+      "heading": "Viral bukan karena mewah, tapi karena aneh.",
+      "accentWord": "aneh",
+      "accentTone": "coral",
+      "card": {
+        "from": "catatan-usaha.id",
+        "tag": "JENDELA",
+        "title": "Steak dijual dari jendela apartemen",
+        "body": "Tanpa ruang makan, pesanan diturunkan ke bawah."
+      },
+      "sub": "Ide yang tidak biasa lebih mudah diingat daripada diskon."
+    },
+    {
+      "kind": "how",
+      "cue": "Dalam",
+      "kicker": "Kenapa berhasil",
+      "heading": "Perhatian langka, pengalaman aneh mudah diceritakan.",
+      "accentWord": "mudah diceritakan",
+      "lines": [
+        "Ide sederhana, modal kecil.",
+        "Yang bertahan: rasa dan pelayanan.",
+        "Keanehan membuka pintu, kualitas menahan."
+      ],
+      "badges": [
+        {"text": "Viral tanpa kualitas hanya sebentar", "tone": "muted"},
+        {"text": "Satu detail cukup untuk diingat", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "Pelajarannya",
+      "kicker": "Yang bisa ditiru",
+      "heading": "Tidak butuh modal besar untuk berbeda.",
+      "accentWord": "untuk berbeda",
+      "cards": [
+        "Satu detail unik",
+        "Alasan untuk bercerita",
+        "Kualitas tetap dijaga",
+        "Lokasi dimanfaatkan"
+      ],
+      "highlight": "Yang diingat orang bukan daftar menu, tapi cara mereka dilayani."
+    },
+    {
+      "kind": "cta",
+      "cue": "membagikan",
+      "kicker": "Yang perlu diingat",
+      "heading": "Orang membagikan pengalaman, bukan menu.",
+      "accentWord": "pengalaman",
+      "accentTone": "accent",
+      "big": "SATU DETAIL",
+      "sub": "Cari satu hal yang membuat orang bercerita tentangmu.",
+      "pill": "Berbeda dulu, bagus kemudian"
+    }
+  ]
+}

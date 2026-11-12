@@ -1,0 +1,19 @@
+{
+  "template": "explainer",
+  "name": "CHERRY PICKING",
+  "title": "Cherry Picking: Memetik Data yang Manis",
+  "script": "Dari seratus penelitian, sembilan puluh menunjukkan hasil buruk. Tapi yang dikutip hanya sepuluh yang menguntungkan. Itulah cherry picking, memetik data yang manis dan membuang sisanya. Ini bukan kebohongan langsung, karena setiap angka yang disebut memang benar. Tapi gambaran yang terbentuk sepenuhnya palsu. Di iklan, di kampanye, dan di debat, pola ini bekerja sangat rapi. Cara mendeteksinya, lihat apakah mereka menyebut jumlah total. Tanyakan, apa yang tidak ditampilkan. Karena data yang dipilih dengan tangan bukanlah bukti, melainkan dekorasi. Kalau kamu hanya melihat buah yang ranum, mungkin ada keranjang yang disembunyikan.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#a3e635",
+  "keywords": ["penelitian", "cherry picking", "data", "kebohongan", "gambaran", "iklan", "kampanye", "total", "dekorasi", "keranjang"],
+  "captionFixes": {},
+  "explainerScenes": [
+    {"kind": "hook", "cue": null, "label": "Hanya Data yang Manis", "mood": "neutral", "pose": "presenting"},
+    {"kind": "brain", "cue": "cherry", "label": "Otak Suka Bukti Enak", "mood": "thinking", "pose": "thinking"},
+    {"kind": "iceberg", "cue": "gambaran", "label": "Gambaran yang Palsu", "mood": "sad", "pose": "shrug"},
+    {"kind": "desk", "cue": "total", "label": "Minta Angka Totalnya", "mood": "neutral", "pose": "holding", "prop": "book"},
+    {"kind": "trophy", "cue": "dekorasi", "label": "Ada Keranjang yang Disembunyikan", "mood": "determined", "pose": "presenting"}
+  ]
+}

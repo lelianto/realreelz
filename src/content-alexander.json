@@ -1,0 +1,19 @@
+{
+  "template": "chronicle",
+  "name": "ALEXANDER AGUNG",
+  "title": "Alexander & Aristoteles",
+  "script": "Sebelum menjadi penakluk terbesar dalam sejarah, Alexander muda hanyalah seorang murid. Gurunya bukan orang sembarangan, melainkan sang filsuf agung, Aristoteles. Dari beliau, Alexander belajar filsafat, ilmu alam, dan seni berpikir jernih. Konon dia selalu tidur dengan dua benda di bawah bantalnya, sebilah belati dan sebuah buku. Ketika naik takhta di usia dua puluh tahun, dia mulai menaklukkan satu demi satu kerajaan, dari tanah Yunani hingga jauh ke India. Dalam waktu sepuluh tahun saja, dia membangun salah satu kekaisaran terbesar yang pernah ada di muka bumi. Namun di puncak kejayaannya, di usia tiga puluh dua tahun, dia justru meninggal karena sakit. Dunia yang dia taklukkan begitu luas, tetapi umur hidupnya sendiri begitu singkat.",
+  "edgeVoiceId": "id-ID-GadisNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#d7a23f",
+  "keywords": ["penakluk", "murid", "filsuf", "Aristoteles", "menaklukkan", "kekaisaran", "Alexander", "India", "singkat"],
+  "captionFixes": {"Aristotales": "Aristoteles", "Aristotles": "Aristoteles", "Aleksander": "Alexander", "menaklukan": "menaklukkan", "taklukan": "taklukkan", "mudah": "muda", "melayinkan": "melainkan", "Vilsof": "filsuf", "Fil-suf": "filsuf", "Filsuf": "filsuf", "Vilsofat": "filsafat", "sebelah": "sebilah"},
+  "chronScenes": [
+    {"kind": "map", "cue": null, "label": "Kekaisaran Alexander", "sub": "Yunani hingga India"},
+    {"kind": "bust", "cue": "Gurunya", "label": "Aristoteles", "sub": "Sang guru sang penakluk"},
+    {"kind": "battle", "cue": "menaklukkan", "label": "Dari Yunani ke India"},
+    {"kind": "temple", "cue": "kekaisaran", "label": "Kekaisaran Terbesar"},
+    {"kind": "outro", "cue": "singkat", "label": "Dunia begitu luas, hidupnya begitu singkat"}
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "template": "stickman",
+  "name": "ALFRED NOBEL",
+  "title": "Alfred Nobel",
+  "script": "Pada abad kesembilan belas, bahan peledak bernama nitrogliserin sangat kuat, tapi juga sangat tidak stabil dan sering meledak tanpa aba-aba. Seorang kimiawan Swedia bernama Alfred Nobel bahkan kehilangan adiknya sendiri dalam sebuah ledakan di laboratorium. Alih-alih menyerah, dia justru bertekad menjinakkannya. Dia menemukan cara menyerap cairan berbahaya itu ke dalam bahan padat, menciptakan dinamit yang jauh lebih aman. Penemuan itu membantu membangun terowongan, jalan, dan kanal di seluruh dunia. Tapi saat alatnya dipakai untuk perang, Nobel merasa sangat bersalah. Maka dia mewariskan seluruh hartanya untuk sebuah penghargaan bagi mereka yang paling berjasa bagi kemanusiaan.",
+  "edgeVoiceId": "id-ID-GadisNeural",
+  "elevenVoiceId": "nPczCjzI2devNBz1zQrb",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#ff7ab0",
+  "hue": 320,
+  "hair": "#463a2e",
+  "moustache": true,
+  "captionFixes": {"menyerak": "menyerap", "peleda": "peledak", "bertekat": "bertekad"},
+  "keywords": ["peledak", "Nobel", "kehilangan", "menyerap", "dinamit", "terowongan", "mewariskan"],
+  "storyScenes": [
+    {"kind": "gintro", "cue": null, "mood": "neutral"},
+    {"kind": "gportrait", "cue": "Alfred", "label": "Alfred Nobel"},
+    {"kind": "gstruggle", "cue": "kehilangan"},
+    {"kind": "gwork", "cue": "menyerap", "prop": "flask"},
+    {"kind": "gbreakthrough", "cue": "dinamit", "label": "DINAMIT"},
+    {"kind": "gimpact", "cue": "terowongan"},
+    {"kind": "gaward", "cue": "mewariskan", "label": "HADIAH NOBEL"}
+  ]
+}

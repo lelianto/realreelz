@@ -1,0 +1,24 @@
+{
+  "template": "stickman",
+  "name": "MARCONI",
+  "title": "Guglielmo Marconi",
+  "script": "Di akhir abad kesembilan belas, orang percaya pesan tidak mungkin dikirim tanpa kabel. Seorang pemuda Italia bernama Guglielmo Marconi menolak mempercayai itu. Di loteng rumahnya, dia bereksperimen mengirim gelombang radio dari satu sisi ruangan ke sisi lain. Lalu jaraknya terus dia perjauh, melewati bukit, lalu melewati lautan. Pada tahun 1901, sebuah sinyal berhasil melintasi Samudra Atlantik tanpa satu pun kabel. Dunia tercengang. Komunikasi nirkabel ini kemudian menyelamatkan ribuan nyawa di laut, termasuk saat kapal Titanic tenggelam. Dari sebuah ruang kecil, Marconi membuktikan bahwa jarak bukanlah penghalang bagi sebuah pesan.",
+  "edgeVoiceId": "id-ID-GadisNeural",
+  "elevenVoiceId": "nPczCjzI2devNBz1zQrb",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#5fd0ff",
+  "hue": 200,
+  "hair": "#22202a",
+  "moustache": false,
+  "captionFixes": {"Google": "Guglielmo", "Elmo": "", "titanik": "Titanic"},
+  "keywords": ["pesan", "Marconi", "loteng", "radio", "Atlantik", "Titanic", "penghalang"],
+  "storyScenes": [
+    {"kind": "gintro", "cue": null, "mood": "neutral"},
+    {"kind": "gportrait", "cue": "Guglielmo", "label": "G. Marconi"},
+    {"kind": "gwork", "cue": "loteng", "prop": "gear"},
+    {"kind": "gbreakthrough", "cue": "Atlantik", "label": "RADIO NIRKABEL"},
+    {"kind": "gimpact", "cue": "Titanic"},
+    {"kind": "gclose", "cue": "penghalang"}
+  ]
+}

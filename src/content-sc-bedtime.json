@@ -1,0 +1,71 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Mencuri Waktu Tidur",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["mengantuk", "tidur", "malam", "waktu", "kendali", "batas", "layar", "bebas"],
+  "captionFixes": {},
+  "script": "Kamu sudah mengantuk, tapi tetap menonton sampai tengah malam. Itu revenge bedtime procrastination, mencuri waktu tidur demi waktu yang terasa milik sendiri. Sepanjang hari, waktumu diatur orang lain: kerja, keluarga, pesan yang harus dibalas. Malam jadi satu-satunya ruang yang tidak diawasi. Jadi kamu menukar tidur dengan rasa bebas, meski besok tubuhmu membayar. Masalahnya, utang tidur tidak bisa dilunasi di akhir pekan. Cara memperbaikinya, jangan menunggu malam untuk punya waktu. Sisipkan sepuluh menit milikmu di siang hari, dan beri batas jelas kapan layar berhenti. Karena yang kamu rindukan bukan begadang, tapi rasa memegang kendali.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Kebiasaan sehari-hari",
+      "heading": "Mengantuk, tapi menolak tidur.",
+      "accentWord": "menolak tidur",
+      "accentTone": "coral",
+      "card": {
+        "from": "jam-01.00",
+        "tag": "BEGADANG",
+        "title": "Masih menonton, padahal ngantuk",
+        "body": "Karena malam terasa satu-satunya waktu milik sendiri."
+      },
+      "sub": "Yang dicari bukan hiburan, tapi rasa punya waktu."
+    },
+    {
+      "kind": "how",
+      "cue": "Sepanjang",
+      "kicker": "Cara kerjanya",
+      "heading": "Waktumu diatur orang lain sepanjang hari.",
+      "accentWord": "diatur orang lain",
+      "lines": [
+        "Kerja, keluarga, pesan yang harus dibalas.",
+        "Malam jadi ruang yang tidak diawasi.",
+        "Tidur ditukar dengan rasa bebas."
+      ],
+      "badges": [
+        {"text": "Utang tidur tidak lunas di akhir pekan", "tone": "muted"},
+        {"text": "Sisipkan waktu sendiri di siang hari", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "diawasi",
+      "kicker": "Yang mengambil waktumu",
+      "heading": "Malam jadi ruang yang tidak diawasi.",
+      "accentWord": "tidak diawasi",
+      "cards": [
+        "Pekerjaan",
+        "Keluarga",
+        "Pesan masuk",
+        "Jadwal orang lain"
+      ],
+      "highlight": "Yang dirindukan bukan begadang, tapi kendali atas waktumu."
+    },
+    {
+      "kind": "cta",
+      "cue": "Karena",
+      "kicker": "Cara memperbaikinya",
+      "heading": "Yang dirindukan bukan begadang, tapi kendali.",
+      "accentWord": "kendali",
+      "accentTone": "accent",
+      "big": "10 MENIT",
+      "sub": "Ambil waktumu di siang hari, jangan menunggu malam.",
+      "pill": "Beri batas jelas kapan layar berhenti"
+    }
+  ]
+}

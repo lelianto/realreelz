@@ -1,0 +1,19 @@
+{
+  "template": "parable",
+  "name": "JUBAH BARU SANG RAJA",
+  "title": "Jubah Baru Sang Raja",
+  "script": "Semua orang memuji jubah baru sang raja. Padahal sang raja tidak memakai apa apa. Di Negeri Konoha, semua pembesar berlomba memuji kebijakan yang jelas jelas gagal. Tidak ada yang berani berkata jujur, karena takut dianggap bodoh dan sendirian. Seperti dalam dongeng tua, hanya seorang anak kecil yang polos berani menunjuk dan berteriak, raja tidak pakai baju. Bukan karena dia paling pintar, tapi karena dia belum belajar untuk takut. Kebohongan besar tidak bertahan karena kuat. Ia bertahan karena kita semua sepakat untuk diam. Keberanian satu suara jujur, bisa membangunkan seluruh negeri.",
+  "edgeVoiceId": "id-ID-GadisNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#e0b24a",
+  "keywords": ["jubah", "raja", "Konoha", "pembesar", "gagal", "jujur", "bodoh", "anak", "Kebohongan", "diam", "Keberanian"],
+  "captionFixes": {"Kenoha": "Konoha", "Konoa": "Konoha", "pembesar.": "pembesar"},
+  "parableScenes": [
+    {"kind": "title", "cue": null, "label": "Jubah Baru Sang Raja", "sub": "Negeri Konoha"},
+    {"kind": "emperor", "cue": "pembesar", "label": "Semua memuji yang jelas gagal"},
+    {"kind": "silence", "cue": "jujur", "label": "Takut jadi satu satunya yang jujur"},
+    {"kind": "quote", "cue": "anak", "quote": "Raja tidak pakai baju.", "author": "Sang Anak Kecil"},
+    {"kind": "outro", "cue": "Keberanian", "label": "Satu suara jujur membangunkan negeri"}
+  ]
+}

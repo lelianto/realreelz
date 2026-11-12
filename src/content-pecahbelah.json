@@ -1,34 +1,19 @@
 {
-  "template": "stickman",
+  "template": "parable",
   "name": "PECAH BELAH",
-  "title": "Pecah Belah (Divide et Impera)",
-  "script": "Ada dua anak yang disuruh bersama-sama menjaga satu toples kue. Mereka awalnya rukun. Lalu datang orang ketiga yang diam-diam membisiki keduanya supaya saling curiga. Tak lama, mereka pun bertengkar hebat, saling menuduh ingin mencuri kue. Dan tepat saat keduanya ribut, orang ketiga itu pelan-pelan mengambil seluruh isi toplesnya. Inilah yang disebut taktik pecah belah, atau divide et impera. Kalau yang banyak di bawah sibuk saling membenci, yang sedikit di atas justru paling aman dan paling diuntungkan. Pola ini dipakai sejak zaman penjajahan sampai sekarang, rakyat diadu soal suku, agama, atau golongan supaya lupa mengawasi yang memegang kuasa. Jadi lain kali, saat kamu dipanaskan untuk memusuhi sesamamu sendiri, berhentilah sejenak. Tanyakan, saat kita semua sibuk ribut, siapa yang diam-diam sedang menikmati hasilnya.",
+  "title": "Divide et Impera",
+  "script": "Negeri yang paling kuat tidak pernah dikalahkan dari luar. Ia dihancurkan dari dalam. Caranya? Buat rakyatnya saling benci. Di Negeri Konoha, rakyat terus diadu satu sama lain. Dibelah berdasarkan agama, suku, dan pilihan politik, sampai lupa siapa yang sebenarnya berkuasa. Strategi ini sudah setua kekaisaran. Bangsa Romawi menyebutnya pecah belah lalu kuasai. Selama rakyat sibuk bertengkar di bawah, para penguasa duduk tenang di atas, menonton sambil tersenyum. Musuhmu yang sebenarnya bukan tetanggamu yang beda pilihan. Musuhmu adalah tangan yang membuat kalian saling membenci.",
   "edgeVoiceId": "id-ID-ArdiNeural",
-  "elevenVoiceId": "nPczCjzI2devNBz1zQrb",
   "music": "music.mp3",
   "musicVolume": 0.08,
-  "accent": "#ffd23f",
-  "captionFixes": {},
-  "keywords": [
-    "kue",
-    "membisiki",
-    "curiga",
-    "bertengkar",
-    "ribut",
-    "diadu",
-    "membenci",
-    "kuasa",
-    "menikmati",
-    "memusuhi"
-  ],
-  "storyScenes": [
-    {"kind": "cstory", "cue": null, "label": "Dua penjaga kue", "bubble": "Kita jaga sama-sama ya", "mood": "happy", "hair": "#2a2320", "moustache": false},
-    {"kind": "cstory", "cue": "membisiki", "label": "Si pembisik", "bubble": "Hati-hati, dia mau curang", "mood": "neutral", "hair": "#2a2320", "moustache": false},
-    {"kind": "cdilemma", "cue": "bertengkar", "optL": "Kamu curang!", "optR": "Enak aja!", "hair": "#2a2320", "moustache": false},
-    {"kind": "cstory", "cue": "ribut", "label": "Saat kalian ribut", "bubble": "Kuenya jadi milikku", "mood": "happy", "hair": "#2a2320", "moustache": false},
-    {"kind": "cterm", "cue": "disebut", "term": "PECAH BELAH", "def": "Diadu domba biar lupa siapa yang diuntungkan", "hair": "#2a2320", "moustache": false},
-    {"kind": "cwhy", "cue": "membenci", "label": "KENAPA AMPUH?", "points": ["Yang bawah sibuk berkelahi", "Yang atas aman dan diuntungkan", "Rakyat lupa mengawasi kuasa"], "hair": "#2a2320", "moustache": false},
-    {"kind": "clesson", "cue": "memusuhi", "label": "Dipanasi? Tanya dulu", "hair": "#2a2320", "moustache": false},
-    {"kind": "coutro", "cue": "menikmati", "label": "Saat ribut, siapa untung?", "hair": "#2a2320", "moustache": false}
+  "accent": "#e0b24a",
+  "keywords": ["dikalahkan", "benci", "Konoha", "diadu", "agama", "suku", "pecah", "kuasai", "penguasa", "Musuhmu"],
+  "captionFixes": {"Kenoha": "Konoha", "Konoa": "Konoha", "Dibilah": "Dibelah"},
+  "parableScenes": [
+    {"kind": "title", "cue": null, "label": "Dibuat Saling Benci dari Dalam", "sub": "Negeri Konoha"},
+    {"kind": "divide", "cue": "diadu", "label": "Rakyat diadu satu sama lain"},
+    {"kind": "quote", "cue": "pecah", "quote": "Pecah belah mereka, maka kamu akan menguasai.", "author": "Strategi Romawi Kuno"},
+    {"kind": "throne", "cue": "menonton", "label": "Penguasa menonton dari atas"},
+    {"kind": "outro", "cue": "Musuhmu", "label": "Musuhmu bukan yang beda pilihan"}
   ]
 }

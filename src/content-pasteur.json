@@ -1,0 +1,24 @@
+{
+  "template": "stickman",
+  "name": "LOUIS PASTEUR",
+  "title": "Louis Pasteur",
+  "script": "Di abad kesembilan belas, penyakit menular membunuh jutaan orang, dan tidak ada yang tahu penyebabnya. Seorang ilmuwan Prancis bernama Louis Pasteur menemukan jawabannya: makhluk sangat kecil tak kasat mata yang kita sebut kuman. Dia membuktikan bahwa memanaskan susu dan anggur bisa membunuh kuman berbahaya, sebuah proses yang kini disebut pasteurisasi. Lalu secara tak sengaja, Pasteur menemukan bahwa kuman yang dilemahkan justru bisa melatih tubuh untuk melawan penyakit. Lahirlah vaksin modern. Berkat penemuannya, jutaan nyawa terselamatkan dari rabies, antraks, dan banyak wabah lainnya. Pasteur berkata, keberuntungan hanya memihak pikiran yang siap.",
+  "edgeVoiceId": "id-ID-GadisNeural",
+  "elevenVoiceId": "nPczCjzI2devNBz1zQrb",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#9ee06a",
+  "hue": 95,
+  "hair": "#4a4036",
+  "moustache": true,
+  "captionFixes": {},
+  "keywords": ["penyakit", "Pasteur", "kuman", "memanaskan", "melatih", "vaksin", "terselamatkan"],
+  "storyScenes": [
+    {"kind": "gintro", "cue": null, "mood": "sad"},
+    {"kind": "gportrait", "cue": "Louis", "label": "Louis Pasteur"},
+    {"kind": "gwork", "cue": "memanaskan", "prop": "flask"},
+    {"kind": "gbreakthrough", "cue": "melatih", "label": "VAKSIN"},
+    {"kind": "gimpact", "cue": "terselamatkan"},
+    {"kind": "gclose", "cue": "keberuntungan"}
+  ]
+}

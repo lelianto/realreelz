@@ -1,0 +1,71 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Hukum Parkinson",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["pekerjaan", "waktu", "tenggat", "melar", "rapat", "revisi", "batas", "selesai"],
+  "captionFixes": {},
+  "script": "Kerjaan yang harusnya selesai satu jam, kamu kerjakan seharian. Itu hukum Parkinson: pekerjaan melar sesuai waktu yang tersedia. Beri waktu dua hari, hasilnya dua hari. Beri satu jam, hasilnya satu jam. Bukan karena kamu malas, tapi karena otak mengisi ruang kosong dengan kesempurnaan yang tidak diminta. Semakin banyak waktu, semakin banyak rapat, revisi, dan hal yang sebenarnya tidak perlu. Cara memanfaatkannya, beri tenggat yang lebih pendek dari rasa nyamanmu. Tentukan satu hasil yang jelas, lalu mulai sekarang. Karena pekerjaan tidak butuh waktu sebanyak yang kamu sediakan, ia butuh batas yang tegas.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Kebiasaan sehari-hari",
+      "heading": "Kerjaan satu jam, selesai seharian.",
+      "accentWord": "seharian",
+      "accentTone": "coral",
+      "card": {
+        "from": "tugas.app",
+        "tag": "MELAR",
+        "title": "Harusnya selesai jam 10",
+        "body": "Selesai jam 5, tanpa hasil yang lebih baik."
+      },
+      "sub": "Waktu yang longgar tidak membuat hasil lebih baik, hanya lebih lama."
+    },
+    {
+      "kind": "how",
+      "cue": "Beri",
+      "kicker": "Cara kerjanya",
+      "heading": "Pekerjaan melar sesuai waktu yang tersedia.",
+      "accentWord": "melar",
+      "lines": [
+        "Beri dua hari, hasilnya dua hari.",
+        "Beri satu jam, hasilnya satu jam.",
+        "Otak mengisi ruang dengan kesempurnaan yang tidak diminta."
+      ],
+      "badges": [
+        {"text": "Tenggat longgar = pekerjaan tambahan", "tone": "muted"},
+        {"text": "Tenggat pendek, hasil jelas", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "Semakin",
+      "kicker": "Yang ikut tumbuh",
+      "heading": "Waktu lebih banyak, pekerjaan lebih banyak.",
+      "accentWord": "lebih banyak",
+      "cards": [
+        "Rapat tambahan",
+        "Revisi tanpa arah",
+        "Kesempurnaan yang tidak diminta",
+        "Tenggat yang terus mundur"
+      ],
+      "highlight": "Pekerjaan tidak butuh waktu sebanyak yang kamu sediakan."
+    },
+    {
+      "kind": "cta",
+      "cue": "butuh",
+      "kicker": "Cara memanfaatkannya",
+      "heading": "Pekerjaan butuh batas, bukan waktu luang.",
+      "accentWord": "batas",
+      "accentTone": "accent",
+      "big": "1 JAM",
+      "sub": "Tentukan satu hasil yang jelas, lalu mulai sekarang.",
+      "pill": "Tenggat lebih pendek dari rasa nyamanmu"
+    }
+  ]
+}

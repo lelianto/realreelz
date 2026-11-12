@@ -1,0 +1,21 @@
+{
+  "template": "chronicle",
+  "name": "SOCRATES",
+  "title": "Socrates",
+  "script": "Sebelum dikenal sebagai filsuf, Socrates adalah seorang prajurit. Dia bertempur dalam Perang Peloponnesia, memanggul perisai berat di garis depan pasukan Athena. Di tengah medan perang yang brutal, dia dikenal tenang dan tak kenal takut. Dari pengalaman itulah dia belajar bahwa musuh terbesar manusia bukanlah orang lain, melainkan ketidaktahuan di dalam dirinya sendiri. Pulang dari perang, dia meninggalkan pedang dan memilih bertanya. Di jalanan kota Athena, dia menantang setiap orang dengan satu pertanyaan sederhana, apa itu kebijaksanaan sejati. Dia berkata, aku tahu bahwa aku tidak tahu apa apa. Kalimat itu justru membuatnya disebut manusia paling bijaksana oleh ramalan kuil Delphi. Dari seorang prajurit, lahir seorang guru yang pemikirannya mengubah dunia selamanya.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#d7a23f",
+  "keywords": ["prajurit", "perang", "filsuf", "Athena", "kebijaksanaan", "ketidaktahuan", "Socrates", "Delphi", "guru"],
+  "captionFixes": {"Sokrates": "Socrates", "Peloponesia": "Peloponnesia", "Pelopones": "Peloponnesia", "peloponisia": "Peloponnesia", "Atena": "Athena", "Delfi": "Delphi", "Delpi": "Delphi", "delpi": "Delphi", "kuyl": "kuil", "perajurit": "prajurit", "melayangkan": "melainkan", "ketidak": "ketidaktahuan", "tahuan": ""},
+  "chronScenes": [
+    {"kind": "title", "cue": null, "label": "Socrates", "sub": "Prajurit yang menjadi filsuf"},
+    {"kind": "battle", "cue": "bertempur", "label": "Perang Peloponnesia", "sub": "Garis depan Athena"},
+    {"kind": "bust", "cue": "ketidaktahuan", "label": "Musuh di dalam diri", "sub": "470 - 399 SM"},
+    {"kind": "temple", "cue": "jalanan", "label": "Kota Athena"},
+    {"kind": "quote", "cue": "berkata", "quote": "Aku tahu bahwa aku tidak tahu apa apa.", "author": "Socrates"},
+    {"kind": "map", "cue": "ramalan", "label": "Yunani Kuno", "sub": "Ramalan kuil Delphi"},
+    {"kind": "outro", "cue": "mengubah", "label": "Dari prajurit, lahir seorang guru"}
+  ]
+}

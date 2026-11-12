@@ -1,0 +1,20 @@
+{
+  "template": "explainer",
+  "name": "KEKELIRUAN PENJUDI",
+  "title": "Gambler's Fallacy: Koin Tidak Punya Ingatan",
+  "script": "Koin sudah muncul angka lima kali berturut-turut. Pasti berikutnya gambar, kan? Itulah kekeliruan penjudi. Kita percaya bahwa hasil masa lalu bisa memaksa hasil berikutnya, padahal koin tidak punya ingatan. Peluangnya tetap lima puluh lima puluh, setiap kali lempar. Di kasino, keyakinan ini membuat orang menambah taruhan justru saat sedang rugi. Di pasar saham, orang membeli karena sudah terlalu banyak turun, seolah harga punya utang untuk naik. Alam semesta tidak menyeimbangkan buku seperti akuntan. Cara melawannya, lihat setiap kejadian sebagai kejadian baru. Tanyakan, apakah peluangnya benar-benar berubah, atau hanya perasaanmu yang tidak nyaman. Karena semesta tidak berhutang apa pun padamu.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#ffd23f",
+  "keywords": ["koin", "penjudi", "peluang", "kasino", "taruhan", "saham", "akuntan", "kejadian", "perasaanmu", "berhutang"],
+  "captionFixes": {},
+  "explainerScenes": [
+    {"kind": "hook", "cue": null, "label": "Koin Tidak Punya Ingatan", "mood": "thinking", "pose": "holding", "prop": "coin"},
+    {"kind": "brain", "cue": "penjudi", "label": "Peluang Tetap Sama", "mood": "thinking", "pose": "thinking"},
+    {"kind": "desk", "cue": "kasino", "label": "Taruhan Naik Saat Rugi", "mood": "shock", "pose": "holding", "prop": "coin"},
+    {"kind": "iceberg", "cue": "saham", "label": "Harga Tidak Berutang", "mood": "sad", "pose": "shrug"},
+    {"kind": "eureka", "cue": "Tanyakan", "label": "Setiap Lemparan Baru", "mood": "happy", "pose": "eureka"},
+    {"kind": "trophy", "cue": "perasaanmu", "label": "Semesta Tidak Berutang", "mood": "determined", "pose": "presenting"}
+  ]
+}

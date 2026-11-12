@@ -1,0 +1,25 @@
+{
+  "template": "stickman",
+  "name": "KARL BENZ",
+  "title": "Karl Benz",
+  "script": "Pada tahun 1885, hampir semua orang masih bepergian menggunakan kuda. Seorang insinyur Jerman bernama Karl Benz punya mimpi yang dianggap gila: sebuah kereta yang bisa berjalan sendiri tanpa kuda. Dengan dukungan penuh dari istrinya, Bertha, dia membangun kendaraan beroda tiga yang digerakkan oleh mesin pembakaran. Banyak orang justru menertawakannya. Lalu Bertha diam-diam membawa kendaraan itu menempuh perjalanan jauh untuk membuktikan bahwa mesin itu benar-benar bekerja. Perjalanan nekat itu mengubah segalanya. Mobil pun mulai diterima, dan dunia perlahan meninggalkan kereta kuda. Hari ini, miliaran kendaraan di jalan berawal dari satu mimpi yang dulu dianggap mustahil.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "elevenVoiceId": "nPczCjzI2devNBz1zQrb",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#ff8a5c",
+  "hue": 20,
+  "hair": "#463a2e",
+  "moustache": true,
+  "captionFixes": {"diambil": "diam-diam"},
+  "keywords": ["kuda", "Benz", "membangun", "menertawakannya", "membuktikan", "miliaran", "mustahil"],
+  "storyScenes": [
+    {"kind": "gintro", "cue": null, "mood": "neutral"},
+    {"kind": "gportrait", "cue": "Karl", "label": "Karl Benz"},
+    {"kind": "gwork", "cue": "membangun", "prop": "gear"},
+    {"kind": "gstruggle", "cue": "menertawakannya"},
+    {"kind": "gbreakthrough", "cue": "membuktikan", "label": "MOBIL PERTAMA"},
+    {"kind": "gimpact", "cue": "miliaran"},
+    {"kind": "gclose", "cue": "mustahil"}
+  ]
+}

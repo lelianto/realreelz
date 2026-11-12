@@ -12,7 +12,6 @@ import path from 'node:path';
 
 const ROOT = process.cwd();
 const PORT = Number(process.env.PORT || 4000);
-const CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 const OUT_DIR = path.join(ROOT, 'out');
 mkdirSync(OUT_DIR, {recursive: true});
 
@@ -66,7 +65,6 @@ async function runJob(job) {
         'Reel',
         outRel,
         '--crf=18',
-        `--browser-executable=${CHROME}`,
       ],
       job,
       'render',

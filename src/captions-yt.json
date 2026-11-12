@@ -1,0 +1,6750 @@
+[
+  {
+    "text": "Pernahkah",
+    "startMs": 60,
+    "endMs": 570,
+    "timestampMs": 315,
+    "confidence": 0.99
+  },
+  {
+    "text": " kamu",
+    "startMs": 570,
+    "endMs": 830,
+    "timestampMs": 700,
+    "confidence": 0.99
+  },
+  {
+    "text": " bertanya-tanya,",
+    "startMs": 830,
+    "endMs": 2250,
+    "timestampMs": 1540,
+    "confidence": 0.99
+  },
+  {
+    "text": " mengapa",
+    "startMs": 2250,
+    "endMs": 2330,
+    "timestampMs": 2290,
+    "confidence": 0.99
+  },
+  {
+    "text": " di",
+    "startMs": 2250,
+    "endMs": 2340,
+    "timestampMs": 2295,
+    "confidence": 0.99
+  },
+  {
+    "text": " era",
+    "startMs": 2340,
+    "endMs": 2480,
+    "timestampMs": 2410,
+    "confidence": 0.99
+  },
+  {
+    "text": " modern",
+    "startMs": 2480,
+    "endMs": 2800,
+    "timestampMs": 2640,
+    "confidence": 0.99
+  },
+  {
+    "text": " ketika",
+    "startMs": 2800,
+    "endMs": 3000,
+    "timestampMs": 2900,
+    "confidence": 0.99
+  },
+  {
+    "text": " seluruh",
+    "startMs": 3000,
+    "endMs": 3490,
+    "timestampMs": 3245,
+    "confidence": 0.99
+  },
+  {
+    "text": " ilmu",
+    "startMs": 3490,
+    "endMs": 3780,
+    "timestampMs": 3635,
+    "confidence": 0.99
+  },
+  {
+    "text": " pengetahuan",
+    "startMs": 3780,
+    "endMs": 4160,
+    "timestampMs": 3970,
+    "confidence": 0.99
+  },
+  {
+    "text": " bisa",
+    "startMs": 4160,
+    "endMs": 4260,
+    "timestampMs": 4210,
+    "confidence": 0.99
+  },
+  {
+    "text": " diakses",
+    "startMs": 4260,
+    "endMs": 4780,
+    "timestampMs": 4520,
+    "confidence": 0.99
+  },
+  {
+    "text": " lewat",
+    "startMs": 4780,
+    "endMs": 5140,
+    "timestampMs": 4960,
+    "confidence": 0.99
+  },
+  {
+    "text": " ujung",
+    "startMs": 5140,
+    "endMs": 5420,
+    "timestampMs": 5280,
+    "confidence": 0.99
+  },
+  {
+    "text": " jari,",
+    "startMs": 5420,
+    "endMs": 5840,
+    "timestampMs": 5630,
+    "confidence": 0.99
+  },
+  {
+    "text": " begitu",
+    "startMs": 5840,
+    "endMs": 6190,
+    "timestampMs": 6015,
+    "confidence": 0.99
+  },
+  {
+    "text": " banyak",
+    "startMs": 6190,
+    "endMs": 6540,
+    "timestampMs": 6365,
+    "confidence": 0.99
+  },
+  {
+    "text": " orang",
+    "startMs": 6540,
+    "endMs": 6830,
+    "timestampMs": 6685,
+    "confidence": 0.99
+  },
+  {
+    "text": " cerdas",
+    "startMs": 6830,
+    "endMs": 7200,
+    "timestampMs": 7015,
+    "confidence": 0.99
+  },
+  {
+    "text": " justru",
+    "startMs": 7200,
+    "endMs": 7500,
+    "timestampMs": 7350,
+    "confidence": 0.99
+  },
+  {
+    "text": " mudah",
+    "startMs": 7500,
+    "endMs": 7720,
+    "timestampMs": 7610,
+    "confidence": 0.99
+  },
+  {
+    "text": " tertipu",
+    "startMs": 7720,
+    "endMs": 8110,
+    "timestampMs": 7915,
+    "confidence": 0.99
+  },
+  {
+    "text": " oleh",
+    "startMs": 8110,
+    "endMs": 8340,
+    "timestampMs": 8225,
+    "confidence": 0.99
+  },
+  {
+    "text": " manipulasi",
+    "startMs": 8340,
+    "endMs": 8940,
+    "timestampMs": 8640,
+    "confidence": 0.99
+  },
+  {
+    "text": " opini,",
+    "startMs": 8940,
+    "endMs": 9200,
+    "timestampMs": 9070,
+    "confidence": 0.99
+  },
+  {
+    "text": " debat",
+    "startMs": 9650,
+    "endMs": 9850,
+    "timestampMs": 9750,
+    "confidence": 0.99
+  },
+  {
+    "text": " kusir,",
+    "startMs": 9850,
+    "endMs": 10240,
+    "timestampMs": 10045,
+    "confidence": 0.99
+  },
+  {
+    "text": " hingga",
+    "startMs": 10690,
+    "endMs": 10860,
+    "timestampMs": 10775,
+    "confidence": 0.99
+  },
+  {
+    "text": " keputusan",
+    "startMs": 10860,
+    "endMs": 11490,
+    "timestampMs": 11175,
+    "confidence": 0.99
+  },
+  {
+    "text": " hidup",
+    "startMs": 11490,
+    "endMs": 11840,
+    "timestampMs": 11665,
+    "confidence": 0.99
+  },
+  {
+    "text": " yang",
+    "startMs": 11840,
+    "endMs": 12120,
+    "timestampMs": 11980,
+    "confidence": 0.99
+  },
+  {
+    "text": " merugikan?",
+    "startMs": 12120,
+    "endMs": 12750,
+    "timestampMs": 12435,
+    "confidence": 0.99
+  },
+  {
+    "text": " Kita",
+    "startMs": 13040,
+    "endMs": 13300,
+    "timestampMs": 13170,
+    "confidence": 0.99
+  },
+  {
+    "text": " sering",
+    "startMs": 13300,
+    "endMs": 13660,
+    "timestampMs": 13480,
+    "confidence": 0.99
+  },
+  {
+    "text": " mengira",
+    "startMs": 13660,
+    "endMs": 14090,
+    "timestampMs": 13875,
+    "confidence": 0.99
+  },
+  {
+    "text": " manusia",
+    "startMs": 14090,
+    "endMs": 14520,
+    "timestampMs": 14305,
+    "confidence": 0.99
+  },
+  {
+    "text": " adalah",
+    "startMs": 14520,
+    "endMs": 14890,
+    "timestampMs": 14705,
+    "confidence": 0.99
+  },
+  {
+    "text": " makhluk",
+    "startMs": 14890,
+    "endMs": 15330,
+    "timestampMs": 15110,
+    "confidence": 0.99
+  },
+  {
+    "text": " rasional",
+    "startMs": 15330,
+    "endMs": 15830,
+    "timestampMs": 15580,
+    "confidence": 0.99
+  },
+  {
+    "text": " yang",
+    "startMs": 15830,
+    "endMs": 16080,
+    "timestampMs": 15955,
+    "confidence": 0.99
+  },
+  {
+    "text": " selalu",
+    "startMs": 16080,
+    "endMs": 16450,
+    "timestampMs": 16265,
+    "confidence": 0.99
+  },
+  {
+    "text": " menimbang",
+    "startMs": 16450,
+    "endMs": 17020,
+    "timestampMs": 16735,
+    "confidence": 0.99
+  },
+  {
+    "text": " bukti.",
+    "startMs": 17020,
+    "endMs": 17310,
+    "timestampMs": 17165,
+    "confidence": 0.99
+  },
+  {
+    "text": " Namun",
+    "startMs": 17600,
+    "endMs": 17860,
+    "timestampMs": 17730,
+    "confidence": 0.99
+  },
+  {
+    "text": " psikologi",
+    "startMs": 17960,
+    "endMs": 18420,
+    "timestampMs": 18190,
+    "confidence": 0.99
+  },
+  {
+    "text": " modern",
+    "startMs": 18420,
+    "endMs": 18740,
+    "timestampMs": 18580,
+    "confidence": 0.99
+  },
+  {
+    "text": " dan",
+    "startMs": 18740,
+    "endMs": 18900,
+    "timestampMs": 18820,
+    "confidence": 0.99
+  },
+  {
+    "text": " sejarah",
+    "startMs": 18900,
+    "endMs": 19260,
+    "timestampMs": 19080,
+    "confidence": 0.99
+  },
+  {
+    "text": " ribuan",
+    "startMs": 19260,
+    "endMs": 19580,
+    "timestampMs": 19420,
+    "confidence": 0.99
+  },
+  {
+    "text": " tahun",
+    "startMs": 19580,
+    "endMs": 19850,
+    "timestampMs": 19715,
+    "confidence": 0.99
+  },
+  {
+    "text": " membuktikan",
+    "startMs": 19850,
+    "endMs": 20430,
+    "timestampMs": 20140,
+    "confidence": 0.99
+  },
+  {
+    "text": " bahwa",
+    "startMs": 20430,
+    "endMs": 20690,
+    "timestampMs": 20560,
+    "confidence": 0.99
+  },
+  {
+    "text": " otak",
+    "startMs": 20690,
+    "endMs": 20890,
+    "timestampMs": 20790,
+    "confidence": 0.99
+  },
+  {
+    "text": " kita",
+    "startMs": 20890,
+    "endMs": 21100,
+    "timestampMs": 20995,
+    "confidence": 0.99
+  },
+  {
+    "text": " sebenarnya",
+    "startMs": 21100,
+    "endMs": 21760,
+    "timestampMs": 21430,
+    "confidence": 0.99
+  },
+  {
+    "text": " dirancang",
+    "startMs": 21760,
+    "endMs": 22240,
+    "timestampMs": 22000,
+    "confidence": 0.99
+  },
+  {
+    "text": " untuk",
+    "startMs": 22240,
+    "endMs": 22450,
+    "timestampMs": 22345,
+    "confidence": 0.99
+  },
+  {
+    "text": " bertahan",
+    "startMs": 22450,
+    "endMs": 22800,
+    "timestampMs": 22625,
+    "confidence": 0.99
+  },
+  {
+    "text": " hidup",
+    "startMs": 22800,
+    "endMs": 23170,
+    "timestampMs": 22985,
+    "confidence": 0.99
+  },
+  {
+    "text": " dengan",
+    "startMs": 23170,
+    "endMs": 23550,
+    "timestampMs": 23360,
+    "confidence": 0.99
+  },
+  {
+    "text": " cepat,",
+    "startMs": 23550,
+    "endMs": 23920,
+    "timestampMs": 23735,
+    "confidence": 0.99
+  },
+  {
+    "text": " bukan",
+    "startMs": 23920,
+    "endMs": 24320,
+    "timestampMs": 24120,
+    "confidence": 0.99
+  },
+  {
+    "text": " mencari",
+    "startMs": 24320,
+    "endMs": 24860,
+    "timestampMs": 24590,
+    "confidence": 0.99
+  },
+  {
+    "text": " kebenaran",
+    "startMs": 24860,
+    "endMs": 25550,
+    "timestampMs": 25205,
+    "confidence": 0.99
+  },
+  {
+    "text": " mutlak.",
+    "startMs": 25550,
+    "endMs": 26320,
+    "timestampMs": 25935,
+    "confidence": 0.99
+  },
+  {
+    "text": " Psikolog",
+    "startMs": 26480,
+    "endMs": 27000,
+    "timestampMs": 26740,
+    "confidence": 0.99
+  },
+  {
+    "text": " peraih",
+    "startMs": 27000,
+    "endMs": 27440,
+    "timestampMs": 27220,
+    "confidence": 0.99
+  },
+  {
+    "text": " Nobel,",
+    "startMs": 27440,
+    "endMs": 28020,
+    "timestampMs": 27730,
+    "confidence": 0.99
+  },
+  {
+    "text": " Daniel",
+    "startMs": 28020,
+    "endMs": 28320,
+    "timestampMs": 28170,
+    "confidence": 0.99
+  },
+  {
+    "text": " Kahneman,",
+    "startMs": 28320,
+    "endMs": 29200,
+    "timestampMs": 28760,
+    "confidence": 0.99
+  },
+  {
+    "text": " membagi",
+    "startMs": 29200,
+    "endMs": 29520,
+    "timestampMs": 29360,
+    "confidence": 0.99
+  },
+  {
+    "text": " cara",
+    "startMs": 29520,
+    "endMs": 29840,
+    "timestampMs": 29680,
+    "confidence": 0.99
+  },
+  {
+    "text": " kerja",
+    "startMs": 29840,
+    "endMs": 30250,
+    "timestampMs": 30045,
+    "confidence": 0.99
+  },
+  {
+    "text": " pikiran",
+    "startMs": 30250,
+    "endMs": 30810,
+    "timestampMs": 30530,
+    "confidence": 0.99
+  },
+  {
+    "text": " manusia",
+    "startMs": 30810,
+    "endMs": 31360,
+    "timestampMs": 31085,
+    "confidence": 0.99
+  },
+  {
+    "text": " menjadi",
+    "startMs": 31360,
+    "endMs": 31920,
+    "timestampMs": 31640,
+    "confidence": 0.99
+  },
+  {
+    "text": " dua",
+    "startMs": 31920,
+    "endMs": 32720,
+    "timestampMs": 32320,
+    "confidence": 0.99
+  },
+  {
+    "text": " sistem.",
+    "startMs": 32720,
+    "endMs": 32800,
+    "timestampMs": 32760,
+    "confidence": 0.99
+  },
+  {
+    "text": " Sistem",
+    "startMs": 32800,
+    "endMs": 33310,
+    "timestampMs": 33055,
+    "confidence": 0.99
+  },
+  {
+    "text": " pertama",
+    "startMs": 33310,
+    "endMs": 33920,
+    "timestampMs": 33615,
+    "confidence": 0.99
+  },
+  {
+    "text": " bekerja",
+    "startMs": 33920,
+    "endMs": 34520,
+    "timestampMs": 34220,
+    "confidence": 0.99
+  },
+  {
+    "text": " otomatis,",
+    "startMs": 34520,
+    "endMs": 35270,
+    "timestampMs": 34895,
+    "confidence": 0.99
+  },
+  {
+    "text": " cepat,",
+    "startMs": 35380,
+    "endMs": 35880,
+    "timestampMs": 35630,
+    "confidence": 0.99
+  },
+  {
+    "text": " emosional,",
+    "startMs": 35980,
+    "endMs": 36910,
+    "timestampMs": 36445,
+    "confidence": 0.99
+  },
+  {
+    "text": " dan",
+    "startMs": 36920,
+    "endMs": 37180,
+    "timestampMs": 37050,
+    "confidence": 0.99
+  },
+  {
+    "text": " mengandalkan",
+    "startMs": 37180,
+    "endMs": 38220,
+    "timestampMs": 37700,
+    "confidence": 0.99
+  },
+  {
+    "text": " insting.",
+    "startMs": 38220,
+    "endMs": 38960,
+    "timestampMs": 38590,
+    "confidence": 0.99
+  },
+  {
+    "text": " Sementara",
+    "startMs": 38960,
+    "endMs": 39650,
+    "timestampMs": 39305,
+    "confidence": 0.99
+  },
+  {
+    "text": " sistem",
+    "startMs": 39650,
+    "endMs": 40120,
+    "timestampMs": 39885,
+    "confidence": 0.99
+  },
+  {
+    "text": " kedua",
+    "startMs": 40120,
+    "endMs": 40520,
+    "timestampMs": 40320,
+    "confidence": 0.99
+  },
+  {
+    "text": " bekerja",
+    "startMs": 40520,
+    "endMs": 41340,
+    "timestampMs": 40930,
+    "confidence": 0.99
+  },
+  {
+    "text": " lambat,",
+    "startMs": 41340,
+    "endMs": 41490,
+    "timestampMs": 41415,
+    "confidence": 0.99
+  },
+  {
+    "text": " analitis,",
+    "startMs": 41640,
+    "endMs": 42390,
+    "timestampMs": 42015,
+    "confidence": 0.99
+  },
+  {
+    "text": " dan",
+    "startMs": 42410,
+    "endMs": 42640,
+    "timestampMs": 42525,
+    "confidence": 0.99
+  },
+  {
+    "text": " logis,",
+    "startMs": 42640,
+    "endMs": 43020,
+    "timestampMs": 42830,
+    "confidence": 0.99
+  },
+  {
+    "text": " namun",
+    "startMs": 43480,
+    "endMs": 43650,
+    "timestampMs": 43565,
+    "confidence": 0.99
+  },
+  {
+    "text": " menguras",
+    "startMs": 43650,
+    "endMs": 44250,
+    "timestampMs": 43950,
+    "confidence": 0.99
+  },
+  {
+    "text": " energi",
+    "startMs": 44250,
+    "endMs": 44700,
+    "timestampMs": 44475,
+    "confidence": 0.99
+  },
+  {
+    "text": " mental",
+    "startMs": 44700,
+    "endMs": 45150,
+    "timestampMs": 44925,
+    "confidence": 0.99
+  },
+  {
+    "text": " yang",
+    "startMs": 45150,
+    "endMs": 45820,
+    "timestampMs": 45485,
+    "confidence": 0.99
+  },
+  {
+    "text": " besar.",
+    "startMs": 45820,
+    "endMs": 45900,
+    "timestampMs": 45860,
+    "confidence": 0.99
+  },
+  {
+    "text": " Dalam",
+    "startMs": 46080,
+    "endMs": 46450,
+    "timestampMs": 46265,
+    "confidence": 0.99
+  },
+  {
+    "text": " psikologi",
+    "startMs": 46450,
+    "endMs": 47120,
+    "timestampMs": 46785,
+    "confidence": 0.99
+  },
+  {
+    "text": " kognitif,",
+    "startMs": 47120,
+    "endMs": 47860,
+    "timestampMs": 47490,
+    "confidence": 0.99
+  },
+  {
+    "text": " otak",
+    "startMs": 48010,
+    "endMs": 48160,
+    "timestampMs": 48085,
+    "confidence": 0.99
+  },
+  {
+    "text": " kita",
+    "startMs": 48160,
+    "endMs": 48490,
+    "timestampMs": 48325,
+    "confidence": 0.99
+  },
+  {
+    "text": " adalah",
+    "startMs": 48490,
+    "endMs": 48910,
+    "timestampMs": 48700,
+    "confidence": 0.99
+  },
+  {
+    "text": " pemikir",
+    "startMs": 48910,
+    "endMs": 49430,
+    "timestampMs": 49170,
+    "confidence": 0.99
+  },
+  {
+    "text": " yang",
+    "startMs": 49430,
+    "endMs": 49730,
+    "timestampMs": 49580,
+    "confidence": 0.99
+  },
+  {
+    "text": " hemat",
+    "startMs": 49730,
+    "endMs": 50090,
+    "timestampMs": 49910,
+    "confidence": 0.99
+  },
+  {
+    "text": " energi.",
+    "startMs": 50090,
+    "endMs": 50550,
+    "timestampMs": 50320,
+    "confidence": 0.99
+  },
+  {
+    "text": " Karena",
+    "startMs": 51220,
+    "endMs": 51330,
+    "timestampMs": 51275,
+    "confidence": 0.99
+  },
+  {
+    "text": " berpikir",
+    "startMs": 51330,
+    "endMs": 51920,
+    "timestampMs": 51625,
+    "confidence": 0.99
+  },
+  {
+    "text": " kritis",
+    "startMs": 51920,
+    "endMs": 52370,
+    "timestampMs": 52145,
+    "confidence": 0.99
+  },
+  {
+    "text": " butuh",
+    "startMs": 52370,
+    "endMs": 52780,
+    "timestampMs": 52575,
+    "confidence": 0.99
+  },
+  {
+    "text": " fokus",
+    "startMs": 52780,
+    "endMs": 53110,
+    "timestampMs": 52945,
+    "confidence": 0.99
+  },
+  {
+    "text": " tinggi,",
+    "startMs": 53110,
+    "endMs": 53600,
+    "timestampMs": 53355,
+    "confidence": 0.99
+  },
+  {
+    "text": " otak",
+    "startMs": 53730,
+    "endMs": 54010,
+    "timestampMs": 53870,
+    "confidence": 0.99
+  },
+  {
+    "text": " menyerahkan",
+    "startMs": 54010,
+    "endMs": 54820,
+    "timestampMs": 54415,
+    "confidence": 0.99
+  },
+  {
+    "text": " sembilan",
+    "startMs": 54820,
+    "endMs": 54900,
+    "timestampMs": 54860,
+    "confidence": 0.99
+  },
+  {
+    "text": " puluh",
+    "startMs": 54900,
+    "endMs": 54980,
+    "timestampMs": 54940,
+    "confidence": 0.99
+  },
+  {
+    "text": " lima",
+    "startMs": 54980,
+    "endMs": 55060,
+    "timestampMs": 55020,
+    "confidence": 0.99
+  },
+  {
+    "text": " persen",
+    "startMs": 54820,
+    "endMs": 55270,
+    "timestampMs": 55045,
+    "confidence": 0.99
+  },
+  {
+    "text": " keputusan",
+    "startMs": 55340,
+    "endMs": 56010,
+    "timestampMs": 55675,
+    "confidence": 0.99
+  },
+  {
+    "text": " harian",
+    "startMs": 56010,
+    "endMs": 56450,
+    "timestampMs": 56230,
+    "confidence": 0.99
+  },
+  {
+    "text": " kepada",
+    "startMs": 56450,
+    "endMs": 56900,
+    "timestampMs": 56675,
+    "confidence": 0.99
+  },
+  {
+    "text": " jalan",
+    "startMs": 56900,
+    "endMs": 57270,
+    "timestampMs": 57085,
+    "confidence": 0.99
+  },
+  {
+    "text": " pintas",
+    "startMs": 57270,
+    "endMs": 57720,
+    "timestampMs": 57495,
+    "confidence": 0.99
+  },
+  {
+    "text": " emosional.",
+    "startMs": 57720,
+    "endMs": 58480,
+    "timestampMs": 58100,
+    "confidence": 0.99
+  },
+  {
+    "text": " Celah",
+    "startMs": 58480,
+    "endMs": 58830,
+    "timestampMs": 58655,
+    "confidence": 0.99
+  },
+  {
+    "text": " biologis",
+    "startMs": 58830,
+    "endMs": 59340,
+    "timestampMs": 59085,
+    "confidence": 0.99
+  },
+  {
+    "text": " inilah",
+    "startMs": 59340,
+    "endMs": 59740,
+    "timestampMs": 59540,
+    "confidence": 0.99
+  },
+  {
+    "text": " yang",
+    "startMs": 59740,
+    "endMs": 60000,
+    "timestampMs": 59870,
+    "confidence": 0.99
+  },
+  {
+    "text": " dieksploitasi",
+    "startMs": 60000,
+    "endMs": 60870,
+    "timestampMs": 60435,
+    "confidence": 0.99
+  },
+  {
+    "text": " melalui",
+    "startMs": 60870,
+    "endMs": 61330,
+    "timestampMs": 61100,
+    "confidence": 0.99
+  },
+  {
+    "text": " senjata",
+    "startMs": 61330,
+    "endMs": 61790,
+    "timestampMs": 61560,
+    "confidence": 0.99
+  },
+  {
+    "text": " bernama",
+    "startMs": 61790,
+    "endMs": 62250,
+    "timestampMs": 62020,
+    "confidence": 0.99
+  },
+  {
+    "text": " sesat",
+    "startMs": 62250,
+    "endMs": 62610,
+    "timestampMs": 62430,
+    "confidence": 0.99
+  },
+  {
+    "text": " pikir",
+    "startMs": 62610,
+    "endMs": 62910,
+    "timestampMs": 62760,
+    "confidence": 0.99
+  },
+  {
+    "text": " atau",
+    "startMs": 62910,
+    "endMs": 63210,
+    "timestampMs": 63060,
+    "confidence": 0.99
+  },
+  {
+    "text": " logical",
+    "startMs": 63210,
+    "endMs": 63440,
+    "timestampMs": 63325,
+    "confidence": 0.99
+  },
+  {
+    "text": " fallacy.",
+    "startMs": 63440,
+    "endMs": 64040,
+    "timestampMs": 63740,
+    "confidence": 0.99
+  },
+  {
+    "text": " Untuk",
+    "startMs": 64480,
+    "endMs": 64860,
+    "timestampMs": 64670,
+    "confidence": 0.99
+  },
+  {
+    "text": " memahami",
+    "startMs": 64860,
+    "endMs": 65420,
+    "timestampMs": 65140,
+    "confidence": 0.99
+  },
+  {
+    "text": " sejarahnya,",
+    "startMs": 65420,
+    "endMs": 66280,
+    "timestampMs": 65850,
+    "confidence": 0.99
+  },
+  {
+    "text": " mari",
+    "startMs": 66490,
+    "endMs": 66570,
+    "timestampMs": 66530,
+    "confidence": 0.99
+  },
+  {
+    "text": " kembali",
+    "startMs": 66570,
+    "endMs": 67100,
+    "timestampMs": 66835,
+    "confidence": 0.99
+  },
+  {
+    "text": " ke",
+    "startMs": 67100,
+    "endMs": 67210,
+    "timestampMs": 67155,
+    "confidence": 0.99
+  },
+  {
+    "text": " dua",
+    "startMs": 67210,
+    "endMs": 67290,
+    "timestampMs": 67250,
+    "confidence": 0.99
+  },
+  {
+    "text": " ribu",
+    "startMs": 67210,
+    "endMs": 68090,
+    "timestampMs": 67650,
+    "confidence": 0.99
+  },
+  {
+    "text": " empat",
+    "startMs": 68090,
+    "endMs": 68170,
+    "timestampMs": 68130,
+    "confidence": 0.99
+  },
+  {
+    "text": " ratus",
+    "startMs": 68170,
+    "endMs": 68250,
+    "timestampMs": 68210,
+    "confidence": 0.99
+  },
+  {
+    "text": " tahun",
+    "startMs": 68090,
+    "endMs": 68450,
+    "timestampMs": 68270,
+    "confidence": 0.99
+  },
+  {
+    "text": " silam",
+    "startMs": 68450,
+    "endMs": 68830,
+    "timestampMs": 68640,
+    "confidence": 0.99
+  },
+  {
+    "text": " di",
+    "startMs": 68830,
+    "endMs": 68950,
+    "timestampMs": 68890,
+    "confidence": 0.99
+  },
+  {
+    "text": " kota",
+    "startMs": 68950,
+    "endMs": 69270,
+    "timestampMs": 69110,
+    "confidence": 0.99
+  },
+  {
+    "text": " Athena",
+    "startMs": 69270,
+    "endMs": 69670,
+    "timestampMs": 69470,
+    "confidence": 0.99
+  },
+  {
+    "text": " kuno.",
+    "startMs": 69670,
+    "endMs": 69890,
+    "timestampMs": 69780,
+    "confidence": 0.99
+  },
+  {
+    "text": " Pada",
+    "startMs": 70240,
+    "endMs": 70570,
+    "timestampMs": 70405,
+    "confidence": 0.99
+  },
+  {
+    "text": " abad",
+    "startMs": 70570,
+    "endMs": 70810,
+    "timestampMs": 70690,
+    "confidence": 0.99
+  },
+  {
+    "text": " kelima",
+    "startMs": 70810,
+    "endMs": 71250,
+    "timestampMs": 71030,
+    "confidence": 0.99
+  },
+  {
+    "text": " sebelum",
+    "startMs": 71250,
+    "endMs": 71750,
+    "timestampMs": 71500,
+    "confidence": 0.99
+  },
+  {
+    "text": " Masehi,",
+    "startMs": 71750,
+    "endMs": 72320,
+    "timestampMs": 72035,
+    "confidence": 0.99
+  },
+  {
+    "text": " demokrasi",
+    "startMs": 72490,
+    "endMs": 72970,
+    "timestampMs": 72730,
+    "confidence": 0.99
+  },
+  {
+    "text": " Athena",
+    "startMs": 72970,
+    "endMs": 73330,
+    "timestampMs": 73150,
+    "confidence": 0.99
+  },
+  {
+    "text": " melahirkan",
+    "startMs": 73330,
+    "endMs": 74050,
+    "timestampMs": 73690,
+    "confidence": 0.99
+  },
+  {
+    "text": " ruang",
+    "startMs": 74050,
+    "endMs": 74470,
+    "timestampMs": 74260,
+    "confidence": 0.99
+  },
+  {
+    "text": " publik",
+    "startMs": 74470,
+    "endMs": 74840,
+    "timestampMs": 74655,
+    "confidence": 0.99
+  },
+  {
+    "text": " bernama",
+    "startMs": 74840,
+    "endMs": 75330,
+    "timestampMs": 75085,
+    "confidence": 0.99
+  },
+  {
+    "text": " Agora.",
+    "startMs": 75330,
+    "endMs": 75710,
+    "timestampMs": 75520,
+    "confidence": 0.99
+  },
+  {
+    "text": " Di",
+    "startMs": 75710,
+    "endMs": 75930,
+    "timestampMs": 75820,
+    "confidence": 0.99
+  },
+  {
+    "text": " sana",
+    "startMs": 76080,
+    "endMs": 76500,
+    "timestampMs": 76290,
+    "confidence": 0.99
+  },
+  {
+    "text": " muncul",
+    "startMs": 76500,
+    "endMs": 76920,
+    "timestampMs": 76710,
+    "confidence": 0.99
+  },
+  {
+    "text": " kelompok",
+    "startMs": 76920,
+    "endMs": 77490,
+    "timestampMs": 77205,
+    "confidence": 0.99
+  },
+  {
+    "text": " pengajar",
+    "startMs": 77490,
+    "endMs": 78040,
+    "timestampMs": 77765,
+    "confidence": 0.99
+  },
+  {
+    "text": " keliling",
+    "startMs": 78040,
+    "endMs": 78590,
+    "timestampMs": 78315,
+    "confidence": 0.99
+  },
+  {
+    "text": " yang",
+    "startMs": 78590,
+    "endMs": 78880,
+    "timestampMs": 78735,
+    "confidence": 0.99
+  },
+  {
+    "text": " disebut",
+    "startMs": 78880,
+    "endMs": 79370,
+    "timestampMs": 79125,
+    "confidence": 0.99
+  },
+  {
+    "text": " kaum",
+    "startMs": 79370,
+    "endMs": 79860,
+    "timestampMs": 79615,
+    "confidence": 0.99
+  },
+  {
+    "text": " Sofis.",
+    "startMs": 79860,
+    "endMs": 80000,
+    "timestampMs": 79930,
+    "confidence": 0.99
+  },
+  {
+    "text": " Mereka",
+    "startMs": 80240,
+    "endMs": 80600,
+    "timestampMs": 80420,
+    "confidence": 0.99
+  },
+  {
+    "text": " menjual",
+    "startMs": 80600,
+    "endMs": 80930,
+    "timestampMs": 80765,
+    "confidence": 0.99
+  },
+  {
+    "text": " keahlian",
+    "startMs": 80930,
+    "endMs": 81420,
+    "timestampMs": 81175,
+    "confidence": 0.99
+  },
+  {
+    "text": " retorika",
+    "startMs": 81420,
+    "endMs": 81850,
+    "timestampMs": 81635,
+    "confidence": 0.99
+  },
+  {
+    "text": " untuk",
+    "startMs": 81850,
+    "endMs": 82120,
+    "timestampMs": 81985,
+    "confidence": 0.99
+  },
+  {
+    "text": " membujuk",
+    "startMs": 82120,
+    "endMs": 82620,
+    "timestampMs": 82370,
+    "confidence": 0.99
+  },
+  {
+    "text": " kerumunan",
+    "startMs": 82620,
+    "endMs": 82990,
+    "timestampMs": 82805,
+    "confidence": 0.99
+  },
+  {
+    "text": " dan",
+    "startMs": 82990,
+    "endMs": 83150,
+    "timestampMs": 83070,
+    "confidence": 0.99
+  },
+  {
+    "text": " memenangkan",
+    "startMs": 83150,
+    "endMs": 83740,
+    "timestampMs": 83445,
+    "confidence": 0.99
+  },
+  {
+    "text": " perkara",
+    "startMs": 83740,
+    "endMs": 84120,
+    "timestampMs": 83930,
+    "confidence": 0.99
+  },
+  {
+    "text": " di",
+    "startMs": 84120,
+    "endMs": 84230,
+    "timestampMs": 84175,
+    "confidence": 0.99
+  },
+  {
+    "text": " pengadilan,",
+    "startMs": 84230,
+    "endMs": 85010,
+    "timestampMs": 84620,
+    "confidence": 0.99
+  },
+  {
+    "text": " tanpa",
+    "startMs": 85110,
+    "endMs": 85340,
+    "timestampMs": 85225,
+    "confidence": 0.99
+  },
+  {
+    "text": " peduli",
+    "startMs": 85340,
+    "endMs": 85740,
+    "timestampMs": 85540,
+    "confidence": 0.99
+  },
+  {
+    "text": " apakah",
+    "startMs": 85740,
+    "endMs": 86150,
+    "timestampMs": 85945,
+    "confidence": 0.99
+  },
+  {
+    "text": " argumennya",
+    "startMs": 86150,
+    "endMs": 86880,
+    "timestampMs": 86515,
+    "confidence": 0.99
+  },
+  {
+    "text": " benar",
+    "startMs": 86880,
+    "endMs": 87210,
+    "timestampMs": 87045,
+    "confidence": 0.99
+  },
+  {
+    "text": " atau",
+    "startMs": 87210,
+    "endMs": 87430,
+    "timestampMs": 87320,
+    "confidence": 0.99
+  },
+  {
+    "text": " salah.",
+    "startMs": 87430,
+    "endMs": 87820,
+    "timestampMs": 87625,
+    "confidence": 0.99
+  },
+  {
+    "text": " Puncak",
+    "startMs": 88160,
+    "endMs": 88600,
+    "timestampMs": 88380,
+    "confidence": 0.99
+  },
+  {
+    "text": " tragedi",
+    "startMs": 88600,
+    "endMs": 89120,
+    "timestampMs": 88860,
+    "confidence": 0.99
+  },
+  {
+    "text": " manipulasi",
+    "startMs": 89120,
+    "endMs": 89870,
+    "timestampMs": 89495,
+    "confidence": 0.99
+  },
+  {
+    "text": " ini",
+    "startMs": 89870,
+    "endMs": 90090,
+    "timestampMs": 89980,
+    "confidence": 0.99
+  },
+  {
+    "text": " terjadi",
+    "startMs": 90090,
+    "endMs": 90610,
+    "timestampMs": 90350,
+    "confidence": 0.99
+  },
+  {
+    "text": " pada",
+    "startMs": 90610,
+    "endMs": 90910,
+    "timestampMs": 90760,
+    "confidence": 0.99
+  },
+  {
+    "text": " tahun",
+    "startMs": 90910,
+    "endMs": 91290,
+    "timestampMs": 91100,
+    "confidence": 0.99
+  },
+  {
+    "text": " tiga",
+    "startMs": 91290,
+    "endMs": 91960,
+    "timestampMs": 91625,
+    "confidence": 0.99
+  },
+  {
+    "text": " ratus",
+    "startMs": 91960,
+    "endMs": 92040,
+    "timestampMs": 92000,
+    "confidence": 0.99
+  },
+  {
+    "text": " sembilan",
+    "startMs": 92040,
+    "endMs": 92120,
+    "timestampMs": 92080,
+    "confidence": 0.99
+  },
+  {
+    "text": " puluh",
+    "startMs": 92120,
+    "endMs": 92200,
+    "timestampMs": 92160,
+    "confidence": 0.99
+  },
+  {
+    "text": " sembilan",
+    "startMs": 92200,
+    "endMs": 92280,
+    "timestampMs": 92240,
+    "confidence": 0.99
+  },
+  {
+    "text": " sebelum",
+    "startMs": 91960,
+    "endMs": 92490,
+    "timestampMs": 92225,
+    "confidence": 0.99
+  },
+  {
+    "text": " Masehi,",
+    "startMs": 92490,
+    "endMs": 93240,
+    "timestampMs": 92865,
+    "confidence": 0.99
+  },
+  {
+    "text": " ketika",
+    "startMs": 93240,
+    "endMs": 93460,
+    "timestampMs": 93350,
+    "confidence": 0.99
+  },
+  {
+    "text": " filsuf",
+    "startMs": 93460,
+    "endMs": 93890,
+    "timestampMs": 93675,
+    "confidence": 0.99
+  },
+  {
+    "text": " besar",
+    "startMs": 93890,
+    "endMs": 94250,
+    "timestampMs": 94070,
+    "confidence": 0.99
+  },
+  {
+    "text": " Socrates",
+    "startMs": 94250,
+    "endMs": 94810,
+    "timestampMs": 94530,
+    "confidence": 0.99
+  },
+  {
+    "text": " diadili",
+    "startMs": 94810,
+    "endMs": 95300,
+    "timestampMs": 95055,
+    "confidence": 0.99
+  },
+  {
+    "text": " oleh",
+    "startMs": 95300,
+    "endMs": 95590,
+    "timestampMs": 95445,
+    "confidence": 0.99
+  },
+  {
+    "text": " lima",
+    "startMs": 95590,
+    "endMs": 96260,
+    "timestampMs": 95925,
+    "confidence": 0.99
+  },
+  {
+    "text": " ratus",
+    "startMs": 96260,
+    "endMs": 96340,
+    "timestampMs": 96300,
+    "confidence": 0.99
+  },
+  {
+    "text": " juri",
+    "startMs": 96260,
+    "endMs": 96510,
+    "timestampMs": 96385,
+    "confidence": 0.99
+  },
+  {
+    "text": " Athena.",
+    "startMs": 96510,
+    "endMs": 97200,
+    "timestampMs": 96855,
+    "confidence": 0.99
+  },
+  {
+    "text": " Alih-alih",
+    "startMs": 97200,
+    "endMs": 97800,
+    "timestampMs": 97500,
+    "confidence": 0.99
+  },
+  {
+    "text": " membantah",
+    "startMs": 97800,
+    "endMs": 98280,
+    "timestampMs": 98040,
+    "confidence": 0.99
+  },
+  {
+    "text": " pemikirannya",
+    "startMs": 98280,
+    "endMs": 99000,
+    "timestampMs": 98640,
+    "confidence": 0.99
+  },
+  {
+    "text": " secara",
+    "startMs": 99000,
+    "endMs": 99360,
+    "timestampMs": 99180,
+    "confidence": 0.99
+  },
+  {
+    "text": " jujur,",
+    "startMs": 99360,
+    "endMs": 99660,
+    "timestampMs": 99510,
+    "confidence": 0.99
+  },
+  {
+    "text": " para",
+    "startMs": 100090,
+    "endMs": 100170,
+    "timestampMs": 100130,
+    "confidence": 0.99
+  },
+  {
+    "text": " penuduh",
+    "startMs": 100170,
+    "endMs": 100520,
+    "timestampMs": 100345,
+    "confidence": 0.99
+  },
+  {
+    "text": " memainkan",
+    "startMs": 100520,
+    "endMs": 101080,
+    "timestampMs": 100800,
+    "confidence": 0.99
+  },
+  {
+    "text": " ketakutan",
+    "startMs": 101080,
+    "endMs": 101640,
+    "timestampMs": 101360,
+    "confidence": 0.99
+  },
+  {
+    "text": " warga",
+    "startMs": 101640,
+    "endMs": 102000,
+    "timestampMs": 101820,
+    "confidence": 0.99
+  },
+  {
+    "text": " dan",
+    "startMs": 102000,
+    "endMs": 102120,
+    "timestampMs": 102060,
+    "confidence": 0.99
+  },
+  {
+    "text": " menyerang",
+    "startMs": 102120,
+    "endMs": 102480,
+    "timestampMs": 102300,
+    "confidence": 0.99
+  },
+  {
+    "text": " karakter",
+    "startMs": 102480,
+    "endMs": 102810,
+    "timestampMs": 102645,
+    "confidence": 0.99
+  },
+  {
+    "text": " pribadinya",
+    "startMs": 102810,
+    "endMs": 103280,
+    "timestampMs": 103045,
+    "confidence": 0.99
+  },
+  {
+    "text": " hingga",
+    "startMs": 103280,
+    "endMs": 103680,
+    "timestampMs": 103480,
+    "confidence": 0.99
+  },
+  {
+    "text": " Socrates",
+    "startMs": 103680,
+    "endMs": 104210,
+    "timestampMs": 103945,
+    "confidence": 0.99
+  },
+  {
+    "text": " dihukum",
+    "startMs": 104210,
+    "endMs": 104860,
+    "timestampMs": 104535,
+    "confidence": 0.99
+  },
+  {
+    "text": " mati",
+    "startMs": 104860,
+    "endMs": 104940,
+    "timestampMs": 104900,
+    "confidence": 0.99
+  },
+  {
+    "text": " dengan",
+    "startMs": 104860,
+    "endMs": 105270,
+    "timestampMs": 105065,
+    "confidence": 0.99
+  },
+  {
+    "text": " meminum",
+    "startMs": 105270,
+    "endMs": 105730,
+    "timestampMs": 105500,
+    "confidence": 0.99
+  },
+  {
+    "text": " racun.",
+    "startMs": 105730,
+    "endMs": 106400,
+    "timestampMs": 106065,
+    "confidence": 0.99
+  },
+  {
+    "text": " Dua",
+    "startMs": 106400,
+    "endMs": 106820,
+    "timestampMs": 106610,
+    "confidence": 0.99
+  },
+  {
+    "text": " generasi",
+    "startMs": 106820,
+    "endMs": 107120,
+    "timestampMs": 106970,
+    "confidence": 0.99
+  },
+  {
+    "text": " kemudian,",
+    "startMs": 107120,
+    "endMs": 107650,
+    "timestampMs": 107385,
+    "confidence": 0.99
+  },
+  {
+    "text": " Aristoteles",
+    "startMs": 107780,
+    "endMs": 108500,
+    "timestampMs": 108140,
+    "confidence": 0.99
+  },
+  {
+    "text": " memutuskan",
+    "startMs": 108500,
+    "endMs": 109160,
+    "timestampMs": 108830,
+    "confidence": 0.99
+  },
+  {
+    "text": " bahwa",
+    "startMs": 109160,
+    "endMs": 109490,
+    "timestampMs": 109325,
+    "confidence": 0.99
+  },
+  {
+    "text": " manusia",
+    "startMs": 109490,
+    "endMs": 109950,
+    "timestampMs": 109720,
+    "confidence": 0.99
+  },
+  {
+    "text": " membutuhkan",
+    "startMs": 109950,
+    "endMs": 110690,
+    "timestampMs": 110320,
+    "confidence": 0.99
+  },
+  {
+    "text": " tameng",
+    "startMs": 110690,
+    "endMs": 111070,
+    "timestampMs": 110880,
+    "confidence": 0.99
+  },
+  {
+    "text": " intelektual",
+    "startMs": 111070,
+    "endMs": 111840,
+    "timestampMs": 111455,
+    "confidence": 0.99
+  },
+  {
+    "text": " agar",
+    "startMs": 111840,
+    "endMs": 112050,
+    "timestampMs": 111945,
+    "confidence": 0.99
+  },
+  {
+    "text": " tidak",
+    "startMs": 112050,
+    "endMs": 112380,
+    "timestampMs": 112215,
+    "confidence": 0.99
+  },
+  {
+    "text": " dipermainkan",
+    "startMs": 112380,
+    "endMs": 113170,
+    "timestampMs": 112775,
+    "confidence": 0.99
+  },
+  {
+    "text": " oleh",
+    "startMs": 113170,
+    "endMs": 113430,
+    "timestampMs": 113300,
+    "confidence": 0.99
+  },
+  {
+    "text": " retorika",
+    "startMs": 113430,
+    "endMs": 113940,
+    "timestampMs": 113685,
+    "confidence": 0.99
+  },
+  {
+    "text": " palsu.",
+    "startMs": 113940,
+    "endMs": 114640,
+    "timestampMs": 114290,
+    "confidence": 0.99
+  },
+  {
+    "text": " Sekitar",
+    "startMs": 114640,
+    "endMs": 115220,
+    "timestampMs": 114930,
+    "confidence": 0.99
+  },
+  {
+    "text": " tahun",
+    "startMs": 115220,
+    "endMs": 115560,
+    "timestampMs": 115390,
+    "confidence": 0.99
+  },
+  {
+    "text": " tiga",
+    "startMs": 115560,
+    "endMs": 116250,
+    "timestampMs": 115905,
+    "confidence": 0.99
+  },
+  {
+    "text": " ratus",
+    "startMs": 116250,
+    "endMs": 116330,
+    "timestampMs": 116290,
+    "confidence": 0.99
+  },
+  {
+    "text": " lima",
+    "startMs": 116330,
+    "endMs": 116410,
+    "timestampMs": 116370,
+    "confidence": 0.99
+  },
+  {
+    "text": " puluh",
+    "startMs": 116410,
+    "endMs": 116490,
+    "timestampMs": 116450,
+    "confidence": 0.99
+  },
+  {
+    "text": " sebelum",
+    "startMs": 116250,
+    "endMs": 116780,
+    "timestampMs": 116515,
+    "confidence": 0.99
+  },
+  {
+    "text": " Masehi,",
+    "startMs": 116780,
+    "endMs": 117440,
+    "timestampMs": 117110,
+    "confidence": 0.99
+  },
+  {
+    "text": " ia",
+    "startMs": 117560,
+    "endMs": 117640,
+    "timestampMs": 117600,
+    "confidence": 0.99
+  },
+  {
+    "text": " menulis",
+    "startMs": 117630,
+    "endMs": 117980,
+    "timestampMs": 117805,
+    "confidence": 0.99
+  },
+  {
+    "text": " risalah",
+    "startMs": 117980,
+    "endMs": 118340,
+    "timestampMs": 118160,
+    "confidence": 0.99
+  },
+  {
+    "text": " legendaris",
+    "startMs": 118340,
+    "endMs": 118880,
+    "timestampMs": 118610,
+    "confidence": 0.99
+  },
+  {
+    "text": " Sophistical",
+    "startMs": 118880,
+    "endMs": 119480,
+    "timestampMs": 119180,
+    "confidence": 0.99
+  },
+  {
+    "text": " Refutations",
+    "startMs": 119480,
+    "endMs": 120160,
+    "timestampMs": 119820,
+    "confidence": 0.99
+  },
+  {
+    "text": " yang",
+    "startMs": 120160,
+    "endMs": 120410,
+    "timestampMs": 120285,
+    "confidence": 0.99
+  },
+  {
+    "text": " memetakan",
+    "startMs": 120410,
+    "endMs": 120970,
+    "timestampMs": 120690,
+    "confidence": 0.99
+  },
+  {
+    "text": " tiga",
+    "startMs": 120970,
+    "endMs": 121350,
+    "timestampMs": 121160,
+    "confidence": 0.99
+  },
+  {
+    "text": " belas",
+    "startMs": 121350,
+    "endMs": 121430,
+    "timestampMs": 121390,
+    "confidence": 0.99
+  },
+  {
+    "text": " jenis",
+    "startMs": 121350,
+    "endMs": 121650,
+    "timestampMs": 121500,
+    "confidence": 0.99
+  },
+  {
+    "text": " sesat",
+    "startMs": 121650,
+    "endMs": 122010,
+    "timestampMs": 121830,
+    "confidence": 0.99
+  },
+  {
+    "text": " pikir",
+    "startMs": 122010,
+    "endMs": 122260,
+    "timestampMs": 122135,
+    "confidence": 0.99
+  },
+  {
+    "text": " untuk",
+    "startMs": 122260,
+    "endMs": 122580,
+    "timestampMs": 122420,
+    "confidence": 0.99
+  },
+  {
+    "text": " pertama",
+    "startMs": 122580,
+    "endMs": 123030,
+    "timestampMs": 122805,
+    "confidence": 0.99
+  },
+  {
+    "text": " kalinya",
+    "startMs": 123030,
+    "endMs": 123470,
+    "timestampMs": 123250,
+    "confidence": 0.99
+  },
+  {
+    "text": " dalam",
+    "startMs": 123470,
+    "endMs": 123780,
+    "timestampMs": 123625,
+    "confidence": 0.99
+  },
+  {
+    "text": " sejarah.",
+    "startMs": 123780,
+    "endMs": 124220,
+    "timestampMs": 124000,
+    "confidence": 0.99
+  },
+  {
+    "text": " Aristoteles",
+    "startMs": 124560,
+    "endMs": 125280,
+    "timestampMs": 124920,
+    "confidence": 0.99
+  },
+  {
+    "text": " mengibaratkan",
+    "startMs": 125280,
+    "endMs": 126050,
+    "timestampMs": 125665,
+    "confidence": 0.99
+  },
+  {
+    "text": " sesat",
+    "startMs": 126050,
+    "endMs": 126350,
+    "timestampMs": 126200,
+    "confidence": 0.99
+  },
+  {
+    "text": " pikir",
+    "startMs": 126350,
+    "endMs": 126660,
+    "timestampMs": 126505,
+    "confidence": 0.99
+  },
+  {
+    "text": " seperti",
+    "startMs": 126660,
+    "endMs": 127130,
+    "timestampMs": 126895,
+    "confidence": 0.99
+  },
+  {
+    "text": " tembaga",
+    "startMs": 127130,
+    "endMs": 127540,
+    "timestampMs": 127335,
+    "confidence": 0.99
+  },
+  {
+    "text": " murah",
+    "startMs": 127540,
+    "endMs": 127850,
+    "timestampMs": 127695,
+    "confidence": 0.99
+  },
+  {
+    "text": " yang",
+    "startMs": 127850,
+    "endMs": 128100,
+    "timestampMs": 127975,
+    "confidence": 0.99
+  },
+  {
+    "text": " dipoles",
+    "startMs": 128100,
+    "endMs": 128540,
+    "timestampMs": 128320,
+    "confidence": 0.99
+  },
+  {
+    "text": " berkilau",
+    "startMs": 128540,
+    "endMs": 129060,
+    "timestampMs": 128800,
+    "confidence": 0.99
+  },
+  {
+    "text": " menyerupai",
+    "startMs": 129060,
+    "endMs": 129650,
+    "timestampMs": 129355,
+    "confidence": 0.99
+  },
+  {
+    "text": " emas",
+    "startMs": 129650,
+    "endMs": 129880,
+    "timestampMs": 129765,
+    "confidence": 0.99
+  },
+  {
+    "text": " murni.",
+    "startMs": 129880,
+    "endMs": 130560,
+    "timestampMs": 130220,
+    "confidence": 0.99
+  },
+  {
+    "text": " Kini",
+    "startMs": 130560,
+    "endMs": 130940,
+    "timestampMs": 130750,
+    "confidence": 0.99
+  },
+  {
+    "text": " mari",
+    "startMs": 130940,
+    "endMs": 131090,
+    "timestampMs": 131015,
+    "confidence": 0.99
+  },
+  {
+    "text": " kita",
+    "startMs": 131090,
+    "endMs": 131360,
+    "timestampMs": 131225,
+    "confidence": 0.99
+  },
+  {
+    "text": " bedah",
+    "startMs": 131360,
+    "endMs": 131690,
+    "timestampMs": 131525,
+    "confidence": 0.99
+  },
+  {
+    "text": " bagaimana",
+    "startMs": 131690,
+    "endMs": 132290,
+    "timestampMs": 131990,
+    "confidence": 0.99
+  },
+  {
+    "text": " sesat",
+    "startMs": 132290,
+    "endMs": 132620,
+    "timestampMs": 132455,
+    "confidence": 0.99
+  },
+  {
+    "text": " pikir",
+    "startMs": 132620,
+    "endMs": 132940,
+    "timestampMs": 132780,
+    "confidence": 0.99
+  },
+  {
+    "text": " kuno",
+    "startMs": 132940,
+    "endMs": 133200,
+    "timestampMs": 133070,
+    "confidence": 0.99
+  },
+  {
+    "text": " itu",
+    "startMs": 133200,
+    "endMs": 133400,
+    "timestampMs": 133300,
+    "confidence": 0.99
+  },
+  {
+    "text": " membajak",
+    "startMs": 133400,
+    "endMs": 133870,
+    "timestampMs": 133635,
+    "confidence": 0.99
+  },
+  {
+    "text": " psikologi",
+    "startMs": 133870,
+    "endMs": 134450,
+    "timestampMs": 134160,
+    "confidence": 0.99
+  },
+  {
+    "text": " manusia",
+    "startMs": 134450,
+    "endMs": 134930,
+    "timestampMs": 134690,
+    "confidence": 0.99
+  },
+  {
+    "text": " modern.",
+    "startMs": 134930,
+    "endMs": 135760,
+    "timestampMs": 135345,
+    "confidence": 0.99
+  },
+  {
+    "text": " Taktik",
+    "startMs": 135760,
+    "endMs": 136140,
+    "timestampMs": 135950,
+    "confidence": 0.99
+  },
+  {
+    "text": " paling",
+    "startMs": 136140,
+    "endMs": 136510,
+    "timestampMs": 136325,
+    "confidence": 0.99
+  },
+  {
+    "text": " tua",
+    "startMs": 136510,
+    "endMs": 136700,
+    "timestampMs": 136605,
+    "confidence": 0.99
+  },
+  {
+    "text": " yang",
+    "startMs": 136700,
+    "endMs": 136950,
+    "timestampMs": 136825,
+    "confidence": 0.99
+  },
+  {
+    "text": " kita",
+    "startMs": 136950,
+    "endMs": 137200,
+    "timestampMs": 137075,
+    "confidence": 0.99
+  },
+  {
+    "text": " temui",
+    "startMs": 137200,
+    "endMs": 137510,
+    "timestampMs": 137355,
+    "confidence": 0.99
+  },
+  {
+    "text": " setiap",
+    "startMs": 137510,
+    "endMs": 137880,
+    "timestampMs": 137695,
+    "confidence": 0.99
+  },
+  {
+    "text": " hari",
+    "startMs": 137880,
+    "endMs": 138130,
+    "timestampMs": 138005,
+    "confidence": 0.99
+  },
+  {
+    "text": " adalah",
+    "startMs": 138130,
+    "endMs": 138510,
+    "timestampMs": 138320,
+    "confidence": 0.99
+  },
+  {
+    "text": " Argumentum",
+    "startMs": 138510,
+    "endMs": 139130,
+    "timestampMs": 138820,
+    "confidence": 0.99
+  },
+  {
+    "text": " Ad",
+    "startMs": 139130,
+    "endMs": 139250,
+    "timestampMs": 139190,
+    "confidence": 0.99
+  },
+  {
+    "text": " Hominem,",
+    "startMs": 139250,
+    "endMs": 139760,
+    "timestampMs": 139505,
+    "confidence": 0.99
+  },
+  {
+    "text": " yakni",
+    "startMs": 139760,
+    "endMs": 140150,
+    "timestampMs": 139955,
+    "confidence": 0.99
+  },
+  {
+    "text": " menyerang",
+    "startMs": 140150,
+    "endMs": 140660,
+    "timestampMs": 140405,
+    "confidence": 0.99
+  },
+  {
+    "text": " pribadi",
+    "startMs": 140660,
+    "endMs": 141050,
+    "timestampMs": 140855,
+    "confidence": 0.99
+  },
+  {
+    "text": " lawan",
+    "startMs": 141050,
+    "endMs": 141340,
+    "timestampMs": 141195,
+    "confidence": 0.99
+  },
+  {
+    "text": " bicara",
+    "startMs": 141340,
+    "endMs": 141700,
+    "timestampMs": 141520,
+    "confidence": 0.99
+  },
+  {
+    "text": " ketika",
+    "startMs": 141700,
+    "endMs": 142010,
+    "timestampMs": 141855,
+    "confidence": 0.99
+  },
+  {
+    "text": " seseorang",
+    "startMs": 142010,
+    "endMs": 142520,
+    "timestampMs": 142265,
+    "confidence": 0.99
+  },
+  {
+    "text": " tidak",
+    "startMs": 142520,
+    "endMs": 142810,
+    "timestampMs": 142665,
+    "confidence": 0.99
+  },
+  {
+    "text": " sanggup",
+    "startMs": 142810,
+    "endMs": 143200,
+    "timestampMs": 143005,
+    "confidence": 0.99
+  },
+  {
+    "text": " mematahkan",
+    "startMs": 143200,
+    "endMs": 143760,
+    "timestampMs": 143480,
+    "confidence": 0.99
+  },
+  {
+    "text": " datanya.",
+    "startMs": 143760,
+    "endMs": 144160,
+    "timestampMs": 143960,
+    "confidence": 0.99
+  },
+  {
+    "text": " Pelakunya",
+    "startMs": 144480,
+    "endMs": 145080,
+    "timestampMs": 144780,
+    "confidence": 0.99
+  },
+  {
+    "text": " akan",
+    "startMs": 145080,
+    "endMs": 145350,
+    "timestampMs": 145215,
+    "confidence": 0.99
+  },
+  {
+    "text": " mengalihkan",
+    "startMs": 145350,
+    "endMs": 146130,
+    "timestampMs": 145740,
+    "confidence": 0.99
+  },
+  {
+    "text": " fokus",
+    "startMs": 146130,
+    "endMs": 146420,
+    "timestampMs": 146275,
+    "confidence": 0.99
+  },
+  {
+    "text": " penonton",
+    "startMs": 146420,
+    "endMs": 146960,
+    "timestampMs": 146690,
+    "confidence": 0.99
+  },
+  {
+    "text": " dengan",
+    "startMs": 146960,
+    "endMs": 147370,
+    "timestampMs": 147165,
+    "confidence": 0.99
+  },
+  {
+    "text": " bertanya",
+    "startMs": 147370,
+    "endMs": 147910,
+    "timestampMs": 147640,
+    "confidence": 0.99
+  },
+  {
+    "text": " kamu",
+    "startMs": 147910,
+    "endMs": 148180,
+    "timestampMs": 148045,
+    "confidence": 0.99
+  },
+  {
+    "text": " ini",
+    "startMs": 148180,
+    "endMs": 148450,
+    "timestampMs": 148315,
+    "confidence": 0.99
+  },
+  {
+    "text": " lulusan",
+    "startMs": 148450,
+    "endMs": 148900,
+    "timestampMs": 148675,
+    "confidence": 0.99
+  },
+  {
+    "text": " mana,",
+    "startMs": 148900,
+    "endMs": 149120,
+    "timestampMs": 149010,
+    "confidence": 0.99
+  },
+  {
+    "text": " atau",
+    "startMs": 149120,
+    "endMs": 149390,
+    "timestampMs": 149255,
+    "confidence": 0.99
+  },
+  {
+    "text": " apa",
+    "startMs": 149390,
+    "endMs": 149620,
+    "timestampMs": 149505,
+    "confidence": 0.99
+  },
+  {
+    "text": " motifmu.",
+    "startMs": 149620,
+    "endMs": 150480,
+    "timestampMs": 150050,
+    "confidence": 0.99
+  },
+  {
+    "text": " Mengapa",
+    "startMs": 150480,
+    "endMs": 151050,
+    "timestampMs": 150765,
+    "confidence": 0.99
+  },
+  {
+    "text": " taktik",
+    "startMs": 151050,
+    "endMs": 151540,
+    "timestampMs": 151295,
+    "confidence": 0.99
+  },
+  {
+    "text": " ini",
+    "startMs": 151540,
+    "endMs": 151770,
+    "timestampMs": 151655,
+    "confidence": 0.99
+  },
+  {
+    "text": " sangat",
+    "startMs": 151770,
+    "endMs": 152260,
+    "timestampMs": 152015,
+    "confidence": 0.99
+  },
+  {
+    "text": " ampuh?",
+    "startMs": 152260,
+    "endMs": 152960,
+    "timestampMs": 152610,
+    "confidence": 0.99
+  },
+  {
+    "text": " Jawabannya",
+    "startMs": 152960,
+    "endMs": 153720,
+    "timestampMs": 153340,
+    "confidence": 0.99
+  },
+  {
+    "text": " ada",
+    "startMs": 153720,
+    "endMs": 153950,
+    "timestampMs": 153835,
+    "confidence": 0.99
+  },
+  {
+    "text": " pada",
+    "startMs": 153950,
+    "endMs": 154250,
+    "timestampMs": 154100,
+    "confidence": 0.99
+  },
+  {
+    "text": " struktur",
+    "startMs": 154250,
+    "endMs": 154860,
+    "timestampMs": 154555,
+    "confidence": 0.99
+  },
+  {
+    "text": " saraf",
+    "startMs": 154860,
+    "endMs": 155300,
+    "timestampMs": 155080,
+    "confidence": 0.99
+  },
+  {
+    "text": " otak",
+    "startMs": 155300,
+    "endMs": 155540,
+    "timestampMs": 155420,
+    "confidence": 0.99
+  },
+  {
+    "text": " bernama",
+    "startMs": 155540,
+    "endMs": 156070,
+    "timestampMs": 155805,
+    "confidence": 0.99
+  },
+  {
+    "text": " amigdala.",
+    "startMs": 156070,
+    "endMs": 156960,
+    "timestampMs": 156515,
+    "confidence": 0.99
+  },
+  {
+    "text": " Riset",
+    "startMs": 156960,
+    "endMs": 157420,
+    "timestampMs": 157190,
+    "confidence": 0.99
+  },
+  {
+    "text": " neurosains",
+    "startMs": 157420,
+    "endMs": 158080,
+    "timestampMs": 157750,
+    "confidence": 0.99
+  },
+  {
+    "text": " menunjukkan",
+    "startMs": 158080,
+    "endMs": 158810,
+    "timestampMs": 158445,
+    "confidence": 0.99
+  },
+  {
+    "text": " bahwa",
+    "startMs": 158810,
+    "endMs": 159140,
+    "timestampMs": 158975,
+    "confidence": 0.99
+  },
+  {
+    "text": " saat",
+    "startMs": 159140,
+    "endMs": 159460,
+    "timestampMs": 159300,
+    "confidence": 0.99
+  },
+  {
+    "text": " keyakinan",
+    "startMs": 159460,
+    "endMs": 159850,
+    "timestampMs": 159655,
+    "confidence": 0.99
+  },
+  {
+    "text": " kita",
+    "startMs": 159850,
+    "endMs": 160110,
+    "timestampMs": 159980,
+    "confidence": 0.99
+  },
+  {
+    "text": " dibantah",
+    "startMs": 160110,
+    "endMs": 160570,
+    "timestampMs": 160340,
+    "confidence": 0.99
+  },
+  {
+    "text": " oleh",
+    "startMs": 160570,
+    "endMs": 160830,
+    "timestampMs": 160700,
+    "confidence": 0.99
+  },
+  {
+    "text": " bukti",
+    "startMs": 160830,
+    "endMs": 161150,
+    "timestampMs": 160990,
+    "confidence": 0.99
+  },
+  {
+    "text": " baru,",
+    "startMs": 161150,
+    "endMs": 161270,
+    "timestampMs": 161210,
+    "confidence": 0.99
+  },
+  {
+    "text": " otak",
+    "startMs": 161690,
+    "endMs": 161820,
+    "timestampMs": 161755,
+    "confidence": 0.99
+  },
+  {
+    "text": " mengalami",
+    "startMs": 161820,
+    "endMs": 162360,
+    "timestampMs": 162090,
+    "confidence": 0.99
+  },
+  {
+    "text": " ketidaknyamanan",
+    "startMs": 162360,
+    "endMs": 163260,
+    "timestampMs": 162810,
+    "confidence": 0.99
+  },
+  {
+    "text": " hebat",
+    "startMs": 163260,
+    "endMs": 163560,
+    "timestampMs": 163410,
+    "confidence": 0.99
+  },
+  {
+    "text": " yang",
+    "startMs": 163560,
+    "endMs": 163800,
+    "timestampMs": 163680,
+    "confidence": 0.99
+  },
+  {
+    "text": " oleh",
+    "startMs": 163800,
+    "endMs": 164040,
+    "timestampMs": 163920,
+    "confidence": 0.99
+  },
+  {
+    "text": " psikolog",
+    "startMs": 164040,
+    "endMs": 164520,
+    "timestampMs": 164280,
+    "confidence": 0.99
+  },
+  {
+    "text": " Leon",
+    "startMs": 164520,
+    "endMs": 164760,
+    "timestampMs": 164640,
+    "confidence": 0.99
+  },
+  {
+    "text": " Festinger",
+    "startMs": 164760,
+    "endMs": 165300,
+    "timestampMs": 165030,
+    "confidence": 0.99
+  },
+  {
+    "text": " disebut",
+    "startMs": 165300,
+    "endMs": 165720,
+    "timestampMs": 165510,
+    "confidence": 0.99
+  },
+  {
+    "text": " disonansi",
+    "startMs": 165720,
+    "endMs": 166220,
+    "timestampMs": 165970,
+    "confidence": 0.99
+  },
+  {
+    "text": " kognitif.",
+    "startMs": 166220,
+    "endMs": 167040,
+    "timestampMs": 166630,
+    "confidence": 0.99
+  },
+  {
+    "text": " Amigdala",
+    "startMs": 167040,
+    "endMs": 167560,
+    "timestampMs": 167300,
+    "confidence": 0.99
+  },
+  {
+    "text": " merespons",
+    "startMs": 167560,
+    "endMs": 168200,
+    "timestampMs": 167880,
+    "confidence": 0.99
+  },
+  {
+    "text": " koreksi",
+    "startMs": 168200,
+    "endMs": 168770,
+    "timestampMs": 168485,
+    "confidence": 0.99
+  },
+  {
+    "text": " fakta",
+    "startMs": 168770,
+    "endMs": 169020,
+    "timestampMs": 168895,
+    "confidence": 0.99
+  },
+  {
+    "text": " seolah-olah",
+    "startMs": 169020,
+    "endMs": 169730,
+    "timestampMs": 169375,
+    "confidence": 0.99
+  },
+  {
+    "text": " kita",
+    "startMs": 169730,
+    "endMs": 169990,
+    "timestampMs": 169860,
+    "confidence": 0.99
+  },
+  {
+    "text": " diserang",
+    "startMs": 169990,
+    "endMs": 170530,
+    "timestampMs": 170260,
+    "confidence": 0.99
+  },
+  {
+    "text": " predator",
+    "startMs": 170530,
+    "endMs": 171040,
+    "timestampMs": 170785,
+    "confidence": 0.99
+  },
+  {
+    "text": " fisik.",
+    "startMs": 171040,
+    "endMs": 171380,
+    "timestampMs": 171210,
+    "confidence": 0.99
+  },
+  {
+    "text": " Kerabat",
+    "startMs": 171680,
+    "endMs": 172180,
+    "timestampMs": 171930,
+    "confidence": 0.99
+  },
+  {
+    "text": " dekat",
+    "startMs": 172180,
+    "endMs": 172540,
+    "timestampMs": 172360,
+    "confidence": 0.99
+  },
+  {
+    "text": " taktik",
+    "startMs": 172540,
+    "endMs": 172970,
+    "timestampMs": 172755,
+    "confidence": 0.99
+  },
+  {
+    "text": " ini",
+    "startMs": 172970,
+    "endMs": 173190,
+    "timestampMs": 173080,
+    "confidence": 0.99
+  },
+  {
+    "text": " adalah",
+    "startMs": 173190,
+    "endMs": 173640,
+    "timestampMs": 173415,
+    "confidence": 0.99
+  },
+  {
+    "text": " sesat",
+    "startMs": 173640,
+    "endMs": 173980,
+    "timestampMs": 173810,
+    "confidence": 0.99
+  },
+  {
+    "text": " pikir",
+    "startMs": 173980,
+    "endMs": 174340,
+    "timestampMs": 174160,
+    "confidence": 0.99
+  },
+  {
+    "text": " Strawman",
+    "startMs": 174340,
+    "endMs": 174920,
+    "timestampMs": 174630,
+    "confidence": 0.99
+  },
+  {
+    "text": " atau",
+    "startMs": 174920,
+    "endMs": 175200,
+    "timestampMs": 175060,
+    "confidence": 0.99
+  },
+  {
+    "text": " boneka",
+    "startMs": 175200,
+    "endMs": 175640,
+    "timestampMs": 175420,
+    "confidence": 0.99
+  },
+  {
+    "text": " jerami.",
+    "startMs": 175640,
+    "endMs": 176240,
+    "timestampMs": 175940,
+    "confidence": 0.99
+  },
+  {
+    "text": " Karena",
+    "startMs": 176240,
+    "endMs": 176600,
+    "timestampMs": 176420,
+    "confidence": 0.99
+  },
+  {
+    "text": " meruntuhkan",
+    "startMs": 176600,
+    "endMs": 177180,
+    "timestampMs": 176890,
+    "confidence": 0.99
+  },
+  {
+    "text": " argumen",
+    "startMs": 177180,
+    "endMs": 177640,
+    "timestampMs": 177410,
+    "confidence": 0.99
+  },
+  {
+    "text": " asli",
+    "startMs": 177640,
+    "endMs": 177880,
+    "timestampMs": 177760,
+    "confidence": 0.99
+  },
+  {
+    "text": " lawan",
+    "startMs": 177880,
+    "endMs": 178170,
+    "timestampMs": 178025,
+    "confidence": 0.99
+  },
+  {
+    "text": " sangat",
+    "startMs": 178170,
+    "endMs": 178530,
+    "timestampMs": 178350,
+    "confidence": 0.99
+  },
+  {
+    "text": " sulit,",
+    "startMs": 178530,
+    "endMs": 178980,
+    "timestampMs": 178755,
+    "confidence": 0.99
+  },
+  {
+    "text": " manipulator",
+    "startMs": 179120,
+    "endMs": 179590,
+    "timestampMs": 179355,
+    "confidence": 0.99
+  },
+  {
+    "text": " memelintir",
+    "startMs": 179590,
+    "endMs": 180040,
+    "timestampMs": 179815,
+    "confidence": 0.99
+  },
+  {
+    "text": " ucapan",
+    "startMs": 180040,
+    "endMs": 180340,
+    "timestampMs": 180190,
+    "confidence": 0.99
+  },
+  {
+    "text": " lawan",
+    "startMs": 180340,
+    "endMs": 180640,
+    "timestampMs": 180490,
+    "confidence": 0.99
+  },
+  {
+    "text": " menjadi",
+    "startMs": 180640,
+    "endMs": 181080,
+    "timestampMs": 180860,
+    "confidence": 0.99
+  },
+  {
+    "text": " karikatur",
+    "startMs": 181080,
+    "endMs": 181630,
+    "timestampMs": 181355,
+    "confidence": 0.99
+  },
+  {
+    "text": " ekstrem",
+    "startMs": 181630,
+    "endMs": 182060,
+    "timestampMs": 181845,
+    "confidence": 0.99
+  },
+  {
+    "text": " yang",
+    "startMs": 182060,
+    "endMs": 182260,
+    "timestampMs": 182160,
+    "confidence": 0.99
+  },
+  {
+    "text": " konyol,",
+    "startMs": 182260,
+    "endMs": 182640,
+    "timestampMs": 182450,
+    "confidence": 0.99
+  },
+  {
+    "text": " lalu",
+    "startMs": 182640,
+    "endMs": 182890,
+    "timestampMs": 182765,
+    "confidence": 0.99
+  },
+  {
+    "text": " menyerangnya",
+    "startMs": 182890,
+    "endMs": 183650,
+    "timestampMs": 183270,
+    "confidence": 0.99
+  },
+  {
+    "text": " agar",
+    "startMs": 183650,
+    "endMs": 183910,
+    "timestampMs": 183780,
+    "confidence": 0.99
+  },
+  {
+    "text": " terlihat",
+    "startMs": 183910,
+    "endMs": 184420,
+    "timestampMs": 184165,
+    "confidence": 0.99
+  },
+  {
+    "text": " menang",
+    "startMs": 184420,
+    "endMs": 184830,
+    "timestampMs": 184625,
+    "confidence": 0.99
+  },
+  {
+    "text": " di",
+    "startMs": 184830,
+    "endMs": 184930,
+    "timestampMs": 184880,
+    "confidence": 0.99
+  },
+  {
+    "text": " depan",
+    "startMs": 184930,
+    "endMs": 185510,
+    "timestampMs": 185220,
+    "confidence": 0.99
+  },
+  {
+    "text": " publik.",
+    "startMs": 185510,
+    "endMs": 185640,
+    "timestampMs": 185575,
+    "confidence": 0.99
+  },
+  {
+    "text": " Memasuki",
+    "startMs": 186120,
+    "endMs": 186450,
+    "timestampMs": 186285,
+    "confidence": 0.99
+  },
+  {
+    "text": " abad",
+    "startMs": 186450,
+    "endMs": 186710,
+    "timestampMs": 186580,
+    "confidence": 0.99
+  },
+  {
+    "text": " kedua",
+    "startMs": 186710,
+    "endMs": 187310,
+    "timestampMs": 187010,
+    "confidence": 0.99
+  },
+  {
+    "text": " puluh,",
+    "startMs": 187310,
+    "endMs": 187500,
+    "timestampMs": 187405,
+    "confidence": 0.99
+  },
+  {
+    "text": " sesat",
+    "startMs": 187500,
+    "endMs": 187880,
+    "timestampMs": 187690,
+    "confidence": 0.99
+  },
+  {
+    "text": " pikir",
+    "startMs": 187880,
+    "endMs": 188090,
+    "timestampMs": 187985,
+    "confidence": 0.99
+  },
+  {
+    "text": " berevolusi",
+    "startMs": 188090,
+    "endMs": 188760,
+    "timestampMs": 188425,
+    "confidence": 0.99
+  },
+  {
+    "text": " menjadi",
+    "startMs": 188760,
+    "endMs": 189240,
+    "timestampMs": 189000,
+    "confidence": 0.99
+  },
+  {
+    "text": " mesin",
+    "startMs": 189240,
+    "endMs": 189570,
+    "timestampMs": 189405,
+    "confidence": 0.99
+  },
+  {
+    "text": " penggerak",
+    "startMs": 189570,
+    "endMs": 190170,
+    "timestampMs": 189870,
+    "confidence": 0.99
+  },
+  {
+    "text": " massa",
+    "startMs": 190170,
+    "endMs": 190440,
+    "timestampMs": 190305,
+    "confidence": 0.99
+  },
+  {
+    "text": " berskala",
+    "startMs": 190440,
+    "endMs": 191020,
+    "timestampMs": 190730,
+    "confidence": 0.99
+  },
+  {
+    "text": " industri.",
+    "startMs": 191020,
+    "endMs": 191920,
+    "timestampMs": 191470,
+    "confidence": 0.99
+  },
+  {
+    "text": " Tokoh",
+    "startMs": 191920,
+    "endMs": 192250,
+    "timestampMs": 192085,
+    "confidence": 0.99
+  },
+  {
+    "text": " kuncinya",
+    "startMs": 192250,
+    "endMs": 192710,
+    "timestampMs": 192480,
+    "confidence": 0.99
+  },
+  {
+    "text": " adalah",
+    "startMs": 192710,
+    "endMs": 193110,
+    "timestampMs": 192910,
+    "confidence": 0.99
+  },
+  {
+    "text": " Edward",
+    "startMs": 193110,
+    "endMs": 193510,
+    "timestampMs": 193310,
+    "confidence": 0.99
+  },
+  {
+    "text": " Bernays,",
+    "startMs": 193510,
+    "endMs": 193970,
+    "timestampMs": 193740,
+    "confidence": 0.99
+  },
+  {
+    "text": " keponakan",
+    "startMs": 194310,
+    "endMs": 194860,
+    "timestampMs": 194585,
+    "confidence": 0.99
+  },
+  {
+    "text": " dari",
+    "startMs": 194860,
+    "endMs": 195130,
+    "timestampMs": 194995,
+    "confidence": 0.99
+  },
+  {
+    "text": " bapak",
+    "startMs": 195130,
+    "endMs": 195500,
+    "timestampMs": 195315,
+    "confidence": 0.99
+  },
+  {
+    "text": " psikoanalisis",
+    "startMs": 195500,
+    "endMs": 196390,
+    "timestampMs": 195945,
+    "confidence": 0.99
+  },
+  {
+    "text": " Sigmund",
+    "startMs": 196390,
+    "endMs": 197280,
+    "timestampMs": 196835,
+    "confidence": 0.99
+  },
+  {
+    "text": " Freud.",
+    "startMs": 197280,
+    "endMs": 197360,
+    "timestampMs": 197320,
+    "confidence": 0.99
+  },
+  {
+    "text": " Lewat",
+    "startMs": 197600,
+    "endMs": 197970,
+    "timestampMs": 197785,
+    "confidence": 0.99
+  },
+  {
+    "text": " bukunya",
+    "startMs": 197970,
+    "endMs": 198490,
+    "timestampMs": 198230,
+    "confidence": 0.99
+  },
+  {
+    "text": " yang",
+    "startMs": 198490,
+    "endMs": 198800,
+    "timestampMs": 198645,
+    "confidence": 0.99
+  },
+  {
+    "text": " berjudul",
+    "startMs": 198800,
+    "endMs": 199380,
+    "timestampMs": 199090,
+    "confidence": 0.99
+  },
+  {
+    "text": " Propaganda",
+    "startMs": 199380,
+    "endMs": 200130,
+    "timestampMs": 199755,
+    "confidence": 0.99
+  },
+  {
+    "text": " pada",
+    "startMs": 200130,
+    "endMs": 200440,
+    "timestampMs": 200285,
+    "confidence": 0.99
+  },
+  {
+    "text": " tahun",
+    "startMs": 200440,
+    "endMs": 200800,
+    "timestampMs": 200620,
+    "confidence": 0.99
+  },
+  {
+    "text": " seribu",
+    "startMs": 200800,
+    "endMs": 200880,
+    "timestampMs": 200840,
+    "confidence": 0.99
+  },
+  {
+    "text": " sembilan",
+    "startMs": 200880,
+    "endMs": 200960,
+    "timestampMs": 200920,
+    "confidence": 0.99
+  },
+  {
+    "text": " ratus",
+    "startMs": 200960,
+    "endMs": 201040,
+    "timestampMs": 201000,
+    "confidence": 0.99
+  },
+  {
+    "text": " dua",
+    "startMs": 201040,
+    "endMs": 201120,
+    "timestampMs": 201080,
+    "confidence": 0.99
+  },
+  {
+    "text": " puluh",
+    "startMs": 201120,
+    "endMs": 201200,
+    "timestampMs": 201160,
+    "confidence": 0.99
+  },
+  {
+    "text": " delapan,",
+    "startMs": 200800,
+    "endMs": 201700,
+    "timestampMs": 201250,
+    "confidence": 0.99
+  },
+  {
+    "text": " ia",
+    "startMs": 201920,
+    "endMs": 202200,
+    "timestampMs": 202060,
+    "confidence": 0.99
+  },
+  {
+    "text": " menggabungkan",
+    "startMs": 202200,
+    "endMs": 202880,
+    "timestampMs": 202540,
+    "confidence": 0.99
+  },
+  {
+    "text": " ketakutan",
+    "startMs": 202880,
+    "endMs": 203460,
+    "timestampMs": 203170,
+    "confidence": 0.99
+  },
+  {
+    "text": " bawah",
+    "startMs": 203460,
+    "endMs": 203710,
+    "timestampMs": 203585,
+    "confidence": 0.99
+  },
+  {
+    "text": " sadar",
+    "startMs": 203710,
+    "endMs": 204030,
+    "timestampMs": 203870,
+    "confidence": 0.99
+  },
+  {
+    "text": " manusia",
+    "startMs": 204030,
+    "endMs": 204490,
+    "timestampMs": 204260,
+    "confidence": 0.99
+  },
+  {
+    "text": " dengan",
+    "startMs": 204490,
+    "endMs": 204880,
+    "timestampMs": 204685,
+    "confidence": 0.99
+  },
+  {
+    "text": " media",
+    "startMs": 204880,
+    "endMs": 205250,
+    "timestampMs": 205065,
+    "confidence": 0.99
+  },
+  {
+    "text": " massa",
+    "startMs": 205250,
+    "endMs": 205470,
+    "timestampMs": 205360,
+    "confidence": 0.99
+  },
+  {
+    "text": " untuk",
+    "startMs": 205470,
+    "endMs": 205800,
+    "timestampMs": 205635,
+    "confidence": 0.99
+  },
+  {
+    "text": " menyetir",
+    "startMs": 205800,
+    "endMs": 206320,
+    "timestampMs": 206060,
+    "confidence": 0.99
+  },
+  {
+    "text": " opini",
+    "startMs": 206320,
+    "endMs": 206650,
+    "timestampMs": 206485,
+    "confidence": 0.99
+  },
+  {
+    "text": " jutaan",
+    "startMs": 206650,
+    "endMs": 207360,
+    "timestampMs": 207005,
+    "confidence": 0.99
+  },
+  {
+    "text": " orang.",
+    "startMs": 207360,
+    "endMs": 207440,
+    "timestampMs": 207400,
+    "confidence": 0.99
+  },
+  {
+    "text": " Dari",
+    "startMs": 207680,
+    "endMs": 207950,
+    "timestampMs": 207815,
+    "confidence": 0.99
+  },
+  {
+    "text": " sinilah",
+    "startMs": 207950,
+    "endMs": 208380,
+    "timestampMs": 208165,
+    "confidence": 0.99
+  },
+  {
+    "text": " dieksploitasi",
+    "startMs": 208510,
+    "endMs": 209340,
+    "timestampMs": 208925,
+    "confidence": 0.99
+  },
+  {
+    "text": " Bandwagon",
+    "startMs": 209340,
+    "endMs": 209730,
+    "timestampMs": 209535,
+    "confidence": 0.99
+  },
+  {
+    "text": " Fallacy,",
+    "startMs": 209730,
+    "endMs": 210560,
+    "timestampMs": 210145,
+    "confidence": 0.99
+  },
+  {
+    "text": " sesat",
+    "startMs": 210560,
+    "endMs": 210860,
+    "timestampMs": 210710,
+    "confidence": 0.99
+  },
+  {
+    "text": " pikir",
+    "startMs": 210860,
+    "endMs": 211160,
+    "timestampMs": 211010,
+    "confidence": 0.99
+  },
+  {
+    "text": " yang",
+    "startMs": 211160,
+    "endMs": 211400,
+    "timestampMs": 211280,
+    "confidence": 0.99
+  },
+  {
+    "text": " menganggap",
+    "startMs": 211400,
+    "endMs": 212000,
+    "timestampMs": 211700,
+    "confidence": 0.99
+  },
+  {
+    "text": " sesuatu",
+    "startMs": 212000,
+    "endMs": 212460,
+    "timestampMs": 212230,
+    "confidence": 0.99
+  },
+  {
+    "text": " pasti",
+    "startMs": 212460,
+    "endMs": 212730,
+    "timestampMs": 212595,
+    "confidence": 0.99
+  },
+  {
+    "text": " benar",
+    "startMs": 212730,
+    "endMs": 213030,
+    "timestampMs": 212880,
+    "confidence": 0.99
+  },
+  {
+    "text": " hanya",
+    "startMs": 213030,
+    "endMs": 213340,
+    "timestampMs": 213185,
+    "confidence": 0.99
+  },
+  {
+    "text": " karena",
+    "startMs": 213340,
+    "endMs": 213720,
+    "timestampMs": 213530,
+    "confidence": 0.99
+  },
+  {
+    "text": " mayoritas",
+    "startMs": 213720,
+    "endMs": 214260,
+    "timestampMs": 213990,
+    "confidence": 0.99
+  },
+  {
+    "text": " orang",
+    "startMs": 214260,
+    "endMs": 214570,
+    "timestampMs": 214415,
+    "confidence": 0.99
+  },
+  {
+    "text": " mempercayainya.",
+    "startMs": 214570,
+    "endMs": 215520,
+    "timestampMs": 215045,
+    "confidence": 0.99
+  },
+  {
+    "text": " Kerapuhan",
+    "startMs": 215760,
+    "endMs": 216110,
+    "timestampMs": 215935,
+    "confidence": 0.99
+  },
+  {
+    "text": " manusia",
+    "startMs": 216110,
+    "endMs": 216470,
+    "timestampMs": 216290,
+    "confidence": 0.99
+  },
+  {
+    "text": " terhadap",
+    "startMs": 216470,
+    "endMs": 216900,
+    "timestampMs": 216685,
+    "confidence": 0.99
+  },
+  {
+    "text": " tekanan",
+    "startMs": 216900,
+    "endMs": 217280,
+    "timestampMs": 217090,
+    "confidence": 0.99
+  },
+  {
+    "text": " kelompok",
+    "startMs": 217280,
+    "endMs": 217710,
+    "timestampMs": 217495,
+    "confidence": 0.99
+  },
+  {
+    "text": " dibuktikan",
+    "startMs": 217710,
+    "endMs": 218320,
+    "timestampMs": 218015,
+    "confidence": 0.99
+  },
+  {
+    "text": " lewat",
+    "startMs": 218320,
+    "endMs": 218560,
+    "timestampMs": 218440,
+    "confidence": 0.99
+  },
+  {
+    "text": " eksperimen",
+    "startMs": 218560,
+    "endMs": 219040,
+    "timestampMs": 218800,
+    "confidence": 0.99
+  },
+  {
+    "text": " psikologi",
+    "startMs": 219040,
+    "endMs": 219460,
+    "timestampMs": 219250,
+    "confidence": 0.99
+  },
+  {
+    "text": " terkenal",
+    "startMs": 219460,
+    "endMs": 219920,
+    "timestampMs": 219690,
+    "confidence": 0.99
+  },
+  {
+    "text": " oleh",
+    "startMs": 219920,
+    "endMs": 220190,
+    "timestampMs": 220055,
+    "confidence": 0.99
+  },
+  {
+    "text": " Solomon",
+    "startMs": 220190,
+    "endMs": 220660,
+    "timestampMs": 220425,
+    "confidence": 0.99
+  },
+  {
+    "text": " Asch",
+    "startMs": 220660,
+    "endMs": 221010,
+    "timestampMs": 220835,
+    "confidence": 0.99
+  },
+  {
+    "text": " pada",
+    "startMs": 221010,
+    "endMs": 221460,
+    "timestampMs": 221235,
+    "confidence": 0.99
+  },
+  {
+    "text": " tahun",
+    "startMs": 221460,
+    "endMs": 222040,
+    "timestampMs": 221750,
+    "confidence": 0.99
+  },
+  {
+    "text": " seribu",
+    "startMs": 222040,
+    "endMs": 222120,
+    "timestampMs": 222080,
+    "confidence": 0.99
+  },
+  {
+    "text": " sembilan",
+    "startMs": 222120,
+    "endMs": 222200,
+    "timestampMs": 222160,
+    "confidence": 0.99
+  },
+  {
+    "text": " ratus",
+    "startMs": 222200,
+    "endMs": 222280,
+    "timestampMs": 222240,
+    "confidence": 0.99
+  },
+  {
+    "text": " lima",
+    "startMs": 222280,
+    "endMs": 222360,
+    "timestampMs": 222320,
+    "confidence": 0.99
+  },
+  {
+    "text": " puluh",
+    "startMs": 222360,
+    "endMs": 222440,
+    "timestampMs": 222400,
+    "confidence": 0.99
+  },
+  {
+    "text": " satu.",
+    "startMs": 222040,
+    "endMs": 223460,
+    "timestampMs": 222750,
+    "confidence": 0.99
+  },
+  {
+    "text": " Saat",
+    "startMs": 223840,
+    "endMs": 224130,
+    "timestampMs": 223985,
+    "confidence": 0.99
+  },
+  {
+    "text": " para",
+    "startMs": 224130,
+    "endMs": 224290,
+    "timestampMs": 224210,
+    "confidence": 0.99
+  },
+  {
+    "text": " aktor",
+    "startMs": 224290,
+    "endMs": 224570,
+    "timestampMs": 224430,
+    "confidence": 0.99
+  },
+  {
+    "text": " di",
+    "startMs": 224570,
+    "endMs": 224680,
+    "timestampMs": 224625,
+    "confidence": 0.99
+  },
+  {
+    "text": " ruangan",
+    "startMs": 224680,
+    "endMs": 225080,
+    "timestampMs": 224880,
+    "confidence": 0.99
+  },
+  {
+    "text": " sengaja",
+    "startMs": 225080,
+    "endMs": 225470,
+    "timestampMs": 225275,
+    "confidence": 0.99
+  },
+  {
+    "text": " kompak",
+    "startMs": 225470,
+    "endMs": 225750,
+    "timestampMs": 225610,
+    "confidence": 0.99
+  },
+  {
+    "text": " memilih",
+    "startMs": 225750,
+    "endMs": 226140,
+    "timestampMs": 225945,
+    "confidence": 0.99
+  },
+  {
+    "text": " jawaban",
+    "startMs": 226140,
+    "endMs": 226540,
+    "timestampMs": 226340,
+    "confidence": 0.99
+  },
+  {
+    "text": " panjang",
+    "startMs": 226540,
+    "endMs": 226940,
+    "timestampMs": 226740,
+    "confidence": 0.99
+  },
+  {
+    "text": " garis",
+    "startMs": 226940,
+    "endMs": 227220,
+    "timestampMs": 227080,
+    "confidence": 0.99
+  },
+  {
+    "text": " yang",
+    "startMs": 227220,
+    "endMs": 227450,
+    "timestampMs": 227335,
+    "confidence": 0.99
+  },
+  {
+    "text": " salah,",
+    "startMs": 227450,
+    "endMs": 227740,
+    "timestampMs": 227595,
+    "confidence": 0.99
+  },
+  {
+    "text": " tujuh",
+    "startMs": 227740,
+    "endMs": 227960,
+    "timestampMs": 227850,
+    "confidence": 0.99
+  },
+  {
+    "text": " puluh",
+    "startMs": 227960,
+    "endMs": 228040,
+    "timestampMs": 228000,
+    "confidence": 0.99
+  },
+  {
+    "text": " lima",
+    "startMs": 228040,
+    "endMs": 228120,
+    "timestampMs": 228080,
+    "confidence": 0.99
+  },
+  {
+    "text": " persen",
+    "startMs": 228000,
+    "endMs": 228470,
+    "timestampMs": 228235,
+    "confidence": 0.99
+  },
+  {
+    "text": " peserta",
+    "startMs": 228570,
+    "endMs": 229080,
+    "timestampMs": 228825,
+    "confidence": 0.99
+  },
+  {
+    "text": " normal",
+    "startMs": 229080,
+    "endMs": 229550,
+    "timestampMs": 229315,
+    "confidence": 0.99
+  },
+  {
+    "text": " ikut",
+    "startMs": 229550,
+    "endMs": 229850,
+    "timestampMs": 229700,
+    "confidence": 0.99
+  },
+  {
+    "text": " menjawab",
+    "startMs": 229850,
+    "endMs": 230460,
+    "timestampMs": 230155,
+    "confidence": 0.99
+  },
+  {
+    "text": " salah",
+    "startMs": 230460,
+    "endMs": 230850,
+    "timestampMs": 230655,
+    "confidence": 0.99
+  },
+  {
+    "text": " karena",
+    "startMs": 230850,
+    "endMs": 231330,
+    "timestampMs": 231090,
+    "confidence": 0.99
+  },
+  {
+    "text": " takut",
+    "startMs": 231330,
+    "endMs": 231700,
+    "timestampMs": 231515,
+    "confidence": 0.99
+  },
+  {
+    "text": " dikucilkan.",
+    "startMs": 231700,
+    "endMs": 232450,
+    "timestampMs": 232075,
+    "confidence": 0.99
+  },
+  {
+    "text": " Ketakutan",
+    "startMs": 232800,
+    "endMs": 233400,
+    "timestampMs": 233100,
+    "confidence": 0.99
+  },
+  {
+    "text": " sosial",
+    "startMs": 233400,
+    "endMs": 233780,
+    "timestampMs": 233590,
+    "confidence": 0.99
+  },
+  {
+    "text": " melumpuhkan",
+    "startMs": 233780,
+    "endMs": 234500,
+    "timestampMs": 234140,
+    "confidence": 0.99
+  },
+  {
+    "text": " logika",
+    "startMs": 234500,
+    "endMs": 234910,
+    "timestampMs": 234705,
+    "confidence": 0.99
+  },
+  {
+    "text": " kita,",
+    "startMs": 234910,
+    "endMs": 235360,
+    "timestampMs": 235135,
+    "confidence": 0.99
+  },
+  {
+    "text": " terlebih",
+    "startMs": 235550,
+    "endMs": 236040,
+    "timestampMs": 235795,
+    "confidence": 0.99
+  },
+  {
+    "text": " saat",
+    "startMs": 236040,
+    "endMs": 236400,
+    "timestampMs": 236220,
+    "confidence": 0.99
+  },
+  {
+    "text": " dipadukan",
+    "startMs": 236400,
+    "endMs": 237760,
+    "timestampMs": 237080,
+    "confidence": 0.99
+  },
+  {
+    "text": " dengan",
+    "startMs": 237760,
+    "endMs": 237840,
+    "timestampMs": 237800,
+    "confidence": 0.99
+  },
+  {
+    "text": " sesat",
+    "startMs": 237760,
+    "endMs": 238130,
+    "timestampMs": 237945,
+    "confidence": 0.99
+  },
+  {
+    "text": " pikir",
+    "startMs": 238130,
+    "endMs": 238470,
+    "timestampMs": 238300,
+    "confidence": 0.99
+  },
+  {
+    "text": " Dilema",
+    "startMs": 238470,
+    "endMs": 238900,
+    "timestampMs": 238685,
+    "confidence": 0.99
+  },
+  {
+    "text": " Palsu",
+    "startMs": 238900,
+    "endMs": 239260,
+    "timestampMs": 239080,
+    "confidence": 0.99
+  },
+  {
+    "text": " atau",
+    "startMs": 239260,
+    "endMs": 239550,
+    "timestampMs": 239405,
+    "confidence": 0.99
+  },
+  {
+    "text": " False",
+    "startMs": 239550,
+    "endMs": 239910,
+    "timestampMs": 239730,
+    "confidence": 0.99
+  },
+  {
+    "text": " Dilemma,",
+    "startMs": 239910,
+    "endMs": 240340,
+    "timestampMs": 240125,
+    "confidence": 0.99
+  },
+  {
+    "text": " jebakan",
+    "startMs": 240690,
+    "endMs": 241010,
+    "timestampMs": 240850,
+    "confidence": 0.99
+  },
+  {
+    "text": " hitam",
+    "startMs": 241010,
+    "endMs": 241340,
+    "timestampMs": 241175,
+    "confidence": 0.99
+  },
+  {
+    "text": " putih",
+    "startMs": 241340,
+    "endMs": 241670,
+    "timestampMs": 241505,
+    "confidence": 0.99
+  },
+  {
+    "text": " yang",
+    "startMs": 241670,
+    "endMs": 241930,
+    "timestampMs": 241800,
+    "confidence": 0.99
+  },
+  {
+    "text": " memaksa",
+    "startMs": 241930,
+    "endMs": 242410,
+    "timestampMs": 242170,
+    "confidence": 0.99
+  },
+  {
+    "text": " kita",
+    "startMs": 242410,
+    "endMs": 242650,
+    "timestampMs": 242530,
+    "confidence": 0.99
+  },
+  {
+    "text": " memilih",
+    "startMs": 242650,
+    "endMs": 243110,
+    "timestampMs": 242880,
+    "confidence": 0.99
+  },
+  {
+    "text": " dua",
+    "startMs": 243110,
+    "endMs": 243320,
+    "timestampMs": 243215,
+    "confidence": 0.99
+  },
+  {
+    "text": " kubu",
+    "startMs": 243320,
+    "endMs": 243560,
+    "timestampMs": 243440,
+    "confidence": 0.99
+  },
+  {
+    "text": " ekstrem",
+    "startMs": 243560,
+    "endMs": 244070,
+    "timestampMs": 243815,
+    "confidence": 0.99
+  },
+  {
+    "text": " dan",
+    "startMs": 244070,
+    "endMs": 244220,
+    "timestampMs": 244145,
+    "confidence": 0.99
+  },
+  {
+    "text": " mematikan",
+    "startMs": 244220,
+    "endMs": 244810,
+    "timestampMs": 244515,
+    "confidence": 0.99
+  },
+  {
+    "text": " diskusi",
+    "startMs": 244810,
+    "endMs": 245290,
+    "timestampMs": 245050,
+    "confidence": 0.99
+  },
+  {
+    "text": " sehat.",
+    "startMs": 245290,
+    "endMs": 245920,
+    "timestampMs": 245605,
+    "confidence": 0.99
+  },
+  {
+    "text": " Namun",
+    "startMs": 245920,
+    "endMs": 246180,
+    "timestampMs": 246050,
+    "confidence": 0.99
+  },
+  {
+    "text": " sesat",
+    "startMs": 246280,
+    "endMs": 246530,
+    "timestampMs": 246405,
+    "confidence": 0.99
+  },
+  {
+    "text": " pikir",
+    "startMs": 246530,
+    "endMs": 246790,
+    "timestampMs": 246660,
+    "confidence": 0.99
+  },
+  {
+    "text": " paling",
+    "startMs": 246790,
+    "endMs": 247110,
+    "timestampMs": 246950,
+    "confidence": 0.99
+  },
+  {
+    "text": " berbahaya",
+    "startMs": 247110,
+    "endMs": 247590,
+    "timestampMs": 247350,
+    "confidence": 0.99
+  },
+  {
+    "text": " justru",
+    "startMs": 247590,
+    "endMs": 247950,
+    "timestampMs": 247770,
+    "confidence": 0.99
+  },
+  {
+    "text": " sering",
+    "startMs": 247950,
+    "endMs": 248220,
+    "timestampMs": 248085,
+    "confidence": 0.99
+  },
+  {
+    "text": " kita",
+    "startMs": 248220,
+    "endMs": 248430,
+    "timestampMs": 248325,
+    "confidence": 0.99
+  },
+  {
+    "text": " lakukan",
+    "startMs": 248430,
+    "endMs": 248800,
+    "timestampMs": 248615,
+    "confidence": 0.99
+  },
+  {
+    "text": " terhadap",
+    "startMs": 248800,
+    "endMs": 249230,
+    "timestampMs": 249015,
+    "confidence": 0.99
+  },
+  {
+    "text": " diri",
+    "startMs": 249230,
+    "endMs": 249430,
+    "timestampMs": 249330,
+    "confidence": 0.99
+  },
+  {
+    "text": " sendiri",
+    "startMs": 249430,
+    "endMs": 249920,
+    "timestampMs": 249675,
+    "confidence": 0.99
+  },
+  {
+    "text": " saat",
+    "startMs": 249920,
+    "endMs": 250210,
+    "timestampMs": 250065,
+    "confidence": 0.99
+  },
+  {
+    "text": " mengambil",
+    "startMs": 250210,
+    "endMs": 250860,
+    "timestampMs": 250535,
+    "confidence": 0.99
+  },
+  {
+    "text": " keputusan",
+    "startMs": 250860,
+    "endMs": 251730,
+    "timestampMs": 251295,
+    "confidence": 0.99
+  },
+  {
+    "text": " hidup.",
+    "startMs": 251730,
+    "endMs": 252160,
+    "timestampMs": 251945,
+    "confidence": 0.99
+  },
+  {
+    "text": " Pada",
+    "startMs": 252160,
+    "endMs": 252490,
+    "timestampMs": 252325,
+    "confidence": 0.99
+  },
+  {
+    "text": " Perang",
+    "startMs": 252490,
+    "endMs": 252910,
+    "timestampMs": 252700,
+    "confidence": 0.99
+  },
+  {
+    "text": " Dunia",
+    "startMs": 252910,
+    "endMs": 253330,
+    "timestampMs": 253120,
+    "confidence": 0.99
+  },
+  {
+    "text": " Kedua",
+    "startMs": 253330,
+    "endMs": 253750,
+    "timestampMs": 253540,
+    "confidence": 0.99
+  },
+  {
+    "text": " tahun",
+    "startMs": 253750,
+    "endMs": 254180,
+    "timestampMs": 253965,
+    "confidence": 0.99
+  },
+  {
+    "text": " seribu",
+    "startMs": 254180,
+    "endMs": 254260,
+    "timestampMs": 254220,
+    "confidence": 0.99
+  },
+  {
+    "text": " sembilan",
+    "startMs": 254260,
+    "endMs": 254340,
+    "timestampMs": 254300,
+    "confidence": 0.99
+  },
+  {
+    "text": " ratus",
+    "startMs": 254340,
+    "endMs": 254420,
+    "timestampMs": 254380,
+    "confidence": 0.99
+  },
+  {
+    "text": " empat",
+    "startMs": 254420,
+    "endMs": 254500,
+    "timestampMs": 254460,
+    "confidence": 0.99
+  },
+  {
+    "text": " puluh",
+    "startMs": 254500,
+    "endMs": 254580,
+    "timestampMs": 254540,
+    "confidence": 0.99
+  },
+  {
+    "text": " tiga,",
+    "startMs": 254180,
+    "endMs": 255210,
+    "timestampMs": 254695,
+    "confidence": 0.99
+  },
+  {
+    "text": " militer",
+    "startMs": 255440,
+    "endMs": 255850,
+    "timestampMs": 255645,
+    "confidence": 0.99
+  },
+  {
+    "text": " Amerika",
+    "startMs": 255850,
+    "endMs": 256270,
+    "timestampMs": 256060,
+    "confidence": 0.99
+  },
+  {
+    "text": " meminta",
+    "startMs": 256270,
+    "endMs": 256670,
+    "timestampMs": 256470,
+    "confidence": 0.99
+  },
+  {
+    "text": " matematikawan",
+    "startMs": 256670,
+    "endMs": 257420,
+    "timestampMs": 257045,
+    "confidence": 0.99
+  },
+  {
+    "text": " Abraham",
+    "startMs": 257420,
+    "endMs": 257830,
+    "timestampMs": 257625,
+    "confidence": 0.99
+  },
+  {
+    "text": " Wald",
+    "startMs": 257830,
+    "endMs": 258070,
+    "timestampMs": 257950,
+    "confidence": 0.99
+  },
+  {
+    "text": " meneliti",
+    "startMs": 258070,
+    "endMs": 258530,
+    "timestampMs": 258300,
+    "confidence": 0.99
+  },
+  {
+    "text": " pesawat",
+    "startMs": 258530,
+    "endMs": 258940,
+    "timestampMs": 258735,
+    "confidence": 0.99
+  },
+  {
+    "text": " pembom",
+    "startMs": 258940,
+    "endMs": 259340,
+    "timestampMs": 259140,
+    "confidence": 0.99
+  },
+  {
+    "text": " yang",
+    "startMs": 259340,
+    "endMs": 259580,
+    "timestampMs": 259460,
+    "confidence": 0.99
+  },
+  {
+    "text": " kembali",
+    "startMs": 259580,
+    "endMs": 259980,
+    "timestampMs": 259780,
+    "confidence": 0.99
+  },
+  {
+    "text": " dari",
+    "startMs": 259980,
+    "endMs": 260220,
+    "timestampMs": 260100,
+    "confidence": 0.99
+  },
+  {
+    "text": " medan",
+    "startMs": 260220,
+    "endMs": 260690,
+    "timestampMs": 260455,
+    "confidence": 0.99
+  },
+  {
+    "text": " perang.",
+    "startMs": 260690,
+    "endMs": 261200,
+    "timestampMs": 260945,
+    "confidence": 0.99
+  },
+  {
+    "text": " Sayap",
+    "startMs": 261200,
+    "endMs": 261450,
+    "timestampMs": 261325,
+    "confidence": 0.99
+  },
+  {
+    "text": " pesawat",
+    "startMs": 261450,
+    "endMs": 261830,
+    "timestampMs": 261640,
+    "confidence": 0.99
+  },
+  {
+    "text": " yang",
+    "startMs": 261830,
+    "endMs": 262090,
+    "timestampMs": 261960,
+    "confidence": 0.99
+  },
+  {
+    "text": " pulang",
+    "startMs": 262090,
+    "endMs": 262400,
+    "timestampMs": 262245,
+    "confidence": 0.99
+  },
+  {
+    "text": " penuh",
+    "startMs": 262400,
+    "endMs": 262480,
+    "timestampMs": 262440,
+    "confidence": 0.99
+  },
+  {
+    "text": " lubang",
+    "startMs": 262400,
+    "endMs": 262960,
+    "timestampMs": 262680,
+    "confidence": 0.99
+  },
+  {
+    "text": " peluru,",
+    "startMs": 262960,
+    "endMs": 263300,
+    "timestampMs": 263130,
+    "confidence": 0.99
+  },
+  {
+    "text": " sedangkan",
+    "startMs": 263730,
+    "endMs": 264300,
+    "timestampMs": 264015,
+    "confidence": 0.99
+  },
+  {
+    "text": " mesin",
+    "startMs": 264300,
+    "endMs": 264800,
+    "timestampMs": 264550,
+    "confidence": 0.99
+  },
+  {
+    "text": " dan",
+    "startMs": 264800,
+    "endMs": 264990,
+    "timestampMs": 264895,
+    "confidence": 0.99
+  },
+  {
+    "text": " kokpit",
+    "startMs": 264990,
+    "endMs": 265860,
+    "timestampMs": 265425,
+    "confidence": 0.99
+  },
+  {
+    "text": " bersih.",
+    "startMs": 265860,
+    "endMs": 266080,
+    "timestampMs": 265970,
+    "confidence": 0.99
+  },
+  {
+    "text": " Militer",
+    "startMs": 266320,
+    "endMs": 266540,
+    "timestampMs": 266430,
+    "confidence": 0.99
+  },
+  {
+    "text": " ingin",
+    "startMs": 266540,
+    "endMs": 266810,
+    "timestampMs": 266675,
+    "confidence": 0.99
+  },
+  {
+    "text": " memperkuat",
+    "startMs": 266810,
+    "endMs": 267350,
+    "timestampMs": 267080,
+    "confidence": 0.99
+  },
+  {
+    "text": " bagian",
+    "startMs": 267350,
+    "endMs": 267670,
+    "timestampMs": 267510,
+    "confidence": 0.99
+  },
+  {
+    "text": " sayap",
+    "startMs": 267670,
+    "endMs": 267890,
+    "timestampMs": 267780,
+    "confidence": 0.99
+  },
+  {
+    "text": " yang",
+    "startMs": 267890,
+    "endMs": 268160,
+    "timestampMs": 268025,
+    "confidence": 0.99
+  },
+  {
+    "text": " berlubang",
+    "startMs": 268160,
+    "endMs": 268650,
+    "timestampMs": 268405,
+    "confidence": 0.99
+  },
+  {
+    "text": " itu,",
+    "startMs": 268650,
+    "endMs": 268800,
+    "timestampMs": 268725,
+    "confidence": 0.99
+  },
+  {
+    "text": " tetapi",
+    "startMs": 269200,
+    "endMs": 269390,
+    "timestampMs": 269295,
+    "confidence": 0.99
+  },
+  {
+    "text": " Wald",
+    "startMs": 269390,
+    "endMs": 269570,
+    "timestampMs": 269480,
+    "confidence": 0.99
+  },
+  {
+    "text": " menghentikan",
+    "startMs": 269570,
+    "endMs": 270200,
+    "timestampMs": 269885,
+    "confidence": 0.99
+  },
+  {
+    "text": " mereka",
+    "startMs": 270200,
+    "endMs": 270560,
+    "timestampMs": 270380,
+    "confidence": 0.99
+  },
+  {
+    "text": " karena",
+    "startMs": 270560,
+    "endMs": 270970,
+    "timestampMs": 270765,
+    "confidence": 0.99
+  },
+  {
+    "text": " mereka",
+    "startMs": 270970,
+    "endMs": 271400,
+    "timestampMs": 271185,
+    "confidence": 0.99
+  },
+  {
+    "text": " terjebak",
+    "startMs": 271400,
+    "endMs": 271960,
+    "timestampMs": 271680,
+    "confidence": 0.99
+  },
+  {
+    "text": " Survivorship",
+    "startMs": 271960,
+    "endMs": 272660,
+    "timestampMs": 272310,
+    "confidence": 0.99
+  },
+  {
+    "text": " Bias",
+    "startMs": 272660,
+    "endMs": 272940,
+    "timestampMs": 272800,
+    "confidence": 0.99
+  },
+  {
+    "text": " atau",
+    "startMs": 272940,
+    "endMs": 273220,
+    "timestampMs": 273080,
+    "confidence": 0.99
+  },
+  {
+    "text": " bias",
+    "startMs": 273220,
+    "endMs": 273500,
+    "timestampMs": 273360,
+    "confidence": 0.99
+  },
+  {
+    "text": " penyintas.",
+    "startMs": 273500,
+    "endMs": 274130,
+    "timestampMs": 273815,
+    "confidence": 0.99
+  },
+  {
+    "text": " Pesawat",
+    "startMs": 274400,
+    "endMs": 274820,
+    "timestampMs": 274610,
+    "confidence": 0.99
+  },
+  {
+    "text": " yang",
+    "startMs": 274820,
+    "endMs": 275060,
+    "timestampMs": 274940,
+    "confidence": 0.99
+  },
+  {
+    "text": " tertembak",
+    "startMs": 275060,
+    "endMs": 275600,
+    "timestampMs": 275330,
+    "confidence": 0.99
+  },
+  {
+    "text": " di",
+    "startMs": 275600,
+    "endMs": 275720,
+    "timestampMs": 275660,
+    "confidence": 0.99
+  },
+  {
+    "text": " mesin",
+    "startMs": 275720,
+    "endMs": 276020,
+    "timestampMs": 275870,
+    "confidence": 0.99
+  },
+  {
+    "text": " dan",
+    "startMs": 276020,
+    "endMs": 276270,
+    "timestampMs": 276145,
+    "confidence": 0.99
+  },
+  {
+    "text": " kokpit",
+    "startMs": 276270,
+    "endMs": 276560,
+    "timestampMs": 276415,
+    "confidence": 0.99
+  },
+  {
+    "text": " tidak",
+    "startMs": 276560,
+    "endMs": 276860,
+    "timestampMs": 276710,
+    "confidence": 0.99
+  },
+  {
+    "text": " pernah",
+    "startMs": 276860,
+    "endMs": 277220,
+    "timestampMs": 277040,
+    "confidence": 0.99
+  },
+  {
+    "text": " kembali",
+    "startMs": 277220,
+    "endMs": 277640,
+    "timestampMs": 277430,
+    "confidence": 0.99
+  },
+  {
+    "text": " untuk",
+    "startMs": 277640,
+    "endMs": 277960,
+    "timestampMs": 277800,
+    "confidence": 0.99
+  },
+  {
+    "text": " diteliti",
+    "startMs": 277960,
+    "endMs": 278420,
+    "timestampMs": 278190,
+    "confidence": 0.99
+  },
+  {
+    "text": " karena",
+    "startMs": 278420,
+    "endMs": 278780,
+    "timestampMs": 278600,
+    "confidence": 0.99
+  },
+  {
+    "text": " semuanya",
+    "startMs": 278780,
+    "endMs": 279260,
+    "timestampMs": 279020,
+    "confidence": 0.99
+  },
+  {
+    "text": " jatuh",
+    "startMs": 279260,
+    "endMs": 279550,
+    "timestampMs": 279405,
+    "confidence": 0.99
+  },
+  {
+    "text": " di",
+    "startMs": 279550,
+    "endMs": 279800,
+    "timestampMs": 279675,
+    "confidence": 0.99
+  },
+  {
+    "text": " lautan.",
+    "startMs": 279800,
+    "endMs": 280240,
+    "timestampMs": 280020,
+    "confidence": 0.99
+  },
+  {
+    "text": " Di",
+    "startMs": 280240,
+    "endMs": 280540,
+    "timestampMs": 280390,
+    "confidence": 0.99
+  },
+  {
+    "text": " era",
+    "startMs": 280540,
+    "endMs": 280620,
+    "timestampMs": 280580,
+    "confidence": 0.99
+  },
+  {
+    "text": " modern,",
+    "startMs": 280570,
+    "endMs": 280910,
+    "timestampMs": 280740,
+    "confidence": 0.99
+  },
+  {
+    "text": " kita",
+    "startMs": 281030,
+    "endMs": 281280,
+    "timestampMs": 281155,
+    "confidence": 0.99
+  },
+  {
+    "text": " melihat",
+    "startMs": 281280,
+    "endMs": 281710,
+    "timestampMs": 281495,
+    "confidence": 0.99
+  },
+  {
+    "text": " satu",
+    "startMs": 281710,
+    "endMs": 281790,
+    "timestampMs": 281750,
+    "confidence": 0.99
+  },
+  {
+    "text": " miliarder",
+    "startMs": 281710,
+    "endMs": 282500,
+    "timestampMs": 282105,
+    "confidence": 0.99
+  },
+  {
+    "text": " yang",
+    "startMs": 282500,
+    "endMs": 282750,
+    "timestampMs": 282625,
+    "confidence": 0.99
+  },
+  {
+    "text": " sukses",
+    "startMs": 282750,
+    "endMs": 283130,
+    "timestampMs": 282940,
+    "confidence": 0.99
+  },
+  {
+    "text": " setelah",
+    "startMs": 283130,
+    "endMs": 283530,
+    "timestampMs": 283330,
+    "confidence": 0.99
+  },
+  {
+    "text": " keluar",
+    "startMs": 283530,
+    "endMs": 283900,
+    "timestampMs": 283715,
+    "confidence": 0.99
+  },
+  {
+    "text": " dari",
+    "startMs": 283900,
+    "endMs": 284150,
+    "timestampMs": 284025,
+    "confidence": 0.99
+  },
+  {
+    "text": " kuliah,",
+    "startMs": 284150,
+    "endMs": 284640,
+    "timestampMs": 284395,
+    "confidence": 0.99
+  },
+  {
+    "text": " lalu",
+    "startMs": 284640,
+    "endMs": 284930,
+    "timestampMs": 284785,
+    "confidence": 0.99
+  },
+  {
+    "text": " menyimpulkan",
+    "startMs": 284930,
+    "endMs": 285600,
+    "timestampMs": 285265,
+    "confidence": 0.99
+  },
+  {
+    "text": " itulah",
+    "startMs": 285600,
+    "endMs": 285960,
+    "timestampMs": 285780,
+    "confidence": 0.99
+  },
+  {
+    "text": " rumus",
+    "startMs": 285960,
+    "endMs": 286260,
+    "timestampMs": 286110,
+    "confidence": 0.99
+  },
+  {
+    "text": " pasti",
+    "startMs": 286260,
+    "endMs": 286560,
+    "timestampMs": 286410,
+    "confidence": 0.99
+  },
+  {
+    "text": " keberhasilan,",
+    "startMs": 286560,
+    "endMs": 287440,
+    "timestampMs": 287000,
+    "confidence": 0.99
+  },
+  {
+    "text": " sembari",
+    "startMs": 287440,
+    "endMs": 287840,
+    "timestampMs": 287640,
+    "confidence": 0.99
+  },
+  {
+    "text": " melupakan",
+    "startMs": 287840,
+    "endMs": 288350,
+    "timestampMs": 288095,
+    "confidence": 0.99
+  },
+  {
+    "text": " ratusan",
+    "startMs": 288350,
+    "endMs": 288750,
+    "timestampMs": 288550,
+    "confidence": 0.99
+  },
+  {
+    "text": " ribu",
+    "startMs": 288750,
+    "endMs": 288970,
+    "timestampMs": 288860,
+    "confidence": 0.99
+  },
+  {
+    "text": " orang",
+    "startMs": 288970,
+    "endMs": 289250,
+    "timestampMs": 289110,
+    "confidence": 0.99
+  },
+  {
+    "text": " yang",
+    "startMs": 289250,
+    "endMs": 289480,
+    "timestampMs": 289365,
+    "confidence": 0.99
+  },
+  {
+    "text": " mengambil",
+    "startMs": 289480,
+    "endMs": 289990,
+    "timestampMs": 289735,
+    "confidence": 0.99
+  },
+  {
+    "text": " langkah",
+    "startMs": 289990,
+    "endMs": 290390,
+    "timestampMs": 290190,
+    "confidence": 0.99
+  },
+  {
+    "text": " serupa",
+    "startMs": 290390,
+    "endMs": 290730,
+    "timestampMs": 290560,
+    "confidence": 0.99
+  },
+  {
+    "text": " namun",
+    "startMs": 290730,
+    "endMs": 291010,
+    "timestampMs": 290870,
+    "confidence": 0.99
+  },
+  {
+    "text": " bangkrut",
+    "startMs": 291010,
+    "endMs": 291460,
+    "timestampMs": 291235,
+    "confidence": 0.99
+  },
+  {
+    "text": " dalam",
+    "startMs": 291460,
+    "endMs": 291720,
+    "timestampMs": 291590,
+    "confidence": 0.99
+  },
+  {
+    "text": " kesunyian.",
+    "startMs": 291720,
+    "endMs": 292190,
+    "timestampMs": 291955,
+    "confidence": 0.99
+  },
+  {
+    "text": " Selain",
+    "startMs": 292680,
+    "endMs": 292880,
+    "timestampMs": 292780,
+    "confidence": 0.99
+  },
+  {
+    "text": " itu,",
+    "startMs": 292880,
+    "endMs": 293080,
+    "timestampMs": 292980,
+    "confidence": 0.99
+  },
+  {
+    "text": " keputusan",
+    "startMs": 293210,
+    "endMs": 293810,
+    "timestampMs": 293510,
+    "confidence": 0.99
+  },
+  {
+    "text": " kita",
+    "startMs": 293810,
+    "endMs": 294060,
+    "timestampMs": 293935,
+    "confidence": 0.99
+  },
+  {
+    "text": " juga",
+    "startMs": 294060,
+    "endMs": 294360,
+    "timestampMs": 294210,
+    "confidence": 0.99
+  },
+  {
+    "text": " sering",
+    "startMs": 294360,
+    "endMs": 294720,
+    "timestampMs": 294540,
+    "confidence": 0.99
+  },
+  {
+    "text": " dihancurkan",
+    "startMs": 294720,
+    "endMs": 295450,
+    "timestampMs": 295085,
+    "confidence": 0.99
+  },
+  {
+    "text": " oleh",
+    "startMs": 295450,
+    "endMs": 295710,
+    "timestampMs": 295580,
+    "confidence": 0.99
+  },
+  {
+    "text": " Sunk",
+    "startMs": 295710,
+    "endMs": 295790,
+    "timestampMs": 295750,
+    "confidence": 0.99
+  },
+  {
+    "text": " Cost",
+    "startMs": 295710,
+    "endMs": 296230,
+    "timestampMs": 295970,
+    "confidence": 0.99
+  },
+  {
+    "text": " Fallacy,",
+    "startMs": 296230,
+    "endMs": 296720,
+    "timestampMs": 296475,
+    "confidence": 0.99
+  },
+  {
+    "text": " yakni",
+    "startMs": 296720,
+    "endMs": 297020,
+    "timestampMs": 296870,
+    "confidence": 0.99
+  },
+  {
+    "text": " bertahan",
+    "startMs": 297020,
+    "endMs": 297500,
+    "timestampMs": 297260,
+    "confidence": 0.99
+  },
+  {
+    "text": " pada",
+    "startMs": 297500,
+    "endMs": 297730,
+    "timestampMs": 297615,
+    "confidence": 0.99
+  },
+  {
+    "text": " hal",
+    "startMs": 297730,
+    "endMs": 297920,
+    "timestampMs": 297825,
+    "confidence": 0.99
+  },
+  {
+    "text": " yang",
+    "startMs": 297920,
+    "endMs": 298150,
+    "timestampMs": 298035,
+    "confidence": 0.99
+  },
+  {
+    "text": " sudah",
+    "startMs": 298150,
+    "endMs": 298460,
+    "timestampMs": 298305,
+    "confidence": 0.99
+  },
+  {
+    "text": " gagal",
+    "startMs": 298460,
+    "endMs": 298760,
+    "timestampMs": 298610,
+    "confidence": 0.99
+  },
+  {
+    "text": " hanya",
+    "startMs": 298760,
+    "endMs": 299100,
+    "timestampMs": 298930,
+    "confidence": 0.99
+  },
+  {
+    "text": " karena",
+    "startMs": 299100,
+    "endMs": 299420,
+    "timestampMs": 299260,
+    "confidence": 0.99
+  },
+  {
+    "text": " merasa",
+    "startMs": 299420,
+    "endMs": 299780,
+    "timestampMs": 299600,
+    "confidence": 0.99
+  },
+  {
+    "text": " sayang",
+    "startMs": 299780,
+    "endMs": 300140,
+    "timestampMs": 299960,
+    "confidence": 0.99
+  },
+  {
+    "text": " dengan",
+    "startMs": 300140,
+    "endMs": 300500,
+    "timestampMs": 300320,
+    "confidence": 0.99
+  },
+  {
+    "text": " uang",
+    "startMs": 300500,
+    "endMs": 300740,
+    "timestampMs": 300620,
+    "confidence": 0.99
+  },
+  {
+    "text": " atau",
+    "startMs": 300740,
+    "endMs": 300980,
+    "timestampMs": 300860,
+    "confidence": 0.99
+  },
+  {
+    "text": " waktu",
+    "startMs": 300980,
+    "endMs": 301280,
+    "timestampMs": 301130,
+    "confidence": 0.99
+  },
+  {
+    "text": " yang",
+    "startMs": 301280,
+    "endMs": 301550,
+    "timestampMs": 301415,
+    "confidence": 0.99
+  },
+  {
+    "text": " terlanjur",
+    "startMs": 301550,
+    "endMs": 302420,
+    "timestampMs": 301985,
+    "confidence": 0.99
+  },
+  {
+    "text": " keluar.",
+    "startMs": 302420,
+    "endMs": 302500,
+    "timestampMs": 302460,
+    "confidence": 0.99
+  },
+  {
+    "text": " Psikolog",
+    "startMs": 302640,
+    "endMs": 303190,
+    "timestampMs": 302915,
+    "confidence": 0.99
+  },
+  {
+    "text": " Daniel",
+    "startMs": 303190,
+    "endMs": 303580,
+    "timestampMs": 303385,
+    "confidence": 0.99
+  },
+  {
+    "text": " Kahneman",
+    "startMs": 303580,
+    "endMs": 304120,
+    "timestampMs": 303850,
+    "confidence": 0.99
+  },
+  {
+    "text": " dan",
+    "startMs": 304120,
+    "endMs": 304320,
+    "timestampMs": 304220,
+    "confidence": 0.99
+  },
+  {
+    "text": " Amos",
+    "startMs": 304320,
+    "endMs": 304400,
+    "timestampMs": 304360,
+    "confidence": 0.99
+  },
+  {
+    "text": " Tversky",
+    "startMs": 304320,
+    "endMs": 305040,
+    "timestampMs": 304680,
+    "confidence": 0.99
+  },
+  {
+    "text": " lewat",
+    "startMs": 305040,
+    "endMs": 305370,
+    "timestampMs": 305205,
+    "confidence": 0.99
+  },
+  {
+    "text": " Teori",
+    "startMs": 305370,
+    "endMs": 305730,
+    "timestampMs": 305550,
+    "confidence": 0.99
+  },
+  {
+    "text": " Prospek",
+    "startMs": 305730,
+    "endMs": 306250,
+    "timestampMs": 305990,
+    "confidence": 0.99
+  },
+  {
+    "text": " tahun",
+    "startMs": 306250,
+    "endMs": 306590,
+    "timestampMs": 306420,
+    "confidence": 0.99
+  },
+  {
+    "text": " seribu",
+    "startMs": 306590,
+    "endMs": 306670,
+    "timestampMs": 306630,
+    "confidence": 0.99
+  },
+  {
+    "text": " sembilan",
+    "startMs": 306670,
+    "endMs": 306750,
+    "timestampMs": 306710,
+    "confidence": 0.99
+  },
+  {
+    "text": " ratus",
+    "startMs": 306750,
+    "endMs": 306830,
+    "timestampMs": 306790,
+    "confidence": 0.99
+  },
+  {
+    "text": " tujuh",
+    "startMs": 306830,
+    "endMs": 306910,
+    "timestampMs": 306870,
+    "confidence": 0.99
+  },
+  {
+    "text": " puluh",
+    "startMs": 306910,
+    "endMs": 306990,
+    "timestampMs": 306950,
+    "confidence": 0.99
+  },
+  {
+    "text": " sembilan",
+    "startMs": 306590,
+    "endMs": 307420,
+    "timestampMs": 307005,
+    "confidence": 0.99
+  },
+  {
+    "text": " menemukan",
+    "startMs": 307420,
+    "endMs": 308040,
+    "timestampMs": 307730,
+    "confidence": 0.99
+  },
+  {
+    "text": " prinsip",
+    "startMs": 308040,
+    "endMs": 308480,
+    "timestampMs": 308260,
+    "confidence": 0.99
+  },
+  {
+    "text": " Loss",
+    "startMs": 308480,
+    "endMs": 308680,
+    "timestampMs": 308580,
+    "confidence": 0.99
+  },
+  {
+    "text": " Aversion,",
+    "startMs": 308680,
+    "endMs": 309440,
+    "timestampMs": 309060,
+    "confidence": 0.99
+  },
+  {
+    "text": " bahwa",
+    "startMs": 309520,
+    "endMs": 309770,
+    "timestampMs": 309645,
+    "confidence": 0.99
+  },
+  {
+    "text": " rasa",
+    "startMs": 309770,
+    "endMs": 309980,
+    "timestampMs": 309875,
+    "confidence": 0.99
+  },
+  {
+    "text": " sakit",
+    "startMs": 309980,
+    "endMs": 310230,
+    "timestampMs": 310105,
+    "confidence": 0.99
+  },
+  {
+    "text": " kehilangan",
+    "startMs": 310230,
+    "endMs": 310740,
+    "timestampMs": 310485,
+    "confidence": 0.99
+  },
+  {
+    "text": " seratus",
+    "startMs": 310740,
+    "endMs": 311210,
+    "timestampMs": 310975,
+    "confidence": 0.99
+  },
+  {
+    "text": " ribu",
+    "startMs": 311210,
+    "endMs": 311410,
+    "timestampMs": 311310,
+    "confidence": 0.99
+  },
+  {
+    "text": " rupiah",
+    "startMs": 311410,
+    "endMs": 311710,
+    "timestampMs": 311560,
+    "confidence": 0.99
+  },
+  {
+    "text": " terasa",
+    "startMs": 311710,
+    "endMs": 312010,
+    "timestampMs": 311860,
+    "confidence": 0.99
+  },
+  {
+    "text": " lebih",
+    "startMs": 312010,
+    "endMs": 312270,
+    "timestampMs": 312140,
+    "confidence": 0.99
+  },
+  {
+    "text": " dari",
+    "startMs": 312270,
+    "endMs": 312480,
+    "timestampMs": 312375,
+    "confidence": 0.99
+  },
+  {
+    "text": " dua",
+    "startMs": 312480,
+    "endMs": 312630,
+    "timestampMs": 312555,
+    "confidence": 0.99
+  },
+  {
+    "text": " kali",
+    "startMs": 312630,
+    "endMs": 312840,
+    "timestampMs": 312735,
+    "confidence": 0.99
+  },
+  {
+    "text": " lipat",
+    "startMs": 312840,
+    "endMs": 313200,
+    "timestampMs": 313020,
+    "confidence": 0.99
+  },
+  {
+    "text": " lebih",
+    "startMs": 313200,
+    "endMs": 313500,
+    "timestampMs": 313350,
+    "confidence": 0.99
+  },
+  {
+    "text": " menyiksa",
+    "startMs": 313500,
+    "endMs": 313980,
+    "timestampMs": 313740,
+    "confidence": 0.99
+  },
+  {
+    "text": " daripada",
+    "startMs": 313980,
+    "endMs": 314460,
+    "timestampMs": 314220,
+    "confidence": 0.99
+  },
+  {
+    "text": " kebahagiaan",
+    "startMs": 314460,
+    "endMs": 315170,
+    "timestampMs": 314815,
+    "confidence": 0.99
+  },
+  {
+    "text": " mendapatkannya.",
+    "startMs": 315170,
+    "endMs": 315960,
+    "timestampMs": 315565,
+    "confidence": 0.99
+  },
+  {
+    "text": " Di",
+    "startMs": 316280,
+    "endMs": 316400,
+    "timestampMs": 316340,
+    "confidence": 0.99
+  },
+  {
+    "text": " abad",
+    "startMs": 316400,
+    "endMs": 316540,
+    "timestampMs": 316470,
+    "confidence": 0.99
+  },
+  {
+    "text": " kedua",
+    "startMs": 316540,
+    "endMs": 317080,
+    "timestampMs": 316810,
+    "confidence": 0.99
+  },
+  {
+    "text": " puluh",
+    "startMs": 317080,
+    "endMs": 317200,
+    "timestampMs": 317140,
+    "confidence": 0.99
+  },
+  {
+    "text": " satu,",
+    "startMs": 317200,
+    "endMs": 317280,
+    "timestampMs": 317240,
+    "confidence": 0.99
+  },
+  {
+    "text": " seluruh",
+    "startMs": 317200,
+    "endMs": 317630,
+    "timestampMs": 317415,
+    "confidence": 0.99
+  },
+  {
+    "text": " bias",
+    "startMs": 317630,
+    "endMs": 318060,
+    "timestampMs": 317845,
+    "confidence": 0.99
+  },
+  {
+    "text": " ini",
+    "startMs": 318060,
+    "endMs": 318140,
+    "timestampMs": 318100,
+    "confidence": 0.99
+  },
+  {
+    "text": " diperparah",
+    "startMs": 318130,
+    "endMs": 318680,
+    "timestampMs": 318405,
+    "confidence": 0.99
+  },
+  {
+    "text": " oleh",
+    "startMs": 318680,
+    "endMs": 318930,
+    "timestampMs": 318805,
+    "confidence": 0.99
+  },
+  {
+    "text": " algoritma",
+    "startMs": 318930,
+    "endMs": 319490,
+    "timestampMs": 319210,
+    "confidence": 0.99
+  },
+  {
+    "text": " ponsel",
+    "startMs": 319490,
+    "endMs": 319870,
+    "timestampMs": 319680,
+    "confidence": 0.99
+  },
+  {
+    "text": " kita",
+    "startMs": 319870,
+    "endMs": 320120,
+    "timestampMs": 319995,
+    "confidence": 0.99
+  },
+  {
+    "text": " yang",
+    "startMs": 320120,
+    "endMs": 320400,
+    "timestampMs": 320260,
+    "confidence": 0.99
+  },
+  {
+    "text": " bekerja",
+    "startMs": 320400,
+    "endMs": 320800,
+    "timestampMs": 320600,
+    "confidence": 0.99
+  },
+  {
+    "text": " selaras",
+    "startMs": 320800,
+    "endMs": 321240,
+    "timestampMs": 321020,
+    "confidence": 0.99
+  },
+  {
+    "text": " dengan",
+    "startMs": 321240,
+    "endMs": 321620,
+    "timestampMs": 321430,
+    "confidence": 0.99
+  },
+  {
+    "text": " Confirmation",
+    "startMs": 321620,
+    "endMs": 322380,
+    "timestampMs": 322000,
+    "confidence": 0.99
+  },
+  {
+    "text": " Bias,",
+    "startMs": 322380,
+    "endMs": 322650,
+    "timestampMs": 322515,
+    "confidence": 0.99
+  },
+  {
+    "text": " kecenderungan",
+    "startMs": 322880,
+    "endMs": 323570,
+    "timestampMs": 323225,
+    "confidence": 0.99
+  },
+  {
+    "text": " otak",
+    "startMs": 323570,
+    "endMs": 323800,
+    "timestampMs": 323685,
+    "confidence": 0.99
+  },
+  {
+    "text": " untuk",
+    "startMs": 323800,
+    "endMs": 324070,
+    "timestampMs": 323935,
+    "confidence": 0.99
+  },
+  {
+    "text": " hanya",
+    "startMs": 324070,
+    "endMs": 324350,
+    "timestampMs": 324210,
+    "confidence": 0.99
+  },
+  {
+    "text": " mencari",
+    "startMs": 324350,
+    "endMs": 324710,
+    "timestampMs": 324530,
+    "confidence": 0.99
+  },
+  {
+    "text": " informasi",
+    "startMs": 324710,
+    "endMs": 325200,
+    "timestampMs": 324955,
+    "confidence": 0.99
+  },
+  {
+    "text": " yang",
+    "startMs": 325200,
+    "endMs": 325420,
+    "timestampMs": 325310,
+    "confidence": 0.99
+  },
+  {
+    "text": " membenarkan",
+    "startMs": 325420,
+    "endMs": 326010,
+    "timestampMs": 325715,
+    "confidence": 0.99
+  },
+  {
+    "text": " pendapat",
+    "startMs": 326010,
+    "endMs": 326450,
+    "timestampMs": 326230,
+    "confidence": 0.99
+  },
+  {
+    "text": " sendiri.",
+    "startMs": 326450,
+    "endMs": 327120,
+    "timestampMs": 326785,
+    "confidence": 0.99
+  },
+  {
+    "text": " Di",
+    "startMs": 327120,
+    "endMs": 327560,
+    "timestampMs": 327340,
+    "confidence": 0.99
+  },
+  {
+    "text": " dalam",
+    "startMs": 327560,
+    "endMs": 327640,
+    "timestampMs": 327600,
+    "confidence": 0.99
+  },
+  {
+    "text": " ruang",
+    "startMs": 327610,
+    "endMs": 327960,
+    "timestampMs": 327785,
+    "confidence": 0.99
+  },
+  {
+    "text": " gema",
+    "startMs": 327960,
+    "endMs": 328240,
+    "timestampMs": 328100,
+    "confidence": 0.99
+  },
+  {
+    "text": " digital",
+    "startMs": 328240,
+    "endMs": 328730,
+    "timestampMs": 328485,
+    "confidence": 0.99
+  },
+  {
+    "text": " ini,",
+    "startMs": 328730,
+    "endMs": 328940,
+    "timestampMs": 328835,
+    "confidence": 0.99
+  },
+  {
+    "text": " muncul",
+    "startMs": 329350,
+    "endMs": 329580,
+    "timestampMs": 329465,
+    "confidence": 0.99
+  },
+  {
+    "text": " fenomena",
+    "startMs": 329580,
+    "endMs": 330200,
+    "timestampMs": 329890,
+    "confidence": 0.99
+  },
+  {
+    "text": " yang",
+    "startMs": 330200,
+    "endMs": 330500,
+    "timestampMs": 330350,
+    "confidence": 0.99
+  },
+  {
+    "text": " diteliti",
+    "startMs": 330500,
+    "endMs": 331120,
+    "timestampMs": 330810,
+    "confidence": 0.99
+  },
+  {
+    "text": " David",
+    "startMs": 331120,
+    "endMs": 331510,
+    "timestampMs": 331315,
+    "confidence": 0.99
+  },
+  {
+    "text": " Dunning",
+    "startMs": 331510,
+    "endMs": 332050,
+    "timestampMs": 331780,
+    "confidence": 0.99
+  },
+  {
+    "text": " dan",
+    "startMs": 332050,
+    "endMs": 332280,
+    "timestampMs": 332165,
+    "confidence": 0.99
+  },
+  {
+    "text": " Justin",
+    "startMs": 332280,
+    "endMs": 332750,
+    "timestampMs": 332515,
+    "confidence": 0.99
+  },
+  {
+    "text": " Kruger",
+    "startMs": 332750,
+    "endMs": 333220,
+    "timestampMs": 332985,
+    "confidence": 0.99
+  },
+  {
+    "text": " pada",
+    "startMs": 333220,
+    "endMs": 333580,
+    "timestampMs": 333400,
+    "confidence": 0.99
+  },
+  {
+    "text": " tahun",
+    "startMs": 333580,
+    "endMs": 333910,
+    "timestampMs": 333745,
+    "confidence": 0.99
+  },
+  {
+    "text": " seribu",
+    "startMs": 333910,
+    "endMs": 333990,
+    "timestampMs": 333950,
+    "confidence": 0.99
+  },
+  {
+    "text": " sembilan",
+    "startMs": 333990,
+    "endMs": 334070,
+    "timestampMs": 334030,
+    "confidence": 0.99
+  },
+  {
+    "text": " ratus",
+    "startMs": 334070,
+    "endMs": 334150,
+    "timestampMs": 334110,
+    "confidence": 0.99
+  },
+  {
+    "text": " sembilan",
+    "startMs": 334150,
+    "endMs": 334230,
+    "timestampMs": 334190,
+    "confidence": 0.99
+  },
+  {
+    "text": " puluh",
+    "startMs": 334230,
+    "endMs": 334310,
+    "timestampMs": 334270,
+    "confidence": 0.99
+  },
+  {
+    "text": " sembilan.",
+    "startMs": 333910,
+    "endMs": 334960,
+    "timestampMs": 334435,
+    "confidence": 0.99
+  },
+  {
+    "text": " Efek",
+    "startMs": 335120,
+    "endMs": 335510,
+    "timestampMs": 335315,
+    "confidence": 0.99
+  },
+  {
+    "text": " Dunning",
+    "startMs": 335510,
+    "endMs": 335750,
+    "timestampMs": 335630,
+    "confidence": 0.99
+  },
+  {
+    "text": " Kruger",
+    "startMs": 335750,
+    "endMs": 336060,
+    "timestampMs": 335905,
+    "confidence": 0.99
+  },
+  {
+    "text": " membuktikan",
+    "startMs": 336060,
+    "endMs": 336750,
+    "timestampMs": 336405,
+    "confidence": 0.99
+  },
+  {
+    "text": " bahwa",
+    "startMs": 336750,
+    "endMs": 336950,
+    "timestampMs": 336850,
+    "confidence": 0.99
+  },
+  {
+    "text": " orang",
+    "startMs": 336950,
+    "endMs": 337230,
+    "timestampMs": 337090,
+    "confidence": 0.99
+  },
+  {
+    "text": " yang",
+    "startMs": 337230,
+    "endMs": 337450,
+    "timestampMs": 337340,
+    "confidence": 0.99
+  },
+  {
+    "text": " ilmunya",
+    "startMs": 337450,
+    "endMs": 337840,
+    "timestampMs": 337645,
+    "confidence": 0.99
+  },
+  {
+    "text": " masih",
+    "startMs": 337840,
+    "endMs": 338120,
+    "timestampMs": 337980,
+    "confidence": 0.99
+  },
+  {
+    "text": " dangkal",
+    "startMs": 338120,
+    "endMs": 338510,
+    "timestampMs": 338315,
+    "confidence": 0.99
+  },
+  {
+    "text": " justru",
+    "startMs": 338510,
+    "endMs": 338960,
+    "timestampMs": 338735,
+    "confidence": 0.99
+  },
+  {
+    "text": " berada",
+    "startMs": 338960,
+    "endMs": 339300,
+    "timestampMs": 339130,
+    "confidence": 0.99
+  },
+  {
+    "text": " di",
+    "startMs": 339300,
+    "endMs": 339430,
+    "timestampMs": 339365,
+    "confidence": 0.99
+  },
+  {
+    "text": " puncak",
+    "startMs": 339430,
+    "endMs": 339750,
+    "timestampMs": 339590,
+    "confidence": 0.99
+  },
+  {
+    "text": " gunung",
+    "startMs": 339750,
+    "endMs": 340090,
+    "timestampMs": 339920,
+    "confidence": 0.99
+  },
+  {
+    "text": " kepercayaan",
+    "startMs": 340090,
+    "endMs": 340700,
+    "timestampMs": 340395,
+    "confidence": 0.99
+  },
+  {
+    "text": " diri",
+    "startMs": 340700,
+    "endMs": 340920,
+    "timestampMs": 340810,
+    "confidence": 0.99
+  },
+  {
+    "text": " yang",
+    "startMs": 340920,
+    "endMs": 341140,
+    "timestampMs": 341030,
+    "confidence": 0.99
+  },
+  {
+    "text": " keliru,",
+    "startMs": 341140,
+    "endMs": 341520,
+    "timestampMs": 341330,
+    "confidence": 0.99
+  },
+  {
+    "text": " sedangkan",
+    "startMs": 341520,
+    "endMs": 342180,
+    "timestampMs": 341850,
+    "confidence": 0.99
+  },
+  {
+    "text": " para",
+    "startMs": 342180,
+    "endMs": 342480,
+    "timestampMs": 342330,
+    "confidence": 0.99
+  },
+  {
+    "text": " ahli",
+    "startMs": 342480,
+    "endMs": 342780,
+    "timestampMs": 342630,
+    "confidence": 0.99
+  },
+  {
+    "text": " sejati",
+    "startMs": 342780,
+    "endMs": 343220,
+    "timestampMs": 343000,
+    "confidence": 0.99
+  },
+  {
+    "text": " jauh",
+    "startMs": 343220,
+    "endMs": 343510,
+    "timestampMs": 343365,
+    "confidence": 0.99
+  },
+  {
+    "text": " lebih",
+    "startMs": 343510,
+    "endMs": 343880,
+    "timestampMs": 343695,
+    "confidence": 0.99
+  },
+  {
+    "text": " berhati-hati.",
+    "startMs": 343880,
+    "endMs": 344880,
+    "timestampMs": 344380,
+    "confidence": 0.99
+  },
+  {
+    "text": " Lalu",
+    "startMs": 344960,
+    "endMs": 345330,
+    "timestampMs": 345145,
+    "confidence": 0.99
+  },
+  {
+    "text": " bagaimana",
+    "startMs": 345330,
+    "endMs": 345910,
+    "timestampMs": 345620,
+    "confidence": 0.99
+  },
+  {
+    "text": " cara",
+    "startMs": 345910,
+    "endMs": 346210,
+    "timestampMs": 346060,
+    "confidence": 0.99
+  },
+  {
+    "text": " melindungi",
+    "startMs": 346210,
+    "endMs": 346950,
+    "timestampMs": 346580,
+    "confidence": 0.99
+  },
+  {
+    "text": " pikiran",
+    "startMs": 346950,
+    "endMs": 347770,
+    "timestampMs": 347360,
+    "confidence": 0.99
+  },
+  {
+    "text": " kita?",
+    "startMs": 347770,
+    "endMs": 347850,
+    "timestampMs": 347810,
+    "confidence": 0.99
+  },
+  {
+    "text": " Filsafat",
+    "startMs": 348080,
+    "endMs": 348670,
+    "timestampMs": 348375,
+    "confidence": 0.99
+  },
+  {
+    "text": " modern",
+    "startMs": 348670,
+    "endMs": 349120,
+    "timestampMs": 348895,
+    "confidence": 0.99
+  },
+  {
+    "text": " mengajarkan",
+    "startMs": 349120,
+    "endMs": 349940,
+    "timestampMs": 349530,
+    "confidence": 0.99
+  },
+  {
+    "text": " latihan",
+    "startMs": 349940,
+    "endMs": 350450,
+    "timestampMs": 350195,
+    "confidence": 0.99
+  },
+  {
+    "text": " mental",
+    "startMs": 350450,
+    "endMs": 350900,
+    "timestampMs": 350675,
+    "confidence": 0.99
+  },
+  {
+    "text": " bernama",
+    "startMs": 350900,
+    "endMs": 351410,
+    "timestampMs": 351155,
+    "confidence": 0.99
+  },
+  {
+    "text": " metode",
+    "startMs": 351410,
+    "endMs": 351850,
+    "timestampMs": 351630,
+    "confidence": 0.99
+  },
+  {
+    "text": " Steelman.",
+    "startMs": 351850,
+    "endMs": 352480,
+    "timestampMs": 352165,
+    "confidence": 0.99
+  },
+  {
+    "text": " Kebalikan",
+    "startMs": 352640,
+    "endMs": 353200,
+    "timestampMs": 352920,
+    "confidence": 0.99
+  },
+  {
+    "text": " dari",
+    "startMs": 353200,
+    "endMs": 353450,
+    "timestampMs": 353325,
+    "confidence": 0.99
+  },
+  {
+    "text": " Strawman,",
+    "startMs": 353450,
+    "endMs": 353940,
+    "timestampMs": 353695,
+    "confidence": 0.99
+  },
+  {
+    "text": " teknik",
+    "startMs": 354070,
+    "endMs": 354530,
+    "timestampMs": 354300,
+    "confidence": 0.99
+  },
+  {
+    "text": " ini",
+    "startMs": 354530,
+    "endMs": 354660,
+    "timestampMs": 354595,
+    "confidence": 0.99
+  },
+  {
+    "text": " menuntut",
+    "startMs": 354660,
+    "endMs": 355130,
+    "timestampMs": 354895,
+    "confidence": 0.99
+  },
+  {
+    "text": " kita",
+    "startMs": 355130,
+    "endMs": 355380,
+    "timestampMs": 355255,
+    "confidence": 0.99
+  },
+  {
+    "text": " merumuskan",
+    "startMs": 355380,
+    "endMs": 356000,
+    "timestampMs": 355690,
+    "confidence": 0.99
+  },
+  {
+    "text": " argumen",
+    "startMs": 356000,
+    "endMs": 356440,
+    "timestampMs": 356220,
+    "confidence": 0.99
+  },
+  {
+    "text": " lawan",
+    "startMs": 356440,
+    "endMs": 356750,
+    "timestampMs": 356595,
+    "confidence": 0.99
+  },
+  {
+    "text": " dalam",
+    "startMs": 356750,
+    "endMs": 357060,
+    "timestampMs": 356905,
+    "confidence": 0.99
+  },
+  {
+    "text": " versi",
+    "startMs": 357060,
+    "endMs": 357430,
+    "timestampMs": 357245,
+    "confidence": 0.99
+  },
+  {
+    "text": " terkuat",
+    "startMs": 357430,
+    "endMs": 357800,
+    "timestampMs": 357615,
+    "confidence": 0.99
+  },
+  {
+    "text": " dan",
+    "startMs": 357800,
+    "endMs": 357990,
+    "timestampMs": 357895,
+    "confidence": 0.99
+  },
+  {
+    "text": " paling",
+    "startMs": 357990,
+    "endMs": 358370,
+    "timestampMs": 358180,
+    "confidence": 0.99
+  },
+  {
+    "text": " adil",
+    "startMs": 358370,
+    "endMs": 358610,
+    "timestampMs": 358490,
+    "confidence": 0.99
+  },
+  {
+    "text": " sebelum",
+    "startMs": 358610,
+    "endMs": 359040,
+    "timestampMs": 358825,
+    "confidence": 0.99
+  },
+  {
+    "text": " mengujinya.",
+    "startMs": 359040,
+    "endMs": 360000,
+    "timestampMs": 359520,
+    "confidence": 0.99
+  },
+  {
+    "text": " Sebagai",
+    "startMs": 360000,
+    "endMs": 360550,
+    "timestampMs": 360275,
+    "confidence": 0.99
+  },
+  {
+    "text": " penutup,",
+    "startMs": 360550,
+    "endMs": 361090,
+    "timestampMs": 360820,
+    "confidence": 0.99
+  },
+  {
+    "text": " gunakan",
+    "startMs": 361480,
+    "endMs": 361790,
+    "timestampMs": 361635,
+    "confidence": 0.99
+  },
+  {
+    "text": " tiga",
+    "startMs": 361790,
+    "endMs": 362100,
+    "timestampMs": 361945,
+    "confidence": 0.99
+  },
+  {
+    "text": " Perisai",
+    "startMs": 362100,
+    "endMs": 362640,
+    "timestampMs": 362370,
+    "confidence": 0.99
+  },
+  {
+    "text": " mental",
+    "startMs": 362640,
+    "endMs": 363120,
+    "timestampMs": 362880,
+    "confidence": 0.99
+  },
+  {
+    "text": " ini",
+    "startMs": 363120,
+    "endMs": 363360,
+    "timestampMs": 363240,
+    "confidence": 0.99
+  },
+  {
+    "text": " setiap",
+    "startMs": 363360,
+    "endMs": 363810,
+    "timestampMs": 363585,
+    "confidence": 0.99
+  },
+  {
+    "text": " hari.",
+    "startMs": 363810,
+    "endMs": 364140,
+    "timestampMs": 363975,
+    "confidence": 0.99
+  },
+  {
+    "text": " Pertama,",
+    "startMs": 364480,
+    "endMs": 365010,
+    "timestampMs": 364745,
+    "confidence": 0.99
+  },
+  {
+    "text": " pisahkan",
+    "startMs": 365150,
+    "endMs": 365800,
+    "timestampMs": 365475,
+    "confidence": 0.99
+  },
+  {
+    "text": " isi",
+    "startMs": 365800,
+    "endMs": 365990,
+    "timestampMs": 365895,
+    "confidence": 0.99
+  },
+  {
+    "text": " pesan",
+    "startMs": 365990,
+    "endMs": 366370,
+    "timestampMs": 366180,
+    "confidence": 0.99
+  },
+  {
+    "text": " dari",
+    "startMs": 366370,
+    "endMs": 366680,
+    "timestampMs": 366525,
+    "confidence": 0.99
+  },
+  {
+    "text": " pembawa",
+    "startMs": 366680,
+    "endMs": 367210,
+    "timestampMs": 366945,
+    "confidence": 0.99
+  },
+  {
+    "text": " pesannya",
+    "startMs": 367210,
+    "endMs": 367840,
+    "timestampMs": 367525,
+    "confidence": 0.99
+  },
+  {
+    "text": " agar",
+    "startMs": 367840,
+    "endMs": 368170,
+    "timestampMs": 368005,
+    "confidence": 0.99
+  },
+  {
+    "text": " kebal",
+    "startMs": 368170,
+    "endMs": 368590,
+    "timestampMs": 368380,
+    "confidence": 0.99
+  },
+  {
+    "text": " terhadap",
+    "startMs": 368590,
+    "endMs": 369110,
+    "timestampMs": 368850,
+    "confidence": 0.99
+  },
+  {
+    "text": " Ad",
+    "startMs": 369110,
+    "endMs": 369260,
+    "timestampMs": 369185,
+    "confidence": 0.99
+  },
+  {
+    "text": " Hominem.",
+    "startMs": 369260,
+    "endMs": 369920,
+    "timestampMs": 369590,
+    "confidence": 0.99
+  },
+  {
+    "text": " Kedua,",
+    "startMs": 369920,
+    "endMs": 370290,
+    "timestampMs": 370105,
+    "confidence": 0.99
+  },
+  {
+    "text": " cari",
+    "startMs": 370440,
+    "endMs": 371050,
+    "timestampMs": 370745,
+    "confidence": 0.99
+  },
+  {
+    "text": " data",
+    "startMs": 371050,
+    "endMs": 371180,
+    "timestampMs": 371115,
+    "confidence": 0.99
+  },
+  {
+    "text": " yang",
+    "startMs": 371180,
+    "endMs": 371360,
+    "timestampMs": 371270,
+    "confidence": 0.99
+  },
+  {
+    "text": " bisu",
+    "startMs": 371360,
+    "endMs": 371660,
+    "timestampMs": 371510,
+    "confidence": 0.99
+  },
+  {
+    "text": " dan",
+    "startMs": 371660,
+    "endMs": 371880,
+    "timestampMs": 371770,
+    "confidence": 0.99
+  },
+  {
+    "text": " tidak",
+    "startMs": 371880,
+    "endMs": 372280,
+    "timestampMs": 372080,
+    "confidence": 0.99
+  },
+  {
+    "text": " terlihat",
+    "startMs": 372280,
+    "endMs": 372890,
+    "timestampMs": 372585,
+    "confidence": 0.99
+  },
+  {
+    "text": " agar",
+    "startMs": 372890,
+    "endMs": 373190,
+    "timestampMs": 373040,
+    "confidence": 0.99
+  },
+  {
+    "text": " bebas",
+    "startMs": 373190,
+    "endMs": 373570,
+    "timestampMs": 373380,
+    "confidence": 0.99
+  },
+  {
+    "text": " dari",
+    "startMs": 373570,
+    "endMs": 373880,
+    "timestampMs": 373725,
+    "confidence": 0.99
+  },
+  {
+    "text": " Survivorship",
+    "startMs": 373880,
+    "endMs": 374340,
+    "timestampMs": 374110,
+    "confidence": 0.99
+  },
+  {
+    "text": " Bias.",
+    "startMs": 374340,
+    "endMs": 375020,
+    "timestampMs": 374680,
+    "confidence": 0.99
+  },
+  {
+    "text": " Ketiga,",
+    "startMs": 375440,
+    "endMs": 375830,
+    "timestampMs": 375635,
+    "confidence": 0.99
+  },
+  {
+    "text": " berani",
+    "startMs": 375960,
+    "endMs": 376630,
+    "timestampMs": 376295,
+    "confidence": 0.99
+  },
+  {
+    "text": " menghentikan",
+    "startMs": 376630,
+    "endMs": 377160,
+    "timestampMs": 376895,
+    "confidence": 0.99
+  },
+  {
+    "text": " langkah",
+    "startMs": 377160,
+    "endMs": 377630,
+    "timestampMs": 377395,
+    "confidence": 0.99
+  },
+  {
+    "text": " saat",
+    "startMs": 377630,
+    "endMs": 377900,
+    "timestampMs": 377765,
+    "confidence": 0.99
+  },
+  {
+    "text": " arahmu",
+    "startMs": 377900,
+    "endMs": 378230,
+    "timestampMs": 378065,
+    "confidence": 0.99
+  },
+  {
+    "text": " terbukti",
+    "startMs": 378230,
+    "endMs": 378750,
+    "timestampMs": 378490,
+    "confidence": 0.99
+  },
+  {
+    "text": " keliru",
+    "startMs": 378750,
+    "endMs": 379140,
+    "timestampMs": 378945,
+    "confidence": 0.99
+  },
+  {
+    "text": " tanpa",
+    "startMs": 379140,
+    "endMs": 379470,
+    "timestampMs": 379305,
+    "confidence": 0.99
+  },
+  {
+    "text": " tersandera",
+    "startMs": 379470,
+    "endMs": 380130,
+    "timestampMs": 379800,
+    "confidence": 0.99
+  },
+  {
+    "text": " Sunk",
+    "startMs": 380130,
+    "endMs": 380210,
+    "timestampMs": 380170,
+    "confidence": 0.99
+  },
+  {
+    "text": " Cost.",
+    "startMs": 380130,
+    "endMs": 381040,
+    "timestampMs": 380585,
+    "confidence": 0.99
+  },
+  {
+    "text": " Pada",
+    "startMs": 381040,
+    "endMs": 381370,
+    "timestampMs": 381205,
+    "confidence": 0.99
+  },
+  {
+    "text": " akhirnya,",
+    "startMs": 381370,
+    "endMs": 381980,
+    "timestampMs": 381675,
+    "confidence": 0.99
+  },
+  {
+    "text": " tujuan",
+    "startMs": 382290,
+    "endMs": 382590,
+    "timestampMs": 382440,
+    "confidence": 0.99
+  },
+  {
+    "text": " mempelajari",
+    "startMs": 382590,
+    "endMs": 383480,
+    "timestampMs": 383035,
+    "confidence": 0.99
+  },
+  {
+    "text": " psikologi,",
+    "startMs": 383480,
+    "endMs": 384280,
+    "timestampMs": 383880,
+    "confidence": 0.99
+  },
+  {
+    "text": " sejarah,",
+    "startMs": 384370,
+    "endMs": 384820,
+    "timestampMs": 384595,
+    "confidence": 0.99
+  },
+  {
+    "text": " dan",
+    "startMs": 385330,
+    "endMs": 385410,
+    "timestampMs": 385370,
+    "confidence": 0.99
+  },
+  {
+    "text": " logika",
+    "startMs": 385340,
+    "endMs": 385790,
+    "timestampMs": 385565,
+    "confidence": 0.99
+  },
+  {
+    "text": " bukanlah",
+    "startMs": 385790,
+    "endMs": 386310,
+    "timestampMs": 386050,
+    "confidence": 0.99
+  },
+  {
+    "text": " untuk",
+    "startMs": 386310,
+    "endMs": 386670,
+    "timestampMs": 386490,
+    "confidence": 0.99
+  },
+  {
+    "text": " memenangkan",
+    "startMs": 386670,
+    "endMs": 387440,
+    "timestampMs": 387055,
+    "confidence": 0.99
+  },
+  {
+    "text": " debat",
+    "startMs": 387440,
+    "endMs": 387860,
+    "timestampMs": 387650,
+    "confidence": 0.99
+  },
+  {
+    "text": " kusir.",
+    "startMs": 387860,
+    "endMs": 388140,
+    "timestampMs": 388000,
+    "confidence": 0.99
+  },
+  {
+    "text": " Seperti",
+    "startMs": 388480,
+    "endMs": 388920,
+    "timestampMs": 388700,
+    "confidence": 0.99
+  },
+  {
+    "text": " kata",
+    "startMs": 388920,
+    "endMs": 389170,
+    "timestampMs": 389045,
+    "confidence": 0.99
+  },
+  {
+    "text": " Socrates",
+    "startMs": 389170,
+    "endMs": 389680,
+    "timestampMs": 389425,
+    "confidence": 0.99
+  },
+  {
+    "text": " lebih",
+    "startMs": 389680,
+    "endMs": 390010,
+    "timestampMs": 389845,
+    "confidence": 0.99
+  },
+  {
+    "text": " dari",
+    "startMs": 390010,
+    "endMs": 390270,
+    "timestampMs": 390140,
+    "confidence": 0.99
+  },
+  {
+    "text": " dua",
+    "startMs": 390270,
+    "endMs": 390460,
+    "timestampMs": 390365,
+    "confidence": 0.99
+  },
+  {
+    "text": " milenium",
+    "startMs": 390460,
+    "endMs": 390970,
+    "timestampMs": 390715,
+    "confidence": 0.99
+  },
+  {
+    "text": " silam,",
+    "startMs": 390970,
+    "endMs": 391520,
+    "timestampMs": 391245,
+    "confidence": 0.99
+  },
+  {
+    "text": " kebijaksanaan",
+    "startMs": 391640,
+    "endMs": 392300,
+    "timestampMs": 391970,
+    "confidence": 0.99
+  },
+  {
+    "text": " sejati",
+    "startMs": 392300,
+    "endMs": 392720,
+    "timestampMs": 392510,
+    "confidence": 0.99
+  },
+  {
+    "text": " dimulai",
+    "startMs": 392720,
+    "endMs": 393080,
+    "timestampMs": 392900,
+    "confidence": 0.99
+  },
+  {
+    "text": " ketika",
+    "startMs": 393080,
+    "endMs": 393460,
+    "timestampMs": 393270,
+    "confidence": 0.99
+  },
+  {
+    "text": " kita",
+    "startMs": 393460,
+    "endMs": 393680,
+    "timestampMs": 393570,
+    "confidence": 0.99
+  },
+  {
+    "text": " berani",
+    "startMs": 393680,
+    "endMs": 394040,
+    "timestampMs": 393860,
+    "confidence": 0.99
+  },
+  {
+    "text": " mengakui",
+    "startMs": 394040,
+    "endMs": 394520,
+    "timestampMs": 394280,
+    "confidence": 0.99
+  },
+  {
+    "text": " betapa",
+    "startMs": 394520,
+    "endMs": 394880,
+    "timestampMs": 394700,
+    "confidence": 0.99
+  },
+  {
+    "text": " banyak",
+    "startMs": 394880,
+    "endMs": 395250,
+    "timestampMs": 395065,
+    "confidence": 0.99
+  },
+  {
+    "text": " hal",
+    "startMs": 395250,
+    "endMs": 395430,
+    "timestampMs": 395340,
+    "confidence": 0.99
+  },
+  {
+    "text": " yang",
+    "startMs": 395430,
+    "endMs": 395700,
+    "timestampMs": 395565,
+    "confidence": 0.99
+  },
+  {
+    "text": " belum",
+    "startMs": 395700,
+    "endMs": 395970,
+    "timestampMs": 395835,
+    "confidence": 0.99
+  },
+  {
+    "text": " kita",
+    "startMs": 395970,
+    "endMs": 396210,
+    "timestampMs": 396090,
+    "confidence": 0.99
+  },
+  {
+    "text": " ketahui.",
+    "startMs": 396210,
+    "endMs": 396630,
+    "timestampMs": 396420,
+    "confidence": 0.99
+  },
+  {
+    "text": " Jaga",
+    "startMs": 397200,
+    "endMs": 397300,
+    "timestampMs": 397250,
+    "confidence": 0.99
+  },
+  {
+    "text": " kejernihan",
+    "startMs": 397300,
+    "endMs": 398040,
+    "timestampMs": 397670,
+    "confidence": 0.99
+  },
+  {
+    "text": " pikiranmu,",
+    "startMs": 398040,
+    "endMs": 398740,
+    "timestampMs": 398390,
+    "confidence": 0.99
+  },
+  {
+    "text": " tetaplah",
+    "startMs": 399180,
+    "endMs": 399590,
+    "timestampMs": 399385,
+    "confidence": 0.99
+  },
+  {
+    "text": " kritis,",
+    "startMs": 399590,
+    "endMs": 399970,
+    "timestampMs": 399780,
+    "confidence": 0.99
+  },
+  {
+    "text": " dan",
+    "startMs": 400330,
+    "endMs": 400410,
+    "timestampMs": 400370,
+    "confidence": 0.99
+  },
+  {
+    "text": " jadilah",
+    "startMs": 400380,
+    "endMs": 400830,
+    "timestampMs": 400605,
+    "confidence": 0.99
+  },
+  {
+    "text": " manusia",
+    "startMs": 400830,
+    "endMs": 401330,
+    "timestampMs": 401080,
+    "confidence": 0.99
+  },
+  {
+    "text": " yang",
+    "startMs": 401330,
+    "endMs": 401630,
+    "timestampMs": 401480,
+    "confidence": 0.99
+  },
+  {
+    "text": " bijaksana.",
+    "startMs": 401630,
+    "endMs": 402560,
+    "timestampMs": 402095,
+    "confidence": 0.99
+  }
+]

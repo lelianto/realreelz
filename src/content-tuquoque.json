@@ -1,0 +1,22 @@
+{
+  "template": "stickman",
+  "name": "TU QUOQUE",
+  "title": "Kamu Juga",
+  "script": "Kamu menuduh seorang pejabat korupsi, dan jawabannya, kamu dulu juga begitu. Itulah tu quoque, atau kamu juga. Alih-alih menjawab tuduhanmu, dia menyerang balik dengan kesalahanmu. Padahal dua kesalahan tidak saling membatalkan. Kalau kamu pernah berbohong, kebohongan orang lain tetap salah. Argumen ini bekerja karena terasa adil, padahal hanya mengalihkan pembicaraan. Di meja makan, di rapat, dan di kolom komentar, pola ini muncul setiap hari. Cara melawannya sederhana, yaitu pisahkan orang dari argumen. Apakah tuduhannya benar atau tidak, terlepas dari siapa yang mengatakannya. Karena kesalahanmu tidak membuat kesalahannya hilang, dan sebaliknya.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#ff6a4d",
+  "hue": 12,
+  "hair": "#241c18",
+  "moustache": false,
+  "captionFixes": {},
+  "keywords": ["tu quoque", "menuduh", "korupsi", "membatalkan", "kebohongan", "meja", "rapat", "pisahkan", "argumen", "kesalahanmu"],
+  "storyScenes": [
+    {"kind": "grival", "cue": null, "bubbleL": "Kamu dulu juga begitu!", "bubbleR": "Itu tidak menjawab tuduhan"},
+    {"kind": "cterm", "cue": "quoque", "term": "TU QUOQUE", "def": "Menyerang orang, bukan argumennya"},
+    {"kind": "cwhy", "cue": "membatalkan", "points": ["Dua kesalahan tidak saling hapus", "Fokus pindah ke pribadi", "Tuduhan asli tak terjawab"]},
+    {"kind": "cstory", "cue": "meja", "bubble": "Di rapat dan kolom komentar"},
+    {"kind": "clesson", "cue": "pisahkan", "label": "Pisahkan orang dari argumen"}
+  ]
+}

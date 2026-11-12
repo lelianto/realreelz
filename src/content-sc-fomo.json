@@ -1,0 +1,71 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Takut Ketinggalan",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["ketinggalan", "FOMO", "cemas", "media sosial", "sorotan", "bandingkan", "pilihan", "kebahagiaan"],
+  "captionFixes": {},
+  "script": "Kamu sedang libur, tapi malah gelisah melihat teman-teman jalan-jalan. Itu FOMO, takut ketinggalan. Dulu, ketinggalan bisa berarti tidak dapat makanan. Sekarang, ketinggalan cuma berarti tidak ikut satu foto. Tapi rasa cemasnya tetap sama tuanya. Media sosial memperparah, karena kita melihat acara orang lain, bukan kehidupan mereka. Yang kita bandingkan bukan hidup, tapi sorotan. Cara melawannya, sadari bahwa setiap unggahan adalah pilihan. Tidak semua orang harus hidup sepertimu, dan kamu tidak harus hidup seperti mereka. Karena kebahagiaan bukan lomba kecepatan, dan ketinggalan satu acara tidak menghapus hidupmu.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Sesat pikir sehari-hari",
+      "heading": "Takut ketinggalan itu warisan zaman purba.",
+      "accentWord": "ketinggalan",
+      "accentTone": "coral",
+      "card": {
+        "from": "media-sosial.app",
+        "tag": "FOMO",
+        "title": "Semua teman sedang liburan",
+        "body": "Kamu di rumah, merasa hidupmu tertinggal."
+      },
+      "sub": "Yang dirasa ketinggalan bukan acara, tapi rasa aman."
+    },
+    {
+      "kind": "how",
+      "cue": "Dulu",
+      "kicker": "Cara kerjanya di otak",
+      "heading": "Ketinggalan dulu berarti bahaya nyata.",
+      "accentWord": "bahaya nyata",
+      "lines": [
+        "Dulu: tersisih dari kelompok berarti bahaya.",
+        "Sekarang: ketinggalan cuma satu foto.",
+        "Tapi rasa cemasnya tetap sama tuanya."
+      ],
+      "badges": [
+        {"text": "Ancaman lama, pemicu baru", "tone": "muted"},
+        {"text": "Cemas itu informasi, bukan perintah", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "Media",
+      "kicker": "Yang sebenarnya dibandingkan",
+      "heading": "Yang kita lihat bukan hidup, tapi sorotan.",
+      "accentWord": "sorotan",
+      "cards": [
+        "Foto liburan",
+        "Pencapaian karier",
+        "Rumah baru",
+        "Momen bahagia"
+      ],
+      "highlight": "Setiap unggahan adalah pilihan, bukan ukuran hidup."
+    },
+    {
+      "kind": "cta",
+      "cue": "kebahagiaan",
+      "kicker": "Cara keluar",
+      "heading": "Kebahagiaan bukan lomba kecepatan.",
+      "accentWord": "lomba kecepatan",
+      "accentTone": "accent",
+      "big": "HIDUPMU",
+      "sub": "Ketinggalan satu acara tidak menghapus hidupmu.",
+      "pill": "Bandingkan dirimu dengan dirimu kemarin"
+    }
+  ]
+}

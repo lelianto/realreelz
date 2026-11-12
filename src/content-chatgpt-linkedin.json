@@ -1,0 +1,97 @@
+{
+  "template": "ai-productivity",
+  "name": "CHATGPT × LINKEDIN",
+  "watermark": "@lelianto_",
+  "title": "Cara Pakai ChatGPT untuk Apply Kerja di LinkedIn & Kirim Email via Gmail",
+  "script": "Sudah kirim ratusan lamaran di LinkedIn tapi tidak pernah dipanggil interview? Masalahnya, sembilan puluh persen pelamar hanya menekan tombol melamar instan dengan satu CV yang sama, sehingga langsung ditolak oleh mesin penyaring otomatis milik HRD. Mulai hari ini, gunakan kombinasi LinkedIn, ChatGPT, dan Gmail agar peluangmu naik berkali-kali lipat. Langkah pertama, buka lowongan impianmu di LinkedIn, lalu salin seluruh teks deskripsi dan kualifikasi pekerjaannya. Langkah kedua, buka ChatGPT dan minta ia membedah kata kunci utama dari lowongan tersebut, lalu sesuaikan isi CV kamu agar lolos saringan otomatis dengan skor di atas sembilan puluh persen. Langkah ketiga, minta ChatGPT membuatkan subjek dan isi email lamaran yang singkat, personal, serta menonjolkan solusi terbaikmu. Langkah keempat, buka Gmail dan kirimkan email tersebut bersama lampiran CV barumu langsung ke alamat rekrutmen perusahaan. Jangan melamar dengan cara lama lagi. Simpan video ini dan ikuti akun ini untuk trik produktivitas berikutnya.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "edgeRate": "-4%",
+  "edgePitch": "-6Hz",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#00f2fe",
+  "keywords": [
+    "LinkedIn",
+    "interview",
+    "CV",
+    "HRD",
+    "ChatGPT",
+    "Gmail",
+    "kualifikasi",
+    "kunci",
+    "otomatis",
+    "subjek",
+    "email",
+    "personal",
+    "rekrutmen",
+    "produktivitas"
+  ],
+  "captionFixes": {
+    "lamar": "pelamar",
+    "chat": "ChatGPT",
+    "Chat": "ChatGPT",
+    "GPT": "",
+    "JPT": "",
+    "peluang": "peluangmu",
+    "munaik": "naik",
+    "loongan": "lowongan",
+    "saling": "salin",
+    "kwalifikasi": "kualifikasi",
+    "lolo-saringan": "lolos saringan",
+    "score": "skor",
+    "baru": "barumu",
+    "mulangsung": "langsung"
+  },
+  "aiScenes": [
+    {
+      "kind": "job_hook",
+      "cue": null,
+      "kicker": "KENAPA LAMARANMU DI-GHOSTING?",
+      "label": "Apply 100+ di LinkedIn Tanpa Hasil?",
+      "sub": "CV umum langsung ditolak mesin filter ATS milik HRD"
+    },
+    {
+      "kind": "linkedin_scan",
+      "cue": "pertama",
+      "kicker": "LANGKAH 1 · RISET LINKEDIN",
+      "label": "Salin Deskripsi Lowongan di LinkedIn",
+      "sub": "Ambil detail kualifikasi & tanggung jawab posisi target"
+    },
+    {
+      "kind": "chatgpt_cv",
+      "cue": "kedua",
+      "kicker": "LANGKAH 2 · OPTIMASI CV DI CHATGPT",
+      "label": "Bedah Keyword ATS & Sesuaikan CV",
+      "sub": "Naikkan skor kecocokan CV dari 32% menjadi 94%",
+      "promptText": "Ini kualifikasi dari LinkedIn dan ini CV saya. Sesuaikan bullet point CV saya agar relevan dan lolos filter ATS..."
+    },
+    {
+      "kind": "chatgpt_email",
+      "cue": "ketiga",
+      "kicker": "LANGKAH 3 · DRAFT EMAIL DI CHATGPT",
+      "label": "Buat Subject & Body Email Personal",
+      "sub": "Rangkum nilai tambah dan solusi spesifik untuk perusahaan"
+    },
+    {
+      "kind": "gmail_send",
+      "cue": "keempat",
+      "kicker": "LANGKAH 4 · EKSEKUSI LEWAT GMAIL",
+      "label": "Kirim Langsung ke Inbox Gmail HRD",
+      "sub": "Lampirkan CV tailored + portofolio agar langsung dibaca"
+    },
+    {
+      "kind": "job_comparison",
+      "cue": "jangan",
+      "kicker": "HASIL AKHIR",
+      "label": "Pelamar Pasif vs Strategi AI",
+      "sub": "Kombinasi LinkedIn + ChatGPT + Gmail tingkatkan panggilan 5x"
+    },
+    {
+      "kind": "outro",
+      "cue": "simpan",
+      "kicker": "PRAKTEKKAN HARI INI",
+      "label": "Kuasai Karir & Produktivitas AI",
+      "sub": "Save video ini & Follow @lelianto_ untuk panduan AI berikutnya"
+    }
+  ]
+}

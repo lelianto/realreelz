@@ -1,0 +1,25 @@
+{
+  "template": "stickman",
+  "name": "BERNERS-LEE",
+  "title": "Tim Berners-Lee",
+  "script": "Di tahun 1989, internet sebenarnya sudah ada, tapi hanya segelintir ilmuwan yang bisa menggunakannya karena sangat rumit. Seorang ilmuwan Inggris bernama Tim Berners-Lee punya sebuah ide yang sederhana: bagaimana jika semua informasi di dunia bisa saling terhubung lewat tautan? Dia lalu menciptakan tiga hal mendasar, yaitu alamat web, bahasa HTML, dan peramban pertama. Lahirlah World Wide Web. Dan inilah bagian terpentingnya: dia memberikannya secara gratis kepada seluruh dunia, tanpa paten sama sekali. Keputusan itu membuat web meledak menjadi milik semua orang, bukan milik satu perusahaan. Hari ini, miliaran halaman yang kamu buka berawal dari satu ide tentang berbagi. Terkadang, hadiah terbesar adalah yang kita berikan secara cuma-cuma.",
+  "edgeVoiceId": "id-ID-GadisNeural",
+  "elevenVoiceId": "nPczCjzI2devNBz1zQrb",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#34e0d0",
+  "hue": 180,
+  "hair": "#6b6b6b",
+  "moustache": false,
+  "captionFixes": {"Bernersley": "Berners-Lee", "perambahan": "peramban"},
+  "keywords": ["internet", "Berners-Lee", "terhubung", "menciptakan", "World", "meledak", "berbagi"],
+  "storyScenes": [
+    {"kind": "gintro", "cue": null, "mood": "neutral"},
+    {"kind": "gportrait", "cue": "Tim", "label": "Tim Berners-Lee"},
+    {"kind": "gidea", "cue": "terhubung"},
+    {"kind": "gwork", "cue": "menciptakan", "prop": "gear"},
+    {"kind": "gbreakthrough", "cue": "World", "label": "WORLD WIDE WEB"},
+    {"kind": "gimpact", "cue": "meledak"},
+    {"kind": "gclose", "cue": "cuma-cuma"}
+  ]
+}

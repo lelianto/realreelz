@@ -1,0 +1,71 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "War Tiket Konser",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["tiket", "konser", "penonton", "anggaran", "calo", "resmi", "hiburan", "tagihan"],
+  "captionFixes": {},
+  "script": "Tiket konser habis dalam hitungan menit, dan media sosial penuh tangkapan layar antrean. Fenomena ini bukan cuma soal musik. Konser musisi dunia di Jakarta pada Oktober dua ribu dua puluh enam menarik sekitar tujuh puluh ribu penonton, termasuk dua puluh lima ribu dari luar negeri, dengan perputaran ekonomi yang diperkirakan mencapai enam ratus miliar rupiah. Euforia itu nyata, dan wajar. Tapi euforia juga membuat orang membeli tiket di luar kemampuan, atau tergoda calo. Cara sehatnya, tentukan anggaran sebelum war tiket, beli hanya dari kanal resmi, dan jangan berutang untuk hiburan. Karena pengalaman boleh mahal, tapi penyesalan tagihannya lebih mahal.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Viral pekan ini",
+      "heading": "Tiket habis, euforia datang, akal pergi.",
+      "accentWord": "akal pergi",
+      "accentTone": "coral",
+      "card": {
+        "from": "tiket.app",
+        "tag": "SOLD OUT",
+        "title": "Antrean ratusan ribu orang",
+        "body": "Panik, lalu membeli di luar kemampuan."
+      },
+      "sub": "Yang dibeli bukan cuma tiket, tapi rasa tidak mau ketinggalan."
+    },
+    {
+      "kind": "how",
+      "cue": "penonton",
+      "kicker": "Angka di balik euforia",
+      "heading": "Euforia konser nyata, dan besar.",
+      "accentWord": "nyata",
+      "lines": [
+        "Sekitar 70 ribu penonton di Jakarta (Okt 2026).",
+        "25 ribu di antaranya dari luar negeri.",
+        "Perputaran ekonomi diperkirakan Rp600 miliar."
+      ],
+      "badges": [
+        {"text": "Euforia wajar, utang tidak", "tone": "muted"},
+        {"text": "Tentukan anggaran sebelum war", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "anggaran",
+      "kicker": "Cara sehat menonton",
+      "heading": "Tentukan anggaran sebelum war tiket.",
+      "accentWord": "sebelum",
+      "cards": [
+        "Beli dari kanal resmi",
+        "Tetapkan batas harga",
+        "Jangan berutang untuk hiburan",
+        "Waspadai calo dan transfer pribadi"
+      ],
+      "highlight": "Hiburan seharusnya memulihkan, bukan menambah beban."
+    },
+    {
+      "kind": "cta",
+      "cue": "Karena",
+      "kicker": "Yang perlu diingat",
+      "heading": "Pengalaman boleh mahal, tagihannya jangan.",
+      "accentWord": "tagihannya jangan",
+      "accentTone": "accent",
+      "big": "ANGGARAN",
+      "sub": "Tentukan batas sebelum antrean dibuka.",
+      "pill": "Beli resmi, bayar sesuai kemampuan"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "template": "stickman",
+  "name": "G. W. CARVER",
+  "title": "George Washington Carver",
+  "script": "George Washington Carver lahir sebagai budak di Amerika, di masa ketika orang sepertinya dianggap tak punya masa depan. Tapi rasa ingin tahunya tentang tumbuhan tak bisa dibendung. Dia berjuang menembus sekolah dan tumbuh menjadi ilmuwan pertanian yang brilian. Carver mengajari para petani miskin cara menyuburkan tanah dengan menanam kacang. Dari kacang tanah saja, dia menciptakan ratusan produk, mulai dari sabun, tinta, hingga makanan. Tapi yang paling mengharukan, dia menolak mematenkan hampir semua temuannya. Konon dia berkata, Tuhan memberikannya gratis, lalu bagaimana mungkin aku menjualnya. Dia ingin semua orang bisa memakainya tanpa perlu bayar. Bahkan di akhir hidupnya, dia menyumbangkan seluruh tabungannya untuk mendirikan sebuah yayasan penelitian. Baginya, ilmu adalah hadiah untuk dibagi, bukan untuk ditimbun.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#ffb347",
+  "hue": 40,
+  "hair": "#20201e",
+  "moustache": true,
+  "captionFixes": {"Charfer": "Carver", "berilihan": "brilian", "petanimiskin": "petani miskin", "mematengkan": "mematenkan", "Conan": "Konon"},
+  "keywords": ["budak", "tumbuhan", "petani", "kacang", "produk", "gratis", "menyumbangkan"],
+  "storyScenes": [
+    {"kind": "gintro", "cue": null},
+    {"kind": "gfield", "cue": "petani"},
+    {"kind": "gwork", "cue": "menciptakan", "label": "RATUSAN PRODUK"},
+    {"kind": "gquote", "cue": "menjualnya", "label": "Tuhan memberinya gratis", "mood": "happy"},
+    {"kind": "ggive", "cue": "menyumbangkan"}
+  ]
+}

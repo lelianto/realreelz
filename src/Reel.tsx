@@ -1,4 +1,5 @@
 import {useEffect, useMemo, useState} from 'react';
+import {DEFAULT_HANDLE} from './brand';
 import {
   AbsoluteFill,
   Audio,
@@ -16,6 +17,16 @@ import {ThreeCanvas} from '@remotion/three';
 import * as THREE from 'three';
 import rawContent from './content.json';
 import {StickmanStory, type StoryScene} from './Stickman';
+import type {Rival, StoryFormat} from './StickFormats';
+import {ChronicleStory, type ChronScene} from './Chronicle';
+import {CollageStory, type CollageScene} from './Collage';
+import {ParableStory, type ParScene} from './Parable';
+import {ExplainerStory, type ExplainerScene} from './Explainer';
+import {AiProductivityStory, type AiScene} from './AiProductivity';
+import {YoutubePsychStory, type YtChapter, type YtScene} from './YoutubePsych';
+import {FieldnotesStory, type FieldScene} from './Fieldnotes';
+import {StorycardStory, type StorycardScene, type StorycardTheme} from './Storycard';
+import {EsportsStory, type EspScene} from './Esports';
 
 type Scene = {
   type: 'intro' | 'tip' | 'outro';
@@ -66,6 +77,32 @@ type Content = {
   keywords?: string[];
   storyScenes?: StoryScene[];
   captionFixes?: Record<string, string>;
+  // chronicle template (sepia history)
+  chronScenes?: ChronScene[];
+  // collage template (torn-paper scrapbook geopolitics)
+  collageScenes?: CollageScene[];
+  // fieldnotes template (editorial "special edition" clipping)
+  masthead?: string;
+  edition?: string;
+  dateTag?: string;
+  fieldScenes?: FieldScene[];
+  // parable template (cold allegory / Konoha)
+  parableScenes?: ParScene[];
+  // explainer template (modern vector explainer)
+  explainerScenes?: ExplainerScene[];
+  // ai-productivity template (AI productivity & side job motion graphics)
+  watermark?: string;
+  aiScenes?: AiScene[];
+  // youtube-psych template (16:9 long-form documentary on psychology, fallacy & history)
+  channelName?: string;
+  chapters?: YtChapter[];
+  ytScenes?: YtScene[];
+  // storycard template (editorial explainer in the CapiMail story look)
+  tag?: string;
+  theme?: StorycardTheme; // 'dark' (default) | 'light'
+  storycardScenes?: StorycardScene[];
+  // esports template (MLBB/MPL match-recap hype scoreboard)
+  espScenes?: EspScene[];
 };
 
 const content = rawContent as unknown as Content;
@@ -75,13 +112,83 @@ type Page = ReturnType<typeof createTikTokStyleCaptions>['pages'][number];
 type Word = {text: string; fromMs: number; toMs: number};
 
 // ----------------------------------------------------------------------------
+// Persistent brand watermark (constant opacity on every frame, all templates)
+// ----------------------------------------------------------------------------
+const Watermark: React.FC = () => {
+  if (
+    content.template === 'ai' ||
+    content.template === 'ai-productivity' ||
+    content.template === 'youtube-psych' ||
+    content.template === 'storycard' ||
+    content.template === 'esports'
+  ) {
+    return null; // Custom HUD / badge rendered inside template
+  }
+  // stickman duel scoreboard / mundur year rail occupy the top band
+  const fmt = (content as {format?: string}).format;
+  const top = content.template === 'stickman' && (fmt === 'duel' || fmt === 'mundur') ? 236 : 84;
+  return (
+    <AbsoluteFill style={{pointerEvents: 'none'}}>
+      <div
+        style={{
+          position: 'absolute',
+          top,
+          right: 46,
+          padding: '9px 20px',
+          borderRadius: 999,
+          background: 'rgba(15,15,22,0.5)',
+          color: 'rgba(255,255,255,0.92)',
+          fontFamily: 'Arial Black, Arial, sans-serif',
+          fontWeight: 900,
+          fontSize: 30,
+          letterSpacing: 0.5,
+          textShadow: '0 2px 10px rgba(0,0,0,0.55)',
+        }}
+      >
+        {content.watermark ?? DEFAULT_HANDLE}
+      </div>
+    </AbsoluteFill>
+  );
+};
+
+// ----------------------------------------------------------------------------
 // Template dispatcher
 // ----------------------------------------------------------------------------
 export const Reel: React.FC = () => {
-  if (content.template === 'stickman') return <StickmanReel />;
-  if (content.template === 'planet') return <PlanetReel />;
-  if (content.template === 'reflective') return <ReflectiveReel />;
-  return <TipsReel />;
+  const inner =
+    content.template === 'youtube-psych' ? (
+      <YoutubePsychReel />
+    ) : content.template === 'ai' || content.template === 'ai-productivity' ? (
+      <AiProductivityReel />
+    ) : content.template === 'explainer' ? (
+      <ExplainerReel />
+    ) : content.template === 'storycard' ? (
+      <StorycardReel />
+    ) : content.template === 'stickman' ? (
+      <StickmanReel />
+    ) : content.template === 'chronicle' ? (
+      <ChronicleReel />
+    ) : content.template === 'esports' ? (
+      <EsportsReel />
+    ) : content.template === 'collage' ? (
+      <CollageReel />
+    ) : content.template === 'parable' ? (
+      <ParableReel />
+    ) : content.template === 'planet' ? (
+      <PlanetReel />
+    ) : content.template === 'fieldnotes' ? (
+      <FieldnotesReel />
+    ) : content.template === 'reflective' ? (
+      <ReflectiveReel />
+    ) : (
+      <TipsReel />
+    );
+  return (
+    <>
+      {inner}
+      <Watermark />
+    </>
+  );
 };
 
 // ----------------------------------------------------------------------------
@@ -94,6 +201,7 @@ const MusicTrack: React.FC = () => {
   return (
     <Audio
       src={staticFile(content.music)}
+      loop
       volume={(f) =>
         interpolate(
           f,
@@ -157,6 +265,172 @@ const useCaptions = () => {
 };
 
 // ============================================================================
+// FIELDNOTES template — editorial "special edition" clipping (Catatan style)
+// ============================================================================
+const FieldnotesReel: React.FC = () => {
+  const data = useCaptions();
+  const words = useMemo(() => {
+    const fixes = content.captionFixes ?? {};
+    return (data?.words ?? [])
+      .map((w) => {
+        const bare = w.text.replace(/[.,?!:]+$/, '');
+        const fix = fixes[bare];
+        return fix === undefined ? w : {...w, text: w.text.replace(bare, fix)};
+      })
+      .filter((w) => w.text.trim() !== '');
+  }, [data]);
+  return (
+    <AbsoluteFill style={{background: '#1c1915'}}>
+      <SharedAudio />
+      {words.length ? (
+        <FieldnotesStory
+          words={words}
+          scenes={(content.fieldScenes as FieldScene[]) ?? []}
+          masthead={content.masthead ?? 'CATATAN'}
+          edition={content.edition ?? 'EDISI KHUSUS'}
+          dateTag={content.dateTag}
+          keywords={content.keywords ?? []}
+          accent={content.accent ?? '#b23a2e'}
+        />
+      ) : null}
+    </AbsoluteFill>
+  );
+};
+
+// ============================================================================
+// YOUTUBE PSYCHOLOGY, FALLACY & HISTORY (16:9 Long-Form Documentary)
+// ============================================================================
+const YoutubePsychReel: React.FC = () => {
+  const data = useCaptions();
+  const words = useMemo(() => {
+    const fixes = content.captionFixes ?? {};
+    return (data?.words ?? [])
+      .map((w) => {
+        const bare = w.text.replace(/[.,?!:]+$/, '');
+        const fix = fixes[bare];
+        return fix === undefined ? w : {...w, text: w.text.replace(bare, fix)};
+      })
+      .filter((w) => w.text.trim() !== '');
+  }, [data]);
+  return (
+    <AbsoluteFill style={{background: '#070a12'}}>
+      <SharedAudio />
+      {words.length ? (
+        <YoutubePsychStory
+          words={words}
+          scenes={(content.ytScenes as YtScene[]) ?? []}
+          chapters={(content.chapters as YtChapter[]) ?? []}
+          title={content.title}
+          watermark={content.watermark ?? DEFAULT_HANDLE}
+          channelName={content.channelName ?? 'LOGIKA & PIKIRAN'}
+          keywords={content.keywords ?? []}
+          accent={content.accent ?? '#e5b84b'}
+        />
+      ) : null}
+    </AbsoluteFill>
+  );
+};
+
+// ============================================================================
+// AI PRODUCTIVITY & SIDE JOB template — Motion Graphics
+// ============================================================================
+const AiProductivityReel: React.FC = () => {
+  const data = useCaptions();
+  const words = useMemo(() => {
+    const fixes = content.captionFixes ?? {};
+    return (data?.words ?? [])
+      .map((w) => {
+        const bare = w.text.replace(/[.,?!:]+$/, '');
+        const fix = fixes[bare];
+        return fix === undefined ? w : {...w, text: w.text.replace(bare, fix)};
+      })
+      .filter((w) => w.text.trim() !== '');
+  }, [data]);
+  return (
+    <AbsoluteFill style={{background: '#050811'}}>
+      <SharedAudio />
+      {words.length ? (
+        <AiProductivityStory
+          words={words}
+          scenes={(content.aiScenes as AiScene[]) ?? []}
+          name={content.name ?? 'AI × SIDE JOB'}
+          watermark={content.watermark ?? DEFAULT_HANDLE}
+          keywords={content.keywords ?? []}
+          accent={content.accent ?? '#00f2fe'}
+        />
+      ) : null}
+    </AbsoluteFill>
+  );
+};
+
+// ============================================================================
+// EXPLAINER template — Modern Vector Explainer (Kurzgesagt/Vox style)
+// ============================================================================
+const ExplainerReel: React.FC = () => {
+  const data = useCaptions();
+  const words = useMemo(() => {
+    const fixes = content.captionFixes ?? {};
+    return (data?.words ?? [])
+      .map((w) => {
+        const bare = w.text.replace(/[.,?!:]+$/, '');
+        const fix = fixes[bare];
+        return fix === undefined ? w : {...w, text: w.text.replace(bare, fix)};
+      })
+      .filter((w) => w.text.trim() !== '');
+  }, [data]);
+  return (
+    <AbsoluteFill style={{background: '#080c16'}}>
+      <SharedAudio />
+      {words.length ? (
+        <ExplainerStory
+          words={words}
+          scenes={
+            (content.explainerScenes as ExplainerScene[]) ??
+            (content.storyScenes as unknown as ExplainerScene[]) ??
+            []
+          }
+          name={content.name ?? ''}
+          keywords={content.keywords ?? []}
+          accent={content.accent ?? '#ffd23f'}
+        />
+      ) : null}
+    </AbsoluteFill>
+  );
+};
+
+// ============================================================================
+// STORYCARD template — editorial explainer in the CapiMail story look
+// ============================================================================
+const StorycardReel: React.FC = () => {
+  const data = useCaptions();
+  const words = useMemo(() => {
+    const fixes = content.captionFixes ?? {};
+    return (data?.words ?? [])
+      .map((w) => {
+        const bare = w.text.replace(/[.,?!:]+$/, '');
+        const fix = fixes[bare];
+        return fix === undefined ? w : {...w, text: w.text.replace(bare, fix)};
+      })
+      .filter((w) => w.text.trim() !== '');
+  }, [data]);
+  return (
+    <AbsoluteFill style={{background: content.theme === 'light' ? '#F3ECE0' : '#0E1714'}}>
+      <SharedAudio />
+      {words.length ? (
+        <StorycardStory
+          words={words}
+          scenes={(content.storycardScenes as StorycardScene[]) ?? []}
+          name={content.name ?? 'CATATAN'}
+          tag={content.tag}
+          keywords={content.keywords ?? []}
+          theme={content.theme}
+        />
+      ) : null}
+    </AbsoluteFill>
+  );
+};
+
+// ============================================================================
 // STICKMAN template — flat 2D story, scenes cut on narration cue words
 // ============================================================================
 const StickmanReel: React.FC = () => {
@@ -181,6 +455,125 @@ const StickmanReel: React.FC = () => {
           name={content.name ?? ''}
           keywords={content.keywords ?? []}
           accent={content.accent ?? '#ffd23f'}
+          hue={(content as {hue?: number}).hue ?? 0}
+          baseHair={(content as {hair?: string}).hair}
+          baseMoustache={(content as {moustache?: boolean}).moustache}
+          format={(content as {format?: StoryFormat}).format}
+          rival={(content as {rival?: Rival}).rival}
+        />
+      ) : null}
+    </AbsoluteFill>
+  );
+};
+
+// ============================================================================
+// CHRONICLE template — cinematic sepia history/philosophy, SVG scenes on cues
+// ============================================================================
+const ChronicleReel: React.FC = () => {
+  const data = useCaptions();
+  const words = useMemo(() => {
+    const fixes = content.captionFixes ?? {};
+    return (data?.words ?? [])
+      .map((w) => {
+        const bare = w.text.replace(/[.,?!:]+$/, '');
+        const fix = fixes[bare];
+        return fix === undefined ? w : {...w, text: w.text.replace(bare, fix)};
+      })
+      .filter((w) => w.text.trim() !== '');
+  }, [data]);
+  return (
+    <AbsoluteFill style={{background: '#160d05'}}>
+      <SharedAudio />
+      {words.length ? (
+        <ChronicleStory
+          words={words}
+          scenes={content.chronScenes ?? []}
+          keywords={content.keywords ?? []}
+        />
+      ) : null}
+    </AbsoluteFill>
+  );
+};
+
+// ============================================================================
+// ESPORTS template — MLBB/MPL match-recap hype scoreboard, SVG scenes on cues
+// ============================================================================
+const EsportsReel: React.FC = () => {
+  const data = useCaptions();
+  const words = useMemo(() => {
+    const fixes = content.captionFixes ?? {};
+    return (data?.words ?? [])
+      .map((w) => {
+        const bare = w.text.replace(/[.,?!:]+$/, '');
+        const fix = fixes[bare];
+        return fix === undefined ? w : {...w, text: w.text.replace(bare, fix)};
+      })
+      .filter((w) => w.text.trim() !== '');
+  }, [data]);
+  return (
+    <AbsoluteFill style={{background: '#070a14'}}>
+      <SharedAudio />
+      {words.length ? (
+        <EsportsStory
+          words={words}
+          scenes={content.espScenes ?? []}
+          keywords={content.keywords ?? []}
+        />
+      ) : null}
+    </AbsoluteFill>
+  );
+};
+
+// ============================================================================
+// COLLAGE template — torn-paper scrapbook geopolitics, SVG scenes on cues
+// ============================================================================
+const CollageReel: React.FC = () => {
+  const data = useCaptions();
+  const words = useMemo(() => {
+    const fixes = content.captionFixes ?? {};
+    return (data?.words ?? [])
+      .map((w) => {
+        const bare = w.text.replace(/[.,?!:]+$/, '');
+        const fix = fixes[bare];
+        return fix === undefined ? w : {...w, text: w.text.replace(bare, fix)};
+      })
+      .filter((w) => w.text.trim() !== '');
+  }, [data]);
+  return (
+    <AbsoluteFill style={{background: '#2a1d10'}}>
+      <SharedAudio />
+      <CollageStory
+        words={words}
+        scenes={content.collageScenes ?? []}
+        keywords={content.keywords ?? []}
+      />
+    </AbsoluteFill>
+  );
+};
+
+// ============================================================================
+// PARABLE template — cold allegory (Negeri Konoha), SVG power imagery on cues
+// ============================================================================
+const ParableReel: React.FC = () => {
+  const data = useCaptions();
+  const words = useMemo(() => {
+    const fixes = content.captionFixes ?? {};
+    return (data?.words ?? [])
+      .map((w) => {
+        const bare = w.text.replace(/[.,?!:]+$/, '');
+        const fix = fixes[bare];
+        return fix === undefined ? w : {...w, text: w.text.replace(bare, fix)};
+      })
+      .filter((w) => w.text.trim() !== '');
+  }, [data]);
+  return (
+    <AbsoluteFill style={{background: '#04070b'}}>
+      <SharedAudio />
+      {words.length ? (
+        <ParableStory
+          words={words}
+          scenes={content.parableScenes ?? []}
+          keywords={content.keywords ?? []}
         />
       ) : null}
     </AbsoluteFill>

@@ -1,0 +1,25 @@
+{
+  "template": "stickman",
+  "name": "WILHELM RONTGEN",
+  "title": "Wilhelm Rontgen",
+  "script": "Pada tahun 1895, seorang fisikawan Jerman sedang bereksperimen dengan tabung sinar katoda di sebuah ruang gelap. Namanya Wilhelm Rontgen. Tiba-tiba, dia melihat sebuah layar di dekatnya bersinar, padahal tabungnya tertutup rapat. Ada radiasi misterius tak terlihat yang menembus benda padat. Karena belum tahu apa itu, dia menamainya sinar X. Saat dia meletakkan tangan istrinya di depan pancaran itu, muncullah gambar tulang-tulangnya dengan jelas. Untuk pertama kalinya, manusia bisa melihat ke dalam tubuh tanpa operasi. Penemuan ini langsung mengubah dunia kedokteran, dan Rontgen menerima Hadiah Nobel Fisika yang pertama. Dia menolak mematenkannya, supaya semua orang bisa memanfaatkannya.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "elevenVoiceId": "nPczCjzI2devNBz1zQrb",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#c58cff",
+  "hue": 265,
+  "hair": "#6b6b6b",
+  "moustache": true,
+  "captionFixes": {},
+  "keywords": ["Rontgen", "bersinar", "sinar", "tulang", "kedokteran", "Nobel", "menolak"],
+  "storyScenes": [
+    {"kind": "gintro", "cue": null, "mood": "neutral"},
+    {"kind": "gportrait", "cue": "Wilhelm", "label": "Wilhelm Rontgen"},
+    {"kind": "gbreakthrough", "cue": "bersinar", "label": "SINAR-X"},
+    {"kind": "gwork", "cue": "tulang", "prop": "scope"},
+    {"kind": "gimpact", "cue": "kedokteran"},
+    {"kind": "gaward", "cue": "Nobel", "label": "NOBEL FISIKA"},
+    {"kind": "gclose", "cue": "menolak"}
+  ]
+}

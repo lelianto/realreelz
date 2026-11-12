@@ -1,0 +1,71 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Sulit Bilang Tidak",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["menolak", "egois", "batas", "janji", "waktu", "tenaga", "jujur", "mengecewakan"],
+  "captionFixes": {},
+  "script": "Kamu sudah penuh, tapi tetap bilang iya karena tidak enak menolak. Itu bukan baik hati, itu takut mengecewakan. Kita diajari bahwa menolak berarti egois, jadi kita menukar waktu dan tenaga dengan rasa aman. Masalahnya, setiap iya yang dipaksakan mengambil sesuatu dari yang lain: istirahat, keluarga, atau pekerjaan yang sudah kamu janjikan. Dan orang lain belajar bahwa batasmu tidak nyata. Cara memperbaikinya, menolak tidak perlu penjelasan panjang. Katakan terima kasih, lalu jelaskan apa yang bisa kamu lakukan. Karena batas yang jelas lebih jujur daripada janji yang akhirnya tidak ditepati.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Sesat pikir sehari-hari",
+      "heading": "Bilang iya padahal sudah penuh.",
+      "accentWord": "sudah penuh",
+      "accentTone": "coral",
+      "card": {
+        "from": "chat-kantor.app",
+        "tag": "IYA",
+        "title": "Bisa bantu ini juga?",
+        "body": "Kamu bilang iya, padahal waktumu sudah habis."
+      },
+      "sub": "Bukan karena mampu, tapi karena tidak enak menolak."
+    },
+    {
+      "kind": "how",
+      "cue": "Kita",
+      "kicker": "Cara kerjanya",
+      "heading": "Menolak dianggap egois sejak kecil.",
+      "accentWord": "egois",
+      "lines": [
+        "Menolak dianggap tidak sopan.",
+        "Jadi kita menukar tenaga dengan rasa aman.",
+        "Tapi rasa aman itu dibayar mahal."
+      ],
+      "badges": [
+        {"text": "Setiap iya yang dipaksakan mengambil hal lain", "tone": "muted"},
+        {"text": "Menolak tidak perlu penjelasan panjang", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "batasmu",
+      "kicker": "Yang ikut diambil",
+      "heading": "Setiap iya yang dipaksakan mengambil hal lain.",
+      "accentWord": "mengambil hal lain",
+      "cards": [
+        "Istirahat",
+        "Keluarga",
+        "Pekerjaan yang dijanjikan",
+        "Waktu untuk diri sendiri"
+      ],
+      "highlight": "Orang lain belajar batasmu dari apa yang kamu izinkan."
+    },
+    {
+      "kind": "cta",
+      "cue": "penjelasan",
+      "kicker": "Cara memperbaikinya",
+      "heading": "Batas yang jelas lebih jujur daripada janji kosong.",
+      "accentWord": "lebih jujur",
+      "accentTone": "accent",
+      "big": "TIDAK",
+      "sub": "Ucapkan terima kasih, lalu sebutkan apa yang bisa kamu lakukan.",
+      "pill": "Menolak bukan berarti mengecewakan"
+    }
+  ]
+}

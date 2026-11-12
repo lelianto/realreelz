@@ -1,0 +1,71 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Belanja Impulsif",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["checkout", "diskon", "hitung mundur", "keranjang", "kebutuhan", "penyesalan", "tunggu", "butuh"],
+  "captionFixes": {},
+  "script": "Kamu buka aplikasi cuma untuk lihat-lihat, dan tiba-tiba sudah checkout. Itu belanja impulsif. Diskon, hitung mundur, dan tulisan stok terbatas bukan informasi, tapi tekanan. Otak melihat kesempatan, bukan kebutuhan. Dan rasa senang saat membeli datang lebih cepat daripada penyesalan saat tagihan tiba. Yang membuatnya makin mudah, tombol bayar hanya satu ketukan. Cara menahannya, masukkan ke keranjang lalu tutup aplikasinya. Tunggu satu malam sebelum membayar. Kalau besok kamu masih menginginkannya dengan alasan yang jelas, beli. Karena barang yang benar-benar kamu butuhkan tidak hilang hanya karena kamu tidur dulu.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Kebiasaan sehari-hari",
+      "heading": "Buka untuk lihat-lihat, berakhir checkout.",
+      "accentWord": "berakhir checkout",
+      "accentTone": "coral",
+      "card": {
+        "from": "toko-online.app",
+        "tag": "SISA 2",
+        "title": "Stok terbatas, hitung mundur 10 menit",
+        "body": "Kamu belum butuh, tapi takut kehabisan."
+      },
+      "sub": "Rasa takut kehilangan bekerja lebih cepat daripada kebutuhan."
+    },
+    {
+      "kind": "how",
+      "cue": "Diskon",
+      "kicker": "Cara kerjanya",
+      "heading": "Diskon dan hitung mundur itu tekanan, bukan informasi.",
+      "accentWord": "tekanan",
+      "lines": [
+        "Otak melihat kesempatan, bukan kebutuhan.",
+        "Senang membeli datang sebelum tagihan.",
+        "Tombol bayar cuma satu ketukan."
+      ],
+      "badges": [
+        {"text": "Urgensi palsu memotong pertimbangan", "tone": "muted"},
+        {"text": "Satu malam cukup untuk menimbang", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "tombol",
+      "kicker": "Yang membuatnya mudah",
+      "heading": "Yang membuatnya mudah: satu ketukan.",
+      "accentWord": "satu ketukan",
+      "cards": [
+        "Masukkan keranjang",
+        "Hitung mundur",
+        "Stok terbatas",
+        "Bayar satu klik"
+      ],
+      "highlight": "Tutup aplikasinya, bukan debat dengan dirimu sendiri."
+    },
+    {
+      "kind": "cta",
+      "cue": "Karena",
+      "kicker": "Cara menahannya",
+      "heading": "Tunggu satu malam sebelum membayar.",
+      "accentWord": "satu malam",
+      "accentTone": "accent",
+      "big": "1 MALAM",
+      "sub": "Kalau besok masih ingin dengan alasan jelas, baru beli.",
+      "pill": "Yang benar-benar dibutuhkan tidak hilang dalam semalam"
+    }
+  ]
+}

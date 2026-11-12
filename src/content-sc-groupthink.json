@@ -1,0 +1,71 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Semua Setuju di Ruangan",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["rapat", "setuju", "groupthink", "keberatan", "junior", "keputusan", "kelompok", "berpikir"],
+  "captionFixes": {},
+  "script": "Dalam rapat, semua tampak setuju. Tapi setelah keluar ruangan, banyak yang berbisik, aku sebenarnya tidak setuju. Itu gejala groupthink, ketika kelompok lebih memilih harmoni daripada keputusan yang benar. Semakin tinggi jabatan yang bicara lebih dulu, semakin kecil kemungkinan orang lain membantah. Akibatnya, satu keberatan yang seharusnya menyelamatkan proyek justru tidak pernah diucapkan. Cara mencegahnya, minta pendapat dari yang paling junior lebih dulu. Beri ruang untuk keberatan tanpa hukuman. Dan tunjuk satu orang yang tugasnya mencari celah. Karena kelompok yang selalu setuju biasanya berhenti berpikir bersama.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Kebiasaan rapat",
+      "heading": "Semua setuju di ruangan, berbisik di luar.",
+      "accentWord": "berbisik di luar",
+      "accentTone": "coral",
+      "card": {
+        "from": "rapat.app",
+        "tag": "SETUJU",
+        "title": "Tidak ada yang membantah",
+        "body": "Padahal banyak yang tidak setuju."
+      },
+      "sub": "Yang hilang bukan suara, tapi kemungkinan keputusan yang lebih baik."
+    },
+    {
+      "kind": "how",
+      "cue": "Semakin",
+      "kicker": "Cara kerjanya",
+      "heading": "Semakin tinggi jabatan, semakin sulit dibantah.",
+      "accentWord": "semakin sulit dibantah",
+      "lines": [
+        "Harmoni dipilih daripada benar.",
+        "Keberatan tidak diucapkan.",
+        "Kesalahan lolos bersama-sama."
+      ],
+      "badges": [
+        {"text": "Diam belum tentu setuju", "tone": "muted"},
+        {"text": "Dengar yang paling junior dulu", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "minta",
+      "kicker": "Cara mencegahnya",
+      "heading": "Dengar yang paling junior lebih dulu.",
+      "accentWord": "paling junior",
+      "cards": [
+        "Junior bicara dulu",
+        "Keberatan tanpa hukuman",
+        "Satu orang pencari celah",
+        "Catat pendapat berbeda"
+      ],
+      "highlight": "Satu keberanian kecil bisa menyelamatkan keputusan besar."
+    },
+    {
+      "kind": "cta",
+      "cue": "Karena",
+      "kicker": "Yang perlu diingat",
+      "heading": "Kelompok yang selalu setuju berhenti berpikir.",
+      "accentWord": "berhenti berpikir",
+      "accentTone": "accent",
+      "big": "BANTAH",
+      "sub": "Beri ruang untuk tidak setuju sebelum keputusan diambil.",
+      "pill": "Harmoni bukan bukti kebenaran"
+    }
+  ]
+}

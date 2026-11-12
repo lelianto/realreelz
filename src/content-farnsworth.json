@@ -1,0 +1,22 @@
+{
+  "template": "stickman",
+  "name": "PHILO FARNSWORTH",
+  "title": "Philo Farnsworth",
+  "script": "Pada umur empat belas tahun, seorang anak petani bernama Philo Farnsworth sedang membajak ladang kentang di pertaniannya. Saat menatap barisan lurus yang dia buat satu demi satu, sebuah gagasan brilian tiba-tiba muncul di kepalanya. Bagaimana kalau gambar bisa dikirim lewat udara, baris demi baris, persis seperti cara dia membajak tanah. Dari ladang itulah lahir ide televisi elektronik pertama di dunia. Bertahun-tahun kemudian, dia berhasil mewujudkan mimpinya dan memancarkan gambar ke sebuah layar. Tapi di masa tuanya, Farnsworth justru merasa kecewa berat. Dia menganggap televisi hanya dipenuhi acara yang dangkal dan sia-sia. Dia bahkan sempat melarang anak-anaknya menonton benda yang dia ciptakan sendiri. Baru di akhir hayat, dia melihat satu siaran yang membuatnya bangga, yaitu manusia menginjak bulan, disiarkan lewat ciptaannya.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#86d64a",
+  "hue": 90,
+  "hair": "#2a241c",
+  "moustache": false,
+  "captionFixes": {"Halo": "Philo", "Farnsword": "Farnsworth", "brillian": "brilian", "persi": "persis", "limpinya": "mimpinya"},
+  "keywords": ["petani", "ladang", "gagasan", "televisi", "layar", "kecewa", "bulan"],
+  "storyScenes": [
+    {"kind": "gfield", "cue": null},
+    {"kind": "gidea", "cue": "gagasan", "label": "TELEVISI"},
+    {"kind": "gwork", "cue": "mewujudkan"},
+    {"kind": "cthink", "cue": "kecewa", "bubble": "TV cuma acara dangkal?", "mood": "sad"},
+    {"kind": "coutro", "cue": "bulan", "label": "Ciptaannya menyiarkan manusia ke bulan"}
+  ]
+}

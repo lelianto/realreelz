@@ -1,0 +1,19 @@
+{
+  "template": "parable",
+  "name": "APPEAL TO IGNORANCE",
+  "title": "Tidak Terbukti Salah, Berarti Benar?",
+  "script": "Tidak ada yang bisa membuktikan makhluk itu tidak ada, jadi pasti dia ada. Itulah appeal to ignorance, menyandarkan kebenaran pada ketiadaan bukti. Ketidakmampuan membuktikan salah dianggap sebagai bukti benar. Padahal keduanya tidak sama. Kalau kamu bilang ada harta karun di dasar laut, tugas membuktikannya ada padamu, bukan pada yang meragukan. Beban bukti tidak bisa dibalik hanya karena klaimnya terdengar meyakinkan. Di iklan, di ramalan, dan di grup obrolan, pola ini dipakai terus. Cara menjawabnya, katakan dengan tenang, tidak adanya bukti bukanlah bukti. Karena ketidaktahuan kita bukanlah bukti apa pun, hanya pengakuan bahwa kita belum tahu.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#e0b24a",
+  "keywords": ["makhluk", "ignorance", "ketiadaan", "bukti", "harta", "beban", "iklan", "ramalan", "tenang", "ketidaktahuan"],
+  "captionFixes": {},
+  "parableScenes": [
+    {"kind": "title", "cue": null, "label": "Tidak Terbukti Salah, Berarti Benar?", "sub": "Negeri Konoha"},
+    {"kind": "emperor", "cue": "ignorance", "label": "Tak Ada Bukti, Dianggap Nyata"},
+    {"kind": "quote", "cue": "harta", "quote": "Beban bukti ada pada yang mengklaim.", "author": "Fallacy Appeal to Ignorance"},
+    {"kind": "cave", "cue": "iklan", "label": "Klaim Diulang Sampai Terasa Benar"},
+    {"kind": "outro", "cue": "ketidaktahuan", "label": "Ketidaktahuan Bukan Bukti"}
+  ]
+}

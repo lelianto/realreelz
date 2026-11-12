@@ -1,0 +1,22 @@
+{
+  "template": "stickman",
+  "name": "ALFRED NOBEL",
+  "title": "Alfred Nobel",
+  "script": "Suatu pagi di tahun seribu delapan ratus delapan puluh delapan, Alfred Nobel membuka koran dan membaca sesuatu yang mengerikan. Sebuah surat kabar keliru mengira dia telah meninggal, lalu menerbitkan obituari dirinya sendiri. Judulnya konon berbunyi, pedagang kematian telah tiada. Nobel terguncang membaca bagaimana dunia akan mengenangnya, yaitu sebagai penemu dinamit yang merenggut banyak nyawa. Dia duduk termenung memikirkan warisan apa yang sebenarnya dia tinggalkan. Dari rasa gelisah itu lahirlah sebuah keputusan besar. Dia menulis wasiat untuk memberikan hampir seluruh kekayaannya bagi mereka yang memberi manfaat terbesar bagi umat manusia. Dari situlah lahir Hadiah Nobel, penghargaan paling terhormat di dunia, yang mengubah namanya dari lambang kematian menjadi lambang kemuliaan.",
+  "edgeVoiceId": "id-ID-GadisNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#ff7ab0",
+  "hue": 340,
+  "hair": "#3a2f26",
+  "moustache": true,
+  "captionFixes": {"obituary": "obituari", "terguncan": "terguncang", "dinamid": "dinamit", "termenu": "termenung", "memberiman": "memberi", "faat": "manfaat"},
+  "keywords": ["koran", "obituari", "kematian", "dinamit", "warisan", "wasiat", "kemuliaan"],
+  "storyScenes": [
+    {"kind": "gquote", "cue": null, "label": "Pedagang kematian telah tiada", "mood": "shock"},
+    {"kind": "gstruggle", "cue": "terguncang"},
+    {"kind": "cthink", "cue": "duduk", "bubble": "Beginikah dunia mengingatku?", "mood": "sad"},
+    {"kind": "gidea", "cue": "keputusan", "label": "WASIAT BARU"},
+    {"kind": "gaward", "cue": "Hadiah", "label": "HADIAH NOBEL"}
+  ]
+}

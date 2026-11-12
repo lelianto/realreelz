@@ -1,0 +1,86 @@
+{
+  "template": "ai-productivity",
+  "name": "AI PRODUCTIVITY",
+  "watermark": "@lelianto_",
+  "title": "Sistem Kerja AI: Selesaikan Kerjaan Seharian dalam 2 Jam",
+  "script": "Kenapa ada orang yang bisa menyelesaikan pekerjaan kantornya dengan cepat, sementara masih punya waktu luang untuk membangun bisnis sampingan? Rahasianya adalah mereka tidak lagi bekerja secara manual, melainkan membangun sistem kerja bersama kecerdasan buatan. Bayangkan kamu punya asisten pribadi untuk riset, penulisan, analisa data, hingga menyusun presentasi. Tugas berat yang biasanya menguras waktu empat jam, kini bisa dipangkas menjadi lima belas menit saja. Waktu dan energi yang kamu hemat setiap hari adalah modal terbesar untuk mulai membangun side job digital dari rumah. Cukup luangkan satu jam setiap malam dengan bantuan AI untuk membuat konten, produk digital, atau jasa otomasi. Berhentilah bekerja keras dengan cara lama. Ikuti akun ini sekarang dan ubah AI menjadi mesin produktivitasmu.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "edgeRate": "-4%",
+  "edgePitch": "-6Hz",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#00f2fe",
+  "keywords": [
+    "bisnis",
+    "manual",
+    "sistem",
+    "asisten",
+    "empat",
+    "lima",
+    "belas",
+    "menit",
+    "energi",
+    "side",
+    "job",
+    "digital",
+    "otomasi",
+    "produktivitasmu"
+  ],
+  "captionFixes": {
+    "E.I": "AI",
+    "E.I.": "AI",
+    "ei": "AI",
+    "Ei": "AI"
+  },
+  "aiScenes": [
+    {
+      "kind": "burnout",
+      "cue": null,
+      "kicker": "KENAPA WAKTU SELALU KURANG?",
+      "label": "Sibuk Seharian vs Produktif",
+      "sub": "Kerja manual menguras energi sebelum sempat bangun aset"
+    },
+    {
+      "kind": "leverage",
+      "cue": "asisten",
+      "kicker": "SISTEM KERJA BARU",
+      "label": "Punya Tim Asisten AI Pribadi",
+      "sub": "Riset, analisa data, copywriting & struktur presentasi"
+    },
+    {
+      "kind": "workflow",
+      "cue": "berat",
+      "kicker": "10X SPEED WORKFLOW",
+      "label": "Dari 4 Jam Menjadi 15 Menit",
+      "sub": "Gunakan prompt terstruktur untuk 80% draf pertama"
+    },
+    {
+      "kind": "time_unlocked",
+      "cue": "energi",
+      "kicker": "MODAL TERBESARMU",
+      "label": "Simpan Energi untuk Side Job",
+      "sub": "Pulang tepat waktu dengan pikiran masih segar"
+    },
+    {
+      "kind": "execution",
+      "cue": "luangkan",
+      "kicker": "RUTINITAS 60 MENIT MALAM",
+      "label": "Bangun Aset & Side Income",
+      "sub": "Konsisten eksekusi dibantu AI setiap malam"
+    },
+    {
+      "kind": "mindset",
+      "cue": "berhentilah",
+      "kicker": "ERA BARU PRODUKTIVITAS",
+      "label": "Tinggalkan Cara Kerja Lama",
+      "sub": "Siapa yang menguasai sistem AI akan memimpin"
+    },
+    {
+      "kind": "outro",
+      "cue": "ikuti",
+      "kicker": "MULAI HARI INI",
+      "label": "Ubah AI Jadi Mesin Cuanmu",
+      "sub": "Follow @lelianto_ untuk tips AI & Side Job setiap minggu"
+    }
+  ]
+}

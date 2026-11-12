@@ -1,0 +1,71 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Rasa Bersalah Saat Istirahat",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["istirahat", "bersalah", "santai", "produktif", "fokus", "batas", "layar", "bekerja"],
+  "captionFixes": {},
+  "script": "Kamu duduk santai, tapi pikiran terus berkata, seharusnya kamu mengerjakan sesuatu. Itu rasa bersalah saat istirahat. Kita tumbuh dengan anggapan bahwa waktu baru bernilai kalau menghasilkan sesuatu. Padahal istirahat bukan hadiah setelah lelah, ia bagian dari cara kerja tubuh. Kalau dipotong, fokus, suasana hati, dan keputusan ikut rusak. Cara memperbaikinya, beri nama pada istirahatmu. Bukan rebahan sambil merasa bersalah, tapi istirahat yang disengaja dan dibatasi. Karena otak yang tidak pernah berhenti bukan otak yang produktif, ia hanya otak yang belum sempat rusak.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Kebiasaan sehari-hari",
+      "heading": "Duduk santai, pikiran tetap bekerja.",
+      "accentWord": "tetap bekerja",
+      "accentTone": "coral",
+      "card": {
+        "from": "hari-minggu.app",
+        "tag": "SENGGU",
+        "title": "Rebahan sambil merasa bersalah",
+        "body": "Tubuh berhenti, pikiran tidak."
+      },
+      "sub": "Istirahat setengah hati terasa seperti kerja yang gagal."
+    },
+    {
+      "kind": "how",
+      "cue": "Kita",
+      "kicker": "Kenapa terasa salah",
+      "heading": "Kita diajari waktu harus menghasilkan sesuatu.",
+      "accentWord": "menghasilkan sesuatu",
+      "lines": [
+        "Istirahat dianggap hadiah.",
+        "Padahal ia bagian dari kerja.",
+        "Tanpa istirahat, keputusan ikut rusak."
+      ],
+      "badges": [
+        {"text": "Berhenti bukan malas", "tone": "muted"},
+        {"text": "Istirahat yang disengaja lebih memulihkan", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "rebahan",
+      "kicker": "Cara memperbaikinya",
+      "heading": "Beri nama pada istirahatmu.",
+      "accentWord": "nama pada istirahatmu",
+      "cards": [
+        "Istirahat disengaja",
+        "Dengan batas waktu",
+        "Tanpa layar",
+        "Tanpa rasa bersalah"
+      ],
+      "highlight": "Rebahan sambil merasa bersalah bukan istirahat, itu kerja tanpa hasil."
+    },
+    {
+      "kind": "cta",
+      "cue": "Karena",
+      "kicker": "Yang perlu diingat",
+      "heading": "Otak yang tidak berhenti bukan otak produktif.",
+      "accentWord": "bukan otak produktif",
+      "accentTone": "accent",
+      "big": "ISTIRAHAT",
+      "sub": "Istirahat bukan hadiah setelah lelah, tapi bagian dari kerja.",
+      "pill": "Berhenti dulu, baru lanjut lagi"
+    }
+  ]
+}

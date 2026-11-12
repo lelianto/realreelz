@@ -1,0 +1,20 @@
+{
+  "template": "parable",
+  "name": "GUA KONOHA",
+  "title": "Gua Konoha",
+  "script": "Di sebuah negeri bernama Konoha, rakyatnya lahir menghadap dinding. Seumur hidup, mereka hanya menatap bayangan yang bergerak di tembok gua. Bayangan itu mereka sebut berita, mereka sebut kebenaran, padahal itu cuma pantulan. Di belakang mereka, ada segelintir orang yang menyalakan api dan memainkan boneka, mengatur bentuk setiap bayangan. Suatu hari, seorang berani menoleh ke belakang. Ia melihat apinya, melihat tangan yang mengendalikan semuanya. Tapi saat ia kembali dan bercerita, semua menertawakannya dan menyebutnya gila. Dua ribu tahun lalu, Plato sudah menulis kisah ini. Pertanyaannya bukan siapa yang memegang api. Tapi kenapa kita memilih terus menatap dinding.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#e0b24a",
+  "keywords": ["Konoha", "dinding", "bayangan", "kebenaran", "boneka", "api", "Plato", "gila", "menatap"],
+  "captionFixes": {"Kenoha": "Konoha", "Konoa": "Konoha", "Plateau": "Plato", "tembap": "tembok"},
+  "parableScenes": [
+    {"kind": "title", "cue": null, "label": "Rakyat yang Lahir Menghadap Dinding", "sub": "Negeri Konoha"},
+    {"kind": "cave", "cue": "bayangan", "label": "Seumur hidup menatap bayangan"},
+    {"kind": "puppet", "cue": "boneka", "label": "Ada yang mengatur setiap bayangan"},
+    {"kind": "silence", "cue": "gila", "label": "Yang berani menoleh, disebut gila"},
+    {"kind": "quote", "cue": "Plato", "quote": "Manusia lebih memilih rantai yang akrab daripada kebebasan yang asing.", "author": "Plato"},
+    {"kind": "outro", "cue": "Pertanyaannya", "label": "Kenapa kita memilih terus menatap dinding?"}
+  ]
+}

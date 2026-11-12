@@ -1,0 +1,71 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Belanja Online Terlalu Murah",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["murah", "penjual", "transfer", "platform", "kerugian", "rekening", "ulasan", "kehabisan"],
+  "captionFixes": {},
+  "script": "Harga barangnya jauh lebih murah dari toko resmi, dan penjualnya membalas dengan sopan. Kamu transfer, lalu akunnya hilang. Modus ini masih jadi penyumbang kerugian terbesar. Data OJK mencatat kerugian penipuan belanja online menembus satu koma tiga triliun rupiah, dengan rata-rata kerugian sekitar tujuh belas juta rupiah per korban. Yang membuatnya berhasil bukan harga murahnya, tapi rasa takut kehabisan. Cara amannya sederhana. Transaksi di dalam platform, jangan pindah ke chat pribadi. Cek rekening penjual di kanal resmi. Dan kalau harga terlalu bagus untuk jadi benar, biasanya memang tidak benar.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Viral dan berulang",
+      "heading": "Terlalu murah, dan akun penjual hilang.",
+      "accentWord": "hilang",
+      "accentTone": "coral",
+      "card": {
+        "from": "toko-murah.app",
+        "tag": "TRANSFER",
+        "title": "Harga jauh di bawah toko resmi",
+        "body": "Setelah dibayar, akun penjual menghilang."
+      },
+      "sub": "Penipu tidak butuh banyak korban, cukup yang sedang buru-buru."
+    },
+    {
+      "kind": "how",
+      "cue": "Data",
+      "kicker": "Angka yang jarang dibaca",
+      "heading": "Rata-rata korban kehilangan Rp17 juta.",
+      "accentWord": "Rp17 juta",
+      "lines": [
+        "Kerugian belanja online Rp1,3 triliun.",
+        "Rata-rata Rp17 juta per korban.",
+        "Pemicunya takut kehabisan, bukan butuh."
+      ],
+      "badges": [
+        {"text": "Diskon palsu memotong pertimbangan", "tone": "muted"},
+        {"text": "Transaksi hanya di dalam platform", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "Transaksi",
+      "kicker": "Cara aman",
+      "heading": "Jangan pindah ke chat pribadi.",
+      "accentWord": "chat pribadi",
+      "cards": [
+        "Transaksi di platform",
+        "Cek rekening penjual",
+        "Baca ulasan dengan kritis",
+        "Jangan transfer langsung"
+      ],
+      "highlight": "Penjual yang menolak platform biasanya menghindari perlindungan pembeli."
+    },
+    {
+      "kind": "cta",
+      "cue": "bagus",
+      "kicker": "Yang perlu diingat",
+      "heading": "Kalau terlalu bagus, biasanya tidak benar.",
+      "accentWord": "tidak benar",
+      "accentTone": "accent",
+      "big": "DI PLATFORM",
+      "sub": "Murah bukan alasan untuk melewati perlindungan pembeli.",
+      "pill": "Cek dulu, transfer kemudian"
+    }
+  ]
+}

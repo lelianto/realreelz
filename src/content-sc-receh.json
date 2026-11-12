@@ -1,0 +1,71 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Uang Receh yang Bocor",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["kopi", "ongkir", "langganan", "mutasi", "pengeluaran", "menghemat", "uang", "kecil"],
+  "captionFixes": {},
+  "script": "Kopi dua puluh ribu, ongkir sepuluh ribu, langganan yang tidak pernah dipakai. Satu per satu terasa kecil. Tapi dijumlahkan selama sebulan, angkanya bisa mengejutkan. Itu kebocoran kecil. Pengeluaran receh lolos dari pengawasan karena tidak terasa seperti keputusan besar. Kita mencatat sewa dan cicilan, tapi lupa pada hal yang paling sering. Cara menemukannya, lihat mutasi rekening satu bulan, lalu tandai semua pengeluaran di bawah lima puluh ribu. Jumlahkan. Biasanya di situ letak yang paling mudah diperbaiki. Karena menghemat bukan soal menahan semua keinginan, tapi tahu ke mana uang kecil pergi.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Kebiasaan sehari-hari",
+      "heading": "Semua terasa kecil, sampai dijumlahkan.",
+      "accentWord": "sampai dijumlahkan",
+      "accentTone": "coral",
+      "card": {
+        "from": "mutasi.app",
+        "tag": "Rp20.000",
+        "title": "Kopi, ongkir, langganan",
+        "body": "Satu per satu terasa tidak berarti."
+      },
+      "sub": "Yang tidak terasa seperti keputusan besar jarang diperiksa."
+    },
+    {
+      "kind": "how",
+      "cue": "Pengeluaran",
+      "kicker": "Kenapa lolos",
+      "heading": "Yang receh lolos karena tidak terasa seperti keputusan.",
+      "accentWord": "tidak terasa",
+      "lines": [
+        "Sewa dan cicilan dicatat.",
+        "Yang paling sering justru terlupa.",
+        "Sebulan kemudian, angkanya mengejutkan."
+      ],
+      "badges": [
+        {"text": "Kecil bukan berarti tidak berdampak", "tone": "muted"},
+        {"text": "Lihat mutasi, bukan perasaan", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "Cara",
+      "kicker": "Cara menemukannya",
+      "heading": "Lihat mutasi dan tandai yang di bawah lima puluh ribu.",
+      "accentWord": "mutasi",
+      "cards": [
+        "Kopi harian",
+        "Ongkir",
+        "Langganan mati",
+        "Jajan impulsif"
+      ],
+      "highlight": "Yang paling mudah diperbaiki biasanya yang paling sering diulang."
+    },
+    {
+      "kind": "cta",
+      "cue": "menghemat",
+      "kicker": "Yang perlu diingat",
+      "heading": "Menghemat bukan menahan semua keinginan.",
+      "accentWord": "bukan menahan semua keinginan",
+      "accentTone": "accent",
+      "big": "MUTASI",
+      "sub": "Tahu ke mana uang kecil pergi, sebelum menambah penghasilan.",
+      "pill": "Periksa yang sering, bukan cuma yang besar"
+    }
+  ]
+}

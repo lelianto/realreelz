@@ -1,0 +1,25 @@
+{
+  "template": "stickman",
+  "name": "GRAHAM BELL",
+  "title": "Alexander Graham Bell",
+  "script": "Di tahun 1876, suara manusia untuk pertama kalinya berjalan melewati kabel. Di baliknya ada Alexander Graham Bell, seorang guru bagi anak tunarungu. Karena ibunya dan istrinya tuli, Bell terobsesi memahami cara kerja suara dan pendengaran. Bertahun-tahun dia bereksperimen mengubah getaran suara menjadi sinyal listrik. Suatu hari, dia menumpahkan bahan kimia dan berteriak memanggil asistennya lewat alatnya. Watson, kemari, aku butuh kamu. Dan kalimat itu benar-benar terdengar jelas di ruang sebelah. Telepon pun lahir. Penemuan ini membuat orang di benua berbeda bisa saling bicara, menyusutkan dunia menjadi sebuah percakapan. Pelajarannya, kadang obsesi pada satu masalah kecil justru bisa menghubungkan seluruh dunia.",
+  "edgeVoiceId": "id-ID-GadisNeural",
+  "elevenVoiceId": "nPczCjzI2devNBz1zQrb",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#46d6a0",
+  "hue": 150,
+  "hair": "#3a3330",
+  "moustache": true,
+  "captionFixes": {},
+  "keywords": ["Bell", "tuli", "suara", "Watson", "telepon", "benua", "obsesi"],
+  "storyScenes": [
+    {"kind": "gintro", "cue": null, "mood": "neutral"},
+    {"kind": "gportrait", "cue": "Graham", "label": "Graham Bell"},
+    {"kind": "gstruggle", "cue": "tuli"},
+    {"kind": "gwork", "cue": "bereksperimen", "prop": "gear"},
+    {"kind": "gbreakthrough", "cue": "Watson", "label": "TELEPON"},
+    {"kind": "gimpact", "cue": "benua"},
+    {"kind": "gclose", "cue": "Pelajarannya"}
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "template": "ai-productivity",
+  "name": "AI × SIDE JOB",
+  "watermark": "@lelianto_",
+  "title": "Cara AI Pangkas Waktu Kerja & Buka Peluang Side Job Cuan",
+  "script": "Pernah merasa waktu habis di kantor seharian, sampai tidak punya energi lagi untuk mencari penghasilan tambahan? Masalahnya bukan karena kamu kurang kerja keras, tapi karena kamu masih mengerjakan semuanya secara manual. Di era kecerdasan buatan, satu orang yang menguasai AI setara dengan tim berisi lima orang ahli. Tugas repetitif seperti merangkum laporan, menyusun jadwal, hingga menulis draf email yang biasanya memakan waktu empat jam, kini bisa selesai hanya dalam lima belas menit. Artinya, kamu bisa pulang tepat waktu dengan energi yang masih penuh untuk membangun side job impianmu. Ada tiga peluang side job berbasis AI yang paling mudah dimulai malam ini. Pertama, jasa penulisan konten dan riset cepat untuk bisnis. Kedua, membuat produk digital dan template siap pakai. Ketiga, membangun sistem otomasi sederhana untuk usaha lokal. Jangan cuma jadi penonton di era ini. Ikuti terus akun ini dan mulai bangun mesin produktivitasmu hari ini.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "edgeRate": "-4%",
+  "edgePitch": "-6Hz",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#00f2fe",
+  "keywords": [
+    "energi",
+    "penghasilan",
+    "manual",
+    "kecerdasan",
+    "AI",
+    "repetitif",
+    "jadwal",
+    "selesai",
+    "menit",
+    "pulang",
+    "side",
+    "job",
+    "peluang",
+    "konten",
+    "digital",
+    "template",
+    "otomasi",
+    "produktivitasmu"
+  ],
+  "captionFixes": {
+    "air": "AI",
+    "menyu": "",
+    "sunja": "menyusun",
+    "dual": "jadwal",
+    "sai": "side",
+    "templatis": "template",
+    "produktivitas": "produktivitasmu",
+    "semua": ""
+  },
+  "aiScenes": [
+    {
+      "kind": "burnout",
+      "cue": null,
+      "kicker": "REALITA PEKERJA 9-TO-5",
+      "label": "Kerja Seharian, Habis Energi?",
+      "sub": "Mau mulai side job tapi waktu habis buat tugas manual"
+    },
+    {
+      "kind": "leverage",
+      "cue": "kecerdasan",
+      "kicker": "THE AI LEVERAGE",
+      "label": "1 Orang + AI = Tim 5 Ahli",
+      "sub": "Delegasikan riset, penulisan, desain & otomasi ke AI"
+    },
+    {
+      "kind": "workflow",
+      "cue": "repetitif",
+      "kicker": "AI WORKFLOW ENGINE",
+      "label": "Kerjaan 4 Jam Selesai 15 Menit",
+      "sub": "Otomatisasi laporan, jadwal, & draf dokumen kerja",
+      "promptText": "Rangkum laporan bulanan, analisa 3 poin utama, dan buatkan draf jadwal eksekusi tim..."
+    },
+    {
+      "kind": "time_unlocked",
+      "cue": "pulang",
+      "kicker": "FREEDOM UNLOCKED",
+      "label": "Hemat Waktu, Energi Tetap Utuh",
+      "sub": "Punya 2 jam fokus setiap malam untuk bangun aset"
+    },
+    {
+      "kind": "sidejobs",
+      "cue": "peluang",
+      "kicker": "3 PELUANG SIDE JOB AI",
+      "label": "Bisa Dimulai dari Rumah Malam Ini",
+      "sub": "Modal laptop + skill prompting & workflow AI",
+      "items": [
+        {
+          "title": "01 · Jasa Konten & Riset Bisnis",
+          "desc": "Bantu brand buat script, artikel, & ide konten 10x lebih cepat",
+          "tag": "CEPAT CUAN"
+        },
+        {
+          "title": "02 · Produk Digital & Template",
+          "desc": "Buat e-book, Notion system, atau prompt pack sekali, jual berkali-kali",
+          "tag": "PASSIVE INCOME"
+        },
+        {
+          "title": "03 · Otomasi & Web Usaha Lokal",
+          "desc": "Bantu UMKM bikin landing page, katalog AI, & sistem kerja otomatis",
+          "tag": "HIGH TICKET"
+        }
+      ]
+    },
+    {
+      "kind": "execution",
+      "cue": "ketiga",
+      "kicker": "COMPOUNDING SIDE INCOME",
+      "label": "Sistem Eksekusi 1 Jam Malam",
+      "sub": "Bangun sumber penghasilan kedua tanpa ganggu kerja utama"
+    },
+    {
+      "kind": "mindset",
+      "cue": "jangan",
+      "kicker": "PILIHAN DI TANGANMU",
+      "label": "Konsumen vs Kreator Era AI",
+      "sub": "Gunakan AI untuk melipatgandakan nilai waktumu"
+    },
+    {
+      "kind": "outro",
+      "cue": "ikuti",
+      "kicker": "MULAI SEKARANG",
+      "label": "Bangun Mesin Produktivitasmu",
+      "sub": "Save video ini & Follow @lelianto_ untuk panduan AI berikutnya"
+    }
+  ]
+}

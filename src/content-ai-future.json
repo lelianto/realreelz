@@ -1,0 +1,125 @@
+{
+  "template": "explainer",
+  "name": "AI & MASA DEPAN",
+  "watermark": "@lelianto_",
+  "title": "Ketika AI Bisa Semuanya, Lalu Apa Peran Kita?",
+  "script": "Bayangkan dunia di mana AI bisa menulis kode lebih cepat, membuat desain dalam hitungan detik, dan menganalisis laporan dalam sekejap. Pertanyaannya, kalau eksekusi teknis bukan lagi keunggulan manusia, lalu apa peran kita? Jawabannya sederhana: peran kita bergeser dari pekerja eksekusi menjadi kurator dan pengambil keputusan. AI ibarat mesin kapal super canggih, tapi manusialah nakhoda yang menentukan ke mana arah kapal harus berlayar. AI hebat dalam menjawab pertanyaan, tapi tidak pernah tahu pertanyaan apa yang paling layak untuk ditanyakan. Menemukan masalah nyata manusia butuh empati, intuisi, dan pemahaman emosional mendalam. Keahlian teknis seperti mengetik kode atau menyusun slide hanyalah puncak gunung es. Di bawah permukaan, ada selera, etika, dan konteks budaya yang tidak punya algoritma. Jangan bersaing dengan mesin dalam kecepatan mengetik. Jadilah orang yang memiliki visi tajam untuk menyatukan potongan ide menjadi solusi bernilai tinggi. Dengan AI, seorang kreator tunggal kini memiliki daya cipta setara satu agensi penuh. Skalabilitas ide manusia kini tidak lagi dibatasi oleh jam kerja fisik. Masa depan bukan milik orang yang takut digantikan AI, tapi milik mereka yang berani memegang kendali. Asah seleramu, pelajari AI, dan ciptakan karya terbesarmu hari ini!",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "edgeRate": "-3%",
+  "edgePitch": "-4Hz",
+  "music": "music.mp3",
+  "musicVolume": 0.18,
+  "accent": "#ffd23f",
+  "keywords": [
+    "AI",
+    "eksekusi",
+    "kurator",
+    "nakhoda",
+    "empati",
+    "etika",
+    "selera",
+    "visi",
+    "kreator",
+    "kendali"
+  ],
+  "captionFixes": {
+    "Ai": "AI",
+    "muhari": "hari",
+    "Asa": "Asah"
+  },
+  "explainerScenes": [
+    {
+      "kind": "hook",
+      "cue": "Bayangkan",
+      "label": "KETIKA AI BISA SEMUANYA",
+      "sub": "Lalu apa peran manusia selanjutnya?",
+      "character": {
+        "pose": "thinking",
+        "mood": "shock",
+        "talking": true,
+        "hair": "short",
+        "clothingColor": "#2563eb",
+        "holdingItem": "phone"
+      }
+    },
+    {
+      "kind": "brain",
+      "cue": "bergeser",
+      "label": "DARI PEKERJA KE NAKHODA",
+      "sub": "Kurator, arsitek, dan pengambil keputusan",
+      "character": {
+        "pose": "presenting",
+        "mood": "neutral",
+        "talking": true,
+        "hair": "short",
+        "clothingColor": "#2563eb"
+      }
+    },
+    {
+      "kind": "desk",
+      "cue": "menjawab",
+      "label": "EMPATI & INTUISI MANUSIA",
+      "sub": "Menemukan masalah nyata yang bernilai",
+      "character": {
+        "pose": "holding",
+        "mood": "thinking",
+        "talking": true,
+        "hair": "short",
+        "clothingColor": "#2563eb",
+        "holdingItem": "coffee"
+      }
+    },
+    {
+      "kind": "iceberg",
+      "cue": "mengetik",
+      "label": "GUNUNG ES NILAI KREATIF",
+      "sub": "Selera, etika, dan konteks tanpa algoritma",
+      "character": {
+        "pose": "thinking",
+        "mood": "determined",
+        "talking": true,
+        "hair": "short",
+        "clothingColor": "#2563eb"
+      }
+    },
+    {
+      "kind": "eureka",
+      "cue": "bersaing",
+      "label": "PENGUNGKIT MAHA BESAR",
+      "sub": "Bukan saingan, tapi pengungkit visi",
+      "character": {
+        "pose": "eureka",
+        "mood": "happy",
+        "talking": true,
+        "hair": "short",
+        "clothingColor": "#2563eb"
+      }
+    },
+    {
+      "kind": "rocket",
+      "cue": "tunggal",
+      "label": "LEVERAGE TANPA BATAS",
+      "sub": "1 kreator setara agensi raksasa",
+      "character": {
+        "pose": "presenting",
+        "mood": "excited",
+        "talking": true,
+        "hair": "short",
+        "clothingColor": "#2563eb"
+      }
+    },
+    {
+      "kind": "trophy",
+      "cue": "depan",
+      "label": "KENDALIKAN MASA DEPAN",
+      "sub": "Asah selera, pimpin mesin, dan berkarya!",
+      "character": {
+        "pose": "celebrate",
+        "mood": "happy",
+        "talking": true,
+        "hair": "short",
+        "clothingColor": "#2563eb"
+      }
+    }
+  ]
+}

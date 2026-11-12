@@ -1,0 +1,71 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Deepfake dan Penipuan",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["deepfake", "AI", "video", "suara", "penipuan", "verifikasi", "resmi", "dipalsukan"],
+  "captionFixes": {},
+  "script": "Belakangan ini, video pejabat dan artis berbicara di luar kebiasaan mereka beredar luas. Sebagian di antaranya palsu, dibuat dengan AI. Menurut data Kementerian Komdigi, serangan deepfake di Indonesia melonjak sekitar seribu empat ratus persen dalam setahun, dan sekitar sembilan puluh persen dipakai untuk tujuan berbahaya. Yang paling sering, penipuan. Suara bisa ditiru, wajah bisa ditempel, dan rekaman bisa dipalsukan dalam hitungan menit. Karena itu, jangan mengambil keputusan uang hanya dari satu video. Tutup panggilan, lalu hubungi nomor resmi yang kamu cari sendiri. Karena di era deepfake, melihat belum tentu percaya, dan suara yang kamu dengar bisa saja bukan manusia.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Viral pekan ini",
+      "heading": "Video yang bikin heboh belum tentu nyata.",
+      "accentWord": "belum tentu nyata",
+      "accentTone": "coral",
+      "card": {
+        "from": "grup-chat.app",
+        "tag": "VIRAL",
+        "title": "Video pejabat bicara keras",
+        "body": "Sebagian di antaranya hasil AI."
+      },
+      "sub": "Wajah dan suara sekarang bisa dibuat tanpa izin dan tanpa biaya besar."
+    },
+    {
+      "kind": "how",
+      "cue": "Menurut",
+      "kicker": "Data dan cara kerjanya",
+      "heading": "Suara dan wajah bisa dipalsukan dalam hitungan menit.",
+      "accentWord": "dipalsukan",
+      "lines": [
+        "Komdigi: serangan deepfake naik sekitar 1.400% setahun.",
+        "Sekitar 90% dipakai untuk tujuan berbahaya.",
+        "Motif yang paling sering: penipuan."
+      ],
+      "badges": [
+        {"text": "Melihat video bukan lagi bukti", "tone": "muted"},
+        {"text": "Verifikasi lewat kanal resmi", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "keputusan",
+      "kicker": "Yang harus dilakukan",
+      "heading": "Jangan putuskan uang dari satu video.",
+      "accentWord": "satu video",
+      "cards": [
+        "Tutup panggilan",
+        "Cari nomor resmi sendiri",
+        "Telepon balik lewat kanal resmi",
+        "Jangan transfer karena panik"
+      ],
+      "highlight": "Penipu memakai urgensi supaya kamu tidak sempat memeriksa."
+    },
+    {
+      "kind": "cta",
+      "cue": "melihat",
+      "kicker": "Yang perlu diingat",
+      "heading": "Melihat belum tentu percaya.",
+      "accentWord": "belum tentu percaya",
+      "accentTone": "accent",
+      "big": "VERIFIKASI",
+      "sub": "Suara yang kamu dengar bisa saja bukan manusia.",
+      "pill": "Cek lewat kanal resmi, bukan lewat link di pesan"
+    }
+  ]
+}

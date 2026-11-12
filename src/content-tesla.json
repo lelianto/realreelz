@@ -1,0 +1,22 @@
+{
+  "template": "stickman",
+  "name": "NIKOLA TESLA",
+  "title": "Nikola Tesla",
+  "script": "Dunia mengenalnya sebagai jenius listrik yang mengubah peradaban. Nikola Tesla bisa membayangkan sebuah mesin utuh di dalam kepalanya sebelum sempat menggambarnya. Tapi di luar laboratorium, hidupnya justru sunyi. Dia tidak pernah menikah dan hanya punya sedikit teman. Satu-satunya yang dia cintai dengan sepenuh hati adalah seekor merpati putih yang sering datang ke jendelanya. Konon dia berkata bahwa dia mencintai burung itu seperti mencintai seorang manusia. Di masa tuanya, Tesla kehilangan hampir semua uangnya dan hidup berpindah dari hotel ke hotel dengan utang menumpuk. Pada tahun seribu sembilan ratus empat puluh tiga, pria yang menerangi dunia itu meninggal sendirian di sebuah kamar hotel, miskin dan nyaris terlupakan.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#6ea8ff",
+  "hue": 220,
+  "hair": "#1c1a17",
+  "moustache": true,
+  "captionFixes": {"merpaty": "merpati", "genius": "jenius", "Conan": "Konon", "Priya": "Pria"},
+  "keywords": ["jenius", "listrik", "Tesla", "merpati", "mencintai", "utang", "sendirian"],
+  "storyScenes": [
+    {"kind": "lab", "cue": null},
+    {"kind": "gportrait", "cue": "Tesla", "label": "Nikola Tesla"},
+    {"kind": "gbird", "cue": "merpati"},
+    {"kind": "cdrain", "cue": "kehilangan", "label": "Utang"},
+    {"kind": "galone", "cue": "sendirian", "mood": "sad"}
+  ]
+}

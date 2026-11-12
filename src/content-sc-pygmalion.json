@@ -1,0 +1,71 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Ekspektasi yang Membentuk Hasil",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["ekspektasi", "label", "murid", "percaya", "kesempatan", "perlakuan", "kemampuan", "hasil"],
+  "captionFixes": {},
+  "script": "Seorang guru diberi tahu bahwa beberapa muridnya istimewa. Ternyata informasi itu salah, muridnya dipilih acak. Tapi di akhir tahun, murid-murid itu benar-benar berkembang lebih baik. Itu efek Pygmalion. Ekspektasi mengubah cara kita memperlakukan orang, dan perlakuan itu mengubah hasilnya. Kita memberi lebih banyak waktu, lebih banyak kesempatan, dan lebih banyak kesabaran pada orang yang kita percaya. Sebaliknya, label buruk membuat kita berhenti mencoba. Cara memakainya, periksa label yang kamu berikan hari ini, ke anak, rekan, atau dirimu sendiri. Karena kadang orang gagal bukan karena tidak mampu, tapi karena tidak ada yang mengira dia bisa.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Psikologi sehari-hari",
+      "heading": "Label yang salah bisa mengubah hasil yang nyata.",
+      "accentWord": "mengubah hasil",
+      "accentTone": "coral",
+      "card": {
+        "from": "catatan-sekolah.id",
+        "tag": "EFEK PYGMALION",
+        "title": "Murid dipilih acak, disebut istimewa",
+        "body": "Di akhir tahun, mereka benar-benar berkembang."
+      },
+      "sub": "Yang berubah bukan kemampuannya, tapi cara orang memperlakukannya."
+    },
+    {
+      "kind": "how",
+      "cue": "Ekspektasi",
+      "kicker": "Cara kerjanya",
+      "heading": "Ekspektasi mengubah cara kita memperlakukan orang.",
+      "accentWord": "cara kita memperlakukan",
+      "lines": [
+        "Lebih banyak waktu dan kesabaran.",
+        "Label buruk membuat kita berhenti mencoba.",
+        "Perlakuan mengubah hasil."
+      ],
+      "badges": [
+        {"text": "Label menjadi ramalan", "tone": "muted"},
+        {"text": "Beri kesempatan sebelum menyimpulkan", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "periksa",
+      "kicker": "Cara memakainya",
+      "heading": "Periksa label yang kamu berikan hari ini.",
+      "accentWord": "label",
+      "cards": [
+        "Ke anak",
+        "Ke rekan kerja",
+        "Ke dirimu sendiri",
+        "Ke orang yang belum dikenal"
+      ],
+      "highlight": "Label yang diulang cukup lama akan dicari pembenarannya."
+    },
+    {
+      "kind": "cta",
+      "cue": "Karena",
+      "kicker": "Yang perlu diingat",
+      "heading": "Orang gagal karena tidak ada yang mengira bisa.",
+      "accentWord": "tidak ada yang mengira bisa",
+      "accentTone": "accent",
+      "big": "PERCAYA",
+      "sub": "Ekspektasi bukan jaminan, tapi ia membuka atau menutup pintu.",
+      "pill": "Lihat kemungkinan sebelum label"
+    }
+  ]
+}

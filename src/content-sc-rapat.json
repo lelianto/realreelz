@@ -1,0 +1,71 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Rapat yang Melebar",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["rapat", "tujuan", "keputusan", "agenda", "waktu", "sibuk", "arah", "catatan"],
+  "captionFixes": {},
+  "script": "Rapat dijadwalkan satu jam, lalu melebar jadi dua jam tanpa keputusan. Itu bukan tanda timnya sibuk, tapi tanda tidak ada yang memimpin arah. Rapat yang tidak punya tujuan jelas akan diisi oleh hal yang paling mudah dibicarakan, bukan yang paling penting. Biasanya, topik kecil mendapat waktu paling banyak. Cara memperbaikinya, kirim tujuan dan bahan sebelum rapat. Minta peserta datang dengan keputusan yang diusulkan, bukan pertanyaan kosong. Lalu tutup dengan tiga hal: apa yang diputuskan, siapa yang mengerjakan, kapan selesainya. Karena rapat bukan tempat menunjukkan kesibukan, tapi tempat memilih arah.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Kebiasaan kerja",
+      "heading": "Rapat satu jam, melebar tanpa keputusan.",
+      "accentWord": "tanpa keputusan",
+      "accentTone": "coral",
+      "card": {
+        "from": "kalender-kantor.app",
+        "tag": "2 JAM",
+        "title": "Rapat tanpa agenda",
+        "body": "Banyak bicara, tidak ada keputusan."
+      },
+      "sub": "Yang habis bukan cuma waktu, tapi perhatian semua orang."
+    },
+    {
+      "kind": "how",
+      "cue": "tujuan",
+      "kicker": "Kenapa melebar",
+      "heading": "Rapat tanpa tujuan diisi hal yang mudah.",
+      "accentWord": "mudah",
+      "lines": [
+        "Topik kecil dapat waktu terbanyak.",
+        "Kesibukan bukan hasil.",
+        "Arah harus ditentukan di depan."
+      ],
+      "badges": [
+        {"text": "Tanpa agenda, yang ramai menang", "tone": "muted"},
+        {"text": "Kirim tujuan sebelum rapat", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "memperbaikinya",
+      "kicker": "Cara memperbaikinya",
+      "heading": "Kirim tujuan dan bahan sebelum rapat.",
+      "accentWord": "sebelum rapat",
+      "cards": [
+        "Tujuan jelas",
+        "Bahan dibaca dulu",
+        "Usulan keputusan",
+        "Catatan hasil"
+      ],
+      "highlight": "Peserta datang dengan usulan, bukan pertanyaan kosong."
+    },
+    {
+      "kind": "cta",
+      "cue": "Karena",
+      "kicker": "Yang perlu diingat",
+      "heading": "Rapat memilih arah, bukan pamer sibuk.",
+      "accentWord": "arah",
+      "accentTone": "accent",
+      "big": "3 HAL",
+      "sub": "Apa yang diputuskan, siapa mengerjakan, kapan selesai.",
+      "pill": "Tanpa keputusan, itu bukan rapat"
+    }
+  ]
+}

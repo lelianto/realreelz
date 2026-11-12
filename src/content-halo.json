@@ -1,0 +1,23 @@
+{
+  "template": "stickman",
+  "name": "EFEK HALO",
+  "title": "Efek Halo",
+  "script": "Kita cenderung percaya orang yang tampan, rapi, dan percaya diri. Itulah efek halo. Dalam sebuah penelitian, orang yang dianggap menarik juga dianggap lebih pintar, lebih jujur, dan lebih kompeten, tanpa bukti apa pun. Di kantor, karyawan yang berbicara meyakinkan lebih cepat naik jabatan daripada yang benar-benar bekerja. Di media sosial, wajah yang enak dilihat membuat kata-katanya terasa lebih benar. Halo ini juga bekerja sebaliknya. Satu kesalahan kecil bisa membuat kita menilai seseorang buruk secara keseluruhan. Efek halo membuat dunia terasa lebih mudah, karena kita bisa menilai orang dalam satu detik. Tapi penilaian cepat itu sering salah. Penampilan bisa menipu, dan kebaikan tidak selalu terlihat. Nilailah isinya, bukan bungkusnya.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#e0b24a",
+  "hue": 42,
+  "hair": "#2b2118",
+  "moustache": false,
+  "captionFixes": {},
+  "keywords": ["halo", "menarik", "penelitian", "pintar", "kantor", "jabatan", "kesalahan", "penilaian", "Penampilan", "bungkusnya"],
+  "storyScenes": [
+    {"kind": "cstory", "cue": null, "label": "Efek Halo"},
+    {"kind": "cterm", "cue": "halo", "term": "EFEK HALO", "def": "Satu sifat baik menutupi semuanya"},
+    {"kind": "cthink", "cue": "jujur", "bubble": "Menarik = Pintar, Jujur, Kompeten?"},
+    {"kind": "cwhy", "cue": "kantor", "points": ["Bicara meyakinkan", "Cepat naik jabatan", "Tanpa bukti kinerja"]},
+    {"kind": "cthink", "cue": "kesalahan", "bubble": "Satu salah, semua dinilai buruk"},
+    {"kind": "clesson", "cue": "Penampilan", "label": "Nilailah isinya, bukan bungkusnya"}
+  ]
+}

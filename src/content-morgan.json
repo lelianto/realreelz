@@ -1,0 +1,32 @@
+{
+  "template": "stickman",
+  "name": "GARRETT MORGAN",
+  "title": "Garrett Morgan",
+  "script": "Garrett Morgan lahir dari orang tua yang dulunya budak. Dia hanya sempat bersekolah sampai kelas enam, lalu bekerja untuk membantu keluarganya. Tapi tangannya terampil dan otaknya tajam. Setelah menyaksikan kebakaran yang menewaskan banyak pekerja, dia menciptakan topeng yang menyaring asap. Topeng itu menyelamatkan nyawa saat terowongan Cleveland meledak, dan kemudian dipakai tentara di medan perang. Namun namanya tetap diabaikan karena warna kulitnya. Morgan tidak berhenti. Setelah melihat kecelakaan di persimpangan jalan, dia merancang lampu lalu lintas dengan sinyal berhenti sejenak. Sistem tiga lampu itu masih dipakai sampai hari ini. Morgan menjual penemuannya, dan menghabiskan hidupnya untuk membantu komunitasnya. Pelajarannya, sumbangan terbesar sering datang dari orang yang paling sedikit didengar.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#5aa9ff",
+  "hue": 205,
+  "hair": "#1c1a17",
+  "moustache": true,
+  "captionFixes": {
+    "Garet": "Garrett",
+    "bersekola": "bersekolah",
+    "menyeksikan": "menyaksikan",
+    "menyering": "menyaring",
+    "roongan": "terowongan"
+  },
+  "keywords": ["Morgan", "budak", "topeng", "asap", "Cleveland", "diabaikan", "lampu", "lalu lintas", "komunitasnya", "sumbangan"],
+  "storyScenes": [
+    {"kind": "gintro", "cue": null},
+    {"kind": "gstruggle", "cue": "budak"},
+    {"kind": "gportrait", "cue": "terampil", "label": "Garrett Morgan"},
+    {"kind": "gwork", "cue": "topeng", "prop": "gear"},
+    {"kind": "gnews", "cue": "terowongan", "label": "PENYELAMAT DARI CLEVELAND"},
+    {"kind": "galone", "cue": "diabaikan", "mood": "sad"},
+    {"kind": "gbreakthrough", "cue": "lampu", "label": "LAMPU LALU LINTAS"},
+    {"kind": "ggive", "cue": "menghabiskan"},
+    {"kind": "gclose", "cue": "Pelajarannya"}
+  ]
+}

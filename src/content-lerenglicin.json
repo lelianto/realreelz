@@ -1,0 +1,22 @@
+{
+  "template": "stickman",
+  "name": "LERENG LICIN",
+  "title": "Slippery Slope",
+  "script": "Kalau kamu izinkan ini, nanti semua hal buruk akan terjadi. Itulah slippery slope, lereng licin. Argumen ini menolak langkah kecil dengan menakut-nakuti akibat ekstrem, tanpa membuktikan rantainya. Contohnya, kalau siswa boleh memakai sandal, besok mereka akan datang telanjang. Kedengarannya konyol, tapi pola ini dipakai setiap hari, di rapat, di berita, dan di grup keluarga. Bahayanya, argumen ini membunuh semua perubahan kecil yang sebenarnya masuk akal. Cara memeriksanya sederhana, yaitu minta rantai sebab-akibatnya satu per satu. Apakah langkah pertama benar-benar pasti menuju langkah terakhir? Kalau tidak, itu bukan ramalan, itu hanya ketakutan yang dikemas sebagai logika.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#8f7bff",
+  "hue": 265,
+  "hair": "#2b2a33",
+  "moustache": false,
+  "captionFixes": {},
+  "keywords": ["licin", "ekstrem", "sandal", "telanjang", "Bahayanya", "perubahan", "rantai", "sebab-akibatnya", "ramalan", "logika"],
+  "storyScenes": [
+    {"kind": "cstory", "cue": null, "label": "Lereng Licin"},
+    {"kind": "cterm", "cue": "licin", "term": "SLIPPERY SLOPE", "def": "Langkah kecil, ancaman ekstrem"},
+    {"kind": "cwhy", "cue": "Contohnya", "points": ["Sandal hari ini", "Telanjang besok", "Tanpa bukti rantai"]},
+    {"kind": "fall", "cue": "Bahayanya"},
+    {"kind": "clesson", "cue": "ramalan", "label": "Minta rantai sebab-akibatnya"}
+  ]
+}

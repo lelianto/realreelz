@@ -1,0 +1,71 @@
+{
+  "template": "storycard",
+  "name": "ceritastik",
+  "tag": "Penjelas nalar",
+  "title": "Ilusi Sudah Paham",
+  "accent": "#F2A541",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "music": "music.mp3",
+  "musicVolume": 0.07,
+  "keywords": ["membaca", "paham", "ulang", "mengingat", "mengenali", "buku", "uji", "ingatan"],
+  "captionFixes": {},
+  "script": "Kamu membaca ulang catatan berkali-kali, merasa sudah paham, lalu blank saat ujian. Itu ilusi belajar. Mengenali tulisan terasa seperti mengingat, padahal otak hanya akrab dengan halamannya. Semakin sering dibaca, semakin lancar, dan semakin palsu rasa pahamnya. Cara belajar yang benar justru terasa lebih sulit: tutup buku, lalu jelaskan dengan kata-katamu sendiri. Kalau macet, di situ letak yang belum kamu kuasai. Ulangi keesokan hari, bukan di menit yang sama. Karena mengingat bukan soal seberapa sering kamu melihat, tapi seberapa sering kamu mengambilnya kembali dari ingatan.",
+  "storycardScenes": [
+    {
+      "kind": "problem",
+      "cue": null,
+      "kicker": "Kebiasaan belajar",
+      "heading": "Merasa paham, lalu blank saat ujian.",
+      "accentWord": "blank",
+      "accentTone": "coral",
+      "card": {
+        "from": "catatan.pdf",
+        "tag": "DIULANG",
+        "title": "Sudah baca lima kali",
+        "body": "Tapi saat ditanya, tidak ada yang keluar."
+      },
+      "sub": "Akrab dengan halaman bukan berarti menguasai isinya."
+    },
+    {
+      "kind": "how",
+      "cue": "Mengenali",
+      "kicker": "Cara kerjanya di otak",
+      "heading": "Mengenali tulisan bukan berarti mengingat.",
+      "accentWord": "bukan berarti mengingat",
+      "lines": [
+        "Membaca ulang membuat halaman terasa akrab.",
+        "Kelancaran itu terasa seperti pemahaman.",
+        "Padahal tidak ada yang diambil dari ingatan."
+      ],
+      "badges": [
+        {"text": "Akrab bukan paham", "tone": "muted"},
+        {"text": "Tutup buku, jelaskan sendiri", "tone": "good"}
+      ]
+    },
+    {
+      "kind": "grid",
+      "cue": "Cara",
+      "kicker": "Cara belajar yang benar",
+      "heading": "Belajar yang benar terasa lebih sulit.",
+      "accentWord": "lebih sulit",
+      "cards": [
+        "Tutup buku",
+        "Jelaskan dengan kata sendiri",
+        "Cari bagian yang macet",
+        "Ulangi besok"
+      ],
+      "highlight": "Bagian yang macet justru peta dari yang belum kamu kuasai."
+    },
+    {
+      "kind": "cta",
+      "cue": "Karena",
+      "kicker": "Yang sebenarnya diuji",
+      "heading": "Mengingat adalah mengambil, bukan melihat.",
+      "accentWord": "mengambil",
+      "accentTone": "accent",
+      "big": "TUTUP BUKU",
+      "sub": "Uji dirimu sebelum merasa siap.",
+      "pill": "Kelancaran bukan bukti pemahaman"
+    }
+  ]
+}

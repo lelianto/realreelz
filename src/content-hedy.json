@@ -1,0 +1,25 @@
+{
+  "template": "stickman",
+  "name": "HEDY LAMARR",
+  "title": "Hedy Lamarr",
+  "script": "Dia dikenal dunia sebagai salah satu bintang film Hollywood paling cantik di tahun 1940-an. Tapi di balik layar, Hedy Lamarr adalah seorang penemu yang sangat jenius. Saat Perang Dunia Kedua, dia tahu bahwa torpedo yang dikendalikan radio sangat mudah diganggu oleh musuh. Bersama seorang komposer, dia merancang sebuah sistem yang membuat sinyal melompat di antara banyak kanal, sehingga menjadi mustahil untuk diblokir. Sayangnya, idenya dianggap terlalu maju dan diabaikan selama puluhan tahun. Namun hari ini, teknik lompatan frekuensi itu menjadi dasar dari Wifi, Bluetooth, dan GPS yang kita pakai setiap hari. Hedy membuktikan bahwa kecerdasan tidak pernah bisa dinilai hanya dari penampilan.",
+  "edgeVoiceId": "id-ID-ArdiNeural",
+  "elevenVoiceId": "nPczCjzI2devNBz1zQrb",
+  "music": "music.mp3",
+  "musicVolume": 0.08,
+  "accent": "#8ea2ff",
+  "hue": 240,
+  "hair": "#3a241a",
+  "moustache": false,
+  "captionFixes": {"genius": "jenius", "lempatan": "lompatan"},
+  "keywords": ["Hollywood", "Hedy", "torpedo", "merancang", "mustahil", "Wifi", "penampilan"],
+  "storyScenes": [
+    {"kind": "gintro", "cue": null, "mood": "neutral"},
+    {"kind": "gportrait", "cue": "Hedy", "label": "Hedy Lamarr"},
+    {"kind": "gstruggle", "cue": "torpedo"},
+    {"kind": "gwork", "cue": "merancang", "prop": "gear"},
+    {"kind": "gbreakthrough", "cue": "mustahil", "label": "LOMPAT FREKUENSI"},
+    {"kind": "gimpact", "cue": "Wifi"},
+    {"kind": "gclose", "cue": "penampilan"}
+  ]
+}
